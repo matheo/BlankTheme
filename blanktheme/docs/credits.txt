@@ -1,0 +1,21 @@
+Developer:
+Mateo Tibaquirá [mateo]
+http://www.nestormateo.com
+
+Menu management:
+Erik Spaan [espaan]
+http://www.erikspaan.nl
+
+BlankTheme Documentation:
+Dave Pahl [ammodump]
+http://www.dpahl.com
+
+
+Special thanks to:
+
+Dirk Jesse
+YAML Author
+http://www.yaml.de/
+
+EFA fontsize script
+http://www.einfach-fuer-alle.de/artikel/fontsize/

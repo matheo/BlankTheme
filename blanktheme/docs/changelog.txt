@@ -1,0 +1,14 @@
+0.9
+	Layout notation was changed from lcr|clr|lc to 213|123|21
+	EFA fontSize on/off theme variable added
+	Adminmenu options and colors improvement
+	Adminmenu now is a CSSplay based menu
+	Now the body ID is the $modname and the current layout is a class
+
+0.8	
+	Menu plugins checks for module availability
+	YAML styles basemod_* files ordered in a consistent way
+	E_ALL errors fixes in the menu plugins 
+	
+Detailed log available here:
+http://trac.postnuke.com/projects/blanktheme/log/

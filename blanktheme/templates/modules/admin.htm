@@ -1,0 +1,57 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<!--[lang]-->">
+<head>
+<!--[modulestylesheet stylesheet=admin.css modname=admin xhtml=true]-->
+<!--[include file='head.htm']-->
+<link rel="stylesheet" href="<!--[$themepath]-->/style/admin.css" type="text/css" media="screen,projection" />
+</head>
+
+<!-- Admin template -->
+<body id="bt_<!--[$module]-->" class="bt_admin">
+
+<!--[* for the backend we don't include the layout template *]-->
+<div id="page_margins" class="bt_1">
+	<div id="page">
+		<div id="header">
+			<div id="topnav">
+				<!-- start: skip link navigation -->
+				<a class="skip" href="#navigation" title="<!--[pnml name='_AB_SKIPLINK']-->"><!--[pnml name='_AB_SKIPTO_NAVIGATION']--></a><span class="hideme">.</span>
+				<a class="skip" href="#content" title="<!--[pnml name='_AB_SKIPLINK']-->"><!--[pnml name='_AB_SKIPTO_CONTENT']--></a><span class="hideme">.</span>
+				<!-- end: skip link navigation -->
+
+				<!--[userlinks start='' end='']-->
+			</div>
+			<h1><!--[sitename]--></h1>
+			<span class="slogan"><!--[slogan]--></span>
+		</div>
+		<!-- begin: main navigation #nav -->
+		<div id="nav"> <a id="navigation" name="navigation"></a>
+			<!-- skiplink anchor: navigation -->
+			<!--[bt_adminlinks id='nav_admin' ulclass='cssplay_prodrop' current=$module currentclass='selected']-->
+		</div>
+		<!-- end: main navigation -->
+		<!-- begin: main content area #main -->
+		<div id="main">
+			<!-- begin: #col1 -->
+			<div id="col1">
+				<div id="col1_content" class="clearfix">
+					<div class="floatbox"><!--[$maincontent]--></div>
+				</div>
+				<div id="ie_clearing">&nbsp;</div>
+				<!-- End: IE Column Clearing -->
+			</div>
+			<!-- end: #col1 -->
+		</div>
+		<!-- end: #main -->
+	</div>
+<!--[*
+<div>
+<!--[nocache]--><!--[pagerendertime]--><!--[/nocache]-->
+<!--[nocache]--><!--[sqldebug]--><!--[/nocache]-->
+</div>
+*]-->
+</div>
+</body>
+</html>

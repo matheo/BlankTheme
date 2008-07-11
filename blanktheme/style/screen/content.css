@@ -1,0 +1,512 @@
+/**
+ * Design of standard content elements
+ *
+ * @copyright       Copyright 2005-2008, Dirk Jesse
+ * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
+ * @link            http://www.yaml.de
+ * @package         yaml
+ * @version         3.0.4
+ * @revision        $Revision: 138 $
+ * @lastmodified    $Date: 2007-11-19 21:05:33 +0100 (Mo, 19 Nov 2007) $
+ */
+
+/**
+ * Zikula blanktheme adaptation
+ *
+ * @author          Mateo Tibaquira
+ * @link            http://www.nestormateo.com
+ * @author          Erik Spaan
+ * @link            http://www.erikspaan.nl
+ * @author          Dave Pahl
+ * @link            http://www.dpahl.com
+ * @lastmodified    $Date: 2008-03-22 15:41:09 -0500 (Sa, 22 Mar 2008) $
+ */
+
+/**
+ * CSS Table of Contents
+ *
+ *  Global Elements, Standard styles
+ *  General layout Elements
+ *  Links
+ *  Tables
+ *  Generic Content Classes
+ *  Theme specific styles
+ *  Zikula Specific styles
+ *    Fixes
+ *    Core styles
+ *    Value Addons
+ *    Zikula Blocks
+ *    Specific Zikula Zones
+ */
+
+@media all
+{
+  /**
+   * Global elements
+   * standar html elements styles
+   */
+
+  /* reset font size for all elements to standard (16 Pixel) */
+  html * { font-size: 100.01%; }
+
+  /* base layout gets standard */
+  body {
+    color: #444;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 75.00%; /* font size 12px */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #666;
+    font-family: "times new roman", times, serif;
+    font-weight: bold;
+    margin: 0 0 0.25em 0;
+  }
+
+  h1 {
+    font-size: 200%; /* 24px */
+  }
+  h2 {
+    color: #182E7A;
+    font-size: 200%; /* 24px */
+  }
+  h3 {
+    font-size: 150%; /* 18px */
+  }
+  h4 {
+    font-size: 133.33%; /* 16px */
+  }
+  h5 {
+    font-size: 116.67%; /* 14px */
+  }
+  h6 {
+    font-size: 116.67%; /* 14px */
+    font-style: italic;
+  }
+
+  /* reset monospaced elements to font size 16px in Gecko browsers */
+  textarea, pre, tt, code {
+    font-family: "Courier New", Courier, monospace;      
+  }
+
+  /* Lists */
+
+  ul, ol, dl {
+    line-height: 1.5em;
+    margin: 0 0 1em 1em;
+  }
+  li {
+    line-height: 1.5em;
+    margin-left: 1.5em;
+  }
+
+  dt {
+    font-weight: bold;
+  }
+  dd {
+    margin: 0 0 1em 2em;
+  }
+
+  /* text formatting */
+
+  cite, blockquote {
+    font-style: italic
+  }
+  blockquote {
+    margin: 0 0 1em 1.5em;
+  }
+
+  strong, b {
+    font-weight: bold;
+  }
+  em, i {
+    font-style: italic;
+  }
+
+  pre, code {
+    font-family: monospace;
+    font-size: 1.1em;
+  }
+
+  acronym, abbr {
+    border-bottom: .1em dashed #c00;
+    cursor: help;
+    letter-spacing: .07em;
+  }
+
+  /* Miscellaneous */
+
+  p {
+    line-height: 1.5em;
+    margin: 0 0 1em 0;
+  }
+
+  hr {
+    color: #fff;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px #eee solid;
+    margin: 0 0 0.5em 0;
+    padding: 0 0 0.5em 0;
+  }
+
+
+
+  /**
+   * General layout elements
+   * styles for the main containers and some of its specific contents
+   */
+
+  #header h1 {
+    color: #000;
+    font-size: 2.5em;
+    letter-spacing: -2px;
+    line-height: 65%;
+  }
+
+  #header .slogan {
+    color: #999;
+  }
+
+    #topnav {
+      color: #aaa;
+    }
+
+  #footer {
+    color: #666; 
+    text-align: left;
+  }
+
+
+
+  /**
+   * Links
+   * Formatting of hyperlinks
+   */
+
+  /* general links */
+  a {
+    color: #4D87C7;
+    text-decoration: none;
+  }
+  a:focus,
+  a:hover,
+  a:active {
+    color:#182E7A;
+    text-decoration: underline;
+  }
+  
+  /* top navigation links */
+  #topnav a {
+    color: #999;
+    background: transparent;
+    font-weight: normal;
+    text-decoration: none;
+  }
+  #topnav a:focus, 
+  #topnav a:hover,
+  #topnav a:active {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  #footer a {
+    background: transparent;
+    color: #999;
+    font-weight: bold;
+  }
+  #footer a:focus, 
+  #footer a:hover,
+  #footer a:active {
+    background: transparent;
+    color: #4D87C7;
+    text-decoration: underline;
+  }
+
+
+
+  /**
+   * Emphasizing external Hyperlinks via CSS
+   */
+
+  /*
+  #main a[href^="http://www.my-domain.com"],
+  #main a[href^="https://www.my-domain.com"]
+  {
+    background-image: url('../../images/icons/ext_link.gif');
+    background-position: 0 0.45em;
+    background-repeat: no-repeat;
+    padding-left: 12px;
+  }
+  */
+
+
+
+  /**
+   * Tables
+   * Generic classes for table-width and design definition
+   */
+
+  table {
+    border-collapse: collapse;
+    margin-bottom: 0.5em;
+    width: auto;
+  }
+  table.full {
+    width: 100%;
+  }
+  table.fixed {
+    table-layout: fixed;
+  }
+
+  th,td {
+    padding: 0.5em;
+  }
+  thead th {
+    background: #444;
+    color: #fff;
+  }
+  tbody th {
+    background: #ccc;
+    color: #333;
+  }
+  tbody th.sub {
+    background: #ddd;
+    color: #333;
+  }
+
+  thead th a {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+
+
+  /**
+   * Generic Content Classes
+   * standard classes for positioning and highlighting
+   */
+
+  .note {
+    background: #dfd;
+    border-bottom: 1px #bdb dotted;
+    border-top: 1px #bdb dotted;
+    padding: 1em;
+  }
+  .important {
+    background: #ffd;
+    border-bottom: 1px #ddb dotted;
+    border-top: 1px #ddb dotted;
+    padding: 1em;
+  }
+  .warning {
+    background: #fdd;
+    border-bottom: 1px #dbb dotted;
+    border-top: 1px #dbb dotted;
+    padding: 1em;
+  }
+
+  .float_left {
+    display: inline;
+    float: left;
+    margin-bottom: 0.15em;
+    margin-right: 1em;
+  }
+  .float_right {
+    display: inline;
+    float: right;
+    margin-bottom: 0.15em;
+    margin-left: 1em;
+  }
+  .center {
+    margin: 0.5em auto;
+    text-align: center;
+  }
+
+
+
+  /**
+   * Theme specific styles
+   * general styles defined by the theme
+   */
+
+  /* Special styles for entries or menus ... */
+  .post {
+  }
+  .menu {
+  }
+
+
+
+  /**
+   * Zikula specific styles
+   * styles to be used in the Zikula templates
+   */
+
+  /* ### Fixes ### */
+
+  /* multicategory selector */
+  div.pn-formrow ul.selector_category li {
+    list-style: none;
+  }
+
+  /* pnForm */
+  div.contextMenu {
+    margin: -153px 0 0 -20px;
+  }
+  div.contextMenu ul li {
+    margin-left: 0px;
+  }
+
+  /* jsCalendar */
+  .calendar {
+    z-index: 100;
+  }
+    .calendar tr.daysrow td.hilite {
+      font-weight: bold;
+    }
+
+  /* Scribite */
+  /* openwysiwyg fix*/
+  .tableTextareaEditor th,
+  .tableTextareaEditor td {
+    padding: 0;
+  }
+  .tableTextareaEditor span {
+    margin: 0;
+  }
+
+
+  /* ### Core styles ### */
+
+  /* pn-menu */
+  .pn-menu {
+    color: #aaa;
+    text-align: center;
+    width: 100%;
+  }
+    .pn-menu a {
+      padding: 3px 5px;
+    }
+
+  /* pn-pager */
+  .pn-pager {
+    color: #999;
+    padding: 5px 4px;
+  }
+    .pn-pager a:hover {
+      text-decoration: none;
+    }
+
+  /* main content */
+  #pn-maincontent {
+    display: block;
+  }
+
+
+
+  /* ### Value Addons styles ### */
+  
+  /* News Articles */
+  .news_index {
+    padding: 5px 0px 10px 0px;
+  }
+  .news_index h2 {
+    margin: 0;
+    padding: 2px 0px;
+  }
+  .news_index .news_hometext,
+  .news_index .news_hometext p {
+    line-height: 1.5em;
+  }
+  .news_index .news_hometext p {
+    margin: 0;
+  }
+  .news_index_date {
+    color: #AAA;
+  }
+  .news_title {
+    margin-top: 10px;
+  }
+  .news_body,
+  .news_body p {
+    line-height: 1.5em;
+  }
+  .news_categories {
+    border-top: 1px solid #EFEFEF;
+    margin-top: 1em; /* optional */
+    text-align: right;
+  }
+  #news_topic {
+    float: right;
+  }
+
+  /* Ratings hook */
+  #ratingsratecontent p {
+    margin: 0;
+  }
+
+
+  /* ### Miscelaneous ### */
+  
+  /* digger plugin */
+  .diggers {
+    background: #fff;
+    /*border-top: 1px solid #EFEFEF;*/
+    margin: 0px;
+    /*margin-top: 1em; */
+    padding: 2px;
+    text-align: right;
+  }
+
+  .diggers a {
+    background: none no-repeat bottom left ! important;
+    margin-left: 5px;
+    padding-left: 0 ! important;
+  }
+
+
+  /* ### Zikula Blocks  ### */
+
+  /* General Blocks styles */
+  .pn-block {
+    margin-bottom: 15px;
+  }
+  .pn-block h4 {
+    font-weight: 700;
+    line-height: 22px;
+    margin: 0;
+    padding: 3px 4px;
+  }
+  .pn-block ul,
+  .pn-block ol,
+  .pn-block dl {
+    margin: 0px;
+  }
+
+  /* Top Navigation Blocks */
+  .pn-blockposition-navtop {
+    margin-bottom: 0px;
+  }
+
+  /* Right Blocks */
+  .pn-blockposition-right {
+  }
+  .pn-blockposition-right h4 {
+  }
+
+  /* Center Blocks */
+  .pn-blockposition-center {
+  }
+
+
+
+  /* ### Specific Zikula Zones ### */
+
+  /* Example: Homepage main container */
+  .bt_home #main {
+    padding: 10px 0;
+  }
+
+}

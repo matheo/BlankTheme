@@ -1,0 +1,408 @@
+/**
+ * Screen layout styles
+ *
+ * @copyright       Copyright 2005-2008, Dirk Jesse
+ * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
+ * @link            http://www.yaml.de
+ * @package         yaml
+ * @version         3.0.4
+ * @revision        $Revision: 130 $
+ * @lastmodified    $Date: 2007-10-05 19:05:21 +0200 (Fr, 05 Okt 2007) $
+ */
+
+/**
+ * Zikula Adaptation
+ *
+ * @author          Mateo Tibaquira
+ * @link            http://www.blanktheme.org
+ * @author          Erik Spaan
+ * @link            http://www.erikspaan.nl
+ * @author          Dave Pahl
+ * @link            http://www.dpahl.com
+ * @lastmodified    $Date: 2008-03-22 15:41:09 -0500 (Sa, 22 Mar 2008) $
+ */
+
+/**
+ * CSS Table of Contents
+ *
+ *  YAML fix
+ *  Global Elements, Standard styles
+ *  General layout Elements
+ *    Layout Elelemtns
+ *    Navigation Menu Adjustments
+ *    Miscelaneous
+ *  Containers
+ *    YAML Containers
+ *  Specific templates
+ */
+
+@media screen, projection
+{
+  /**
+   * YAML fix
+   * Centering layout in old IE-versions
+   */
+
+  body { 
+    text-align: center; 
+  }
+
+  #page_margins { 
+    text-align:left; 
+  }
+
+
+
+  /**
+   * Global elements
+   * standard html elements styles
+   */
+
+  /* ### Marginal areas & page background ### */
+  body {
+    background: #4d87c7 url(../../images/bg_blue.gif) repeat-x top left fixed;
+    padding: 10px 0; /* to-remove */
+  }
+
+
+
+  /**
+   * General layout elements
+   * Layout: width, background, borders of the main containers
+   * default layout values, modified later by specific settings
+   */
+
+  /* ### Layout Elements ### */
+
+  /* general wrapper */
+  #page_margins {
+    border: 0px #889 solid;  /* to-remove */
+    margin: 0 auto;
+
+    width: 980px;
+    min-width: 980px;
+    max-width: 80em;
+  }
+
+  /* page wrapper */
+  #page {
+    background: #fff;
+    border: 10px #fff solid; /* to-remove */
+  }
+
+      /* header */    
+      #header {
+        /*background: #fff url(../../images/header_imagename.png) repeat-x top left;*/
+        padding: 45px 2em 1em 20px;
+      }
+
+          /* top navigation container */
+          #header #topnav {
+            background: transparent;
+          }
+
+      /* adjustment of main navigation */          
+      #nav ul {
+        margin-left: 20px;
+      }
+
+      /* content wrapper */      
+      #main {
+        overflow: hidden;
+        padding: 1em 0;
+      }
+
+      /* footer */
+      #footer { 
+        background: #efefef; 
+        border-top: 5px #dfdfdf solid; /* to-remove */
+        padding: 15px;
+      }
+
+
+  /* ### Navigation Menu Adjustments ### */
+  #nav_main {
+    background: #efefef url(../../yaml/navigation/images/shiny_buttons/background.gif) repeat-x; /* to-remove */
+    border: none;
+    display: inline;
+    float: left;
+    overflow: visible;
+    width: 100%;
+  }
+
+  #nav_main ul {
+    border: none;
+    display: inline;
+    float: left;
+    list-style: none;
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+  }
+
+  #nav_main ul li {
+    border: none;
+    border-right: 1px solid #aaa; /* to-remove */
+    display: inline;
+    float: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #nav_main ul li a,
+  #nav_main ul li strong {
+    background: transparent;
+    color: #333;
+    display: block;
+    font-size: 1.15em;
+    font-weight: bold;
+    /*line-height: 22px;*/
+    margin: 0;
+    padding: 0.5em 1.2em;
+    text-decoration: none;
+    width: auto;
+  }
+
+  #nav_main ul li a:focus,
+  #nav_main ul li a:hover,
+  #nav_main ul li a:active {
+    background: #3b69ad;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  #nav_main ul li#current {
+    background: #4d87c7;
+    border: none; /* to-remove */
+  }
+
+  #nav_main ul li#current strong,
+  #nav_main ul li#current a,
+  #nav_main ul li#current a:focus,
+  #nav_main ul li#current a:hover,
+  #nav_main ul li#current a:active {
+    background: transparent;
+    color: #fff;
+    font-weight: bold;
+  }
+
+
+  /* ### Miscellaneous ### */
+
+  /* cool subcolumns style */  
+  .coolsubcol {
+    background: #f9f9f9;
+    border-top: 2px #efefef solid;
+    color: #666; 
+    padding-top: 15px;
+  }
+  .coolsubcol .subcl {
+    padding: 0 0 0 10px;
+  }
+  .coolsubcol .subc {
+    padding: 0 5px 0 5px;
+  }
+  .coolsubcol .subcr {
+    padding: 0 10px 0 0;
+  }
+
+
+
+  /**
+   * Formatting content container by default
+   *
+   * |-------------------------------|
+   * | #header                       |
+   * |-------------------------------|
+   * | #col1   | #col3     | #col2   |
+   * | 25%     | flexible  | 25%     |
+   * |-------------------------------|
+   * | #footer                       |
+   * |-------------------------------|
+   */
+
+  /* ### YAML Containers ### */
+  #col1 {
+    width: 25%;
+  }
+    #col1_content {
+      padding: 0 10px;
+    }
+
+  #col2 {
+    width: 25%;
+  }
+    #col2_content {
+      padding: 0 10px;
+    }
+
+  #col3 {
+    margin: 0 25%;
+  }
+    #col3_content {
+      padding: 0 10px;
+    }
+
+
+
+  /**
+   * Specific templates
+   * performance measure to reduce the stylesheets quantity
+   */
+
+  /* Example: #col1 style for the -grid- template and the -123- layout */
+  .bt_grid .bt_123 #col1 {
+    width: 25%; /* width does not affect grid template, don't worry ;-) */
+  }
+
+
+
+  /* ### 2col template ### */
+
+  /* #col1 is the main column */
+  .bt_2col #col1 {
+    float: left;
+    margin: 0;
+    width: 74%;
+  }
+  .bt_2col #col1_content {
+    padding: 0 10px;
+  }
+
+  /* #col2 and #col3 contains side blocks */
+  .bt_2col #col2,
+  .bt_2col #col3 {
+    float: left;
+    margin: 0;
+    width: 25%;
+  }
+  .bt_2col #col2_content {
+    padding: 0 10px 0 15px;
+  }
+  .bt_2col #col3_content {
+    padding: 0 15px 0 10px;
+  }
+
+
+  /* 1X layouts */
+  .bt_2col .bt_12 #col2,
+  .bt_2col .bt_13 #col3 {
+    /*border-left: 1px #ddd solid;*/ /* must reduce the col width if used */
+  }
+  /* padding changes */
+  .bt_2col .bt_12 #col2_content {
+    padding: 0 15px 0 10px;
+  }
+
+
+  /* X1 layouts */
+  .bt_2col .bt_21 #col1,
+  .bt_2col .bt_31 #col1 {
+    float: right;
+  }
+  .bt_2col .bt_21 #col2,
+  .bt_2col .bt_31 #col3 {
+    /*border-right: 1px #ddd solid;*/ /* must reduce the col width if used */
+  }
+  .bt_2col .bt_31 #col3_content {
+    padding: 0 10px 0 15px;
+  }
+
+
+  /* 1 layout */
+  /* full main column */
+  .bt_2col .bt_1 #col1 {
+    width: 100%;
+  }
+
+
+  /* turn off cases */
+  .bt_2col .bt_12 #col3,
+  .bt_2col .bt_13 #col2,
+  .bt_2col .bt_21 #col3,
+  .bt_2col .bt_31 #col2,
+  .bt_2col .bt_1 #col2,
+  .bt_2col .bt_1 #col3 {
+    display: none;
+  }
+  
+  
+
+
+  /* ### 3col template ### */
+  /* 123 is the default layout */
+
+  /* #col1 is the main column */
+  .bt_3col #col1 {
+    float: left;
+    margin: 0;
+    width: 480px;
+  }
+  .bt_3col #col1_content {
+    padding: 0 10px;
+  }
+
+  /* #col2 contains the left blocks */
+  .bt_3col #col2 {
+    float: left;
+    margin: 0;
+    width: 240px;
+  }
+  .bt_3col #col2_content {
+    padding: 0 10px 0 15px;
+  }
+
+  /* #col3 contains the right blocks */
+  .bt_3col #col3 {
+    float: right;
+    margin: 0;
+    width: 240px;
+  }
+  .bt_3col #col3_content {
+    padding: 0 15px 0 10px;
+  }
+
+
+  /* 213 layout */
+  .bt_3col .bt_213 #col1 {
+    margin-left: 240px; /* col2 width */
+  }
+  .bt_3col .bt_213 #col2 {
+    margin-left: -720px; /* col1 + col2 widths */
+  }
+
+
+  /* 312 layout */
+  .bt_3col .bt_312 #col1 {
+    margin-left: 240px; /* col3 width */
+  }
+  .bt_3col .bt_312 #col2 {
+    float: right;
+  }
+  .bt_3col .bt_312 #col3 {
+    float: left;
+    margin-left: -720px; /* col1 + col2 widths */
+  }
+
+
+  /* 132 layout */
+  .bt_3col .bt_132 #col2 {
+    float: right;
+  }
+  .bt_3col .bt_132 #col3 {
+    float: left;
+  }
+
+
+  /* XX1 layouts */
+  .bt_3col .bt_231 #col1,
+  .bt_3col .bt_321 #col1 {
+    float: right;
+  }
+  .bt_3col .bt_321 #col2 {
+    float: right;
+  }
+
+}

@@ -1,0 +1,14 @@
+styles:
+	include the iepng.htc fixer
+
+docs:
+	include the license YAML-license
+	include the efa-fontResizer license
+
+manual:
+	Installing BlankTheme
+		Preventing .ini writable errors
+	A "Modifying BlankTheme" section
+		"Begin with" section (rename version lang...)
+		Top Links customization
+	Changing the styles: background-color, header-bg-image ...

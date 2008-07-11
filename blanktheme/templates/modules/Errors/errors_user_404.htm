@@ -1,0 +1,30 @@
+<!--[*  $Id: errors404.htm,v 1.10 2006/04/04 14:18:07 markwest Exp $  *]-->
+<div class="pn-fullerror">
+<h2><!--[pnml name="_ERRORS_404"]--></h2>
+<hr />
+<p>
+<!--[pnml name="_ERRORS_SORRY_404" page=$currneturi sitename=$sitename]-->
+<!--[if $reportlevel neq 0]-->
+<!--[if $reportlevel eq 2 or $localreferer]-->
+<!--[pnml name="_ERRORS_MAILED"]-->
+<!--[/if]-->
+<!--[/if]-->
+</p>
+
+<!--[pnmodavailable modname=Search assign=search]-->
+<!--[if $search]-->
+<h2><!--[pnml name=_ERRORS_SEARCH]--></h2>
+<!--[pnmodurl modname=Search assign=url]-->
+<p><!--[pnml name=_ERRORS_USESEARCH url=$url html=true]--></p>
+<!--[/if]-->
+
+<h2><!--[pnml name=_ERRORS_TECHNICALINFO]--></h2>
+<ul>
+<!--[foreach from=$messages item=message]-->
+<li><!--[$message]--></li>
+<!--[/foreach]-->
+</ul>
+
+<p><a href="javascript:history.back(-1)"><!--[pnml name=_BACK]--></a></p>
+
+</div>
