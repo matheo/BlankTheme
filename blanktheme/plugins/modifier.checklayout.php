@@ -30,8 +30,8 @@
  */
 function smarty_modifier_checklayout($layout, $columns)
 {
-	if ($layout == '' || $columns == '') {
-		return false;
+	if (empty($layout) || empty($columns)) {
+	    return false;
 	}
 
     $layout = explode('_', $layout, 2);

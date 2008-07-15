@@ -29,7 +29,7 @@
  */
 function smarty_modifier_checkzone($layout, $zone)
 {
-	if ($layout == '' || $zone == '') {
+	if (empty($layout) || empty($zone)) {
 		return false;
 	}
 
