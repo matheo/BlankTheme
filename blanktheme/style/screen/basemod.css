@@ -6,44 +6,43 @@
  *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
  * @link            http://www.yaml.de
  * @package         yaml
- * @version         3.0.4
- * @revision        $Revision: 130 $
- * @lastmodified    $Date: 2007-10-05 19:05:21 +0200 (Fr, 05 Okt 2007) $
+ * @version         3.0.5
  */
 
 /**
- * Zikula Adaptation
+ * Zikula BlankTheme Adaptation
+ * @link            http://www.blanktheme.org
  *
  * @author          Mateo Tibaquira
- * @link            http://www.blanktheme.org
+ * @link            http://www.nestormateo.com
  * @author          Erik Spaan
  * @link            http://www.erikspaan.nl
  * @author          Dave Pahl
  * @link            http://www.dpahl.com
- * @lastmodified    $Date: 2008-03-22 15:41:09 -0500 (Sa, 22 Mar 2008) $
+ * @lastmodified    $Id: $
  */
 
 /**
  * CSS Table of Contents
  *
- *  YAML fix
- *  Global Elements, Standard styles
- *  General layout Elements
- *    Layout Elelemtns
- *    Navigation Menu Adjustments
- *    Miscelaneous
- *  Containers
- *    YAML Containers
- *  Specific templates
+ *  Global fixes (layout-global)
+ *  Design of the layout (layout-basics)
+ *     Layout Elements (layout-elements)
+ *     Navigation menu adjustments (layout-navigation)
+ *     Miscelaneous (layout-misc)
+ *  Content containers default styles (layout-main)
+ *  Specific templates and zones (layout-templates)
  */
 
 @media screen, projection
 {
   /**
-   * YAML fix
-   * Centering layout in old IE-versions
+   * Global fixes
+   * 
+   * @section layout-global
    */
 
+  /* Centering layout in old IE-versions */
   body { 
     text-align: center; 
   }
@@ -55,25 +54,23 @@
 
 
   /**
-   * Global elements
-   * standard html elements styles
+   * Design of the layout
+   * Layout: width, background, borders of the main containers
+   * 
+   * @section layout-basics
    */
 
-  /* ### Marginal areas & page background ### */
+
+  /**
+   * Layout elements
+   * @subsection layout-elements
+   */
+
+  /* marginal area */
   body {
     background: #4d87c7 url(../../images/bg_blue.gif) repeat-x top left fixed;
     padding: 10px 0; /* to-remove */
   }
-
-
-
-  /**
-   * General layout elements
-   * Layout: width, background, borders of the main containers
-   * default layout values, modified later by specific settings
-   */
-
-  /* ### Layout Elements ### */
 
   /* general wrapper */
   #page_margins {
@@ -121,7 +118,11 @@
       }
 
 
-  /* ### Navigation Menu Adjustments ### */
+  /**
+   * Navigation menu adjustments
+   * @subsection layout-navigation
+   */
+
   #nav_main {
     background: #efefef url(../../yaml/navigation/images/shiny_buttons/background.gif) repeat-x; /* to-remove */
     border: none;
@@ -189,7 +190,10 @@
   }
 
 
-  /* ### Miscellaneous ### */
+  /**
+   * Miscellaneous
+   * @subsection layout-misc
+   */
 
   /* cool subcolumns style */  
   .coolsubcol {
@@ -211,19 +215,11 @@
 
 
   /**
-   * Formatting content container by default
+   * Formatting content containers by default
    *
-   * |-------------------------------|
-   * | #header                       |
-   * |-------------------------------|
-   * | #col1   | #col3     | #col2   |
-   * | 25%     | flexible  | 25%     |
-   * |-------------------------------|
-   * | #footer                       |
-   * |-------------------------------|
+   * @section layout-main
    */
 
-  /* ### YAML Containers ### */
   #col1 {
     width: 25%;
   }
@@ -248,8 +244,9 @@
 
 
   /**
-   * Specific templates
-   * performance measure to reduce the stylesheets quantity
+   * Specific templates and zones
+   * 
+   * @section layout-templates
    */
 
   /* Example: #col1 style for the -grid- template and the -123- layout */
@@ -259,7 +256,10 @@
 
 
 
-  /* ### 2col template ### */
+  /**
+   * 2col template
+   * @subsection layout-template-2col
+   */
 
   /* #col1 is the main column */
   .bt_2col #col1 {
@@ -316,6 +316,9 @@
   .bt_2col .bt_1 #col1 {
     width: 100%;
   }
+  .bt_2col .bt_1 #col1_content {
+    padding: 0 10px;
+  }
 
 
   /* turn off cases */
@@ -327,12 +330,14 @@
   .bt_2col .bt_1 #col3 {
     display: none;
   }
-  
-  
 
 
-  /* ### 3col template ### */
-  /* 123 is the default layout */
+
+  /**
+   * 3col template
+   * 123 is the default layout
+   * @subsection layout-template-3col
+   */
 
   /* #col1 is the main column */
   .bt_3col #col1 {

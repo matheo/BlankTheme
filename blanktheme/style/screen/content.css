@@ -1,18 +1,17 @@
 /**
- * Design of standard content elements
+ * Content elements styles
  *
  * @copyright       Copyright 2005-2008, Dirk Jesse
  * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
  *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
  * @link            http://www.yaml.de
  * @package         yaml
- * @version         3.0.4
- * @revision        $Revision: 138 $
- * @lastmodified    $Date: 2007-11-19 21:05:33 +0100 (Mo, 19 Nov 2007) $
+ * @version         3.0.5
  */
 
 /**
- * Zikula blanktheme adaptation
+ * Zikula BlankTheme adaptation
+ * @link            http://www.blanktheme.org
  *
  * @author          Mateo Tibaquira
  * @link            http://www.nestormateo.com
@@ -20,24 +19,25 @@
  * @link            http://www.erikspaan.nl
  * @author          Dave Pahl
  * @link            http://www.dpahl.com
- * @lastmodified    $Date: 2008-03-22 15:41:09 -0500 (Sa, 22 Mar 2008) $
+ * @lastmodified    $Id: $
  */
 
 /**
  * CSS Table of Contents
  *
- *  Global Elements, Standard styles
- *  General layout Elements
- *  Links
- *  Tables
- *  Generic Content Classes
- *  Theme specific styles
- *  Zikula Specific styles
- *    Fixes
- *    Core styles
- *    Value Addons
- *    Zikula Blocks
- *    Specific Zikula Zones
+ *  Global elements (content-global)
+ *  General layout elements (content-layout)
+ *  Links (content-links)
+ *  Tables (content-tables)
+ *  Generic content classes (content-generic-classes)
+ *  Theme specific styles (content-theme-specific)
+ *  Zikula Specific styles (content-zikula-specific)
+ *     Fixes (content-zikula-fixes)
+ *     Core styles (content-zikula-core)
+ *     Value Addons (content-zikula-addons)
+ *     Zikula Blocks (content-zikula-blocks)
+ *     Miscelaneous (content-zikula-misc)
+ *     Specific Zikula Zones (content-zikula-zones)
  */
 
 @media all
@@ -45,10 +45,17 @@
   /**
    * Global elements
    * standar html elements styles
+   * 
+   * @section content-global
    */
 
-  /* reset font size for all elements to standard (16 Pixel) */
+  /* reset font size for all elements to standard (16 pixel) */
   html * { font-size: 100.01%; }
+
+  /* reset monospaced elements to font size 16px in Gecko browsers */
+  textarea, pre, tt, code {
+    font-family: "Courier New", Courier, monospace;      
+  }
 
   /* base layout gets standard */
   body {
@@ -83,11 +90,6 @@
   h6 {
     font-size: 116.67%; /* 14px */
     font-style: italic;
-  }
-
-  /* reset monospaced elements to font size 16px in Gecko browsers */
-  textarea, pre, tt, code {
-    font-family: "Courier New", Courier, monospace;      
   }
 
   /* Lists */
@@ -156,6 +158,8 @@
   /**
    * General layout elements
    * styles for the main containers and some of its specific contents
+   * 
+   * @section content-layout
    */
 
   #header h1 {
@@ -183,6 +187,8 @@
   /**
    * Links
    * Formatting of hyperlinks
+   * 
+   * @section content-links
    */
 
   /* general links */
@@ -228,6 +234,9 @@
 
   /**
    * Emphasizing external Hyperlinks via CSS
+   * 
+   * @section             content-external-links
+   * @app-yaml-default    disabled
    */
 
   /*
@@ -246,6 +255,8 @@
   /**
    * Tables
    * Generic classes for table-width and design definition
+   * 
+   * @section content-tables
    */
 
   table {
@@ -286,6 +297,8 @@
   /**
    * Generic Content Classes
    * standard classes for positioning and highlighting
+   * 
+   * @section content-generic-classes
    */
 
   .note {
@@ -329,6 +342,8 @@
   /**
    * Theme specific styles
    * general styles defined by the theme
+   * 
+   * @section content-theme-specific
    */
 
   /* Special styles for entries or menus ... */
@@ -342,9 +357,15 @@
   /**
    * Zikula specific styles
    * styles to be used in the Zikula templates
+   * 
+   * @section content-zikula-specific
    */
 
-  /* ### Fixes ### */
+
+  /**
+   * Fixes
+   * @subsection content-zikula-fixes
+   */
 
   /* multicategory selector */
   div.pn-formrow ul.selector_category li {
@@ -378,7 +399,10 @@
   }
 
 
-  /* ### Core styles ### */
+  /**
+   * Core styles overrides
+   * @subsection content-zikula-core
+   */
 
   /* pn-menu */
   .pn-menu {
@@ -405,8 +429,10 @@
   }
 
 
-
-  /* ### Value Addons styles ### */
+  /**
+   * Value Addons styles
+   * @subsection content-zikula-addons
+   */
   
   /* News Articles */
   .news_index {
@@ -448,26 +474,10 @@
   }
 
 
-  /* ### Miscelaneous ### */
-  
-  /* digger plugin */
-  .diggers {
-    background: #fff;
-    /*border-top: 1px solid #EFEFEF;*/
-    margin: 0px;
-    /*margin-top: 1em; */
-    padding: 2px;
-    text-align: right;
-  }
-
-  .diggers a {
-    background: none no-repeat bottom left ! important;
-    margin-left: 5px;
-    padding-left: 0 ! important;
-  }
-
-
-  /* ### Zikula Blocks  ### */
+  /**
+   * Zikula Blocks
+   * @subsection content-zikula-blocks
+   */
 
   /* General Blocks styles */
   .pn-block {
@@ -501,8 +511,32 @@
   }
 
 
+  /**
+   * Miscelaneous styles
+   * @subsection content-zikula-misc
+   */
 
-  /* ### Specific Zikula Zones ### */
+  /* digger plugin */
+  .diggers {
+    background: #fff;
+    /*border-top: 1px solid #EFEFEF;*/
+    margin: 0px;
+    /*margin-top: 1em; */
+    padding: 2px;
+    text-align: right;
+  }
+
+  .diggers a {
+    background: none no-repeat bottom left ! important;
+    margin-left: 5px;
+    padding-left: 0 ! important;
+  }
+
+
+  /**
+   * Specific Zikula Zones
+   * @subsection content-zikula-zones
+   */
 
   /* Example: Homepage main container */
   .bt_home #main {
