@@ -2,7 +2,6 @@ styles:
 	include the iepng.htc fixer
 
 docs:
-	include the license YAML-license
 	include the efa-fontResizer license
 
 manual:

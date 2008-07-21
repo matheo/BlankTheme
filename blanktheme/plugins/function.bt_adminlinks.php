@@ -1,11 +1,21 @@
 <?php
 /**
- * Smarty function to display admin links for the site
+ * Zikula Application Framework
+ *
+ * @copyright  (c) 2008, BlankTheme Team
+ * @link       http://www.blanktheme.org
+ * @license    GNU/GPL - http://www.gnu.org/copyleft/gpl.html
+ * @version    $Id$
+ */
+
+/**
+ * Smarty function to display the admin navigation menu
  *
  * Example
- * <!--[bt_adminlinks id="myId" ulclass="myUlClass" current="home" currentclass="myActiveClass"]-->
+ * <!--[bt_adminlinks id='myId' ulclass='myUlClass' current='home' currentclass='myActiveClass']-->
  *
- * @author       Mateo Tibaquira [mateo], Erik Spaan [espaan]
+ * @author       Mateo Tibaquira [mateo]
+ * @author       Erik Spaan [espaan]
  * @since        08/11/2007
  * @param        array       $params       All attributes passed to this function from the template
  * @param        object      &$smarty      Reference to the Smarty object

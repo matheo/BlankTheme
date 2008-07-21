@@ -1,4 +1,5 @@
 0.9
+	Improvements in the inline documentation
 	Layout notation was changed from lcr|clr|lc to 213|123|21
 	EFA fontSize on/off theme variable added
 	Adminmenu options and colors improvement

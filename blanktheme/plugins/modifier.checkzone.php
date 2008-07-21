@@ -2,10 +2,10 @@
 /**
  * Zikula Application Framework
  *
- * @copyright (c) 2008, Mateo Tibaquirá
- * @link http://www.blanktheme.org
- * @version $Id: modifier.checkzone.php 192 2008-07-06 12:38:47Z mateo $
- * @license GNU/GPL - http://www.gnu.org/copyleft/gpl.html
+ * @copyright  (c) 2008, Mateo Tibaquira
+ * @link       http://www.blanktheme.org
+ * @license    GNU/GPL - http://www.gnu.org/copyleft/gpl.html
+ * @version    $Id$
  */
 
 /**

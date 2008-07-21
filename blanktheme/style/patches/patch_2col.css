@@ -1,22 +1,17 @@
 /**
- * "Yet Another Multicolumn Layout" - (X)HTML/CSS Framework
- *
- * IE-Patch stylesheet for "2col" layout
+ * IE-Patch stylesheet for 2col template
  *
  * @copyright       Copyright 2005-2007, Dirk Jesse
  * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
  *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
  * @link            http://www.yaml.de
- * @package         yaml
- * @version         3.0.4
- * @revision        $Revision: 130 $
- * @lastmodified    $Date: 2007-10-05 19:05:21 +0200 (Fr, 05 Okt 2007) $
+ * @version         $Id$
  */
 
-/* Layout-independent adjustments --------------------------------------------------------------------- */
+/* Layout-independent adjustments */
 @import url(../../yaml/core/slim_iehacks.css);
 
-/* Layout-dependent adjustments ----------------------------------------------------------------------- */
+/* Layout-dependent adjustments */
 @media screen, projection
 {
   /**

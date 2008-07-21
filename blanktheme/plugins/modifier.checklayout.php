@@ -2,10 +2,10 @@
 /**
  * Zikula Application Framework
  *
- * @copyright (c) 2008, Mateo Tibaquirá
- * @link http://www.blanktheme.org
- * @version $Id: modifier.checklayout.php 192 2008-07-06 12:38:47Z mateo $
- * @license GNU/GPL - http://www.gnu.org/copyleft/gpl.html
+ * @copyright  (c) 2008, Mateo Tibaquira
+ * @link       http://www.blanktheme.org
+ * @license    GNU/GPL - http://www.gnu.org/copyleft/gpl.html
+ * @version    $Id$
  */
 
 /**
@@ -13,13 +13,12 @@
  *
  * available parameters:
  *  - layout       the layout definition under test
- *  - check        the layout to check or
- *  - zone         the zone to check
+ *  - columns      the columns to check
  *
  * Example
  * with $layout = 'lcr_cb2'
- * <!--[if $layout|checklayout:'l']-->
- * do some stuff when 'l' (left) column is enabled
+ * <!--[if $layout|checklayout:2]-->
+ * do some stuff when '2' (left column) column is enabled
  * <!--[/if]-->
  *
  * @author   Mateo Tibaquirá

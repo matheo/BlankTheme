@@ -1,5 +1,14 @@
 <?php
 /**
+ * Zikula Application Framework
+ *
+ * @copyright  (c) 2008, BlankTheme Team
+ * @link       http://www.blanktheme.org
+ * @license    GNU/GPL - http://www.gnu.org/copyleft/gpl.html
+ * @version    $Id$
+ */
+
+/**
  * Smarty function to centralize important html outputs
  *
  * Example
@@ -21,8 +30,9 @@ function smarty_function_bt_htmloutput($params, &$smarty)
     // theme vars
     $template  = $smarty->_tpl_vars['template'];
     $layout    = $smarty->_tpl_vars['layout'];
-    $current   = $smarty->_tpl_vars['current'];
     $usefontr  = $smarty->_tpl_vars['usefontresize'];
+    // check for the current section
+    $current   = (isset($smarty->_tpl_vars['current'])) ? $smarty->_tpl_vars['current'] : '';
     // assign the respective output
     $output  = '';
     switch($section)

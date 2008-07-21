@@ -1,9 +1,18 @@
 <?php
 /**
- * Smarty function to display user links for the site
+ * Zikula Application Framework
+ *
+ * @copyright  (c) 2008, BlankTheme Team
+ * @link       http://www.blanktheme.org
+ * @license    GNU/GPL - http://www.gnu.org/copyleft/gpl.html
+ * @version    $Id$
+ */
+
+/**
+ * Smarty function to display the user navigation menu
  *
  * Example
- * <!--[bt_userlinks id="myId" current="home" currentclass="myActiveClass"]-->
+ * <!--[bt_userlinks id='myId' current='home' currentclass='myActiveClass']-->
  *
  * @author       Mateo Tibaquira
  * @since        08/11/07
