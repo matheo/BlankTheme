@@ -13,16 +13,14 @@
  *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
  * @link            http://www.yaml.de
  * @package         yaml
- * @version         3.0.5
- * @revision        $Revision: 189 $
- * @lastmodified    $Date: 2008-05-24 08:26:23 +0200 (Sa, 24 Mai 2008) $
+ * @version         3.0.6
+ * @revision        $Revision: 202 $
+ * @lastmodified    $Date: 2008-06-07 07:29:18 -0500 (sáb, 07 jun 2008) $
  * @appdef yaml
  */
 
 @media all
 {
-  /*------------------------------------------------------------------------------------------------------*/
-
   /**
    * (en) Debugging: When you see a green background, IE is getting this stylesheet
    * (de) Fehlersuche: Hintergrund leuchtet grün, wenn das Stylesheet korrekt geladen wurde
@@ -109,7 +107,7 @@
    */
 
   * html .floatbox { width:100%; }
-
+  
   /*------------------------------------------------------------------------------------------------------*/
 
   /**
@@ -253,13 +251,16 @@
 
   * html body a, * html body a:hover { background-color: transparent; }
 
-  /*------------------------------------------------------------------------------------------------------*/
+}
 
+@media screen, projection
+{
   /**
-   * (en) IE-Adjustments for subtemplates
-   * (de) IE-Anpassung für Subtemplates
+   * (en) IE-Adjustments for content columns and subtemplates
+   * (de) IE-Anpassung für Spaltencontainer und Subtemplates
    *
-   * Doubled Float-Margin Fix
+   * Doubled Float-Margin Bug
+   * @see        http://positioniseverything.net/explorer/doubled-margin.html
    *
    * @bugfix
    * @affected   IE 5.x/Win, IE6
@@ -267,25 +268,10 @@
    * @valid      yes
    */
 
+  #col1,  #col2 { display:inline; }
+
   .c50l, .c25l, .c33l, .c38l, .c66l, .c75l, .c62l,
   .c50r, .c25r, .c33r, .c38r, .c66r, .c75r, .c62r { display:inline; }
-}
-
-@media screen
-{
-  /*------------------------------------------------------------------------------------------------------*/
-
-  /**
-   * Doubled Float-Margin Bug
-   * @see        http://positioniseverything.net/explorer/doubled-margin.html
-   *
-   * @bugfix
-   * @affected   IE 5.x/Win, IE6
-   * @css-for    IE 5.x/Win, IE6
-   * @valid      yes
-   */
-  * html #col1, 
-  * html #col2 { display: inline; }
 
   /*------------------------------------------------------------------------------------------------------*/
 
