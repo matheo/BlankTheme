@@ -12,9 +12,6 @@
 <link rel="icon" href="<!--[$imagepath]-->/icon.ico" type="image/ico" />
 <link rel="shortcut icon" href="<!--[$imagepath]-->/favicon.ico" />
 
-<!--[*if $modname eq 'Profile'*]-->
-<!--[pnpageaddvar name='javascript' value='javascript/showimages.js']-->
-<!--[*/if*]-->
 <!--[pnpageaddvar name='javascript' value='javascript/openwindow.js']-->
 
 <!--[additional_header]-->
@@ -22,5 +19,7 @@
 <!--[*if $current eq 'admin]--><!--[modulestylesheet stylesheet=admin.css modname=admin xhtml=true]--><!--[/if*]-->
 <!--[bt_htmloutput section='head']-->
 
-<!--[* Uncomment the following plugin when you use the Scribite module *]-->
-<!--[*if $current neq 'home']--><!--[scribite]--><!--[/if*]-->
+<!--[* Uncomment the following plugin when you use Scribite *]-->
+<!--[* Remove this line
+<!--[if $current neq 'home']--><!--[scribite]--><!--[/if]-->
+Remove this line *]-->
