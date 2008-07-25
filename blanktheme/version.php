@@ -26,3 +26,6 @@ $themeversion['credits']        = 'docs/credits.txt';
 $themeversion['help']           = 'docs/help.txt';
 $themeversion['license']        = 'docs/license.txt';
 $themeversion['xhtml']          = true;
+
+$themeversion['extra']          = array('blanktheme' => '0.9',
+                                        'yaml'       => '3.0.6');
