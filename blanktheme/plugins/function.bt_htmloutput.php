@@ -28,7 +28,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
     $section = $params['section'];
     unset($params);
     // theme vars
-    $template  = $smarty->_tpl_vars['template'];
+    $base  = $smarty->_tpl_vars['base'];
     $layout    = $smarty->_tpl_vars['layout'];
     $usefontr  = $smarty->_tpl_vars['usefontresize'];
     // check for the current section
@@ -58,9 +58,9 @@ function smarty_function_bt_htmloutput($params, &$smarty)
 
         case 'head':
             // head stylesheets
-            $output = '<link rel="stylesheet" href="'.$smarty->stylepath.'/layout_'.$template.'.css" type="text/css"/>'."\n"
+            $output = '<link rel="stylesheet" href="'.$smarty->stylepath.'/layout_'.$base.'.css" type="text/css"/>'."\n"
                      .'<!--[if lte IE 7]>'."\n"
-//                     .'<link rel="stylesheet" href="'.$smarty->stylepath.'/patches/patch_'.$template.'.css" type="text/css" />'."\n"
+//                     .'<link rel="stylesheet" href="'.$smarty->stylepath.'/patches/patch_'.$base.'.css" type="text/css" />'."\n"
                      .'<link rel="stylesheet" href="'.$smarty->themepath.'/yaml/core/slim_iehacks.css" type="text/css" />'."\n"
                      .'<![endif]-->'."\n"
                      .'<!--[if lte IE 6]>'."\n"
@@ -73,7 +73,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             if (!empty($current)) {
                 $output .= 'bt_'.$current.' ';
             }
-            $output .= 'bt_'.$template;
+            $output .= 'bt_'.$base;
             break;
 
         case 'classespage':
