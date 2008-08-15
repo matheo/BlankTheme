@@ -1,1 +1,1 @@
-Look into the 'manual' subfolder to find the PDF/html manual.
+Look online in the Wiki pages of the project page http://code.zikula.org/blanktheme for help on using BlankTheme
