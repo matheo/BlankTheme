@@ -1,0 +1,1 @@
+function showimage(){if(document.images.avatar.src){return document.images.avatar.src="images/avatar/"+document.Register.user_avatar.options[document.Register.user_avatar.selectedIndex].value}};
