@@ -28,7 +28,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
     $section = $params['section'];
     unset($params);
     // theme vars
-    $base  = $smarty->_tpl_vars['base'];
+    $base      = $smarty->_tpl_vars['base'];
     $layout    = $smarty->_tpl_vars['layout'];
     $usefontr  = $smarty->_tpl_vars['usefontresize'];
     // check for the current section
