@@ -40,7 +40,8 @@ function smarty_function_bt_htmloutput($params, &$smarty)
         case 'fontresize':
             if ($usefontr == 'y') {
             // font resize based in the efa script
-            PageUtil::addVar('javascript', $smarty->themepath.'/javascript/efa/efa_fontsize.js');
+            //PageUtil::addVar('javascript', $smarty->scriptpath.'/efa/efa_fontsize_packed.js');
+            PageUtil::addVar('javascript', $smarty->scriptpath.'/efa/efa_fontsize.js');
             $output = '<script type="text/javascript">'."\n"
                      .'  // <![CDATA['."\n"
                      .'  if (efa_fontSize) {'."\n"
