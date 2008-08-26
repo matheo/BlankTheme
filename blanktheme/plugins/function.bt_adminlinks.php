@@ -136,12 +136,8 @@ function smarty_function_bt_adminlinks($params, &$smarty)
 
     /* Create Content links */
     $linkoptions = array();
-    if (pnModAvailable('Content')) {
-        $suboptions = array(
-                         array(null, _MODIFYCONFIG,    pnModURL('Content', 'admin', 'settings'))
-                      );
-        $linkoptions[] = array(null, _NAV_ADDCONTENT,  pnModURL('Content', 'edit'), $suboptions);
-    }
+
+    // Content Modules
     if (pnModAvailable('News')) {
         $suboptions = array(
                          array(null, _AB_ADMINLIST,    pnModURL('News', 'admin', 'view')),
@@ -156,6 +152,21 @@ function smarty_function_bt_adminlinks($params, &$smarty)
                       );
         $linkoptions[] = array(null, _NAV_ADDPAGE,     pnModURL('Pages', 'admin', 'new'), $suboptions);
     }
+    if (pnModAvailable('Content')) {
+        $suboptions = array(
+                         array(null, _MODIFYCONFIG,    pnModURL('Content', 'admin', 'settings'))
+                      );
+        $linkoptions[] = array(null, _NAV_ADDCONTENT,  pnModURL('Content', 'edit'), $suboptions);
+    }
+
+    // Downloads modules
+    if (pnModAvailable('MediaAttach')) {
+        $suboptions = array(
+                         array(null, _AB_ADMINLIST,    pnModURL('MediaAttach', 'admin', 'view')),
+                         array(null, _MODIFYCONFIG,    pnModURL('MediaAttach', 'admin'))
+                      );
+        $linkoptions[] = array(null, _NAV_ADDDOWNLOAD, pnModURL('MediaAttach', 'admin', 'view', array(), null, 'myuploadform_switch'), $suboptions);
+    }
     if (pnModAvailable('Downloads')) {
         $suboptions = array(
                          array(null, _AB_ADDCATEGORY,  pnModURL('Downloads', 'admin', 'category_menu')),
@@ -163,6 +174,8 @@ function smarty_function_bt_adminlinks($params, &$smarty)
                       );
         $linkoptions[] = array(null, _NAV_ADDDOWNLOAD, pnModURL('Downloads', 'admin', 'newdownload'), $suboptions);
     }
+
+    // Community modules
     if (pnModAvailable('Polls')) {
         $suboptions = array(
                          array(null, _AB_ADMINLIST,    pnModURL('Polls', 'admin', 'view')),
@@ -194,6 +207,21 @@ function smarty_function_bt_adminlinks($params, &$smarty)
     if (pnModAvailable('Web_Links')) {
         $linkoptions[] = array(null, _NAV_ADDWEBLINK,  pnModURL('Web_Links', 'admin', 'main', array('op' => 'LinksAddLink')));
     }
+
+    // Calendar modules
+    if (pnModAvailable('EventLiner')) {
+        $suboptions = array(
+                         array(null, _AB_ADMINLIST,    pnModURL('EventLiner', 'admin', 'view')),
+                         array(null, _MODIFYCONFIG,    pnModURL('EventLiner', 'admin', 'modifyconfig'))
+                      );
+        $linkoptions[] = array(null, _NAV_ADDEVENT,    pnModURL('EventLiner', 'admin', 'new'), $suboptions);
+    }
+    if (pnModAvailable('TimeIt')) {
+        $suboptions = array(
+                         array(null, _MODIFYCONFIG,    pnModURL('TimeIt', 'admin', 'modifyconfig'))
+                      );
+        $linkoptions[] = array(null, _NAV_ADDEVENT,    pnModURL('TimeIt', 'admin', 'new'), $suboptions);
+    }
     if (pnModAvailable('crpCalendar')) {
         $suboptions = array(
                          array(null, _AB_ADMINLIST,    pnModURL('crpCalendar', 'admin', 'view')),
@@ -201,6 +229,8 @@ function smarty_function_bt_adminlinks($params, &$smarty)
                       );
         $linkoptions[] = array(null, _NAV_ADDEVENT,    pnModURL('crpCalendar', 'admin', 'new'), $suboptions);
     }
+
+    // Legacy modules
     if (pnModAvailable('Topics')) {
         $linkoptions[] = array(null, _NAV_ADMINTOPICS, pnModURL('Topics', 'admin'));
     }
