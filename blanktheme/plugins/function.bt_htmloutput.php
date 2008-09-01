@@ -65,7 +65,8 @@ function smarty_function_bt_htmloutput($params, &$smarty)
                      .'<link rel="stylesheet" href="'.$smarty->themepath.'/yaml/core/slim_iehacks.css" type="text/css" />'."\n"
                      .'<![endif]-->'."\n"
                      .'<!--[if lte IE 6]>'."\n"
-                     .'<script type="text/javascript" src="'.$smarty->scriptpath.'/minmax.js"></script>'."\n"
+//                     .'<script type="text/javascript" src="'.$smarty->scriptpath.'/minmax.js"></script>'."\n"
+                     .'<script defer type="text/javascript" src="'.$smarty->scriptpath.'/pngfix.js"></script>'."\n"
                      .'<![endif]-->'."\n";
             break;
 
