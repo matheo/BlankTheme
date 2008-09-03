@@ -46,7 +46,7 @@
   }
 
   #page_margins { 
-    text-align:left; 
+    text-align: left; 
   }
 
 
@@ -288,6 +288,7 @@
   .bt_2col .bt_12 #col2,
   .bt_2col .bt_13 #col3 {
     /*border-left: 1px #ddd solid;*/ /* must reduce the col width if used */
+    margin-left: -5px;
   }
   /* padding changes */
   .bt_2col .bt_12 #col2_content {
@@ -299,6 +300,7 @@
   .bt_2col .bt_21 #col1,
   .bt_2col .bt_31 #col1 {
     float: right;
+    margin-left: -5px;
   }
   .bt_2col .bt_21 #col2,
   .bt_2col .bt_31 #col3 {
@@ -316,17 +318,6 @@
   }
   .bt_2col .bt_1 #col1_content {
     padding: 0 10px;
-  }
-
-
-  /* turn off cases */
-  .bt_2col .bt_12 #col3,
-  .bt_2col .bt_13 #col2,
-  .bt_2col .bt_21 #col3,
-  .bt_2col .bt_31 #col2,
-  .bt_2col .bt_1 #col2,
-  .bt_2col .bt_1 #col3 {
-    display: none;
   }
 
 
@@ -375,6 +366,9 @@
   .bt_3col .bt_213 #col2 {
     margin-left: -720px; /* col1 + col2 widths */
   }
+  .bt_3col .bt_213 #col3 {
+    margin-left: -5px;
+  }
 
 
   /* 312 layout */
@@ -383,6 +377,7 @@
   }
   .bt_3col .bt_312 #col2 {
     float: right;
+    margin-left: -5px;
   }
   .bt_3col .bt_312 #col3 {
     float: left;
@@ -393,6 +388,7 @@
   /* 132 layout */
   .bt_3col .bt_132 #col2 {
     float: right;
+    margin-left: -5px;
   }
   .bt_3col .bt_132 #col3 {
     float: left;
@@ -403,6 +399,7 @@
   .bt_3col .bt_231 #col1,
   .bt_3col .bt_321 #col1 {
     float: right;
+    margin-left: -5px;
   }
   .bt_3col .bt_321 #col2 {
     float: right;
