@@ -75,7 +75,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             if (!empty($current)) {
                 $output .= 'bt_'.$current.' ';
             }
-            $output .= 'bt_'.$base;
+            $output .= 'bt_'.$base.' bt_'.pnUserGetLang();
             break;
 
         case 'classespage':
