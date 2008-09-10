@@ -1,6 +1,3 @@
-styles:
-	include the iepng.htc fixer
-
 docs:
 	include the efa-fontResizer license
 

@@ -12,4 +12,4 @@
 	E_ALL errors fixes in the menu plugins 
 	
 Detailed log available here:
-http://trac.postnuke.com/projects/blanktheme/log/
+http://code.zikula.org/blanktheme/log/
