@@ -75,12 +75,14 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             if (!empty($current)) {
                 $output .= 'bt_'.$current.' ';
             }
-            $output .= 'bt_'.$base.' bt_'.pnUserGetLang();
+            $output .= 'bt_'.$base.' bt_lang_'.pnUserGetLang();
             break;
 
         case 'classespage':
             // add the classes with a 'bt_' prefix
             $output = 'bt_'.str_replace('_', ' bt_', $layout);
+            // add the current function name
+            $output .= ' bt_func_'.FormUtil::getPassedValue('func', 'main');
             break;
     }
 
