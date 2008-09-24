@@ -71,7 +71,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             break;
 
         case 'classesbody':
-            // add the classes with a 'bt_' prefix
+            // add a first level of CSS classes like language and current base template with a 'bt_' prefix
             if (!empty($current)) {
                 $output .= 'bt_'.$current.' ';
             }
@@ -79,10 +79,23 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             break;
 
         case 'classespage':
-            // add the classes with a 'bt_' prefix
-            $output = 'bt_'.str_replace('_', ' bt_', $layout);
+            // add a second level of CSS classes like the current function
+            $func = FormUtil::getPassedValue('func', 'main');
+            // add the current layout and enabled zones
+            $output .= 'bt_'.str_replace('_', ' bt_', $layout);
             // add the current function name
-            $output .= ' bt_func_'.FormUtil::getPassedValue('func', 'main');
+            $output .= ' bt_func_'.$func;
+            break;
+
+        case 'classesinnerpage':
+            // add a third level of CSS classes like specific parameters for specific modules
+            /*
+            $func = FormUtil::getPassedValue('func', 'main');
+            // Example: add the current pageid in a class
+            if ($smarty->toplevelmodule == 'Pages' && $func == 'display') {
+                $output .= ' bt_pageid_'.FormUtil::getPassedValue('pageid');
+            }
+            */
             break;
     }
 
