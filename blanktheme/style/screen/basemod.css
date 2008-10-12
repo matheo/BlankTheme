@@ -97,6 +97,13 @@
             background: transparent;
           }
 
+          /* logo */
+          #header .logo {
+            float: left;
+            margin-top: -10px;
+            padding-right: 12px;
+          }
+
       /* adjustment of main navigation */          
       #nav ul {
         margin-left: 20px;
