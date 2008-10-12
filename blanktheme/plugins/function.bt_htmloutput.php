@@ -31,8 +31,8 @@ function smarty_function_bt_htmloutput($params, &$smarty)
     $base      = $smarty->_tpl_vars['base'];
     $layout    = $smarty->_tpl_vars['layout'];
     $usefontr  = $smarty->_tpl_vars['usefontresize'];
-    // check for the current section
-    $current   = (isset($smarty->_tpl_vars['current'])) ? $smarty->_tpl_vars['current'] : '';
+    // check for the current variable
+    $current   = (isset($smarty->_tpl_vars['current'])) ? $smarty->_tpl_vars['current'] : $smarty->toplevelmodule;
     // assign the respective output
     $output  = '';
     switch($section)
