@@ -92,5 +92,6 @@ define('_NAV_LOGOUT','Salir');
 
 
 /* pnForum customized templates */
+define('_PNFORUM_LEGEND', 'Leyenda');
 define('_PNFORUM_STATS', 'Estadísticas');
 define('_PNFORUM_LASTACTIVITY', 'Última actividad');

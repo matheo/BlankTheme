@@ -91,5 +91,6 @@ define('_NAV_CONTENT','Inhoud creëren');
 define('_NAV_LOGOUT','Uitloggen');
 
 /* pnForum customized templates */
+define('_PNFORUM_LEGEND', 'Legend');
 define('_PNFORUM_STATS', 'Statistieken');
 define('_PNFORUM_LASTACTIVITY', 'Laatste Bericht');
