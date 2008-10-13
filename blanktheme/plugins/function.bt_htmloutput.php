@@ -75,6 +75,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
                        ';
             break;
 
+        /* First CSS level */
         case 'classesbody':
             // add a first level of CSS classes like language and current base template with a 'bt_' prefix
             if (!empty($current)) {
@@ -83,6 +84,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             $output .= 'bt_'.$base.' bt_lang_'.pnUserGetLang();
             break;
 
+        /* Second CSS level */
         case 'classespage':
             // add a second level of CSS classes like the current function
             $func = FormUtil::getPassedValue('func', 'main');
@@ -92,6 +94,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             $output .= ' bt_func_'.$func;
             break;
 
+        /* Third CSS level */
         case 'classesinnerpage':
             // add a third level of CSS classes like specific parameters for specific modules
             /*

@@ -42,13 +42,13 @@ function smarty_function_bt_userlinks($params, &$smarty)
 
     if (!isset($current))
     {
-        $current = $smarty->toplevelmodule;
+        $current = (isset($smarty->_tpl_vars['current'])) ? $smarty->_tpl_vars['current'] : $smarty->toplevelmodule;
     }
 
     /*** Build the menu-array ***/
     /* Option format: id, lang_constant, link, array_sublinks */
     $menu   = array();
-    $menu[] = array('home',          _NAV_HOME,    pnGetBaseURL(), null);
+    $menu[] = array('home',          _NAV_HOME,    $smarty->baseurl, null);
     if (pnModAvailable('News')) {
         $menu[] = array('News',      _NAV_NEWS,    pnModURL('News'), null);
     }
