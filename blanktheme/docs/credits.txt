@@ -19,3 +19,6 @@ http://www.yaml.de/
 
 EFA fontsize script
 http://www.einfach-fuer-alle.de/artikel/fontsize/
+
+IE pngfix
+http://www.twinhelix.com/css/iepngfix/

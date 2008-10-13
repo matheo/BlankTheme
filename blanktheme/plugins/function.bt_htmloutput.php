@@ -12,7 +12,7 @@
  * Smarty function to centralize important html outputs
  *
  * Example
- * <!--[bt_htmloutput section="head"]-->
+ * <!--[bt_htmloutput section='head']-->
  *
  * @author       Mateo Tibaquira
  * @since        05/07/08
@@ -42,32 +42,37 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             // font resize based in the efa script
             //PageUtil::addVar('javascript', $smarty->scriptpath.'/efa/efa_fontsize_packed.js');
             PageUtil::addVar('javascript', $smarty->scriptpath.'/efa/efa_fontsize.js');
-            $output = '<script type="text/javascript">'."\n"
-                     .'  // <![CDATA['."\n"
-                     .'  if (efa_fontSize) {'."\n"
-                     .'    var efalang_zoomIn = \''.pnML('_AB_FONT_ZOOMIN')."';\n"
-                     .'    var efalang_zoomReset = \''.pnML('_AB_FONT_ZOOMRESET')."';\n"
-                     .'    var efalang_zoomOut = \''.pnML('_AB_FONT_ZOOMOUT')."';\n"
-                     .'    var efathemedir = \''.$smarty->directory."';\n"
-                     .'    efa_fontSize.efaInit();'."\n"
-                     .'    document.write(efa_fontSize.allLinks);'."\n"
-                     .'  }'."\n"
-                     .'  // ]]>'."\n"
-                     .'</script>';
+            $output = '<script type="text/javascript">
+                         // <![CDATA[
+                         if (efa_fontSize) {
+                           var efalang_zoomIn = "'.pnML('_AB_FONT_ZOOMIN').'";
+                           var efalang_zoomReset = \''.pnML('_AB_FONT_ZOOMRESET').'";
+                           var efalang_zoomOut = \''.pnML('_AB_FONT_ZOOMOUT').'";
+                           var efathemedir = \''.$smarty->directory.'";
+                           efa_fontSize.efaInit();
+                           document.write(efa_fontSize.allLinks);
+                         }
+                         // ]]>
+                       </script>
+                       ';
             }
             break;
 
         case 'head':
             // head stylesheets
-            $output = '<link rel="stylesheet" href="'.$smarty->stylepath.'/layout_'.$base.'.css" type="text/css"/>'."\n"
-                     .'<!--[if lte IE 7]>'."\n"
-//                     .'<link rel="stylesheet" href="'.$smarty->stylepath.'/patches/patch_'.$base.'.css" type="text/css" />'."\n"
-                     .'<link rel="stylesheet" href="'.$smarty->themepath.'/yaml/core/slim_iehacks.css" type="text/css" />'."\n"
-                     .'<![endif]-->'."\n"
-                     .'<!--[if lte IE 6]>'."\n"
-//                     .'<script type="text/javascript" src="'.$smarty->scriptpath.'/minmax.js"></script>'."\n"
-                     .'<script defer type="text/javascript" src="'.$smarty->scriptpath.'/pngfix.js"></script>'."\n"
-                     .'<![endif]-->'."\n";
+            $output = '<link rel="stylesheet" href="'.$smarty->stylepath.'/layout_'.$base.'.css" type="text/css"/>
+                       <!--[if lte IE 7]>'
+//                     .'<link rel="stylesheet" href="'.$smarty->stylepath.'/patches/patch_'.$base.'.css" type="text/css" />'
+                     .'<link rel="stylesheet" href="'.$smarty->themepath.'/yaml/core/slim_iehacks.css" type="text/css" />
+                       <![endif]-->
+                       <!--[if lte IE 6]>'
+//                     .'<script type="text/javascript" src="'.$smarty->scriptpath.'/minmax.js"></script>'
+                     .'<style type="text/css">
+                           img, div, a, input { behavior: url('.$smarty->stylepath.'/patches/iepngfix.htc) }
+                       </style>' 
+//                     .'<script type="text/javascript" src="'.$smarty->scriptpath.'/iepngfix_tilebg.js"></script>'
+                     .'<![endif]-->
+                       ';
             break;
 
         case 'classesbody':

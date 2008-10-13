@@ -8,3 +8,5 @@ manual:
 		"Begin with" section (rename version lang...)
 		Top Links customization
 	Changing the styles: background-color, header-bg-image ...
+	Validate the IE PNG fix
+		and a doc reference about IE issues and available options with pngfix
