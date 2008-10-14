@@ -46,9 +46,9 @@ function smarty_function_bt_htmloutput($params, &$smarty)
                          // <![CDATA[
                          if (efa_fontSize) {
                            var efalang_zoomIn = "'.pnML('_AB_FONT_ZOOMIN').'";
-                           var efalang_zoomReset = \''.pnML('_AB_FONT_ZOOMRESET').'";
-                           var efalang_zoomOut = \''.pnML('_AB_FONT_ZOOMOUT').'";
-                           var efathemedir = \''.$smarty->directory.'";
+                           var efalang_zoomReset = "'.pnML('_AB_FONT_ZOOMRESET').'";
+                           var efalang_zoomOut = "'.pnML('_AB_FONT_ZOOMOUT').'";
+                           var efathemedir = "'.$smarty->directory.'";
                            efa_fontSize.efaInit();
                            document.write(efa_fontSize.allLinks);
                          }
