@@ -98,9 +98,9 @@ function smarty_function_bt_htmloutput($params, &$smarty)
         case 'classesinnerpage':
             // add a third level of CSS classes like specific parameters for specific modules
             /*
-            $func = FormUtil::getPassedValue('func', 'main');
             // Example: add the current pageid in a class
-            if ($smarty->toplevelmodule == 'Pages' && $func == 'display') {
+            // note: this only works when using normal urls, shortURLs uses the title field
+            if ($smarty->toplevelmodule == 'Pages' && $smarty->func == 'display') {
                 $output .= ' bt_pageid_'.FormUtil::getPassedValue('pageid');
             }
             */
