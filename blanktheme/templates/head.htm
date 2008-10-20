@@ -1,4 +1,6 @@
 <!--[* $Id$ *]-->
+<head profile="http://www.w3.org/2005/10/profile">
+
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=<!--[charset]-->" />
 <title><!--[title]--></title>
 <meta name="description" content="<!--[slogan]-->" />
@@ -9,8 +11,8 @@
 <meta name="Generator" content="Zikula - www.zikula.org" />
 
 <link rel="alternate" href="backend.php" type="application/rss+xml" title="<!--[sitename]-->" />
-<link rel="icon" href="<!--[$imagepath]-->/icon.ico" type="image/ico" />
-<link rel="shortcut icon" href="<!--[$imagepath]-->/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="<!--[$imagepath]-->/favicon.ico" /> <!--[* W3C *]-->
+<link rel="shortcut icon" type="image/ico" href="<!--[$imagepath]-->/favicon.ico" /> <!--[* IE *]-->
 
 <!--[pnpageaddvar name='javascript' value='javascript/openwindow.js']-->
 <!-- pagevars -->
@@ -19,7 +21,12 @@
 <!--[modulestylesheet xhtml=true]-->
 <!--[bt_htmloutput section='head']-->
 
+<!--[* Include additional stuff if exist *]-->
+<!--[if $additionalhead]--><!--[$additionalhead]--><!--[/if]-->
+
 <!--[* Uncomment the following plugin when you use Scribite *]-->
 <!--[* Remove this line
-<!--[if $current neq 'home']--><!--[scribite]--><!--[/if]-->
+<!--[if $current AND $current neq 'home']--><!--[scribite]--><!--[/if]-->
 Remove this line *]-->
+
+</head>
