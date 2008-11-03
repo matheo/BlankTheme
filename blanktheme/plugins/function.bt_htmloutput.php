@@ -27,8 +27,8 @@ function smarty_function_bt_htmloutput($params, &$smarty)
     // params
     $section = $params['section'];
     unset($params);
-    // theme vars
-    $base      = $smarty->_tpl_vars['base'];
+    // blanktheme vars
+    $body      = $smarty->_tpl_vars['body'];
     $layout    = $smarty->_tpl_vars['layout'];
     $usefontr  = $smarty->_tpl_vars['usefontresize'];
     // check for the current variable
@@ -60,7 +60,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
 
         case 'head':
             // head stylesheets
-            $output = '<link rel="stylesheet" href="'.$smarty->stylepath.'/layout_'.$base.'.css" type="text/css"/>
+            $output = '<link rel="stylesheet" href="'.$smarty->stylepath.'/layout_'.$body.'.css" type="text/css"/>
                        <!--[if lte IE 7]>'
 //                     .'<link rel="stylesheet" href="'.$smarty->stylepath.'/patches/patch_'.$base.'.css" type="text/css" />'
                      .'<link rel="stylesheet" href="'.$smarty->themepath.'/yaml/core/slim_iehacks.css" type="text/css" />
@@ -77,21 +77,20 @@ function smarty_function_bt_htmloutput($params, &$smarty)
 
         /* First CSS level */
         case 'classesbody':
-            // add a first level of CSS classes like language and current base template with a 'bt_' prefix
+            // add a first level of CSS classes like current language, type parameter and body template in use with a 'bt_' prefix
             if (!empty($current)) {
                 $output .= 'bt_'.$current.' ';
             }
-            $output .= 'bt_'.$base.' bt_type_'.$smarty->type.' bt_lang_'.$smarty->language;
+            $output .= 'bt_'.$body.' bt_type_'.$smarty->type.' bt_lang_'.$smarty->language;
             break;
 
         /* Second CSS level */
         case 'classespage':
-            // add a second level of CSS classes like the current function
-            $func = FormUtil::getPassedValue('func', 'main');
+            // add a second level of CSS classes
             // add the current layout and enabled zones
             $output .= 'bt_'.str_replace('_', ' bt_', $layout);
             // add the current function name
-            $output .= ' bt_func_'.$func;
+            $output .= ' bt_func_'.$smarty->func;
             break;
 
         /* Third CSS level */
