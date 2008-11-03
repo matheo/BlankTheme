@@ -81,7 +81,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             if (!empty($current)) {
                 $output .= 'bt_'.$current.' ';
             }
-            $output .= 'bt_'.$base.' bt_lang_'.pnUserGetLang();
+            $output .= 'bt_'.$base.' bt_type_'.$smarty->type.' bt_lang_'.$smarty->language;
             break;
 
         /* Second CSS level */
@@ -96,12 +96,18 @@ function smarty_function_bt_htmloutput($params, &$smarty)
 
         /* Third CSS level */
         case 'classesinnerpage':
-            // add a third level of CSS classes like specific parameters for specific modules
+            // add a customized third level of CSS classes like specific parameters for specific modules
             /*
-            // Example: add the current pageid in a class
-            // note: this only works when using normal urls, shortURLs uses the title field
-            if ($smarty->toplevelmodule == 'Pages' && $smarty->func == 'display') {
-                $output .= ' bt_pageid_'.FormUtil::getPassedValue('pageid');
+            switch ($smarty->toplevelmodule) {
+                case 'Pages':
+                    switch ($smarty->func) {
+                        case 'display':
+                            // Example: add the current pageid in a class
+                            // note: this only works when using normal urls, shortURLs uses the title field
+                            $output .= ' bt_pageid_'.FormUtil::getPassedValue('pageid');
+                            break;
+                    }
+                    break;
             }
             */
             break;
