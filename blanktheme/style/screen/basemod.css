@@ -49,6 +49,12 @@
     text-align: left; 
   }
 
+  .bt_zone { 
+    clear: both;
+    display: block;
+    overflow: hidden;
+  }
+
 
 
   /**
