@@ -20,6 +20,10 @@
     margin-left: 23.8em;
 }
 
+.bt_admin table.pn-admintable {
+	border: 1px solid #DDDDDD;
+	margin-top: 0.6em;
+}
 .bt_admin table.pn-admintable ul {
 	padding: 0;
 	margin: 0;
