@@ -545,4 +545,9 @@
     padding: 10px 0;
   }
 
+  /* User profile information */
+  #pnprofile table {
+    width: 100%;
+  }
+
 }
