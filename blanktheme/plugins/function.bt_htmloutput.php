@@ -64,8 +64,8 @@ function smarty_function_bt_htmloutput($params, &$smarty)
                        <!--[if lte IE 7]>'
 //                     .'<link rel="stylesheet" href="'.$smarty->stylepath.'/patches/patch_'.$base.'.css" type="text/css" />'
                      .'<link rel="stylesheet" href="'.$smarty->themepath.'/yaml/core/slim_iehacks.css" type="text/css" />
-                       <![endif]-->
-                       <!--[if lte IE 6]>'
+                       <![endif]-->';
+/*                       .'<!--[if lte IE 6]>'
 //                     .'<script type="text/javascript" src="'.$smarty->scriptpath.'/minmax.js"></script>'
                      .'<style type="text/css">
                            img, div, a, input { behavior: url('.$smarty->stylepath.'/patches/iepngfix.htc) }
@@ -73,6 +73,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
 //                     .'<script type="text/javascript" src="'.$smarty->scriptpath.'/iepngfix_tilebg.js"></script>'
                      .'<![endif]-->
                        ';
+*/
             break;
 
         /* First CSS level */
