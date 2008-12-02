@@ -428,6 +428,7 @@
   /* main content */
   #pn-maincontent {
     display: block;
+    position: relative;
   }
 
 
