@@ -74,6 +74,10 @@ function smarty_function_bt_htmloutput($params, &$smarty)
                      .'<![endif]-->
                        ';
 */
+            // Add content in the final if needed
+            if (isset($smarty->_tpl_vars['additionalhead'])) {
+                $output .= $smarty->_tpl_vars['additionalhead'];
+            }
             break;
 
         /* First CSS level */
