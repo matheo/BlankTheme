@@ -1,6 +1,7 @@
 <!--[* $Id$ *]-->
 <div id="page_margins" class="<!--[bt_htmloutput section='classespage']-->">
 	<div id="page" class="<!--[bt_htmloutput section='classesinnerpage']-->">
+
 		<!-- begin: #header -->
 		<div id="header" class="floatbox">
 			<div id="topnav">
@@ -21,26 +22,32 @@
 			<span class="slogan"><!--[slogan]--></span>
 		</div>
 		<!-- end: #header -->
+
 		<!-- begin: main navigation #nav -->
-		<div id="nav"> <a id="navigation" name="navigation"></a>
+		<div id="nav">
 			<!-- skiplink anchor: navigation -->
+			<a id="navigation" name="navigation"></a>
 			<!--[if $usenavtop eq 'b']-->
-			<!--[blockposition name='navtop']-->
+				<!--[blockposition name='navtop']-->
 			<!--[else]-->
-			<!--[bt_userlinks]-->
+				<!--[bt_userlinks]-->
 			<!--[/if]-->
 		</div>
 		<!-- end: main navigation -->
+
 		<!-- begin: main content area #main -->
 		<div id="main">
 			<!-- begin: #col1 - main column -->
 			<div id="col1">
-				<div id="col1_content" class="clearfix"> <a id="content"></a>
+				<div id="col1_content" class="clearfix">
 					<!-- skiplink anchor: Content -->
-						<!--[if $layout|checkzone:nc ne true]-->
+					<a id="content"></a>
+					<!--[if $layout|checkzone:nc ne true]-->
 						<!--[blockposition name='center']-->
-						<!--[/if]-->
-						<!--[$maincontent]-->
+					<!--[/if]-->
+
+					<!--[$maincontent]-->
+
 					<!--[if $layout|checkzone:2cb]-->
 					<div id="bt_2cb" class="bt_zone subcolumns">
 						<div class="c50l">
@@ -83,11 +90,13 @@
 
 		</div>
 		<!-- end: #main -->
+
 		<!-- begin: #footer -->
 		<div id="footer">
 		<!--[include file='footer.htm']-->
 		</div>
 		<!-- end: #footer -->
+
 	</div>
 <!--[*
 <div>

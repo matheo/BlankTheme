@@ -1,6 +1,7 @@
 <!--[* $Id$ *]-->
 <div id="page_margins" class="<!--[bt_htmloutput section='classespage']-->">
 	<div id="page" class="<!--[bt_htmloutput section='classesinnerpage']-->">
+
 		<!-- begin: #header -->
 		<div id="header" class="floatbox">
 			<div id="topnav">
@@ -21,25 +22,30 @@
 			<span class="slogan"><!--[slogan]--></span>
 		</div>
 		<!-- end: #header -->
+
 		<!-- begin: main navigation #nav -->
-		<div id="nav"> <a id="navigation" name="navigation"></a>
+		<div id="nav">
 			<!-- skiplink anchor: navigation -->
+			<a id="navigation" name="navigation"></a>
 			<!--[if $usenavtop eq 'b']-->
-			<!--[blockposition name='navtop']-->
+				<!--[blockposition name='navtop']-->
 			<!--[else]-->
-			<!--[bt_userlinks]-->
+				<!--[bt_userlinks]-->
 			<!--[/if]-->
 		</div>
 		<!-- end: main navigation -->
+
 		<!-- begin: main content area #main -->
-		<div id="main"> <a id="content"></a>
+		<div id="main">
 			<!-- skiplink anchor: Content -->
+			<a id="content"></a>
 			<div class="subcolumns">
 				<div class="c62l">
 					<div id="col1_content">
 						<!--[if $layout|checkzone:nc ne true]-->
-						<!--[blockposition name='center']-->
+							<!--[blockposition name='center']-->
 						<!--[/if]-->
+
 						<!--[$maincontent]-->
 					</div>
 				</div>
@@ -48,34 +54,35 @@
 					<div class="subcolumns">
 						<div class="c50l">
 							<div id="col2_content">
-							  <!--[if $layout|checklayout:123]-->
+							<!--[if $layout|checklayout:123]-->
 								<!--[blockposition name='left']-->
-							  <!--[else]-->
+							<!--[else]-->
 								<!--[blockposition name='right']-->
-							  <!--[/if]-->
+							<!--[/if]-->
 							</div>
 						</div>
 						<div class="c50r">
 							<div id="col3_content">
-							  <!--[if $layout|checklayout:123]-->
+							<!--[if $layout|checklayout:123]-->
 								<!--[blockposition name='right']-->
-							  <!--[else]-->
+							<!--[else]-->
 								<!--[blockposition name='left']-->
-							  <!--[/if]-->
+							<!--[/if]-->
 							</div>
 						</div>
 					</div>
 					<!--[else]-->
 					<div class="subcr">
-					  <!--[if $layout|checklayout:12]-->
+					<!--[if $layout|checklayout:12]-->
 						<!--[blockposition name='right']-->
-					  <!--[elseif $layout|checklayout:13]-->
+					<!--[elseif $layout|checklayout:13]-->
 						<!--[blockposition name='left']-->
-					  <!--[/if]-->
+					<!--[/if]-->
 					</div>
 					<!--[/if]-->
 				</div>
 			</div>
+
 			<!--[if $layout|checkzone:3b]-->
 			<div id="bt_3b" class="bt_zone subcolumns coolsubcol">
 				<div class="c33l">
@@ -97,11 +104,13 @@
 			<!--[/if]-->
 		</div>
 		<!-- end: #main -->
+
 		<!-- begin: #footer -->
 		<div id="footer">
-		<!--[include file='footer.htm']-->
+			<!--[include file='footer.htm']-->
 		</div>
 		<!-- end: #footer -->
+
 	</div>
 <!--[*
 <div>
