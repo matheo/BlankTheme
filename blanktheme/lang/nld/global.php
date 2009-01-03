@@ -49,7 +49,7 @@ define('_NAV_CONFIG','Configuratie');
 	define('_NAV_CATEGORIES','Categorieën');
 	define('_NAV_LEGAL','Wettelijk');
 	define('_NAV_WYSIWYG','WYSIWYG Editors');
-	define('_NAV_COMMENTS','Commentaar');
+	define('_NAV_COMMENTS','Reacties');
     define('_NAV_STATSOPTIONS','Statistieken');
     define('_NAV_RATINGSOPTIONS','Waarderingen');
     define('_NAV_BANNERS','Banners');
