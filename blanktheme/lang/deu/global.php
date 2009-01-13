@@ -24,7 +24,7 @@ define('_AB_POWERED_BY_ZIKULA', 'Powered by Zikula');
 define('_AB_SKIPLINK', 'Link überspringen');
 define('_AB_SKIPTO_CONTENT', 'Zum Inhalt springen');
 define('_AB_SKIPTO_NAVIGATION', 'Zur Navigation springen');
-define('_AB_TERMSOFUSE', 'Terms of use');
+define('_AB_TERMSOFUSE', 'Nutzungsbedingungen');
 define('_AB_VALIDCSS', 'Valid CSS');
 define('_AB_VALIDXHTML', 'Valid XHTML');
 
