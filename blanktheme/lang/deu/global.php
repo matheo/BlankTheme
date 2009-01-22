@@ -36,6 +36,8 @@ define('_NAV_PAGES','Seiten');
 define('_NAV_DOWNLOADS','Downloads');
 define('_NAV_FORUMS','Forum');
 define('_NAV_FAQ','FAQ');
+define('_NAV_WIKI','Wiki');
+define('_NAV_CALENDAR','Kalender');
 define('_NAV_CONTACT','Kontakt');
 
 /* Admin navigation menu
