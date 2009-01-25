@@ -2,12 +2,14 @@
 <div class="news_index floatbox">
   <span class="news_index_date"><!--[$info.briefdate|pnvarprephtmldisplay]--></span><br />
   <h2><!--[$preformat.title|pnvarprephtmldisplay]--></h2>
+
   <div class="news_hometext floatbox"><!--[$info.hometext|pnvarprephtmldisplay]--></div>
   <!--[if $preformat.notes neq '']-->
   <div class="news_notes floatbox"><!--[$preformat.notes|pnvarprephtmldisplay]--></div>
   <!--[/if]-->
+
   <div class="news_categories">
 	<!--[* <p class="diggers"><!--[diggers title=$info.title url=$url]--></p> *]-->
-	<!--[pnml name="_NEWS_FILEDUNDER"]-->: <!--[foreach from=$preformat.categories item="categorylink" name="articleCatsLoop"]--><!--[$categorylink]--><!--[if $smarty.foreach.articleCatsLoop.last ne true]--> | <!--[/if]--><!--[/foreach]-->
+	<!--[pnml name='_NEWS_FILEDUNDER']-->: <!--[foreach from=$preformat.categories item='categorylink' name='articleCatsLoop']--><!--[$categorylink]--><!--[if $smarty.foreach.articleCatsLoop.last ne true]--> | <!--[/if]--><!--[/foreach]-->
   </div>
 </div>
