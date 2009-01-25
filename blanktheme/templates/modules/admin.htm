@@ -14,6 +14,8 @@
 <!--[* for the backend we don't include the layout template *]-->
 <div id="page_margins" class="bt_1">
 	<div id="page">
+
+		<!-- begin: #header -->
 		<div id="header">
 			<div id="topnav">
 				<!-- start: skip link navigation -->
@@ -23,21 +25,25 @@
 
 				<!--[userlinks start='' end='']-->
 			</div>
-			<h1><!--[sitename]--></h1>
+			<h1><a href="<!--[$baseurl]-->" title="<!--[pnml name='_AB_GOTOHOMEPAGE']-->"><!--[sitename]--></a></h1>
 			<span class="slogan"><!--[slogan]--></span>
 		</div>
+		<!-- end: #header -->
+
 		<!-- begin: main navigation #nav -->
-		<div id="nav"> <a id="navigation" name="navigation"></a>
+		<div id="nav">
 			<!-- skiplink anchor: navigation -->
+			<a id="navigation" name="navigation"></a>
 			<!--[bt_adminlinks current=$module]-->
 		</div>
 		<!-- end: main navigation -->
+
 		<!-- begin: main content area #main -->
 		<div id="main">
-			<!-- begin: #col1 -->
+			<!-- begin: #col1 - main column -->
 			<div id="col1">
-				<div id="col1_content" class="clearfix">
-					<div class="floatbox"><!--[$maincontent]--></div>
+				<div id="col1_content" class="floatbox">
+					<!--[$maincontent]-->
 				</div>
 				<div id="ie_clearing">&nbsp;</div>
 				<!-- End: IE Column Clearing -->
@@ -45,6 +51,12 @@
 			<!-- end: #col1 -->
 		</div>
 		<!-- end: #main -->
+
+		<!-- begin: #footer -->
+		<div id="footer">
+			<a href="http://community.zikula.org/" title="<!--[pnml name='_AB_POWERED_BY_ZIKULA']-->"><!--[pnml name='_AB_POWERED_BY_ZIKULA']--></a>
+		</div>
+		<!-- end: #footer -->
 	</div>
 <!--[*
 <div>

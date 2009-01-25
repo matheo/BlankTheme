@@ -10,42 +10,45 @@
 
 /* /system/Admin/pnstyle/admin.css override */
 .bt_admin div.pn-adminformrow label + ul > li {
-    margin-left: 22.9em;
+  margin-left: 22.9em;
 }
 .bt_admin div.pn-adminformrow label + ul > li:first-child {
-    margin-left: 0em;
+  margin-left: 0em;
 }
 
 .bt_admin div.pn-adminformrow label + ul.selector_category > li {
-    margin-left: 23.8em;
+  margin-left: 23.8em;
 }
 
 .bt_admin table.pn-admintable {
-	border: 1px solid #DDDDDD;
-	margin-top: 0.6em;
+  border: 1px solid #DDDDDD;
+  margin-top: 0.6em;
 }
 .bt_admin table.pn-admintable ul {
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .bt_admin div.pn-adminpageicon {
-    margin-bottom: 5px;
-    padding: 0 0 15px 5px;
+  margin-bottom: 5px;
+  padding: 0 0 15px 5px;
 }
 
 .bt_admin #page,
 .bt_admin .pn-adminbox,
 .bt_admin .pn-admincontainer {
-	background: #fff;
+  background: #fff;
 }
 .bt_admin #col1 {
-    float: none;
-	width: 100%;
+  float: none;
+  width: 100%;
+}
+.bt_admin #footer {
+  text-align: center;
 }
 
 .bt_admin a {
-	color: #4D87C7;
+  color: #4D87C7;
 }
 
 /* Theme-navigation */
@@ -62,7 +65,7 @@ way to fit your requirements.
 /* Adapted for Zikula menutree, Erik Spaan, http://code.zikula.org/blanktheme */
 
 /* Set margins of surrounding div to zero */
-#nav_admin ul {margin: 0;}
+#nav_admin ul { margin: 0; }
 
 #nav_admin {
   position:relative;
@@ -85,16 +88,16 @@ way to fit your requirements.
 
 /* The menu styling */
 .bt_admin .cssplay_prodrop {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  width: 100%;
-  list-style: none;
-  height: 28px;
   background: transparent url(../yaml/navigation/images/shiny_buttons/background.gif);
+  border: 0;
+  font: bold 12px 'Lucida Grande', Verdana, Arial, Sans-Serif;
+  height: 28px;
+  list-style: none;
+  padding: 0;
   position: relative;
+  margin: 0;
+  width: 100%;
   z-index: 100;
-  font:bold 12px 'Lucida Grande', Verdana, Arial, Sans-Serif;
 }
 
 /* Default top link link styling, current tab li.select, float left to place inline */
@@ -105,29 +108,29 @@ way to fit your requirements.
   margin: 0;
 }
 .bt_admin .cssplay_prodrop li a.top_link {
+  background: none;
+  color: #444;
+  cursor: pointer;
   display: block;
   float: left;
-  height: 28px;
-  line-height: 27px;
-  color: #444;
-  text-decoration: none;
   font-size: 12px;
   font-weight: bold;
+  height: 28px;
+  line-height: 27px;
+  text-decoration: none;
   padding: 0;
-  cursor: pointer;
-  background: none;
 }
 .bt_admin .cssplay_prodrop li a.top_link span {
-  float: left;
   display: block;
-  padding: 0 25px;
+  float: left;
   height: 28px;
+  padding: 0 25px;
   text-align: center;
 }
 .bt_admin .cssplay_prodrop li a.top_link:hover,
 .bt_admin .cssplay_prodrop li.selected a.top_link {
-  color: #222;
   background: #B5B5B5;
+  color: #222;
   line-height: 27px;
 }
 .bt_admin .cssplay_prodrop li a.top_link:hover span, 
@@ -136,8 +139,8 @@ way to fit your requirements.
 }
 .bt_admin .cssplay_prodrop li:hover > a.top_link,
 .bt_admin .cssplay_prodrop li.selected > a.top_link {
-  color: #222;
   background: #C5C5C5;
+  color: #222;
   line-height: 27px;
 }
 .bt_admin .cssplay_prodrop li:hover > a.top_link span,
@@ -148,24 +151,24 @@ way to fit your requirements.
 /* Style and position the table so it takes no part in the menu function. */
 .bt_admin .cssplay_prodrop table {
   border-collapse: collapse;
-  width: 0;
   height: 0;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
+  width: 0;
 }
 /* The iframe shim, width and height should reflect the dropmenu. */
 .bt_admin .cssplay_prodrop :hover iframe {
+  height: 120px;
   left: 0;
   top: 27px;
   width: 210px;
-  height: 120px;
 }
 
 /* Style the list OR link hover. Depends on which browser is used */
 .bt_admin .cssplay_prodrop a:hover {
-  visibility: visible;
   position: relative;
+  visibility: visible;
   z-index:200;
 } /* for IE6 */
 .bt_admin .cssplay_prodrop li:hover {
@@ -180,41 +183,41 @@ way to fit your requirements.
 .bt_admin .cssplay_prodrop :hover ul :hover ul :hover ul ul,
 .bt_admin .cssplay_prodrop :hover ul :hover ul :hover ul :hover ul ul,
 .bt_admin .cssplay_prodrop iframe {
-  position: absolute;
-  left: -9999px;
-  top: -9999px;
-  width: 0;
   height: 0;
+  left: -9999px;
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
+  position: absolute;
+  top: -9999px;
+  width: 0;
 }
 
 /* set up the first drop down sub level, change the width of the submenus below */
 .bt_admin .cssplay_prodrop ul.drop {
-  width: 210px;
   margin: 0;
   padding: 0;
+  width: 210px;
 }
 .bt_admin .cssplay_prodrop :hover ul {
-  left: 0;
-  top: 27px;
   background: #C5C5C5;
+  border: none;
+  height: auto;
+  left: 0;
   margin: 0;
   padding: 0;
-  border: none;
+  top: 27px;
   white-space: nowrap;
-  height: auto;
   z-index: 200;
 }
 .bt_admin .cssplay_prodrop :hover ul li {
   border-left: 1px solid #C6C6C6;
   border-right: 1px solid #9F9F9F;
+  color: #222;
   display: block;
   font-size: 12px;
   height: 22px;
   padding: 0;
-  color: #222;
   text-decoration: none;
   width: 100%;
 }
@@ -222,11 +225,11 @@ way to fit your requirements.
   background: #C5C5C5;
   border-bottom: 1px solid #9F9F9F;
   border-top: 1px solid #D6D6D6;
+  color: #000;
   display: block;
   height: 22px;
   line-height: 22px;
   padding: 0 4px;
-  color: #000;
   text-decoration: none;
   width: 100%;
 }
@@ -251,13 +254,13 @@ way to fit your requirements.
 .bt_admin .cssplay_prodrop :hover ul :hover ul :hover ul,
 .bt_admin .cssplay_prodrop :hover ul :hover ul :hover ul :hover ul,
 .bt_admin .cssplay_prodrop :hover ul :hover ul :hover ul :hover ul :hover ul {
+  border: none;
+  height: auto;
   left: 209px;
-  top: 0;
   margin: 0;
   padding: 0;
-  border: none;
+  top: 0;
   white-space: nowrap;
   width: 210px;
-  height: auto;
   z-index:300;
 }
