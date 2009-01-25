@@ -95,7 +95,8 @@
       /* header */    
       #header {
         /*background: #fff url(../../images/header_imagename.png) repeat-x top left;*/
-        padding: 45px 2em 1em 20px;
+        padding: 0 20px; /* do not use top/bottom paddings with fixed height */
+        height: 110px;
       }
 
           /* top navigation container */
@@ -103,11 +104,18 @@
             background: transparent;
           }
 
+          /* title and slogan */
+          #header h1 {
+            margin: 45px 0 0.25em 20px;
+          }
+          #header .slogan {
+            float: left;
+          }
+
           /* logo */
           #header .logo {
             float: left;
-            margin-top: -15px;
-            margin-right: 12px;
+            margin: 30px 12px 0 0;
           }
 
       /* adjustment of main navigation */          
