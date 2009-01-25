@@ -6,7 +6,7 @@
 <meta name="description" content="<!--[slogan]-->" />
 <meta name="keywords" content="<!--[keywords]-->" />
 <meta name="Author" content="<!--[sitename]-->" />
-<meta name="Copyright" content="Copyright (c) 2008 by <!--[sitename]-->" />
+<meta name="Copyright" content="Copyright (c) 2009 by <!--[sitename]-->" />
 <meta name="Robots" content="index,follow" />
 <meta name="Generator" content="Zikula - www.zikula.org" />
 
@@ -20,10 +20,10 @@
 <!--[additional_header]-->
 <!--[bt_htmloutput section='head']-->
 
-<!--[* Uncomment the following plugin when you use Scribite *]-->
 <!--[* For Scribite >= v3.0 the plugin call can be removed *]-->
+<!--[* Uncomment the following call when you use Scribite < v3.0 *]-->
 <!--[* Remove this line
-<!--[if $current AND $current neq 'home']--><!--[scribite]--><!--[/if]-->
+<!--[if (isset($current) AND $current neq 'home') OR !isset($current)]--><!--[scribite]--><!--[/if]-->
 Remove this line *]-->
 
 </head>
