@@ -16,7 +16,7 @@
  *  - columns      the columns to check
  *
  * Example
- * with $layout = 'lcr_cb2'
+ * with $layout = '213_cb2'
  * <!--[if $layout|checklayout:2]-->
  * do some stuff when '2' (left column) column is enabled
  * <!--[/if]-->
@@ -29,13 +29,13 @@
  */
 function smarty_modifier_checklayout($layout, $columns)
 {
-	if (empty($layout) || empty($columns)) {
-	    return false;
-	}
+    if (empty($layout) || empty($columns)) {
+        return false;
+    }
 
     $layout = explode('_', $layout, 2);
     if (strpos($layout[0], (string)$columns) !== false) {
-    	return true;
+        return true;
     }
     return false;
 }

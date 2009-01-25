@@ -16,7 +16,7 @@
  *  - zone         the zone to check
  *
  * Example
- * with $layout = 'lcr_cb2'
+ * with $layout = '213_cb2'
  * <!--[if $layout|checkzone:'cb2']-->
  * do some stuff when 'cb2' (center-bottom zone with 2 subcolumns) zone is enabled
  * <!--[/if]-->
@@ -29,9 +29,9 @@
  */
 function smarty_modifier_checkzone($layout, $zone)
 {
-	if (empty($layout) || empty($zone)) {
-		return false;
-	}
+    if (empty($layout) || empty($zone)) {
+        return false;
+    }
 
     $layout = explode('_', $layout);
     unset($layout[0]);

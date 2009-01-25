@@ -85,8 +85,8 @@ function smarty_function_bt_userlinks($params, &$smarty)
 
     // Render the menu as an unordered list in a div
     $output  = '<div id="'.$id.'"><ul>';
-    foreach($menu as $option) {
-        $output .= bt_userlinks_drawmenu($option,$current,$currentclass,$span);
+    foreach ($menu as $option) {
+        $output .= bt_userlinks_drawmenu($option, $current, $currentclass, $span);
     }
     $output .= '</ul></div>';
 
@@ -96,17 +96,17 @@ function smarty_function_bt_userlinks($params, &$smarty)
 /**
  * Draw the arra-menu recursively
  */
-function bt_userlinks_drawmenu($option,$current,$currentclass,$span=false)
+function bt_userlinks_drawmenu($option, $current, $currentclass, $span=false)
 {
     $return = '';
-    if(is_array($option)) {
+    if (is_array($option)) {
         $return .= '<li' . (($option[0] == $current)?' id='.$currentclass:'') . '>';
-        $return .= '<a'. ((isset($option[3]) && is_array($option[3]))?' class="navparent"':''). ' title="'. DataUtil::formatForDisplay($option[1]). '" href="'.DataUtil::formatForDisplay($option[2]).'">'. (($span)?'<span>':''). DataUtil::formatForDisplay($option[1]). (($span)?'</span>':''). '</a>';
+        $return .= '<a'. ((isset($option[3]) && is_array($option[3]))?' class="navparent"':''). ' title="'. DataUtil::formatForDisplay($option[1]). '" href="'.DataUtil::formatForDisplay($option[2]).'">'. ($span ? '<span>' : ''). DataUtil::formatForDisplay($option[1]). ($span ? '</span>' : ''). '</a>';
         // Render the optional suboptions recursively
-        if(isset($option[3]) && is_array($option[3])) {
+        if (isset($option[3]) && is_array($option[3])) {
             $return .= '<ul>';
-            foreach($option[3] as $suboption) {
-                $return .= bt_userlinks_drawmenu($suboption,$current,$currentclass,$span);
+            foreach ($option[3] as $suboption) {
+                $return .= bt_userlinks_drawmenu($suboption, $current, $currentclass, $span);
             }
             $return .= '</ul>';
         }

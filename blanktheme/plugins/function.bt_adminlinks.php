@@ -251,8 +251,8 @@ function smarty_function_bt_adminlinks($params, &$smarty)
 
     /* Actually create the menu based on the array above */
     $output  = '<div id="'.$id.'"><ul' . ((!empty($ulclass))?' class="'.$ulclass.'"':'') . '>';
-    foreach($menu as $option) {
-        $output .= bt_adminlinks_drawmenu($option,$current,$currentclass);
+    foreach ($menu as $option) {
+        $output .= bt_adminlinks_drawmenu($option, $current, $currentclass);
     }
     $output .= '</ul></div>';
 
@@ -262,13 +262,13 @@ function smarty_function_bt_adminlinks($params, &$smarty)
 /**
  * Draw the array-menu recursively
  */
-function bt_adminlinks_drawmenu($option,$current,$currentclass,$level=0)
+function bt_adminlinks_drawmenu($option, $current, $currentclass, $level=0)
 {
     $return = '';
-    if(is_array($option)) {
-        $return .= '<li class="' . (($level==0)?'top':'') . (($option[0]==$current)?' '.$currentclass:'') . '">';
+    if (is_array($option)) {
+        $return .= '<li class="'.(($level==0)?'top':'').(($option[0]==$current)?' '.$currentclass:'').'">';
         $return .= '<a';
-        if ($level==0) {
+        if ($level == 0) {
             $return .= ' class="top_link"';
         } elseif (isset($option[3]) && is_array($option[3])) {
             $return .= ' class="fly"';
@@ -277,7 +277,7 @@ function bt_adminlinks_drawmenu($option,$current,$currentclass,$level=0)
         $return .= (($level==0)?'<span>':'') . DataUtil::formatForDisplay($option[1]). (($level==0)?'</span>':'');
         /* Recursively render submenus */
         if (isset($option[3]) && is_array($option[3])) {
-            if ($level==0) {
+            if ($level == 0) {
                 /* at 1st level add iframe for IE6 menu over form display */
                 $return .= '<!--[if gte IE 7]><!--></a><!--<![endif]--><!--[if lte IE 6]><table><tr><td><iframe frameborder="0"></iframe><![endif]-->';
                 $return .= '<ul class="drop">';
@@ -285,8 +285,8 @@ function bt_adminlinks_drawmenu($option,$current,$currentclass,$level=0)
                 $return .= '<!--[if gte IE 7]><!--></a><!--<![endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->';
                 $return .= '<ul>';
             }
-            foreach($option[3] as $suboption) {
-                $return .= bt_adminlinks_drawmenu($suboption,$current,$currentclass,$level+1);
+            foreach ($option[3] as $suboption) {
+                $return .= bt_adminlinks_drawmenu($suboption, $current, $currentclass, $level+1);
             }
             $return .= '</ul>';
             $return .= '<!--[if lte IE 6]></td></tr></table></a><![endif]-->'; /* IE extras */
