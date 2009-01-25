@@ -92,7 +92,7 @@ define('_NAV_CONTENT','Inhoud creëren');
 	define('_NAV_ADDADMINMESSAGE','Beheerders bericht toevoegen');
 define('_NAV_LOGOUT','Uitloggen');
 
-/* pnForum customized templates */
-define('_PNFORUM_LEGEND', 'Legend');
-define('_PNFORUM_STATS', 'Statistieken');
-define('_PNFORUM_LASTACTIVITY', 'Laatste Bericht');
+/* Dizkus customized templates */
+define('_DZK_LEGEND', 'Legend');
+define('_DZK_STATS', 'Statistieken');
+define('_DZK_LASTACTIVITY', 'Laatste Bericht');

@@ -93,7 +93,7 @@ define('_NAV_CONTENT','Créer du contenu');
 define('_NAV_LOGOUT','Se déconnecter');
 
 
-/* pnForum customized templates */
-define('_PNFORUM_LEGEND', 'Legend');
-define('_PNFORUM_STATS', 'Stats');
-define('_PNFORUM_LASTACTIVITY', 'Last activity');
+/* Dizkus customized templates */
+define('_DZK_LEGEND', 'Legend');
+define('_DZK_STATS', 'Stats');
+define('_DZK_LASTACTIVITY', 'Last activity');

@@ -9,4 +9,4 @@
  */
 
 define('_BLANKTHEME_DISPLAYNAME', 'BlankTheme');
-define('_BLANKTHEME_DESCRIPTION', 'Blank theme ontwikkel basis voor Xanthia 3');
+define('_BLANKTHEME_DESCRIPTION', 'Thema ontwikkeling kader voor Zikula');

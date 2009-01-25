@@ -9,4 +9,4 @@
  */
 
 define('_BLANKTHEME_DISPLAYNAME', 'ThemeBlanc');
-define('_BLANKTHEME_DESCRIPTION', 'Thème blanc servant de base pour Xanthia 3');
+define('_BLANKTHEME_DESCRIPTION', 'Thème cadre de développement pour Zikula');
