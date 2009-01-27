@@ -9,4 +9,4 @@
  */
 
 define('_BLANKTHEME_DISPLAYNAME', 'ThemeBlanc');
-define('_BLANKTHEME_DESCRIPTION', 'Thème cadre de développement pour Zikula');
+define('_BLANKTHEME_DESCRIPTION', 'Framework de développement de thème pour Zikula');
