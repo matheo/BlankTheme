@@ -67,8 +67,8 @@ function smarty_function_bt_userlinks($params, &$smarty)
     if (pnModAvailable('FAQ')) {
         $menu[] = array('FAQ', _NAV_FAQ, pnModURL('FAQ'), null);
     }
-    if (pnModAvailable('Wikula')) {
-        $menu[] = array('Wikula', _NAV_WIKI, pnModURL('Wikula'), null);
+    if (pnModAvailable('wikula')) {
+        $menu[] = array('wikula', _NAV_WIKI, pnModURL('wikula'), null);
     }
     if (pnModAvailable('crpCalendar')) {
         $menu[] = array('crpCalendar', _NAV_CALENDAR, pnModURL('crpCalendar'), null);
