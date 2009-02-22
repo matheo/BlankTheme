@@ -139,6 +139,7 @@
 
   fieldset {
     border: 1px solid #D9DAD5;
+    padding: 5px 10px 10px;
   }
 
   p {
@@ -267,7 +268,8 @@
     margin-bottom: 0.5em;
     /*width: auto;*/
   }
-  table.full {
+  table.full,
+  table.pn-datatable {
     width: 100%;
   }
   table.fixed {
