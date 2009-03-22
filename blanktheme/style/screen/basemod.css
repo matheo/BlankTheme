@@ -276,14 +276,15 @@
 
   /**
    * 2col template
+   * x1 is the default distribution
    * @subsection layout-template-2col
    */
 
   /* #col1 is the main column */
   .bt_2col #col1 {
-    float: left;
-    margin: 0;
-    width: 74%;
+    float: none;
+    margin-left: 25%;
+    width: auto;
   }
   .bt_2col #col1_content {
     padding: 0 10px;
@@ -305,9 +306,15 @@
 
 
   /* 1X layouts */
+  .bt_2col .bt_12 #col1,
+  .bt_2col .bt_13 #col1 {
+    border-right: 1px dashed #DDDDDD;
+    margin-left: 0;
+    margin-right: 25%;
+  }
   .bt_2col .bt_12 #col2,
   .bt_2col .bt_13 #col3 {
-    /*border-left: 1px #ddd solid;*/ /* must reduce the col width if used */
+    float: right;
     margin-left: -5px;
   }
   /* padding changes */
@@ -319,12 +326,7 @@
   /* X1 layouts */
   .bt_2col .bt_21 #col1,
   .bt_2col .bt_31 #col1 {
-    float: right;
-    margin-left: -5px;
-  }
-  .bt_2col .bt_21 #col2,
-  .bt_2col .bt_31 #col3 {
-    /*border-right: 1px #ddd solid;*/ /* must reduce the col width if used */
+    border-left: 1px dashed #DDDDDD;
   }
   .bt_2col .bt_31 #col3_content {
     padding: 0 10px 0 15px;

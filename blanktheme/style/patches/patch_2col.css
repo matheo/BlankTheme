@@ -15,23 +15,18 @@
 @media screen, projection
 {
   /**
-   * Simulate min-width / max-width for IE by using JS-Expressions
+   * Bugfix for IE 3-Pixel-Jog Bug
    *
-   * @workaround
+   * @bugfix
    * @affected   IE 5.x/Win, IE6
    * @css-for    IE 5.x/Win, IE6
-   * @valid      no
+   * @valid      yes
    */
 
-  * html #page_margins {
-  /* Fallback if no Javascript enabled */
-  /*width: 80em;*/
+  * html #col1 { height: 1%; }
 
-  /* min-width & max-width width JS-Expressions */
-  /*width: expression((document.documentElement && document.documentElement.clientHeight) ?
-    (document.documentElement.clientWidth < 740) ? "740px" : (( document.documentElement.clientWidth > (80 * parseInt(document.documentElement.currentStyle.fontSize))) ? "80em" : "auto") :
+  /* x1 layouts */
+  * html .bt_21 #col1, * html .bt_31 #col1 { margin-left: 24%; } /* basemod's 25% - 1 */
+  * html .bt_21 #col2, * html .bt_31 #col3 { margin-right: -3px; }
 
-    (document.body.clientWidth < 740) ? "740px" : (( document.body.clientWidth > (80 * parseInt(document.body.currentStyle.fontSize))) ? "80em" : "auto")
- );*/
-  }
 }
