@@ -377,9 +377,12 @@
     list-style: none;
   }
 
-  /* pnForm */
-  div.contextMenu {
-    margin: -153px 0 0 -20px;
+  /* js context menus */
+  #bt_wikula .bt_func_edit #col1_content,
+  #bt_wikula .bt_func_edit #pn-maincontent,
+  #bt_content.bt_type_edit #col1_content,
+  #bt_content.bt_type_edit #pn-maincontent {
+    position: inherit;
   }
   div.contextMenu ul li {
     margin-left: 0px;
