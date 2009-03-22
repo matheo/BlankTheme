@@ -62,9 +62,9 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             // head stylesheets
             $output = '<link rel="stylesheet" href="'.$smarty->stylepath.'/layout_'.$body.'.css" type="text/css"/>
                        <!--[if lte IE 7]>'
-//                     .'<link rel="stylesheet" href="'.$smarty->stylepath.'/patches/patch_'.$base.'.css" type="text/css" />'
-                     .'<link rel="stylesheet" href="'.$smarty->themepath.'/yaml/core/slim_iehacks.css" type="text/css" />
-                       <![endif]-->';
+                     .'<link rel="stylesheet" href="'.$smarty->stylepath.'/patches/patch_'.$body.'.css" type="text/css" />'
+//                     .'<link rel="stylesheet" href="'.$smarty->themepath.'/yaml/core/slim_iehacks.css" type="text/css" />'
+                     .'<![endif]-->';
 /*                       .'<!--[if lte IE 6]>'
 //                     .'<script type="text/javascript" src="'.$smarty->scriptpath.'/minmax.js"></script>'
                      .'<style type="text/css">
