@@ -1,0 +1,109 @@
+<!--[* $Id$ *]-->
+<div id="page_margins" class="<!--[bt_htmloutput section='classespage']-->">
+	<div id="page" class="<!--[bt_htmloutput section='classesinnerpage']-->">
+
+		<!-- begin: #header -->
+		<div id="header" class="floatbox">
+			<div id="topnav">
+				<!-- start: skip link navigation -->
+				<a class="skip" href="#navigation" title="<!--[pnml name='_AB_SKIPLINK']-->"><!--[pnml name='_AB_SKIPTO_NAVIGATION']--></a><span class="hideme">.</span>
+				<a class="skip" href="#content" title="<!--[pnml name='_AB_SKIPLINK']-->"><!--[pnml name='_AB_SKIPTO_CONTENT']--></a><span class="hideme">.</span>
+				<!-- end: skip link navigation -->
+
+				<!--[*
+				 | <a href="#"><!--[pnml name='_AB_LANGDEFINE']--></a>
+				 | <a href="#"><!--[pnml name='_AB_LANGDEFINE']--></a>
+				*]-->
+				<!--[userlinks start='' end='&nbsp;']-->
+				<!--[bt_htmloutput section='fontresize']-->
+			</div>
+			<a href="<!--[$baseurl]-->"><!--[pnimg src='logo.png' class='logo' alt='logo']--></a>
+			<h1><a href="<!--[$baseurl]-->" title="<!--[pnml name='_AB_GOTOHOMEPAGE']-->"><!--[sitename]--></a></h1>
+			<span class="slogan"><!--[slogan]--></span>
+		</div>
+		<!-- end: #header -->
+
+		<!-- begin: main navigation #nav -->
+		<div id="nav">
+			<!-- skiplink anchor: navigation -->
+			<a id="navigation" name="navigation"></a>
+			<!--[if $usenavtop eq 'b']-->
+				<!--[blockposition name='navtop']-->
+			<!--[else]-->
+				<!--[bt_userlinks]-->
+			<!--[/if]-->
+		</div>
+		<!-- end: main navigation -->
+
+		<!-- begin: main content area #main -->
+		<div id="main" class="clearfix">
+			<!-- begin: #col2 second column -->
+			<div id="col2">
+				<div id="col2_content" class="clearfix">
+					<!--[blockposition name='left']-->
+				</div>
+			</div>
+			<!-- end: #col2 -->
+
+			<!-- begin: #col3 third column -->
+			<div id="col3">
+				<div id="col3_content" class="clearfix">
+					<!--[blockposition name='right']-->
+				</div>
+			</div>
+			<!-- end: #col3 -->
+
+			<!-- begin: #col1 - main column -->
+			<div id="col1">
+				<div id="col1_content" class="clearfix">
+					<!-- skiplink anchor: Content -->
+					<a id="content"></a>
+					<!--[if $layout|checkzone:nc ne true]-->
+						<!--[blockposition name='center']-->
+					<!--[/if]-->
+
+					<!--[$maincontent]-->
+
+					<!--[if $layout|checkzone:2cb]-->
+					<div id="bt_2cb" class="bt_zone subcolumns">
+						<div class="c50l">
+							<div class="subcl">
+								<!--[blockposition name='centerbl']-->
+							</div>
+						</div>
+						<div class="c50r">
+							<div class="subcr">
+								<!--[blockposition name='centerbr']-->
+							</div>
+						</div>
+					</div>
+					<!--[/if]-->
+					<!--[if $layout|checkzone:cb]-->
+					<div id="bt_cb" class="bt_zone">
+						<div id="bt_cb_content">
+							<!--[blockposition name='bottom']-->
+						</div>
+					</div>
+					<!--[/if]-->
+				</div>
+				<div id="ie_clearing">&nbsp;</div>
+				<!-- End: IE Column Clearing -->
+			</div>
+			<!-- end: #col1 -->
+		</div>
+		<!-- end: #main -->
+
+		<!-- begin: #footer -->
+		<div id="footer">
+		<!--[include file='footer.htm']-->
+		</div>
+		<!-- end: #footer -->
+
+	</div>
+<!--[*
+<div>
+<!--[nocache]--><!--[pagerendertime]--><!--[/nocache]-->
+<!--[nocache]--><!--[sqldebug]--><!--[/nocache]-->
+</div>
+*]-->
+</div>
