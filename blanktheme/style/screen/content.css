@@ -51,8 +51,8 @@
   html * { font-size: 100.01%; }
 
   /* reset monospaced elements to font size 16px in Gecko browsers */
-  textarea, pre, tt, code {
-    font-family: "Courier New", Courier, monospace;      
+  textarea, pre, code, kbd, samp, var, tt {
+    font-family: Consolas, "Lucida Console", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier;
   }
 
   /* base layout gets standard */
@@ -110,11 +110,11 @@
 
   /* text formatting */
 
-  cite, blockquote {
+  cite, blockquote, q {
     font-style: italic
   }
   blockquote {
-    margin: 0 0 1em 1.5em;
+    margin: 0 0 1em 1.6em;
   }
 
   strong, b {
@@ -124,15 +124,61 @@
     font-style: italic;
   }
 
+  pre, code, kbd, tt, samp, var {
+    font-size: 100%;
+  }
   pre, code {
-    font-family: monospace;
-    font-size: 1.1em;
+    color: #800;
+  }
+  pre {
+    line-height: 1.5em;
+    margin: 0 0 1em 0;
+  }
+  kbd, samp, var {
+    color: #666;
+  }
+  var {
+    font-style: italic;
   }
 
   acronym, abbr {
     border-bottom: .1em dashed #c00;
     cursor: help;
     letter-spacing: .07em;
+  }
+
+  sub, sup {
+    font-size: 91.6667%;
+  }
+
+  /* images (with optional captions) */
+
+  p.icaption_left {
+    display: inline;
+    float: left;
+    margin: 0 1em 0.15em 0;
+  }
+  p.icaption_right {
+    display: inline;
+    float: right;
+    margin: 0 0 0.15em 1em;
+  }
+
+  p.icaption_left img,
+  p.icaption_right img {
+    border: 1px #888 solid;
+    padding: 0;
+  }
+
+  p.icaption_left strong,
+  p.icaption_right strong {
+    background: #eee;
+    display: block;
+    font-size: 91.667%;
+    font-weight: normal;
+    margin-top: 2px;
+    overflow: hidden;
+    padding: 0.3em 0.5em;
   }
 
   /* Miscellaneous */
@@ -268,6 +314,9 @@
     margin-bottom: 0.5em;
     /*width: auto;*/
   }
+  table caption {
+    font-variant: small-caps;
+  }
   table.full,
   table.pn-datatable {
     width: 100%;
@@ -280,20 +329,33 @@
     padding: 0.5em;
   }
   thead th {
-    background: #444;
-    color: #fff;
+    color: #000;
   }
   tbody th {
-    background: #ccc;
+    background: #e0e0e0;
     color: #333;
   }
-  tbody th.sub {
-    background: #ddd;
-    color: #333;
+  tbody th[scope="row"], tbody th.sub {
+    background: #f0f0f0;
+  }
+  tbody th {
+    /*border-bottom: 1px solid #fff;*/
+    text-align: left;
+  }
+  tbody td {
+    /*border-bottom: 1px solid #eee;*/
+  }
+
+  tbody tr:hover th[scope="row"],
+  tbody tr:hover tbody th.sub {
+    background: #d9e9d9;
+  }
+  tbody tr:hover td {
+    background: #e9f9e9;
   }
 
   thead th a {
-    color: #fff;
+    color: #000;
     text-decoration: underline;
   }
 
@@ -306,23 +368,41 @@
    * @section content-generic-classes
    */
 
+  .highlight {
+    color: #f60;
+  }
+  .dimmed {
+    color: #888;
+  }
+
+  .info {
+    background: #f8f8f8;
+    color: #666;
+    font-size: 91.7%;
+    margin-bottom: 0.5em;
+    padding: 10px;
+  }
+
   .note {
-    background: #dfd;
-    border-bottom: 1px #bdb dotted;
-    border-top: 1px #bdb dotted;
-    padding: 1em;
+    background: #efe;
+    border: 1px #484 solid;
+    color: #040;
+    margin-bottom: 1em;
+    padding: 10px;
   }
   .important {
-    background: #ffd;
-    border-bottom: 1px #ddb dotted;
-    border-top: 1px #ddb dotted;
-    padding: 1em;
+    background: #ffe;
+    border: 1px #884 solid;
+    color: #440;
+    margin-bottom: 1em;
+    padding: 10px;
   }
   .warning {
-    background: #fdd;
-    border-bottom: 1px #dbb dotted;
-    border-top: 1px #dbb dotted;
-    padding: 1em;
+    background: #fee;
+    border: 1px #844 solid;
+    color: #400;
+    margin-bottom: 1em;
+    padding: 10px;
   }
 
   .float_left {
@@ -338,6 +418,7 @@
     margin-left: 1em;
   }
   .center {
+    display: block;
     margin: 0.5em auto;
     text-align: center;
   }
