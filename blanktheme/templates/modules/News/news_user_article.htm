@@ -5,6 +5,12 @@
 </div>
 <div id="news_modify">&nbsp;</div>
 
-<!--[* the next code is to display any hooks (e.g. comments, ratings) *]-->
+<!--[* the next code is to display any hooks (e.g. comments, ratings). All hooks are stored in $hooks and called individually. EZComments is not called when Commenting is not allowed *]-->
 <!--[pnmodurl modname=News func=display sid=$info.sid assign=returnurl]-->
-<!--[pnmodcallhooks hookobject=item hookaction=display hookid=$info.sid module=News returnurl=$returnurl]-->
+<!--[* pnmodcallhooks hookobject=item hookaction=display hookid=$info.sid module=News returnurl=$returnurl *]-->
+<!--[pnmodcallhooks hookobject='item' hookaction='display' hookid=$info.sid module='News' returnurl=$returnurl owneruid=$info.cr_uid implode=false]-->
+<!--[foreach from=$hooks key='hookname' item='hook']-->
+<!--[if $hookname neq 'EZComments' or $info.withcomm eq 0]-->
+<!--[$hook]-->
+<!--[/if]-->
+<!--[/foreach]-->
