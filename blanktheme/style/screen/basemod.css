@@ -337,6 +337,8 @@
   /* full main column */
   .bt_2col .bt_1 #col1 {
     width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
   .bt_2col .bt_1 #col1_content {
     padding: 0 10px;
