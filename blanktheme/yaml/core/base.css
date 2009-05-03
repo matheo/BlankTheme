@@ -8,19 +8,18 @@
  * Don't make any changes in this file!
  * Your changes should be placed in any css-file in your own stylesheet folder.
  *
- * @copyright       Copyright 2005-2008, Dirk Jesse
+ * @copyright       Copyright 2005-2009, Dirk Jesse
  * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
  *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
  * @link            http://www.yaml.de
  * @package         yaml
- * @version         3.0.6
- * @revision        $Revision: 202 $
- * @lastmodified    $Date: 2008-06-07 07:29:18 -0500 (sáb, 07 jun 2008) $
+ * @version         3.1
+ * @revision        $Revision: 343 $
+ * @lastmodified    $Date: 2009-01-19 17:41:32 -0500 (lun, 19 ene 2009) $
  */
 
 @media all
 {
- /*------------------------------------------------------------------------------------------------------*/
 
  /**
   * @section browser reset
@@ -33,7 +32,8 @@
 
   /* (en) Correction: margin/padding reset caused too small select boxes. */
   /* (de) Korrektur: Das Zurücksetzen der Abstände verursacht zu kleine Selectboxen. */
-  option { padding-left: 0.4em; }
+  option { padding-left: 0.4em; } /* LTR */
+  select { padding: 1px; }
 
  /**
   * (en) Global fix of the Italics bugs in IE 5.x and IE 6
@@ -60,7 +60,7 @@
     /* (de) Vorgabe der Standardfarben und Textausrichtung */
     color: #000;
     background: #fff;
-    text-align: left;
+    text-align: left; /* LTR */
   }
 
   /* (en) Clear borders for <fieldset> and <img> elements */
@@ -69,13 +69,19 @@
 
   /* (en) new standard values for lists, blockquote and cite */
   /* (de) Neue Standardwerte für Listen & Zitate */
-  ul, ol, dl { margin: 0 0 1em 1em }
-  li { margin-left: 1.5em; line-height: 1.5em; }
+  ul, ol, dl { margin: 0 0 1em 1em } /* LTR */
+  li {
+    margin-left: 0.8em; /* LTR */
+    line-height: 1.5em;
+  }
 
   dt { font-weight: bold; }
-  dd { margin: 0 0 1em 2em; }
+  dd { margin: 0 0 1em 0.8em; } /* LTR */
 
-  blockquote { margin: 0 0 1em 1.5em; }
+  blockquote { margin: 0 0 1em 0.8em; } /* LTR */
+
+  blockquote:before, blockquote:after,
+  q:before, q:after { content: ""; }
 
  /*------------------------------------------------------------------------------------------------------*/
 
@@ -97,14 +103,14 @@
 
   /* (en) Text Alignment for #topnav content */
   /* (de) Textausrichtung für #topnav Inhalte */
-  #topnav { text-align: right; } 
+  #topnav { text-align: right; }  /* LTR */
 
   /* (en) Absolute positioning only within #header */
   /* (de) Absolute Positionierung erfolgt nur innerhalb von #header */
   #header #topnav {
     position:absolute;
     top: 10px;
-    right: 10px;
+    right: 10px; /* LTR */
   }
 
   /* (en) Backup for correct positioning */
@@ -126,32 +132,16 @@
  /*------------------------------------------------------------------------------------------------------*/
 
  /**
-  * @section generic classes for layout switching | Generische Klassen zur Layoutumschaltung
-  * @see     http://www.yaml.de/en/documentation/css-components/base-stylesheet.html
-  *
-  * .hidecol1 -> 2-column-layout (using #col2 and #col3)
-  * .hidecol2 -> 2-column-layout (using #col1 and #col3)
-  * .hideboth -> single-column-layout (using #col3)
-  */
-
-  .hideboth #col3 { margin-left: 0; margin-right: 0; }
-  .hidecol1 #col3 { margin-left: 0; margin-right: 200px; }
-  .hidecol2 #col3 { margin-left: 200px; margin-right: 0; }
-
-  .hideboth #col1, .hideboth #col2, .hidecol1 #col1, .hidecol2 #col2 { display:none; }
-
- /*------------------------------------------------------------------------------------------------------*/
-
- /**
   * @section clearing methods
   * @see     http://yaml.de/en/documentation/basics/general.html
   */
 
   /* (en) clearfix method for clearing floats */
   /* (de) Clearfix-Methode zum Clearen der Float-Umgebungen */
-   .clearfix:after {
+  .clearfix:after {
     content: ".";
     display: block;
+    font-size:0;
     height: 0;
     clear: both;
     visibility: hidden;
@@ -197,6 +187,14 @@
   .subcl { padding: 0 1em 0 0; }
   .subcr { padding: 0 0 0 1em; }
 
+  .equalize, .equalize .subcolumns { overflow:visible; display:table; table-layout:fixed; }
+  .equalize .c50l,.equalize .c25l,.equalize .c33l,.equalize .c38l,.equalize .c66l,
+  .equalize .c75l,.equalize .c62l,.equalize .c50r,.equalize .c25r,.equalize .c33r,
+  .equalize .c38r,.equalize .c66r,.equalize .c75r,.equalize .c62r {
+    display:table-cell; vertical-align:top;
+    float:none; margin:0; overflow:hidden;
+  }
+
  /*------------------------------------------------------------------------------------------------------*/
 
  /**
@@ -209,21 +207,17 @@
 
   /* (en) classes for invisible elements in the base layout */
   /* (de) Klassen für unsichtbare Elemente im Basislayout */
-  .skip, .hideme, .print {
+  .skip, .hideme, .print, dfn {
     position: absolute;
+    left: -1000em; /* LTR */
     top: -1000em;
-    left: -1000em;
-    height: 1px;
-    width: 1px;
   }
 
   /* (en) make skip links visible when using tab navigation */
   /* (de) Skip-Links für Tab-Navigation sichtbar schalten */
   .skip:focus, .skip:active {
     position: static;
-    top: 0;
     left: 0;
-    height: auto;
-    width: auto;
+    top:0;
   }
 }

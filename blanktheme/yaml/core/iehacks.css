@@ -8,14 +8,14 @@
  * Don't make any changes in this file!
  * Your changes should be added to a separate patch-file.
  *
- * @copyright       Copyright 2005-2008, Dirk Jesse
+ * @copyright       Copyright 2005-2009, Dirk Jesse
  * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
  *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
  * @link            http://www.yaml.de
  * @package         yaml
- * @version         3.0.6
- * @revision        $Revision: 202 $
- * @lastmodified    $Date: 2008-06-07 07:29:18 -0500 (sáb, 07 jun 2008) $
+ * @version         3.1
+ * @revision        $Revision: 343 $
+ * @lastmodified    $Date: 2009-01-19 17:41:32 -0500 (lun, 19 ene 2009) $
  * @appdef yaml
  */
 
@@ -59,11 +59,11 @@
 
   * html textarea { overflow:scroll; overflow-x: hidden; }
   * html input { overflow: hidden; }
-  
+
   /*------------------------------------------------------------------------------------------------------*/
 
   /**
-   * (en) Stability fixes with 'position:relative' 
+   * (en) Stability fixes with 'position:relative'
    * (de) Stabilitätsverbesserungen durch 'position:relative'
    *
    * @bugfix
@@ -89,7 +89,6 @@
    * @valid      yes
    */
 
-
   .clearfix { display: inline-block; }  /* ... especial for IE7 */
   .clearfix { display: block; }      /* ... für IE5,IE6,IE7 */
   * html .clearfix { height: 1%; }   /* ... für IE5 + IE6/Win | hasLayout aktivieren */
@@ -101,13 +100,13 @@
    * (de) Anpassung der .floatbox-Klasse für IE
    *
    * @workaround
-   * @affected   IE 5.x/Win, IE6
-   * @css-for    IE 5.x/Win, IE6
+   * @affected   IE 5.x/Win, IE6, IE7
+   * @css-for    IE 5.x/Win, IE6, IE7
    * @valid      yes
    */
 
-  * html .floatbox { width:100%; }
-  
+  .floatbox { width:100%; }
+
   /*------------------------------------------------------------------------------------------------------*/
 
   /**
@@ -119,7 +118,7 @@
    * @css-for    IE 5.x/Win, IE6
    * @valid      yes
    */
-  
+
   .slidebox {
     position:relative;
     margin-right: -1000px;
@@ -139,8 +138,8 @@
    */
 
   * html #col1,
-  * html #col2, 
-  * html #col3 { position:relative; } 
+  * html #col2,
+  * html #col3 { position:relative; }
 
   /*------------------------------------------------------------------------------------------------------*/
 
@@ -153,12 +152,12 @@
    * @css-for    IE 5.x/Win, IE6, IE7
    * @valid      no
    */
-   
+
   body { height: 1%; }
-  #page_margins, #page, #header, #nav, #main, #footer { zoom:1; }             /* IE6 & IE7    */
-  #page_margins, #page { height: 1%; }                                        /* IE 5.x       */
-  * html #header, * html #nav, * html #main, * html #footer { width: 100%; }  /* IE 5.x & IE6 */
-  * html #header, * html #nav, * html #main, * html #footer { wid\th: auto; } /* IE 6         */
+  #page_margins, #page, .page_margins, .page, #header, #nav, #main, #footer { zoom:1; }   /* IE6 & IE7    */
+  #page_margins, #page, .page_margins, .page { height: 1%; }                              /* IE 5.x       */
+  * html #header, * html #nav, * html #main, * html #footer { width: 100%; }              /* IE 5.x & IE6 */
+  * html #header, * html #nav, * html #main, * html #footer { wid\th: auto; }             /* IE 6         */
 
   /*------------------------------------------------------------------------------------------------------*/
 
@@ -171,6 +170,7 @@
    * @css-for    IE 5.x/Win, IE6
    * @valid      yes
    */
+
   * html ul, * html ol, * html dl { position: relative; }
 
   /*------------------------------------------------------------------------------------------------------*/
@@ -183,8 +183,23 @@
    * @css-for    IE 5.x/Win, IE6, IE7
    * @valid      yes
    */
+
   body ol li { display:list-item; }
-  
+
+  /**
+   * Form related bugfixes
+   *
+   * @bugfix
+   * @affected   IE 5.x/Win, IE6, IE7
+   * @css-for    IE 5.x/Win, IE6, IE7
+   * @valid      no
+   */
+  fieldset, legend { position:relative; }
+  /* global fixes for YAML's form construction set */ 
+  form.yform, 
+  form.yform div,
+  form.yform div * { zoom:1; }
+
   /*------------------------------------------------------------------------------------------------------*/
 
   /**
@@ -204,7 +219,7 @@
    * @valid      no
    */
 
-  #ie_clearing {
+  html #ie_clearing {
     /* (en) Only a small help for debugging */
     /* (de) Nur eine kleine Hilfe zur Fehlersuche */
     position:static;
@@ -232,10 +247,25 @@
   html { margin-right: 1px; }
   * html { margin-right: 0 }
 
-
   /* (en) Bugfix: Essential for IE7 */
   /* (de) Bugfix: Notwendig im IE7 */
-  #col3 { position:relative; z-index: -1; }
+  #col3 { position:relative; }
+
+  /*------------------------------------------------------------------------------------------------------*/
+
+  /**
+   * IE z-index-Fix
+   * brings #col1 and #col2 in front of #col3
+   *
+   * @workaround
+   * @affected   all IE
+   * @css-for    all IE
+   * @valid      yes
+   */
+
+  *+html #col3 { z-index: -1; }
+  * html #col1, * html #col2 { z-index: 1; }
+  * html #col3  { z-index:auto; }
 
   /*------------------------------------------------------------------------------------------------------*/
 
@@ -267,11 +297,32 @@
    * @css-for    IE 5.x/Win, IE6, IE7
    * @valid      yes
    */
-
   #col1,  #col2 { display:inline; }
 
   .c50l, .c25l, .c33l, .c38l, .c66l, .c75l, .c62l,
   .c50r, .c25r, .c33r, .c38r, .c66r, .c75r, .c62r { display:inline; }
+
+  /* Fix for: "Linking to anchors in elements within the containing block" Problem in IE5.x & IE 6.0 */
+  * html .equalize, * html .equalize .subcolumns { overflow:visible; display:block; }
+  .equalize, .equalize .subcolumns { overflow:hidden; display:block; }
+
+  /* transform CSS tables back into floats */
+  .equalize .c25l,.equalize .c33l,.equalize .c38l,.equalize .c50l,.equalize .c66l,.equalize .c75l,.equalize .c62l {
+    float: left; display:inline;
+    padding-bottom: 32767px;
+    margin-bottom: -32767px;
+  }
+  .equalize .c25r,.equalize .c33r,.equalize .c38r,.equalize .c50r,.equalize .c66r,.equalize .c75r,.equalize .c62r {
+    float: right; margin-left: -5px; display:inline;
+    padding-bottom: 32767px;
+    margin-bottom: -32767px;
+  }
+
+  .no-ie-padding .c25l,.no-ie-padding .c33l,.no-ie-padding .c38l,.no-ie-padding .c50l,.no-ie-padding .c66l,.no-ie-padding .c75l,.no-ie-padding .c62l,
+  .no-ie-padding .c25r,.no-ie-padding .c33r,.no-ie-padding .c38r,.no-ie-padding .c50r,.no-ie-padding .c66r,.no-ie-padding .c75r,.no-ie-padding .c62r {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
 
   /*------------------------------------------------------------------------------------------------------*/
 
@@ -285,13 +336,17 @@
    * @valid      yes
    */
 
-  * html #col1_content, 
-  * html #col2_content, 
+  * html #col1_content,
+  * html #col2_content,
   * html #col3_content { word-wrap: break-word; }
 
-  * html .subcolumns .subc,
-  * html .subcolumns .subcl,
-  * html .subcolumns .subcr { word-wrap: break-word; overflow:hidden; }
+  /* trigger hasLayout to force containing content */
+  .subc, .subcl, .subcr { height: 1%; }
+
+  /* avoid growing widths */
+  * html .subc,
+  * html .subcl,
+  * html .subcr { word-wrap: break-word; overflow:hidden;  }
 }
 
 @media print

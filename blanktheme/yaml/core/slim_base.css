@@ -1,9 +1,10 @@
 @charset "UTF-8";
-/* "Yet Another Multicolumn Layout" v3.0.6 (c) by Dirk Jesse (http://www.yaml.de)
-* $Revision: 202 $ $Date: 2008-06-07 07:29:18 -0500 (sáb, 07 jun 2008) $ */
+/* "Yet Another Multicolumn Layout" v3.1 (c) by Dirk Jesse (http://www.yaml.de)
+* $Revision: 343 $ $Date: 2009-01-19 17:41:32 -0500 (lun, 19 ene 2009) $ */
 @media all {
 *{margin:0;padding:0}
 option{padding-left:.4em}
+select{padding:1px}
 * html body *{overflow:visible}
 * html iframe,* html frame{overflow:auto}
 * html frameset{overflow:hidden}
@@ -11,10 +12,11 @@ html{height:100%;margin-bottom:1px}
 body{font-size:100.01%;color:#000;background:#fff;text-align:left}
 fieldset,img{border:0 solid}
 ul,ol,dl{margin:0 0 1em 1em}
-li{margin-left:1.5em;line-height:1.5em}
+li{margin-left:.8em;line-height:1.5em}
 dt{font-weight:700}
-dd{margin:0 0 1em 2em}
-blockquote{margin:0 0 1em 1.5em}
+dd{margin:0 0 1em .8em}
+blockquote{margin:0 0 1em .8em}
+blockquote:before,blockquote:after,q:before,q:after{content:""}
 #header{position:relative}
 #topnav{text-align:right}
 #header #topnav{position:absolute;top:10px;right:10px}
@@ -23,11 +25,7 @@ blockquote{margin:0 0 1em 1.5em}
 #col2{float:right;width:200px}
 #col3{width:auto;margin:0 200px}
 #col1_content,#col2_content,#col3_content{position:relative}
-.hideboth #col3{margin-left:0;margin-right:0}
-.hidecol1 #col3{margin-left:0;margin-right:200px}
-.hidecol2 #col3{margin-left:200px;margin-right:0}
-.hideboth #col1,.hideboth #col2,.hidecol1 #col1,.hidecol2 #col2{display:none}
-.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix:after{content:".";display:block;font-size:0;height:0;clear:both;visibility:hidden}
 .clearfix{display:block}
 .floatbox{overflow:hidden}
 #ie_clearing{display:none}
@@ -45,6 +43,8 @@ blockquote{margin:0 0 1em 1.5em}
 .subc{padding:0 .5em}
 .subcl{padding:0 1em 0 0}
 .subcr{padding:0 0 0 1em}
-.skip,.hideme,.print{position:absolute;top:-1000em;left:-1000em;height:1px;width:1px}
-.skip:focus,.skip:active{position:static;top:0;left:0;height:auto;width:auto}
+.equalize,.equalize .subcolumns{overflow:visible;display:table;table-layout:fixed}
+.equalize .c50l,.equalize .c25l,.equalize .c33l,.equalize .c38l,.equalize .c66l,.equalize .c75l,.equalize .c62l,.equalize .c50r,.equalize .c25r,.equalize .c33r,.equalize .c38r,.equalize .c66r,.equalize .c75r,.equalize .c62r{display:table-cell;vertical-align:top;float:none;margin:0;overflow:hidden}
+.skip,.hideme,.print,dfn{position:absolute;left:-1000em;top:-1000em}
+.skip:focus,.skip:active{position:static;left:0;top:0}
 }
