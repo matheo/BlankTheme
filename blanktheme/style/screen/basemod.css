@@ -45,6 +45,7 @@
     text-align: center; 
   }
 
+  .page_margins,
   #page_margins { 
     text-align: left; 
   }
@@ -77,6 +78,7 @@
   }
 
   /* general wrapper */
+  .page_margins,
   #page_margins {
     border: 0px #889 solid;  /* to-remove */
     margin: 0 auto;
@@ -87,6 +89,7 @@
   }
 
   /* page wrapper */
+  .page,
   #page {
     background: #fff;
     border: 10px #fff solid; /* to-remove */
@@ -336,6 +339,7 @@
   /* 1 layout */
   /* full main column */
   .bt_2col .bt_1 #col1 {
+    margin: 0;
     width: 100%;
     margin-left: 0;
     margin-right: 0;

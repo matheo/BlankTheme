@@ -44,6 +44,7 @@
   * @valid      no
   */
 
+  * html .page_margins,
   * html #page_margins {
     /* Fallback if JavaScript is disabled */
     /* width: 80em; */
