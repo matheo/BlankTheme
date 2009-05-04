@@ -99,8 +99,9 @@ function smarty_function_bt_userlinks($params, &$smarty)
 function bt_userlinks_drawmenu($option, $current, $currentclass, $span=false)
 {
     $return = '';
+
     if (is_array($option)) {
-        $return .= '<li' . (($option[0] == $current)?' id='.$currentclass:'') . '>';
+        $return .= '<li'. (($option[0] == $current)?' id='.$currentclass:'') .'>';
         $return .= '<a'. ((isset($option[3]) && is_array($option[3]))?' class="navparent"':''). ' title="'. DataUtil::formatForDisplay($option[1]). '" href="'.DataUtil::formatForDisplay($option[2]).'">'. ($span ? '<span>' : ''). DataUtil::formatForDisplay($option[1]). ($span ? '</span>' : ''). '</a>';
         // Render the optional suboptions recursively
         if (isset($option[3]) && is_array($option[3])) {
@@ -112,5 +113,6 @@ function bt_userlinks_drawmenu($option, $current, $currentclass, $span=false)
         }
         $return .= '</li>';
     }
+
     return $return;
 }

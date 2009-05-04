@@ -24,7 +24,7 @@
 function smarty_function_bt_htmloutput($params, &$smarty)
 {
     // variables to use
-    // params
+    // parameters
     $section = $params['section'];
     unset($params);
     // blanktheme vars
@@ -33,9 +33,10 @@ function smarty_function_bt_htmloutput($params, &$smarty)
     $usefontr  = $smarty->_tpl_vars['usefontresize'];
     // check for the current variable
     $current   = (isset($smarty->_tpl_vars['current'])) ? $smarty->_tpl_vars['current'] : $smarty->toplevelmodule;
+
     // assign the respective output
-    $output  = '';
-    switch($section)
+    $output    = '';
+    switch ($section)
     {
         case 'fontresize':
             if ($usefontr == 'y') {

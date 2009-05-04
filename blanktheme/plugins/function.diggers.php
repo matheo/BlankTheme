@@ -46,8 +46,9 @@ function smarty_function_diggers($params, &$smarty)
     $theme = pnUserGetTheme();
     $imagepath = 'themes/' . pnVarPrepForOS($theme) . '/images/bookmarks/';
 
-    $link_title = pnVarPrepForDisplay("'" . $title . "'");
-    $title = urlencode(pnVarPrepForDisplay($title));
+    $title = pnVarPrepForDisplay($title);
+    $link_title = "'$title'";
+    $title = urlencode($title);
     $url   = urlencode($url);
 
     // create array of possible options

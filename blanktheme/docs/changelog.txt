@@ -1,4 +1,7 @@
 0.9
+	YAML upgraded to the 3.1 version
+	Major improvements in the theme flexibility/adaptability
+	Added the 'nc' zone (no-center) to disable center blocks
 	Improvements in the inline documentation
 	Layout notation was changed from lcr|clr|lc to 213|123|21
 	EFA fontSize on/off theme variable added

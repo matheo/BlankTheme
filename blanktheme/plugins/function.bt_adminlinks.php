@@ -265,6 +265,7 @@ function smarty_function_bt_adminlinks($params, &$smarty)
 function bt_adminlinks_drawmenu($option, $current, $currentclass, $level=0)
 {
     $return = '';
+
     if (is_array($option)) {
         $return .= '<li class="'.(($level==0)?'top':'').(($option[0]==$current)?' '.$currentclass:'').'">';
         $return .= '<a';
@@ -295,5 +296,6 @@ function bt_adminlinks_drawmenu($option, $current, $currentclass, $level=0)
         }
         $return .= '</li>';
     }
+
     return $return;
 }
