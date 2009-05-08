@@ -91,9 +91,3 @@ define('_NAV_CONTENT','Inhalt erstellen');
 	define('_NAV_ADDEVENT','Kalendar Veranstaltung hinzufügen');
 	define('_NAV_ADDADMINMESSAGE','Admin Message hinzufügen');
 define('_NAV_LOGOUT','Abmelden');
-
-
-/* Dizkus customized templates */
-define('_DZK_LEGEND', 'Legend');
-define('_DZK_STATS', 'Stats');
-define('_DZK_LASTACTIVITY', 'Last activity');
