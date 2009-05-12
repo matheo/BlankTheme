@@ -100,6 +100,7 @@
         /*background: #fff url(../../images/header_imagename.png) repeat-x top left;*/
         padding: 0 20px; /* do not use top/bottom paddings with fixed height */
         height: 110px;
+        /*z-index: 100;*/ /* when the navigation is placed inside the header and a multi level menu is used this is needed for ie */
       }
 
           /* top navigation container */
