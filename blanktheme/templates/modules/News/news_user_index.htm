@@ -11,7 +11,7 @@
   <div class="news_categories">
 	<!--[* <p class="diggers"><!--[diggers title=$info.title url=$url]--></p> *]-->
     <!--[if !empty($info.categories)]-->
-	<!--[pnml name='_NEWS_FILEDUNDER']-->: <!--[foreach from=$preformat.categories item='categorylink' name='articleCatsLoop']--><!--[$categorylink]--><!--[if $smarty.foreach.articleCatsLoop.last ne true]--> | <!--[/if]--><!--[/foreach]-->
+	<!--[pnml name='_NEWS_FILEDUNDER']-->: <!--[foreach from=$preformat.categories item='categorylink' name='articleCatsLoop']--><!--[$categorylink]--><!--[if $smarty.foreach.articleCatsLoop.last ne true]--><span class="text_separator">|</span><!--[/if]--><!--[/foreach]-->
     <!--[/if]-->
   </div>
   <!--[* $preformat.readmore]--> <!--[recommend modname='News' itemid=$info.sid]--> <!--[$preformat.print *]-->

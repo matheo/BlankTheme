@@ -405,6 +405,13 @@
     padding: 10px;
   }
 
+  .text_left {
+    text-align: left;
+  }
+  .text_right {
+    text-align: right;
+  }
+
   .float_left {
     display: inline;
     float: left;
@@ -422,6 +429,17 @@
     margin: 0.5em auto;
     text-align: center;
   }
+  
+  .content_separator {
+    border-bottom: 1px solid #DDDDDD;
+    display: block;
+    margin: 22px 0 18px;
+  }
+  .text_separator {
+    color: #BBBBBB;
+    padding: 0 2px;
+  }
+  
 
 
 
