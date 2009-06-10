@@ -192,6 +192,7 @@
   #nav_main ul li a:hover,
   #nav_main ul li a:active {
     background: #3b69ad;
+    border: none;
     color: #fff;
     text-decoration: none;
   }

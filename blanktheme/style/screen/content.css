@@ -183,6 +183,11 @@
 
   /* Miscellaneous */
 
+  a img,
+  button img {
+    vertical-align: middle;
+  }
+
   fieldset {
     border: 1px solid #D9DAD5;
     padding: 5px 10px 10px;
@@ -591,11 +596,14 @@
   .pn-block {
     margin-bottom: 15px;
   }
-  .pn-block h4 {
+  .pn-block .pn-block-title {
     font-weight: 700;
     line-height: 22px;
     margin: 0;
     padding: 3px 4px;
+  }
+  .pn-block .pn-block-content {
+    padding: 5px;
   }
   .pn-block ul,
   .pn-block ol,

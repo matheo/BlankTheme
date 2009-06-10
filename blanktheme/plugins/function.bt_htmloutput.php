@@ -25,8 +25,10 @@ function smarty_function_bt_htmloutput($params, &$smarty)
 {
     // variables to use
     // parameters
-    $section = $params['section'];
-    unset($params);
+    if (!isset($params['section']) || empty($params['section'])) {
+        return '';
+    }
+
     // blanktheme vars
     $body      = $smarty->_tpl_vars['body'];
     $layout    = $smarty->_tpl_vars['layout'];
@@ -36,7 +38,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
 
     // assign the respective output
     $output    = '';
-    switch ($section)
+    switch ($params['section'])
     {
         case 'fontresize':
             if ($usefontr == 'y') {
@@ -61,8 +63,13 @@ function smarty_function_bt_htmloutput($params, &$smarty)
 
         case 'head':
             // head stylesheets
-            $output = '<link rel="stylesheet" href="'.$smarty->stylepath.'/layout_'.$body.'.css" type="text/css"/>
-                       <!--[if lte IE 7]>'
+/*
+            $output = '<link rel="stylesheet" href="'.$smarty->themepath.'/yaml/core/slim_base.css" type="text/css"/>
+                       <link rel="stylesheet" href="'.$smarty->stylepath.'/screen/basemod.css" type="text/css"/>
+                       <link rel="stylesheet" href="'.$smarty->stylepath.'/screen/content.css" type="text/css"/>
+*/
+            $output = '<link rel="stylesheet" href="'.$smarty->stylepath.'/layout_'.$body.'.css" type="text/css"/>'
+                     .'<!--[if lte IE 7]>'
                      .'<link rel="stylesheet" href="'.$smarty->stylepath.'/patches/patch_'.$body.'.css" type="text/css" />'
 //                     .'<link rel="stylesheet" href="'.$smarty->themepath.'/yaml/core/slim_iehacks.css" type="text/css" />'
                      .'<![endif]-->';
@@ -115,6 +122,9 @@ function smarty_function_bt_htmloutput($params, &$smarty)
                     break;
             }
             */
+            if (!isset($params['noempty']) || !$params['noempty']) {
+                $output = !empty($output) ? $output : 'bt-empty';
+            }
             break;
     }
 

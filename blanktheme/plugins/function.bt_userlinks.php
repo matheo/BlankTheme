@@ -102,7 +102,11 @@ function bt_userlinks_drawmenu($option, $current, $currentclass, $span=false)
 
     if (is_array($option)) {
         $return .= '<li'. (($option[0] == $current)?' id='.$currentclass:'') .'>';
-        $return .= '<a'. ((isset($option[3]) && is_array($option[3]))?' class="navparent"':''). ' title="'. DataUtil::formatForDisplay($option[1]). '" href="'.DataUtil::formatForDisplay($option[2]).'">'. ($span ? '<span>' : ''). DataUtil::formatForDisplay($option[1]). ($span ? '</span>' : ''). '</a>';
+        if (!empty($option[2])) {
+            $return .= '<a'. ((isset($option[3]) && is_array($option[3]))?' class="navparent"':''). ' title="'. DataUtil::formatForDisplay($option[1]). '" href="'.DataUtil::formatForDisplay($option[2]).'">'. ($span ? '<span>' : ''). DataUtil::formatForDisplay($option[1]). ($span ? '</span>' : ''). '</a>';
+        } else {
+            $return .= ($span ? '<span>' : ''). DataUtil::formatForDisplay($option[1]). ($span ? '</span>' : '');
+        }
         // Render the optional suboptions recursively
         if (isset($option[3]) && is_array($option[3])) {
             $return .= '<ul>';
