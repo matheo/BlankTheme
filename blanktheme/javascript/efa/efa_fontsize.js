@@ -18,10 +18,8 @@
  *		 'after HTML'
  *		 ]
  */
-
 var efa_default = 75.00; //%
 var efa_increment = 10;  //%
-
 /* Default multi-language vars and themedir name */
 var efalang_zoomIn = 'Decrease font size';
 var efalang_zoomReset = 'Reset font size';
@@ -47,8 +45,8 @@ function Efa_Fontsize(increment,def) {
 
 efaInitValues = function(efaobject) {
   if ((efaobject.w3c || efaobject.ms) && !efaobject.isOldOp && !efaobject.isMacIE) {
-	var bigger = ['',
-				  '<img src="'+document.location.pnbaseURL+'themes/'+efathemedir+'/images/icons/zoom_in.gif" alt="[+]" title="'+efalang_zoomIn+'" />',
+	var bigger = ['<span class="font-large">',
+				  '<img src="'+document.location.pnbaseURL+'themes/'+efathemedir+'/images/pixel-trans.gif" width="16" height="16" alt="[+]" title="'+efalang_zoomIn+'" />',
 				  efalang_zoomIn,
 				  '',
 				  '',
@@ -57,11 +55,11 @@ efaInitValues = function(efaobject) {
 				  '',
 				  '',
 				  '',
-				  ' '
+				  '</span> '
 				  ]
 
-	var reset = ['',
-				 '<img src="'+document.location.pnbaseURL+'themes/'+efathemedir+'/images/icons/font.png" alt="[R]" title="'+efalang_zoomReset+'" />',
+	var reset = ['<span class="font-reset">',
+				 '<img src="'+document.location.pnbaseURL+'themes/'+efathemedir+'/images/pixel-trans.gif" width="16" height="16" alt="[R]" title="'+efalang_zoomReset+'" />',
 				 efalang_zoomReset,
 				 '',
 				 '',
@@ -70,11 +68,11 @@ efaInitValues = function(efaobject) {
 				 '',
 				 '',
 				 '',
-				 ' '
+				 '</span> '
 				 ]
 
-	var smaller = ['',
-				   '<img src="'+document.location.pnbaseURL+'themes/'+efathemedir+'/images/icons/zoom_out.gif" alt="[-]" title="'+efalang_zoomOut+'" />',
+	var smaller = ['<span class="font-small">',
+				   '<img src="'+document.location.pnbaseURL+'themes/'+efathemedir+'/images/pixel-trans.gif" width="16" height="16" alt="[-]" title="'+efalang_zoomOut+'" />',
 				   efalang_zoomOut,
 				   '',
 				   '',
@@ -83,7 +81,7 @@ efaInitValues = function(efaobject) {
 				   '',
 				   '',
 				   '',
-				   ''
+				   '</span>'
 				   ]
 	efaobject.biggerLink = efaobject.getLinkHtml(1, bigger);
 	efaobject.resetLink = efaobject.getLinkHtml(0, reset);
@@ -124,5 +122,4 @@ Efa_Fontsize.prototype.setSize = function(direction) {
 	this.pref = (direction) ? this.pref+(direction*this.increment) : this.def;
 	this.body.fontSize = Math.round(this.pref*this.base) + '%';
 }
-
 var  efa_fontSize = new Efa_Fontsize(efa_increment,efa_default);

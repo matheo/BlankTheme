@@ -460,6 +460,25 @@
   }
   .menu {
   }
+  /* efa font resize styles, if not used comment out */
+  .font-large { 
+    width: 16px;
+    height: 16px;
+    padding: 3px 0;
+    background: url(../../images/icons/font_resize.gif) no-repeat 0px 0px;
+  }
+  .font-reset { 
+    width: 16px;
+    height: 16px;
+    padding: 3px 0;
+    background: url(../../images/icons/font_resize.gif) no-repeat -20px 0px;
+  }
+  .font-small { 
+    width: 16px;
+    height: 16px;
+    padding: 3px 0;
+    background: url(../../images/icons/font_resize.gif) no-repeat -40px 0px;
+  }
 
 
 
