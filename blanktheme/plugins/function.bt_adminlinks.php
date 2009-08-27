@@ -47,112 +47,113 @@ function smarty_function_bt_adminlinks($params, &$smarty)
     /* Option format: id, lang_constant, link, array_sublinks */
     $menu = array();
 
-    if (SecurityUtil::checkPermission('Admin::', '::', ACCESS_EDIT)) {
-
     /* Homepage link */
     $menu[] = array('home',   _NAV_HOME,   pnGetBaseURL());
 
+    if (SecurityUtil::checkPermission('Admin::', '::', ACCESS_EDIT)) {
 
-    /* Config options */
-    $linkoptions = array(
-                         array(null, _NAV_SETTINGS,      pnModURL('Settings', 'admin')),
-                         array(null, _NAV_PERMISSIONS,   pnModURL('Permissions', 'admin')),
-                         array(null, _NAV_CATEGORIES,    pnModURL('Categories', 'admin')),
-                         array(null, _NAV_MAILER,        pnModURL('Mailer', 'admin')),
-                         array(null, _NAV_SEARCHOPTIONS, pnModURL('Search', 'admin')),
-                   );
-    if (pnModAvailable('legal')) {
-        $linkoptions[] = array(null, _NAV_LEGAL, pnModURL('legal', 'admin'));
-    }
-    if (pnModAvailable('scribite')) {
-        $linkoptions[] = array(null, _NAV_WYSIWYG, pnModURL('scribite', 'admin'));
-    }
-    if (pnModAvailable('EZComments')) {
-        $linkoptions[] = array(null, _NAV_COMMENTS, pnModURL('EZComments', 'admin'));
-    }
-
-    $menu[] = array('config', _NAV_CONFIG,  '#', $linkoptions);
-
-
-    /* System link */
-    $menu[] = array('system', _NAV_SYSTEM, '#',
-                array(
-                    array(null, _NAV_MODULES,         pnModURL('Modules', 'admin')),
-                    array(null, _NAV_BLOCKS,          pnModURL('Blocks', 'admin')),
-                    array(null, _NAV_RENDER,          pnModURL('pnRender', 'admin')),
-                    array(null, _NAV_THEME,           pnModURL('Theme', 'admin')),
-                    array(null, _NAV_SECURITYCENTER,  pnModURL('SecurityCenter', 'admin')),
-                    array(null, _NAV_SYSINFO,         pnModURL('SysInfo', 'admin'))
-                )
-            );
-
-
-    /* Users/Groups link */
-    $menu[] = array('users', _NAV_USERS, '#',
-                array(
-                    array(null, _NAV_ADMINGROUPS,  pnModURL('Groups', 'admin'),
-                        array(
-                            array(null, _NAV_GROUPSETTINGS,  pnModURL('Groups', 'admin', 'modifyconfig'))
-                        )
-                    ),
-                    array(null, _NAV_ADMINUSERS,   pnModURL('Users', 'admin'),
-                        array(
-                            array(null, _NAV_USERSMANAGER,     pnModURL('Users', 'admin', 'modifyconfig')),
-                            array(null, _NAV_USERSPROPERTIES,  pnModURL('Profile', 'admin', 'view'))
-                        )
-                    ),
-                    array(null, _NAV_SEARCHUSERS,  pnModURL('Users', 'admin', 'search')),
-                    array(null, _NAV_CREATEUSER,  pnModURL('Users', 'admin', 'new'))
-                )
-            );
-
-
-    /* Common Routines links */
-    $authidpnr = SecurityUtil::generateAuthKey('pnRender');
-    $authidthm = SecurityUtil::generateAuthKey('Theme');
-    $linkoptions = array(
-                       array(null, _NAV_RENDER,   pnModURL('pnRender', 'admin'),
-                           array(
-                               array(null, _NAV_CLEARCOMPILEDTEMPLATES, pnModURL('pnRender', 'admin', 'clear_compiled', array('authid' => $authidpnr))),
-                               array(null, _NAV_CLEARPNRENDERCACHE, pnModURL('pnRender', 'admin', 'clear_cache', array('authid' => $authidpnr)))
-                           )
-                       ),
-                       array(null, _NAV_THEME,    pnModURL('Theme', 'admin'),
-                           array(
-                               array(null, _NAV_CLEARCOMPILEDTEMPLATES, pnModURL('Theme', 'admin', 'clear_compiled', array('authid' => $authidthm))),
-                               array(null, _NAV_CLEARTHEMECACHE, pnModURL('Theme', 'admin', 'clear_cache', array('authid' => $authidthm)))
-                           )
-                       ),
-                       array(null, _NAV_FILESYSTEMCHECK, pnModURL('SysInfo', 'admin', 'filesystem')),
-                       array(null, _NAV_PNTEMPCHECK, pnModURL('SysInfo', 'admin', 'pntemp'))
-                   );
+        /* Config options */
+        $linkoptions = array(
+                             array(null, _NAV_SETTINGS,      pnModURL('Settings', 'admin')),
+                             array(null, _NAV_PERMISSIONS,   pnModURL('Permissions', 'admin')),
+                             array(null, _NAV_CATEGORIES,    pnModURL('Categories', 'admin')),
+                             array(null, _NAV_MAILER,        pnModURL('Mailer', 'admin')),
+                             array(null, _NAV_SEARCHOPTIONS, pnModURL('Search', 'admin')),
+                       );
+        if (pnModAvailable('legal')) {
+            $linkoptions[] = array(null, _NAV_LEGAL, pnModURL('legal', 'admin'));
+        }
+        if (pnModAvailable('scribite')) {
+            $linkoptions[] = array(null, _NAV_WYSIWYG, pnModURL('scribite', 'admin'));
+        }
+        if (pnModAvailable('EZComments')) {
+            $linkoptions[] = array(null, _NAV_COMMENTS, pnModURL('EZComments', 'admin'));
+        }
     
-    if (pnModAvailable('MailUsers')) {
-        $linkoptions[] = array(null, _NAV_MAILUSERS, pnModURL('MailUsers', 'admin'));
-    }
+        $menu[] = array('config', _NAV_CONFIG,  '#', $linkoptions);
     
-    $menu[] = array('routines', _NAV_ROUTINES, '#', $linkoptions);
-
+    
+        /* System link */
+        $menu[] = array('system', _NAV_SYSTEM, '#',
+                    array(
+                        array(null, _NAV_MODULES,         pnModURL('Modules', 'admin')),
+                        array(null, _NAV_BLOCKS,          pnModURL('Blocks', 'admin')),
+                        array(null, _NAV_RENDER,          pnModURL('pnRender', 'admin')),
+                        array(null, _NAV_THEME,           pnModURL('Theme', 'admin')),
+                        array(null, _NAV_SECURITYCENTER,  pnModURL('SecurityCenter', 'admin')),
+                        array(null, _NAV_SYSINFO,         pnModURL('SysInfo', 'admin'))
+                    )
+                );
+    
+    
+        /* Users/Groups link */
+        $menu[] = array('users', _NAV_USERS, '#',
+                    array(
+                        array(null, _NAV_ADMINGROUPS,  pnModURL('Groups', 'admin'),
+                            array(
+                                array(null, _NAV_GROUPSETTINGS,  pnModURL('Groups', 'admin', 'modifyconfig'))
+                            )
+                        ),
+                        array(null, _NAV_ADMINUSERS,   pnModURL('Users', 'admin'),
+                            array(
+                                array(null, _NAV_USERSMANAGER,     pnModURL('Users', 'admin', 'modifyconfig')),
+                                array(null, _NAV_USERSPROPERTIES,  pnModURL('Profile', 'admin', 'view'))
+                            )
+                        ),
+                        array(null, _NAV_SEARCHUSERS,  pnModURL('Users', 'admin', 'search')),
+                        array(null, _NAV_CREATEUSER,  pnModURL('Users', 'admin', 'new'))
+                    )
+                );
+    
+    
+        /* Common Routines links */
+        $authidpnr = SecurityUtil::generateAuthKey('pnRender');
+        $authidthm = SecurityUtil::generateAuthKey('Theme');
+        $linkoptions = array(
+                           array(null, _NAV_RENDER,   pnModURL('pnRender', 'admin'),
+                               array(
+                                   array(null, _NAV_CLEARCOMPILEDTEMPLATES, pnModURL('pnRender', 'admin', 'clear_compiled', array('authid' => $authidpnr))),
+                                   array(null, _NAV_CLEARPNRENDERCACHE, pnModURL('pnRender', 'admin', 'clear_cache', array('authid' => $authidpnr)))
+                               )
+                           ),
+                           array(null, _NAV_THEME,    pnModURL('Theme', 'admin'),
+                               array(
+                                   array(null, _NAV_CLEARCOMPILEDTEMPLATES, pnModURL('Theme', 'admin', 'clear_compiled', array('authid' => $authidthm))),
+                                   array(null, _NAV_CLEARTHEMECACHE, pnModURL('Theme', 'admin', 'clear_cache', array('authid' => $authidthm)))
+                               )
+                           ),
+                           array(null, _NAV_FILESYSTEMCHECK, pnModURL('SysInfo', 'admin', 'filesystem')),
+                           array(null, _NAV_PNTEMPCHECK, pnModURL('SysInfo', 'admin', 'pntemp'))
+                       );
+        
+        if (pnModAvailable('MailUsers')) {
+            $linkoptions[] = array(null, _NAV_MAILUSERS, pnModURL('MailUsers', 'admin'));
+        }
+        
+        $menu[] = array('routines', _NAV_ROUTINES, '#', $linkoptions);
+    
+    
+    } /* Permission Admin:: | :: | ACCESS_EDIT ends here */
 
     /* Create Content links */
     $linkoptions = array();
 
     // Content Modules
-    if (pnModAvailable('News')) {
+    if (pnModAvailable('News') && (SecurityUtil::checkPermission('News::', '::', ACCESS_EDIT) || SecurityUtil::checkPermission('Stories::Story', '::', ACCESS_EDIT))) {
         $suboptions = array(
                          array(null, _AB_ADMINLIST,    pnModURL('News', 'admin', 'view')),
                          array(null, _MODIFYCONFIG,    pnModURL('News', 'admin', 'modifyconfig'))
                       );
         $linkoptions[] = array(null, _NAV_ADDARTICLE,  pnModURL('News', 'admin', 'new'), $suboptions);
     }
-    if (pnModAvailable('Pages')) {
+    if (pnModAvailable('Pages') && SecurityUtil::checkPermission('Pages::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, _AB_ADMINLIST,     pnModURL('Pages', 'admin', 'view')),
                          array(null, _MODIFYCONFIG,     pnModURL('Pages', 'admin', 'modifyconfig'))
                       );
         $linkoptions[] = array(null, _NAV_ADDPAGE,     pnModURL('Pages', 'admin', 'new'), $suboptions);
     }
-    if (pnModAvailable('Content')) {
+    if (pnModAvailable('Content') && SecurityUtil::checkPermission('Content::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, _MODIFYCONFIG,    pnModURL('Content', 'admin', 'settings'))
                       );
@@ -160,14 +161,14 @@ function smarty_function_bt_adminlinks($params, &$smarty)
     }
 
     // Downloads modules
-    if (pnModAvailable('MediaAttach')) {
+    if (pnModAvailable('MediaAttach') && SecurityUtil::checkPermission('MediaAttach::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, _AB_ADMINLIST,    pnModURL('MediaAttach', 'admin', 'view')),
                          array(null, _MODIFYCONFIG,    pnModURL('MediaAttach', 'admin'))
                       );
         $linkoptions[] = array(null, _NAV_ADDDOWNLOAD, pnModURL('MediaAttach', 'admin', 'view', array(), null, 'myuploadform_switch'), $suboptions);
     }
-    if (pnModAvailable('Downloads')) {
+    if (pnModAvailable('Downloads') && SecurityUtil::checkPermission('Downloads::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, _AB_ADDCATEGORY,  pnModURL('Downloads', 'admin', 'category_menu')),
                          array(null, _MODIFYCONFIG,    pnModURL('Downloads', 'admin'))
@@ -176,53 +177,53 @@ function smarty_function_bt_adminlinks($params, &$smarty)
     }
 
     // Community modules
-    if (pnModAvailable('Polls')) {
+    if (pnModAvailable('Polls') && SecurityUtil::checkPermission('Olls::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, _AB_ADMINLIST,    pnModURL('Polls', 'admin', 'view')),
                          array(null, _MODIFYCONFIG,    pnModURL('Polls', 'admin', 'modifyconfig'))
                       );
         $linkoptions[] = array(null, _NAV_ADDPOLL,     pnModURL('Polls', 'admin', 'new'), $suboptions);
     }
-    if (pnModAvailable('FAQ')) {
+    if (pnModAvailable('FAQ') && SecurityUtil::checkPermission('FAQ::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, _AB_ADMINLIST,    pnModURL('FAQ', 'admin', 'view')),
                          array(null, _MODIFYCONFIG,    pnModURL('FAQ', 'admin', 'modifyconfig'))
                       );
         $linkoptions[] = array(null, _NAV_ADDFAQ,      pnModURL('FAQ', 'admin', 'new'), $suboptions);
     }
-    if (pnModAvailable('Feeds')) {
+    if (pnModAvailable('Feeds') && SecurityUtil::checkPermission('Feeds::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, _AB_ADMINLIST,    pnModURL('Feeds', 'admin', 'view')),
                          array(null, _MODIFYCONFIG,    pnModURL('Feeds', 'admin', 'modifyconfig'))
                       );
         $linkoptions[] = array(null, _NAV_ADDFEED,     pnModURL('Feeds', 'admin', 'new'), $suboptions);
     }
-    if (pnModAvailable('Reviews')) {
+    if (pnModAvailable('Reviews') && SecurityUtil::checkPermission('Reviews::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, _AB_ADMINLIST,    pnModURL('Reviews', 'admin', 'view')),
                          array(null, _MODIFYCONFIG,    pnModURL('Reviews', 'admin', 'modifyconfig'))
                       );
         $linkoptions[] = array(null, _NAV_ADDREVIEW,   pnModURL('Reviews', 'admin', 'new'), $suboptions);
     }
-    if (pnModAvailable('Web_Links')) {
+    if (pnModAvailable('Web_Links') && SecurityUtil::checkPermission('Web_Links::', '::', ACCESS_EDIT)) {
         $linkoptions[] = array(null, _NAV_ADDWEBLINK,  pnModURL('Web_Links', 'admin', 'main', array('op' => 'LinksAddLink')));
     }
 
     // Calendar modules
-    if (pnModAvailable('EventLiner')) {
+    if (pnModAvailable('EventLiner') && SecurityUtil::checkPermission('EventLiner::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, _AB_ADMINLIST,    pnModURL('EventLiner', 'admin', 'view')),
                          array(null, _MODIFYCONFIG,    pnModURL('EventLiner', 'admin', 'modifyconfig'))
                       );
         $linkoptions[] = array(null, _NAV_ADDEVENT,    pnModURL('EventLiner', 'admin', 'new'), $suboptions);
     }
-    if (pnModAvailable('TimeIt')) {
+    if (pnModAvailable('TimeIt') && SecurityUtil::checkPermission('TimeIt::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, _MODIFYCONFIG,    pnModURL('TimeIt', 'admin', 'modifyconfig'))
                       );
         $linkoptions[] = array(null, _NAV_ADDEVENT,    pnModURL('TimeIt', 'admin', 'new'), $suboptions);
     }
-    if (pnModAvailable('crpCalendar')) {
+    if (pnModAvailable('crpCalendar') && SecurityUtil::checkPermission('crpCalendar::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, _AB_ADMINLIST,    pnModURL('crpCalendar', 'admin', 'view')),
                          array(null, _MODIFYCONFIG,    pnModURL('crpCalendar', 'admin', 'modifyconfig'))
@@ -231,10 +232,10 @@ function smarty_function_bt_adminlinks($params, &$smarty)
     }
 
     // Legacy modules
-    if (pnModAvailable('Topics')) {
+    if (pnModAvailable('Topics') && SecurityUtil::checkPermission('Topics::', '::', ACCESS_EDIT)) {
         $linkoptions[] = array(null, _NAV_ADMINTOPICS, pnModURL('Topics', 'admin'));
     }
-    if (pnModAvailable('Admin_Messages')) {
+    if (pnModAvailable('Admin_Messages') && SecurityUtil::checkPermission('Admin_Messages::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, _AB_ADMINLIST,    pnModURL('Admin_Messages', 'admin', 'view')),
                          array(null, _MODIFYCONFIG,    pnModURL('Admin_Messages', 'admin', 'modifyconfig'))
@@ -247,7 +248,6 @@ function smarty_function_bt_adminlinks($params, &$smarty)
     /* Logout link */
     $menu[] = array('logout', _NAV_LOGOUT, pnModURL('Users', 'user', 'logout'));
 
-    }
 
     /* Actually create the menu based on the array above */
     $output  = '<div id="'.$id.'"><ul' . ((!empty($ulclass))?' class="'.$ulclass.'"':'') . '>';
@@ -265,7 +265,6 @@ function smarty_function_bt_adminlinks($params, &$smarty)
 function bt_adminlinks_drawmenu($option, $current, $currentclass, $level=0)
 {
     $return = '';
-
     if (is_array($option)) {
         $return .= '<li class="'.(($level==0)?'top':'').(($option[0]==$current)?' '.$currentclass:'').'">';
         $return .= '<a';
@@ -296,6 +295,5 @@ function bt_adminlinks_drawmenu($option, $current, $currentclass, $level=0)
         }
         $return .= '</li>';
     }
-
     return $return;
 }
