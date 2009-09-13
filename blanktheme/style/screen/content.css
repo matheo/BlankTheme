@@ -455,11 +455,6 @@
    * @section content-theme-specific
    */
 
-  /* Special styles for entries or menus ... */
-  .post {
-  }
-  .menu {
-  }
   /* efa font resize styles, if not used comment out */
   .font-large { 
     width: 16px;
@@ -478,6 +473,12 @@
     height: 16px;
     padding: 3px 0;
     background: url(../../images/icons/font_resize.gif) no-repeat -40px 0px;
+  }
+
+  /* Special styles for entries or menus ... */
+  .post {
+  }
+  .menu {
   }
 
 

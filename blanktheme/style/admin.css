@@ -34,6 +34,15 @@
   padding: 0 0 15px 5px;
 }
 
+/* fix for 1.1- */
+.bt_admin div#pn-securityanalyzer {
+  background-position: 2% 50%;
+}
+.bt_admin div#pn-securityanalyzer h2 {
+  margin: 0;
+  padding: 0;
+}
+
 .bt_admin .page,
 .bt_admin #page,
 .bt_admin .pn-adminbox,
