@@ -235,8 +235,8 @@
 
   #footer {
     color: #666;
-    line-height: 150%; 
     font-size: 12px;
+    line-height: 150%;
     text-align: left;
   }
 
@@ -260,7 +260,7 @@
     color:#182E7A;
     text-decoration: underline;
   }
-  
+
   /* top navigation links */
   #topnav a {
     color: #999;
@@ -274,7 +274,15 @@
     background-color: transparent;
     text-decoration: underline;
   }
-  
+
+  /* title link */
+  #header h1 a:focus, 
+  #header h1 a:hover,
+  #header h1 a:active {
+    text-decoration: none;
+  }
+
+  /* footer links */
   #footer a {
     background: transparent;
     color: #999;
@@ -437,7 +445,7 @@
     margin: 0.5em auto;
     text-align: center;
   }
-  
+
   .content_separator {
     border-bottom: 1px solid #DDDDDD;
     display: block;
@@ -447,7 +455,6 @@
     color: #BBBBBB;
     padding: 0 2px;
   }
-  
 
 
 
@@ -677,7 +684,7 @@
 
   /* Example: Homepage main container */
   .bt_home #main {
-    padding: 10px 0;
+    /*padding: 10px 0;*/
   }
 
   /* User profile information */
