@@ -1,1 +1,16 @@
-Look online in the Wiki pages of the project page http://code.zikula.org/blanktheme for help on using BlankTheme
+
+  HELP
+
+  Look the Wiki pages of the project page http://code.zikula.org/blanktheme/wiki
+  for help on using and develop new themes with BlankTheme
+
+  You can ask for help in the community forums too:
+  http://community.zikula.org
+  and log tickets to ask for a new feature or report a bug:
+  http://code.zikula.org/blanktheme/newticket
+
+  We will try to set up our own forum and wiki at
+  http://blanktheme.org
+
+  Thanks for use BlankTheme
+  we wait for your feedback ;-)

@@ -1,4 +1,7 @@
-0.9
+
+  CHANGELOG
+
+  0.9
 	YAML upgraded to the 3.1 version
 	Major improvements in the theme flexibility/adaptability
 	Added the 'nc' zone (no-center) to disable center blocks
@@ -9,10 +12,11 @@
 	Adminmenu now is a CSSplay based menu
 	Now the body ID is the $modname and the current layout is a class
 
-0.8	
+  0.8	
 	Menu plugins checks for module availability
 	YAML styles basemod_* files ordered in a consistent way
 	E_ALL errors fixes in the menu plugins 
-	
-Detailed log available here:
-http://code.zikula.org/blanktheme/log/
+
+
+  Detailed log available here:
+  http://code.zikula.org/blanktheme/log/

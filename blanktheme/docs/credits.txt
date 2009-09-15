@@ -1,24 +1,32 @@
-Developer:
-Mateo Tibaquirá [mateo]
-http://www.nestormateo.com
 
-Menu management:
-Erik Spaan [espaan]
-http://www.erikspaan.nl
+  CREDITS
 
-BlankTheme Documentation:
-Dave Pahl [ammodump]
-http://www.dpahl.com
+  Developer:
+    Mateo Tibaquirá [mateo]
+    http://www.nestormateo.com/
+
+  Menu management:
+    Erik Spaan [espaan]
+    http://www.erikspaan.nl/
+
+  BlankTheme Documentation:
+    Dave Pahl [ammodump]
+    http://www.dpahl.com/
 
 
-Special thanks to:
+  Special thanks to:
 
-Dirk Jesse
-YAML Author
-http://www.yaml.de/
+    Dirk Jesse
+    YAML Author
+    http://www.yaml.de/
 
-EFA fontsize script
-http://www.einfach-fuer-alle.de/artikel/fontsize/
+    Zikula Communities
+    Developers, Testers & Users
+    http://community.zikula.org/
+    http://zikula.es/
 
-IE pngfix
-http://www.twinhelix.com/css/iepngfix/
+    EFA fontsize script
+    http://www.einfach-fuer-alle.de/artikel/fontsize/
+
+    IE pngfix
+    http://www.twinhelix.com/css/iepngfix/

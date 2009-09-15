@@ -1,12 +1,7 @@
-docs:
-	include the efa-fontResizer license
 
-manual:
-	Installing BlankTheme
-		Preventing .ini writable errors
-	A "Modifying BlankTheme" section
-		"Begin with" section (rename version lang...)
-		Top Links customization
-	Changing the styles: background-color, header-bg-image ...
+  TODO
+
+	Add default styles for INPUTs and other form elements
+	Add a fullheight body template and use more YAML features
+	Include the efa-fontResizer license
 	Validate the IE PNG fix
-		and a doc reference about IE issues and available options with pngfix
