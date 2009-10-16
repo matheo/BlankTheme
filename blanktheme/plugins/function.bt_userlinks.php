@@ -45,42 +45,55 @@ function smarty_function_bt_userlinks($params, &$smarty)
         $span = false;
     }
 
+    $dom = ZLanguage::getThemeDomain('blanktheme');
+
     /*** Build the menu-array ***/
     /* Option format: id, lang_constant, link, array_of_sublinks */
     $menu   = array();
-    $menu[] = array('home', _NAV_HOME, $smarty->baseurl, null);
+    $menu[] = array('home', __('Home', $dom), $smarty->baseurl, null);
+
     if (pnModAvailable('News')) {
-        $menu[] = array('News', _NAV_NEWS, pnModURL('News'), null);
+        $menu[] = array('News', __('News', $dom), pnModURL('News'), null);
     }
+
     if (pnModAvailable('Pages')) {
-        $menu[] = array('Pages', _NAV_PAGES, pnModURL('Pages'), null);
+        $menu[] = array('Pages', __('Pages', $dom), pnModURL('Pages'), null);
     }
+
     if (pnModAvailable('Dizkus')) {
-        $menu[] = array('Dizkus', _NAV_FORUMS, pnModURL('Dizkus'), null);
+        $menu[] = array('Dizkus', __('Forums', $dom), pnModURL('Dizkus'), null);
     }
+
     if (pnModAvailable('PNphpBB2')) {
-        $menu[] = array('PNphpBB2', _NAV_FORUMS, pnModURL('PNphpBB2'), null);
+        $menu[] = array('PNphpBB2', __('Forums', $dom), pnModURL('PNphpBB2'), null);
     }
+
     if (pnModAvailable('Zafenio')) {
-        $menu[] = array('Zafenio', _NAV_FORUMS, pnModURL('Zafenio'), null);
+        $menu[] = array('Zafenio', __('Forums', $dom), pnModURL('Zafenio'), null);
     }
+
     if (pnModAvailable('FAQ')) {
-        $menu[] = array('FAQ', _NAV_FAQ, pnModURL('FAQ'), null);
+        $menu[] = array('FAQ', __('Faq', $dom), pnModURL('FAQ'), null);
     }
+
     if (pnModAvailable('wikula')) {
-        $menu[] = array('wikula', _NAV_WIKI, pnModURL('wikula'), null);
+        $menu[] = array('wikula', __('Wiki', $dom), pnModURL('wikula'), null);
     }
+
     if (pnModAvailable('crpCalendar')) {
-        $menu[] = array('crpCalendar', _NAV_CALENDAR, pnModURL('crpCalendar'), null);
+        $menu[] = array('crpCalendar', __('Calendar', $dom), pnModURL('crpCalendar'), null);
     }
+
     if (pnModAvailable('TimeIt')) {
-        $menu[] = array('TimeIt', _NAV_CALENDAR, pnModURL('TimeIt'), null);
+        $menu[] = array('TimeIt', __('Calendar', $dom), pnModURL('TimeIt'), null);
     }
+
     if (pnModAvailable('Eventliner')) {
-        $menu[] = array('Eventliner', _NAV_CALENDAR, pnModURL('Eventliner'), null);
+        $menu[] = array('Eventliner', __('Calendar', $dom), pnModURL('Eventliner'), null);
     }
+
     if (pnModAvailable('formicula')) {
-        $menu[] = array('formicula', _NAV_CONTACT, pnModURL('formicula'), null);
+        $menu[] = array('formicula', __('Contact', $dom), pnModURL('formicula'), null);
     }
 
     // Render the menu as an unordered list in a div

@@ -15,24 +15,10 @@
  * <!--[diggers title=$info.title url=$info.url]--> : uses given url and title
  */
 
-/** start of poor man's language file **/
-$lang = pnUserGetLang();
-switch($lang) {
-    case 'deu':
-        define('_DIGGER_ADD', 'Beitrag %title% bei %service% hinzufügen');
-        break;
-    case 'spa':
-        define('_DIGGER_ADD', 'Recomienda %title% en %service%');
-        break;
-    case 'eng':
-    default:
-        define('_DIGGER_ADD', 'Add %title% at %service%');
-}
-/** end of poor man's language file **/
-
 function smarty_function_diggers($params, &$smarty) 
 {
-    extract($params); 
+    extract($params);
+    unset($params);
 
     if (!isset($title) || empty($title)) {
         $title = pnConfigGetVar('sitename');
@@ -43,10 +29,12 @@ function smarty_function_diggers($params, &$smarty)
         $url = pnGetCurrentURL();
     }
 
-    $theme = pnUserGetTheme();
-    $imagepath = 'themes/' . pnVarPrepForOS($theme) . '/images/bookmarks/';
+    $dom = ZLanguage::getThemeDomain('blanktheme');
 
-    $title = pnVarPrepForDisplay($title);
+    $theme = pnUserGetTheme();
+    $imagepath = 'themes/' . DataUtil::formatForOS($theme) . '/images/bookmarks/';
+
+    $title = DataUtil::formatForDisplay($title);
     $link_title = "'$title'";
     $title = urlencode($title);
     $url   = urlencode($url);
@@ -70,15 +58,13 @@ function smarty_function_diggers($params, &$smarty)
 
     $return = '';
     foreach ($options as $servicename => $service) {
-        $titlepart = _DIGGER_ADD;
-        $titlepart = str_replace('%service%', $servicename, $titlepart);
-        $titlepart = str_replace('%title%',   $link_title,  $titlepart);
+        $titlepart = __f('Add %1$s at %2$s', array($link_title, $servicename), $dom);
         $return .= '<a href="' . sprintf($service['url'], $url, $title) . '" title="' . $titlepart . '"><img src="' . $imagepath . $service['icon'] . '" alt="' . $servicename . ' icon" /></a>';
     }
 
     if (isset($params['assign'])) {
         $smarty->assign($params['assign'], $return);
-    } else {    
+    } else {
         return $return;
     }
 }

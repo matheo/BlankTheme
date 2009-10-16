@@ -10,9 +10,11 @@
  */
 
 
+$vrdom = ZLanguage::getThemeDomain('blanktheme');
+
 $themeversion['name']           = 'blanktheme';
-$themeversion['displayname']    = _BLANKTHEME_DISPLAYNAME;
-$themeversion['description']    = _BLANKTHEME_DESCRIPTION;
+$themeversion['displayname']    = __('BlankTheme', $vrdom);
+$themeversion['description']    = __('Theme development framework for Zikula', $vrdom);
 $themeversion['version']        = '0.9';
 $themeversion['regid']          = '0';
 $themeversion['official']       = '0';

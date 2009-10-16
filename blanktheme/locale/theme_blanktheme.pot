@@ -1,0 +1,356 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: BlankTheme 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-15 22:57-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/function.bt_userlinks.php:53 plugins/function.bt_adminlinks.php:53
+msgid "Home"
+msgstr ""
+
+#: plugins/function.bt_userlinks.php:56
+msgid "News"
+msgstr ""
+
+#: plugins/function.bt_userlinks.php:60
+msgid "Pages"
+msgstr ""
+
+#: plugins/function.bt_userlinks.php:64 plugins/function.bt_userlinks.php:68
+#: plugins/function.bt_userlinks.php:72
+msgid "Forums"
+msgstr ""
+
+#: plugins/function.bt_userlinks.php:76
+msgid "Faq"
+msgstr ""
+
+#: plugins/function.bt_userlinks.php:80
+msgid "Wiki"
+msgstr ""
+
+#: plugins/function.bt_userlinks.php:84 plugins/function.bt_userlinks.php:88
+#: plugins/function.bt_userlinks.php:92
+msgid "Calendar"
+msgstr ""
+
+#: plugins/function.bt_userlinks.php:96 templates/footer.htm:9
+#: templates/.tmp_footer.htm.17430~:9
+msgid "Contact"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:59
+#: plugins/function.bt_adminlinks.php:147
+#: plugins/function.bt_adminlinks.php:154
+#: plugins/function.bt_adminlinks.php:160
+#: plugins/function.bt_adminlinks.php:169
+#: plugins/function.bt_adminlinks.php:176
+#: plugins/function.bt_adminlinks.php:185
+#: plugins/function.bt_adminlinks.php:192
+#: plugins/function.bt_adminlinks.php:199
+#: plugins/function.bt_adminlinks.php:206
+#: plugins/function.bt_adminlinks.php:218
+#: plugins/function.bt_adminlinks.php:224
+#: plugins/function.bt_adminlinks.php:231
+#: plugins/function.bt_adminlinks.php:243
+msgid "Settings"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:60
+msgid "Permissions"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:61
+msgid "Categories"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:62
+msgid "Mailer"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:63
+msgid "Search options"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:66
+msgid "Legal"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:69
+msgid "WYSIWYG editors"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:72
+msgid "Comments"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:75
+msgid "Config"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:79
+msgid "System"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:81
+msgid "Modules"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:82
+msgid "Blocks"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:83
+#: plugins/function.bt_adminlinks.php:115
+msgid "pnRender"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:84
+#: plugins/function.bt_adminlinks.php:121
+msgid "Theme"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:85
+msgid "Security Center"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:86
+msgid "SysInfo"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:92
+msgid "Users"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:94
+msgid "Manage groups"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:96
+msgid "Groups settings"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:99
+msgid "Manage users"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:101
+msgid "Users manager settings"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:102
+msgid "Account properties"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:105
+msgid "Search users"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:106
+msgid "Create user"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:117
+#: plugins/function.bt_adminlinks.php:123
+msgid "Clear compiled templates"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:118
+msgid "Clear pnRender cache"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:124
+msgid "Clear Theme cache"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:127
+msgid "Filesystem check"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:128
+msgid "pnTemp folder check"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:132
+msgid "Mail users"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:135
+msgid "Routines"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:146
+#: plugins/function.bt_adminlinks.php:153
+#: plugins/function.bt_adminlinks.php:168
+#: plugins/function.bt_adminlinks.php:184
+#: plugins/function.bt_adminlinks.php:191
+#: plugins/function.bt_adminlinks.php:198
+#: plugins/function.bt_adminlinks.php:205
+#: plugins/function.bt_adminlinks.php:217
+#: plugins/function.bt_adminlinks.php:230
+#: plugins/function.bt_adminlinks.php:242
+msgid "Admin list"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:149
+msgid "Add an article"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:156
+msgid "Add a page"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:162
+msgid "Edit contents"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:171
+#: plugins/function.bt_adminlinks.php:178
+msgid "Add a download"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:175
+msgid "Add category"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:187
+msgid "Add a poll"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:194
+msgid "Add a FAQ"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:201
+msgid "Add a Feed"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:208
+msgid "Add a Review"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:211
+msgid "Add a web link"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:220
+#: plugins/function.bt_adminlinks.php:226
+#: plugins/function.bt_adminlinks.php:233
+msgid "Add a calendar event"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:238
+msgid "Manage topics"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:245
+msgid "Add Admin message"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:248
+msgid "Create content"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:251
+msgid "Logout"
+msgstr ""
+
+#: plugins/function.diggers.php:61
+#, php-format
+msgid "Add %1$s at %2$s"
+msgstr ""
+
+#: version.php:16
+msgid "BlankTheme"
+msgstr ""
+
+#: version.php:17
+msgid "Theme development framework for Zikula"
+msgstr ""
+
+#: templates/footer.htm:7
+msgid "Terms of use"
+msgstr ""
+
+#: templates/footer.htm:11
+msgid "Back to top"
+msgstr ""
+
+#: templates/footer.htm:15
+#: templates/modules/admin.htm:60
+msgid "Powered by Zikula"
+msgstr ""
+
+#: templates/footer.htm:17
+msgid "Layout based on YAML"
+msgstr ""
+
+#: templates/footer.htm:19
+msgid "Valid CSS"
+msgstr ""
+
+#: templates/footer.htm:21
+msgid "Valid XHTML"
+msgstr ""
+
+#: templates/modules/admin.htm:22
+#: templates/modules/admin.htm:23
+#: templates/body/grid.htm:10 templates/body/grid.htm:11
+#: templates/body/3col231.htm:10 templates/body/3col231.htm:11
+#: templates/body/2col.htm:10
+#: templates/body/2col.htm:11
+#: templates/body/3col.htm:10
+#: templates/body/3col.htm:11
+msgid "Skip link"
+msgstr ""
+
+#: templates/modules/admin.htm:22
+#: templates/body/grid.htm:10
+#: templates/body/3col231.htm:10
+#: templates/body/2col.htm:10
+#: templates/body/3col.htm:10
+msgid "Skip to the navigation"
+msgstr ""
+
+#: templates/modules/admin.htm:23
+#: templates/body/grid.htm:11
+#: templates/body/3col231.htm:11
+#: templates/body/2col.htm:11
+#: templates/body/3col.htm:11
+msgid "Skip to the content"
+msgstr ""
+
+#: templates/modules/admin.htm:28
+#: templates/body/grid.htm:24
+#: templates/body/3col231.htm:24
+#: templates/body/2col.htm:24
+#: templates/body/3col.htm:24
+msgid "Go to the homepage"
+msgstr ""
+
+#: templates/body/grid.htm:16
+#: templates/body/3col231.htm:16
+#: templates/body/2col.htm:16
+#: templates/body/3col.htm:16
+msgid "Link"
+msgstr ""
+
+#: templates/body/grid.htm:23
+#: templates/body/3col231.htm:23
+#: templates/body/2col.htm:23
+#: templates/body/3col.htm:23
+msgid "logo"
+msgstr ""
+

@@ -1,4 +1,5 @@
 <!--[* $Id$ *]-->
+
 <div id="page_margins" class="<!--[bt_htmloutput section='classespage']-->">
 	<div id="page" class="<!--[bt_htmloutput section='classesinnerpage']-->">
 
@@ -6,19 +7,22 @@
 		<div id="header" class="floatbox">
 			<div id="topnav">
 				<!-- start: skip link navigation -->
-				<a class="skip" href="#navigation" title="<!--[pnml name='_AB_SKIPLINK']-->"><!--[pnml name='_AB_SKIPTO_NAVIGATION']--></a><span class="hideme">.</span>
-				<a class="skip" href="#content" title="<!--[pnml name='_AB_SKIPLINK']-->"><!--[pnml name='_AB_SKIPTO_CONTENT']--></a><span class="hideme">.</span>
+				<a class="skip" href="#navigation" title="<!--[gt text='Skip link']-->"><!--[gt text='Skip to the navigation']--></a><span class="hideme">.</span>
+				<a class="skip" href="#content" title="<!--[gt text='Skip link']-->"><!--[gt text='Skip to the content']--></a><span class="hideme">.</span>
 				<!-- end: skip link navigation -->
 
-				<!--[*
-				 | <a href="#"><!--[pnml name='_AB_LANGDEFINE']--></a>
-				 | <a href="#"><!--[pnml name='_AB_LANGDEFINE']--></a>
-				*]-->
-				<!--[userlinks start='' end='&nbsp;']-->
+				<!--[* commented line
+				<a href="#"><!--[gt text='Link']--></a>
+				<span class="text_separator">|</span>
+				<a href="#"><!--[gt text='Link']--></a>
+				<span class="text_separator">|</span> 
+				 commented line *]-->
+
+				<!--[userlinks start='' end='&nbsp;' seperator='<span class="text_separator">|</span>']-->
 				<!--[bt_htmloutput section='fontresize']-->
 			</div>
-			<a href="<!--[$baseurl]-->"><!--[pnimg src='logo.png' class='logo' alt='logo']--></a>
-			<h1><a href="<!--[$baseurl]-->" title="<!--[pnml name='_AB_GOTOHOMEPAGE']-->"><!--[sitename]--></a></h1>
+			<a href="<!--[$baseurl]-->"><!--[pnimg src='logo.png' class='logo' __alt='logo']--></a>
+			<h1><a href="<!--[$baseurl]-->" title="<!--[gt text='Go to the homepage']-->"><!--[sitename]--></a></h1>
 			<span class="slogan"><!--[slogan]--></span>
 		</div>
 		<!-- end: #header -->
@@ -100,10 +104,10 @@
 		<!-- end: #footer -->
 
 	</div>
-<!--[*
+<!--[* commented line
 <div>
 <!--[nocache]--><!--[pagerendertime]--><!--[/nocache]-->
 <!--[nocache]--><!--[sqldebug]--><!--[/nocache]-->
 </div>
-*]-->
+commented line *]-->
 </div>
