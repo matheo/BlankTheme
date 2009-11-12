@@ -11,18 +11,19 @@
 <!-- Admin template -->
 <body id="bt_<!--[$module]-->" class="bt_admin">
 
-<!--[* for the backend we don't include the layout template *]-->
+<!-- skip link navigation -->
+<ul id="skiplinks" dir="<!--[langdirection]-->">
+	<li><a class="skip" href="#nav"><!--[gt text='Skip to navigation']--> <!--[gt text='(Press Enter)']-->.</a></li>
+	<li><a class="skip" href="#col1"><!--[gt text='Skip to main content']--> <!--[gt text='(Press Enter)']-->.</a></li>
+</ul>
+
+<!--[* for the backend we do not use a body template *]-->
 <div id="page_margins" class="bt_1">
 	<div id="page">
 
 		<!-- begin: #header -->
-		<div id="header" class="floatbox">
-			<div id="topnav">
-				<!-- start: skip link navigation -->
-				<a class="skip" href="#navigation" title="<!--[gt text='Skip link']-->"><!--[gt text='Skip to the navigation']--></a><span class="hideme">.</span>
-				<a class="skip" href="#content" title="<!--[gt text='Skip link']-->"><!--[gt text='Skip to the content']--></a><span class="hideme">.</span>
-				<!-- end: skip link navigation -->
-
+		<div id="header" class="floatbox" role="banner">
+			<div id="topnav" role="contentinfo">
 				<!--[userlinks start='' end='' seperator='<span class="text_separator">|</span>']-->
 			</div>
 			<h1><a href="<!--[$baseurl]-->" title="<!--[gt text='Go to the homepage']-->"><!--[sitename]--></a></h1>
@@ -31,9 +32,7 @@
 		<!-- end: #header -->
 
 		<!-- begin: main navigation #nav -->
-		<div id="nav">
-			<!-- skiplink anchor: navigation -->
-			<a id="navigation" name="navigation"></a>
+		<div id="nav" role="navigation">
 			<!--[bt_adminlinks current=$module]-->
 		</div>
 		<!-- end: main navigation -->
@@ -41,11 +40,8 @@
 		<!-- begin: main content area #main -->
 		<div id="main">
 			<!-- begin: #col1 - main column -->
-			<div id="col1">
+			<div id="col1" role="main">
 				<div id="col1_content" class="floatbox">
-					<!-- skiplink anchor: content -->
-					<a id="content"></a>
-
 					<!--[$maincontent]-->
 				</div>
 				<div id="ie_clearing">&nbsp;</div>
@@ -56,8 +52,8 @@
 		<!-- end: #main -->
 
 		<!-- begin: #footer -->
-		<div id="footer">
-			<a href="http://community.zikula.org/" title="<!--[gt text='Powered by Zikula']-->"><!--[gt text='Powered by Zikula']--></a>
+		<div id="footer" role="contentinfo">
+			<a href="<!--[gt text='http://community.zikula.org/']-->" title="<!--[gt text='Powered by Zikula']-->"><!--[gt text='Powered by Zikula']--></a>
 		</div>
 		<!-- end: #footer -->
 	</div>
