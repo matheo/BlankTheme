@@ -10,11 +10,11 @@
  */
 
 
-$vrdom = ZLanguage::getThemeDomain('blanktheme');
+$dom = ZLanguage::getThemeDomain('blanktheme');
 
 $themeversion['name']           = 'blanktheme';
-$themeversion['displayname']    = __('BlankTheme', $vrdom);
-$themeversion['description']    = __('Theme development framework for Zikula', $vrdom);
+$themeversion['displayname']    = __('BlankTheme', $dom);
+$themeversion['description']    = __('Theme development framework for Zikula', $dom);
 $themeversion['version']        = '0.9';
 $themeversion['regid']          = '0';
 $themeversion['official']       = '0';
@@ -30,4 +30,4 @@ $themeversion['license']        = 'docs/license.txt';
 $themeversion['xhtml']          = true;
 
 $themeversion['extra']          = array('blanktheme' => '0.9',
-                                        'yaml'       => '3.1');
+                                        'yaml'       => '3.2');
