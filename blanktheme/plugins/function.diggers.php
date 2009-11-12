@@ -32,7 +32,7 @@ function smarty_function_diggers($params, &$smarty)
     $dom = ZLanguage::getThemeDomain('blanktheme');
 
     $theme = pnUserGetTheme();
-    $imagepath = 'themes/' . DataUtil::formatForOS($theme) . '/images/bookmarks/';
+    $imagepath = pnGetBaseURL() . 'themes/' . DataUtil::formatForOS($theme) . '/images/bookmarks/';
 
     $title = DataUtil::formatForDisplay($title);
     $link_title = "'$title'";
@@ -57,7 +57,8 @@ function smarty_function_diggers($params, &$smarty)
                     );
 
     $return = '';
-    foreach ($options as $servicename => $service) {
+    foreach ($options as $servicename => $service)
+    {
         $titlepart = __f('Add %1$s at %2$s', array($link_title, $servicename), $dom);
         $return .= '<a href="' . sprintf($service['url'], $url, $title) . '" title="' . $titlepart . '"><img src="' . $imagepath . $service['icon'] . '" alt="' . $servicename . ' icon" /></a>';
     }
