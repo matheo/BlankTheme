@@ -544,22 +544,11 @@
    * @subsection content-zikula-core
    */
 
-  /* pn-menu */
-  .pn-menu {
-    color: #aaa;
-    text-align: center;
-    width: 100%;
-  }
-    .pn-menu a {
-      padding: 3px 5px;
-    }
-
-  /* pn-pager */
-  .pn-pager {
+  /* z-pager */
+  .z-pager {
     color: #999;
-    padding: 5px 4px;
   }
-    .pn-pager a:hover {
+    .z-pager a:hover {
       text-decoration: none;
     }
 
@@ -685,11 +674,6 @@
   /* Example: Homepage main container */
   .bt_home #main {
     /*padding: 10px 0;*/
-  }
-
-  /* User profile information */
-  #pnprofile table {
-    width: 100%;
   }
 
 }
