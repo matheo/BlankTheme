@@ -15,9 +15,9 @@
  *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
  * @link            http://www.yaml.de
  * @package         yaml
- * @version         3.1
- * @revision        $Revision: 343 $
- * @lastmodified    $Date: 2009-01-19 17:41:32 -0500 (lun, 19 ene 2009) $
+ * @version         3.2
+ * @revision        $Revision: 430 $
+ * @lastmodified    $Date: 2009-10-27 21:15:57 +0100 (Di, 27. Okt 2009) $
  */
 
 @media all
@@ -72,7 +72,7 @@
    * @valid      yes
    */
 
-  .skip, .hideme, .print, dfn {
+  .skip, .hideme, .print {
     left: 0;
   }
 

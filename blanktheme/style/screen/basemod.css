@@ -45,8 +45,7 @@
     text-align: center; 
   }
 
-  .page_margins,
-  #page_margins { 
+  .page_margins { 
     text-align: left; 
   }
 
@@ -78,8 +77,7 @@
   }
 
   /* general wrapper */
-  .page_margins,
-  #page_margins {
+  .page_margins {
     border: 0px #889 solid;  /* to-remove */
     margin: 0 auto;
 
@@ -89,8 +87,7 @@
   }
 
   /* page wrapper */
-  .page,
-  #page {
+  .page {
     background: #fff;
     border: 10px #fff solid; /* to-remove */
   }

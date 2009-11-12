@@ -1,16 +1,17 @@
 <!--[* $Id$ *]-->
 
-<div id="page_margins" class="<!--[bt_htmloutput section='classespage']-->">
-	<div id="page" class="<!--[bt_htmloutput section='classesinnerpage']-->">
+<!-- skip link navigation -->
+<ul id="skiplinks" dir="<!--[langdirection]-->">
+	<li><a class="skip" href="#nav"><!--[gt text='Skip to navigation']--> <!--[gt text='(Press Enter)']-->.</a></li>
+	<li><a class="skip" href="#col1_content"><!--[gt text='Skip to main content']--> <!--[gt text='(Press Enter)']-->.</a></li>
+</ul>
+
+<div class="page_margins <!--[bt_htmloutput section='classespage']-->">
+	<div class="page <!--[bt_htmloutput section='classesinnerpage']-->">
 
 		<!-- begin: #header -->
-		<div id="header" class="floatbox">
-			<div id="topnav">
-				<!-- start: skip link navigation -->
-				<a class="skip" href="#navigation" title="<!--[gt text='Skip link']-->"><!--[gt text='Skip to the navigation']--></a><span class="hideme">.</span>
-				<a class="skip" href="#content" title="<!--[gt text='Skip link']-->"><!--[gt text='Skip to the content']--></a><span class="hideme">.</span>
-				<!-- end: skip link navigation -->
-
+		<div id="header" class="floatbox" role="banner">
+			<div id="topnav" role="contentinfo">
 				<!--[* commented line
 				<a href="#"><!--[gt text='Link']--></a>
 				<span class="text_separator">|</span>
@@ -28,9 +29,7 @@
 		<!-- end: #header -->
 
 		<!-- begin: main navigation #nav -->
-		<div id="nav">
-			<!-- skiplink anchor: navigation -->
-			<a id="navigation" name="navigation"></a>
+		<div id="nav" role="navigation">
 			<!--[if $usenavtop eq 'b']-->
 				<!--[blockposition name='navtop']-->
 			<!--[else]-->
@@ -41,10 +40,8 @@
 
 		<!-- begin: main content area #main -->
 		<div id="main">
-			<!-- skiplink anchor: Content -->
-			<a id="content"></a>
 			<div class="subcolumns">
-				<div class="c62l">
+				<div class="c62l" role="main">
 					<div id="col1_content">
 						<!--[if $layout|checkzone:nc ne true]-->
 							<!--[blockposition name='center']-->
@@ -56,7 +53,7 @@
 				<div class="c38r">
 					<!--[if $layout|checklayout:123 OR $layout|checklayout:132]-->
 					<div class="subcolumns">
-						<div class="c50l">
+						<div class="c50l" role="complementary">
 							<div id="col2_content">
 							<!--[if $layout|checklayout:123]-->
 								<!--[blockposition name='left']-->
@@ -65,7 +62,7 @@
 							<!--[/if]-->
 							</div>
 						</div>
-						<div class="c50r">
+						<div class="c50r" role="complementary">
 							<div id="col3_content">
 							<!--[if $layout|checklayout:123]-->
 								<!--[blockposition name='right']-->
@@ -76,7 +73,7 @@
 						</div>
 					</div>
 					<!--[else]-->
-					<div class="subcr">
+					<div class="subcr" role="complementary">
 					<!--[if $layout|checklayout:12]-->
 						<!--[blockposition name='right']-->
 					<!--[elseif $layout|checklayout:13]-->
@@ -110,7 +107,7 @@
 		<!-- end: #main -->
 
 		<!-- begin: #footer -->
-		<div id="footer">
+		<div id="footer" role="contentinfo">
 			<!--[include file='footer.htm']-->
 		</div>
 		<!-- end: #footer -->
