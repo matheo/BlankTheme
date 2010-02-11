@@ -29,6 +29,8 @@ function smarty_function_bt_htmloutput($params, &$smarty)
         return '';
     }
 
+    $dom = ZLanguage::getThemeDomain('blanktheme');
+
     // blanktheme vars
     $body      = $smarty->_tpl_vars['body'];
     $layout    = $smarty->_tpl_vars['layout'];
@@ -48,9 +50,9 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             $output = '<script type="text/javascript">
                          // <![CDATA[
                          if (efa_fontSize) {
-                           var efalang_zoomIn = "'.pnML('_AB_FONT_ZOOMIN').'";
-                           var efalang_zoomReset = "'.pnML('_AB_FONT_ZOOMRESET').'";
-                           var efalang_zoomOut = "'.pnML('_AB_FONT_ZOOMOUT').'";
+                           var efalang_zoomIn = "'.__('Increase font size', $dom).'";
+                           var efalang_zoomReset = "'.__('Reset font size', $dom).'";
+                           var efalang_zoomOut = "'.__('Decrease font size', $dom).'";
                            var efathemedir = "'.$smarty->directory.'";
                            efa_fontSize.efaInit();
                            document.write(efa_fontSize.allLinks);
@@ -71,16 +73,16 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             $output = '<link rel="stylesheet" href="'.$smarty->stylepath.'/layout_'.$body.'.css" type="text/css"/>'
                      .'<!--[if lte IE 7]>'
                      .'<link rel="stylesheet" href="'.$smarty->stylepath.'/patches/patch_'.$body.'.css" type="text/css" />'
-//                     .'<link rel="stylesheet" href="'.$smarty->themepath.'/yaml/core/slim_iehacks.css" type="text/css" />'
+//                   .'<link rel="stylesheet" href="'.$smarty->themepath.'/yaml/core/slim_iehacks.css" type="text/css" />'
                      .'<![endif]-->';
-/*                       .'<!--[if lte IE 6]>'
-//                     .'<script type="text/javascript" src="'.$smarty->scriptpath.'/minmax.js"></script>'
+/*                   .'<!--[if lte IE 6]>'
+//                   .'<script type="text/javascript" src="'.$smarty->scriptpath.'/minmax.js"></script>'
                      .'<style type="text/css">
                            img, div, a, input { behavior: url('.$smarty->stylepath.'/patches/iepngfix.htc) }
                        </style>' 
-//                     .'<script type="text/javascript" src="'.$smarty->scriptpath.'/iepngfix_tilebg.js"></script>'
+//                   .'<script type="text/javascript" src="'.$smarty->scriptpath.'/iepngfix_tilebg.js"></script>'
                      .'<![endif]-->
-                       ';
+                      ';
 */
             // Add content in the final if needed
             if (isset($smarty->_tpl_vars['additionalhead'])) {
