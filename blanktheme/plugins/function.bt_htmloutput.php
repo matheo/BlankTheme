@@ -13,6 +13,7 @@
  *
  * Example
  * <!--[bt_htmloutput section='head']-->
+ * <!--[bt_htmloutput section='topnavlinks']-->
  *
  * @author       Mateo Tibaquira
  * @since        05/07/08
@@ -36,14 +37,51 @@ function smarty_function_bt_htmloutput($params, &$smarty)
     $layout    = $smarty->_tpl_vars['layout'];
     $usefontr  = $smarty->_tpl_vars['usefontresize'];
     // check for the current variable
-    $current   = (isset($smarty->_tpl_vars['current'])) ? $smarty->_tpl_vars['current'] : $smarty->toplevelmodule;
+    $current   = isset($smarty->_tpl_vars['current']) ? $smarty->_tpl_vars['current'] : $smarty->toplevelmodule;
 
     // assign the respective output
     $output    = '';
     switch ($params['section'])
     {
+        case 'topnavlinks':
+            // build the menu list
+            // Option: id, lang string, link
+            $menu   = array();
+            if (pnUserLoggedIn()) {
+                $profileModule = pnConfigGetVar('profilemodule', '');
+                if (!empty($profileModule) && pnModAvailable($profileModule)) {
+                    $menu[] = array('account', __('Your account', $dom), pnModURL($profileModule));
+                }
+                $menu[] = array('logout', __('Log out', $dom), pnModURL('Users', 'user', 'logout'));
+            } else {
+                $menu[] = array('register', __('Register new account', $dom), pnModURL('Users', 'user', 'register'));
+                $menu[] = array('login', __('Login', $dom), pnModURL('Users', 'user', 'loginscreen'));
+            }
+            // Render the menu as an unordered list inside a div
+            $count   = count($menu) - 1;
+            $output  = '<ul id="bt_topnavlinks">';
+            foreach ($menu as $k => $option) {
+                $class = '';
+                if ($k == 0) {
+                    $class = 'first';
+                } elseif ($k == $count) {
+                    $class = 'last';
+                }
+                $output .= '<li '.($class ? ' class="bt_'.$class.'"' : '').'>';
+                if (!empty($option[2])) {
+                    $output .= '<a title="'. DataUtil::formatForDisplay($option[1]). '" href="'.DataUtil::formatForDisplay($option[2]).'"><span>'. DataUtil::formatForDisplay($option[1]). '</span></a>';
+                } else {
+                    $output .= '<span>'. DataUtil::formatForDisplay($option[1]). '</span>';
+                }
+                $output .= '</li>';
+            }
+            $output .= '</ul>';
+            break;
+
         case 'fontresize':
-            if ($usefontr == 'y') {
+            if ($usefontr != 'y') {
+                break;
+            }
             // font resize based in the efa script
             //PageUtil::addVar('javascript', $smarty->scriptpath.'/efa/efa_fontsize_packed.js');
             PageUtil::addVar('javascript', $smarty->scriptpath.'/efa/efa_fontsize.js');
@@ -60,7 +98,6 @@ function smarty_function_bt_htmloutput($params, &$smarty)
                          // ]]>
                        </script>
                        ';
-            }
             break;
 
         case 'head':

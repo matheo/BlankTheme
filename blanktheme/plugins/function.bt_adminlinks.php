@@ -254,7 +254,7 @@ function smarty_function_bt_adminlinks($params, &$smarty)
     $menu[] = array('content', __('Create content', $dom), '#', $linkoptions);
 
     /* Logout link */
-    $menu[] = array('logout', __('Logout', $dom), pnModURL('Users', 'user', 'logout'));
+    $menu[] = array('logout', __('Log out', $dom), pnModURL('Users', 'user', 'logout'));
 
 
     /* Actually create the menu based on the array above */
