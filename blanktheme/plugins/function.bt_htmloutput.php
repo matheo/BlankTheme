@@ -102,24 +102,29 @@ function smarty_function_bt_htmloutput($params, &$smarty)
 
         case 'head':
             // head stylesheets
-/*
-            $output = '<link rel="stylesheet" href="'.$smarty->themepath.'/yaml/core/slim_base.css" type="text/css"/>
-                       <link rel="stylesheet" href="'.$smarty->stylepath.'/screen/basemod.css" type="text/css"/>
-                       <link rel="stylesheet" href="'.$smarty->stylepath.'/screen/content.css" type="text/css"/>
-*/
-            $output = '<link rel="stylesheet" href="'.$smarty->stylepath.'/layout_'.$body.'.css" type="text/css"/>'
-                     .'<!--[if lte IE 7]>'
-                     .'<link rel="stylesheet" href="'.$smarty->stylepath.'/patches/patch_'.$body.'.css" type="text/css" />'
-//                   .'<link rel="stylesheet" href="'.$smarty->themepath.'/yaml/core/slim_iehacks.css" type="text/css" />'
-                     .'<![endif]-->';
-/*                   .'<!--[if lte IE 6]>'
-//                   .'<script type="text/javascript" src="'.$smarty->scriptpath.'/minmax.js"></script>'
-                     .'<style type="text/css">
-                           img, div, a, input { behavior: url('.$smarty->stylepath.'/patches/iepngfix.htc) }
-                       </style>' 
-//                   .'<script type="text/javascript" src="'.$smarty->scriptpath.'/iepngfix_tilebg.js"></script>'
-                     .'<![endif]-->
-                      ';
+            $optimize = isset($params['optimize']) ? (bool)$params['optimize'] : false;
+
+            if ($optimize) {
+                // do not load the layout_* stylesheet and load the basic styles directly
+                $output = '<link rel="stylesheet" href="'.$smarty->themepath.'/yaml/core/slim_base.css" type="text/css"/>
+                           <link rel="stylesheet" href="'.$smarty->stylepath.'/screen/basemod.css" type="text/css"/>
+                           <link rel="stylesheet" href="'.$smarty->stylepath.'/screen/content.css" type="text/css"/>';
+            } else {
+                $output = '<link rel="stylesheet" href="'.$smarty->stylepath.'/layout_'.$body.'.css" type="text/css"/>';
+            }
+
+            $output .= '<!--[if lte IE 7]>'
+                      .'<link rel="stylesheet" href="'.$smarty->stylepath.'/patches/patch_'.$body.'.css" type="text/css" />'
+//                    .'<link rel="stylesheet" href="'.$smarty->themepath.'/yaml/core/slim_iehacks.css" type="text/css" />'
+                      .'<![endif]-->';
+/*                    .'<!--[if lte IE 6]>'
+//                    .'<script type="text/javascript" src="'.$smarty->scriptpath.'/minmax.js"></script>'
+                      .'<style type="text/css">
+                            img, div, a, input { behavior: url('.$smarty->stylepath.'/patches/iepngfix.htc) }
+                        </style>' 
+//                    .'<script type="text/javascript" src="'.$smarty->scriptpath.'/iepngfix_tilebg.js"></script>'
+                      .'<![endif]-->
+                       ';
 */
             // Add content in the final if needed
             if (isset($smarty->_tpl_vars['additionalhead'])) {
