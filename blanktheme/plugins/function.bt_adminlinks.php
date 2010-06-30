@@ -59,17 +59,17 @@ function smarty_function_bt_adminlinks($params, &$smarty)
                              array(null, __('Settings', $dom),       pnModURL('Settings', 'admin')),
                              array(null, __('Permissions', $dom),    pnModURL('Permissions', 'admin')),
                              array(null, __('Categories', $dom),     pnModURL('Categories', 'admin')),
-                             array(null, __('Mailer', $dom),         pnModURL('Mailer', 'admin')),
+                             array(null, __('System mailer', $dom),  pnModURL('Mailer', 'admin')),
                              array(null, __('Search options', $dom), pnModURL('Search', 'admin')),
                        );
         if (pnModAvailable('legal')) {
-            $linkoptions[] = array(null, __('Legal', $dom), pnModURL('legal', 'admin'));
+            $linkoptions[] = array(null, __('Legal settings', $dom), pnModURL('legal', 'admin'));
         }
         if (pnModAvailable('scribite')) {
             $linkoptions[] = array(null, __('WYSIWYG editors', $dom), pnModURL('scribite', 'admin'));
         }
         if (pnModAvailable('EZComments')) {
-            $linkoptions[] = array(null, __('Comments', $dom), pnModURL('EZComments', 'admin'));
+            $linkoptions[] = array(null, __('Comments options', $dom), pnModURL('EZComments', 'admin'));
         }
 
         $menu[] = array('config', __('Config', $dom),  '#', $linkoptions);
@@ -78,12 +78,12 @@ function smarty_function_bt_adminlinks($params, &$smarty)
         /* System link */
         $menu[] = array('system', __('System', $dom), '#',
                     array(
-                        array(null, __('Modules', $dom),         pnModURL('Modules', 'admin')),
-                        array(null, __('Blocks', $dom),          pnModURL('Blocks', 'admin')),
-                        array(null, __('pnRender', $dom),        pnModURL('pnRender', 'admin')),
-                        array(null, __('Theme', $dom),           pnModURL('Theme', 'admin')),
-                        array(null, __('Security Center', $dom), pnModURL('SecurityCenter', 'admin')),
-                        array(null, __('SysInfo', $dom),         pnModURL('SysInfo', 'admin'))
+                        array(null, __('Modules', $dom),            pnModURL('Modules', 'admin')),
+                        array(null, __('Blocks', $dom),             pnModURL('Blocks', 'admin')),
+                        array(null, __('Template engine', $dom),    pnModURL('pnRender', 'admin')),
+                        array(null, __('Theme engine', $dom),       pnModURL('Theme', 'admin')),
+                        array(null, __('Security center', $dom),    pnModURL('SecurityCenter', 'admin')),
+                        array(null, __('System information', $dom), pnModURL('SysInfo', 'admin'))
                     )
                 );
 
@@ -91,7 +91,7 @@ function smarty_function_bt_adminlinks($params, &$smarty)
         /* Users/Groups link */
         // build the Users management submenu options
         $subusr   = array();
-        $subusr[] = array(null, __('Users manager settings', $dom), pnModURL('Users', 'admin', 'modifyconfig'));
+        $subusr[] = array(null, __('Users settings', $dom), pnModURL('Users', 'admin', 'modifyconfig'));
 
         $profileModule = pnConfigGetVar('profilemodule', '');
         if (!empty($profileModule) && pnModAvailable($profileModule)) {
@@ -118,20 +118,20 @@ function smarty_function_bt_adminlinks($params, &$smarty)
         $authidpnr = SecurityUtil::generateAuthKey('pnRender');
         $authidthm = SecurityUtil::generateAuthKey('Theme');
         $linkoptions = array(
-                           array(null, __('pnRender', $dom), pnModURL('pnRender', 'admin'),
+                           array(null, __('Template engine', $dom), pnModURL('pnRender', 'admin'),
                                array(
                                    array(null, __('Clear compiled templates', $dom), pnModURL('pnRender', 'admin', 'clear_compiled', array('authid' => $authidpnr))),
                                    array(null, __('Clear pnRender cache', $dom),     pnModURL('pnRender', 'admin', 'clear_cache', array('authid' => $authidpnr)))
                                )
                            ),
-                           array(null, __('Theme', $dom), pnModURL('Theme', 'admin'),
+                           array(null, __('Theme engine', $dom), pnModURL('Theme', 'admin'),
                                array(
                                    array(null, __('Clear compiled templates', $dom), pnModURL('Theme', 'admin', 'clear_compiled', array('authid' => $authidthm))),
                                    array(null, __('Clear Theme cache', $dom), pnModURL('Theme', 'admin', 'clear_cache', array('authid' => $authidthm)))
                                )
                            ),
                            array(null, __('Filesystem check', $dom),    pnModURL('SysInfo', 'admin', 'filesystem')),
-                           array(null, __('pnTemp folder check', $dom), pnModURL('SysInfo', 'admin', 'pntemp'))
+                           array(null, __('Temporary folder check', $dom), pnModURL('SysInfo', 'admin', 'pntemp'))
                        );
 
         if (pnModAvailable('MailUsers')) {
