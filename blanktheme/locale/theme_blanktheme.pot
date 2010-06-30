@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Zikula component\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-12 05:36-0500\n"
+"POT-Creation-Date: 2010-06-30 13:21-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,38 +16,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: plugins/function.bt_userlinks.php:53 plugins/function.bt_adminlinks.php:53
+#: plugins/function.diggers.php:62
+#, php-format
+msgid "Add %1$s at %2$s"
+msgstr ""
+
+#: plugins/function.bt_adminlinks.php:53 plugins/function.bt_userlinks.php:53
 msgid "Home"
-msgstr ""
-
-#: plugins/function.bt_userlinks.php:56
-msgid "News"
-msgstr ""
-
-#: plugins/function.bt_userlinks.php:60
-msgid "Pages"
-msgstr ""
-
-#: plugins/function.bt_userlinks.php:64 plugins/function.bt_userlinks.php:68
-#: plugins/function.bt_userlinks.php:72
-msgid "Forums"
-msgstr ""
-
-#: plugins/function.bt_userlinks.php:76
-msgid "Faq"
-msgstr ""
-
-#: plugins/function.bt_userlinks.php:80
-msgid "Wiki"
-msgstr ""
-
-#: plugins/function.bt_userlinks.php:84 plugins/function.bt_userlinks.php:88
-#: plugins/function.bt_userlinks.php:92
-msgid "Calendar"
-msgstr ""
-
-#: plugins/function.bt_userlinks.php:96 templates/footer.htm:9
-msgid "Contact"
 msgstr ""
 
 #: plugins/function.bt_adminlinks.php:59
@@ -76,7 +51,7 @@ msgid "Categories"
 msgstr ""
 
 #: plugins/function.bt_adminlinks.php:62
-msgid "Mailer"
+msgid "System mailer"
 msgstr ""
 
 #: plugins/function.bt_adminlinks.php:63
@@ -84,7 +59,7 @@ msgid "Search options"
 msgstr ""
 
 #: plugins/function.bt_adminlinks.php:66
-msgid "Legal"
+msgid "Legal settings"
 msgstr ""
 
 #: plugins/function.bt_adminlinks.php:69
@@ -92,7 +67,7 @@ msgid "WYSIWYG editors"
 msgstr ""
 
 #: plugins/function.bt_adminlinks.php:72
-msgid "Comments"
+msgid "Comments options"
 msgstr ""
 
 #: plugins/function.bt_adminlinks.php:75
@@ -113,24 +88,24 @@ msgstr ""
 
 #: plugins/function.bt_adminlinks.php:83
 #: plugins/function.bt_adminlinks.php:121
-msgid "pnRender"
+msgid "Template engine"
 msgstr ""
 
 #: plugins/function.bt_adminlinks.php:84
 #: plugins/function.bt_adminlinks.php:127
-msgid "Theme"
+msgid "Theme engine"
 msgstr ""
 
 #: plugins/function.bt_adminlinks.php:85
-msgid "Security Center"
+msgid "Security center"
 msgstr ""
 
 #: plugins/function.bt_adminlinks.php:86
-msgid "SysInfo"
+msgid "System information"
 msgstr ""
 
 #: plugins/function.bt_adminlinks.php:94
-msgid "Users manager settings"
+msgid "Users settings"
 msgstr ""
 
 #: plugins/function.bt_adminlinks.php:98
@@ -179,7 +154,7 @@ msgid "Filesystem check"
 msgstr ""
 
 #: plugins/function.bt_adminlinks.php:134
-msgid "pnTemp folder check"
+msgid "Temporary folder check"
 msgstr ""
 
 #: plugins/function.bt_adminlinks.php:138
@@ -263,12 +238,62 @@ msgid "Create content"
 msgstr ""
 
 #: plugins/function.bt_adminlinks.php:257
-msgid "Logout"
+#: plugins/function.bt_htmloutput.php:55
+msgid "Log out"
 msgstr ""
 
-#: plugins/function.diggers.php:61
-#, php-format
-msgid "Add %1$s at %2$s"
+#: plugins/function.bt_userlinks.php:56
+msgid "News"
+msgstr ""
+
+#: plugins/function.bt_userlinks.php:60
+msgid "Pages"
+msgstr ""
+
+#: plugins/function.bt_userlinks.php:64 plugins/function.bt_userlinks.php:68
+#: plugins/function.bt_userlinks.php:72
+msgid "Forums"
+msgstr ""
+
+#: plugins/function.bt_userlinks.php:76
+msgid "Faq"
+msgstr ""
+
+#: plugins/function.bt_userlinks.php:80
+msgid "Wiki"
+msgstr ""
+
+#: plugins/function.bt_userlinks.php:84 plugins/function.bt_userlinks.php:88
+#: plugins/function.bt_userlinks.php:92
+msgid "Calendar"
+msgstr ""
+
+#: plugins/function.bt_userlinks.php:96 templates/footer.htm:14
+msgid "Contact"
+msgstr ""
+
+#: plugins/function.bt_htmloutput.php:53
+msgid "Your account"
+msgstr ""
+
+#: plugins/function.bt_htmloutput.php:57
+msgid "Register new account"
+msgstr ""
+
+#: plugins/function.bt_htmloutput.php:58
+msgid "Login"
+msgstr ""
+
+#: plugins/function.bt_htmloutput.php:91
+msgid "Increase font size"
+msgstr ""
+
+#: plugins/function.bt_htmloutput.php:92
+msgid "Reset font size"
+msgstr ""
+
+#: plugins/function.bt_htmloutput.php:93
+msgid "Decrease font size"
 msgstr ""
 
 #: version.php:16
@@ -279,53 +304,29 @@ msgstr ""
 msgid "Theme development framework for Zikula"
 msgstr ""
 
-#: templates/footer.htm:7
-msgid "Terms of use"
-msgstr ""
-
-#: templates/footer.htm:11
-msgid "Back to top"
-msgstr ""
-
-#: templates/footer.htm:15 templates/modules/admin.htm:56
-msgid "Powered by Zikula"
-msgstr ""
-
-#: templates/footer.htm:17
-msgid "Layout based on YAML"
-msgstr ""
-
-#: templates/footer.htm:19
-msgid "Valid CSS"
-msgstr ""
-
-#: templates/footer.htm:21
-msgid "Valid XHTML"
-msgstr ""
-
 #: templates/modules/admin.htm:16 templates/body/grid.htm:5
-#: templates/body/3col231.htm:5 templates/body/2col.htm:5
-#: templates/body/3col.htm:5
+#: templates/body/3col.htm:5 templates/body/2col.htm:5
+#: templates/body/3col231.htm:5
 msgid "Skip to navigation"
 msgstr ""
 
 #: templates/modules/admin.htm:16 templates/modules/admin.htm:17
 #: templates/body/grid.htm:5 templates/body/grid.htm:6
-#: templates/body/3col231.htm:5 templates/body/3col231.htm:6
-#: templates/body/2col.htm:5 templates/body/2col.htm:6
 #: templates/body/3col.htm:5 templates/body/3col.htm:6
+#: templates/body/2col.htm:5 templates/body/2col.htm:6
+#: templates/body/3col231.htm:5 templates/body/3col231.htm:6
 msgid "(Press Enter)"
 msgstr ""
 
 #: templates/modules/admin.htm:17 templates/body/grid.htm:6
-#: templates/body/3col231.htm:6 templates/body/2col.htm:6
-#: templates/body/3col.htm:6
+#: templates/body/3col.htm:6 templates/body/2col.htm:6
+#: templates/body/3col231.htm:6
 msgid "Skip to main content"
 msgstr ""
 
-#: templates/modules/admin.htm:29 templates/body/grid.htm:25
-#: templates/body/3col231.htm:25 templates/body/2col.htm:25
-#: templates/body/3col.htm:25
+#: templates/modules/admin.htm:29 templates/body/grid.htm:19
+#: templates/body/3col.htm:19 templates/body/2col.htm:19
+#: templates/body/3col231.htm:19
 msgid "Go to the homepage"
 msgstr ""
 
@@ -333,12 +334,31 @@ msgstr ""
 msgid "http://community.zikula.org/"
 msgstr ""
 
-#: templates/body/grid.htm:17 templates/body/3col231.htm:17
-#: templates/body/2col.htm:17 templates/body/3col.htm:17
-msgid "Link"
+#: templates/modules/admin.htm:56 templates/footer.htm:20
+msgid "Powered by Zikula"
 msgstr ""
 
-#: templates/body/grid.htm:24 templates/body/3col231.htm:24
-#: templates/body/2col.htm:24 templates/body/3col.htm:24
+#: templates/body/grid.htm:18 templates/body/3col.htm:18
+#: templates/body/2col.htm:18 templates/body/3col231.htm:18
 msgid "logo"
+msgstr ""
+
+#: templates/footer.htm:12
+msgid "Terms of use"
+msgstr ""
+
+#: templates/footer.htm:16
+msgid "Back to top"
+msgstr ""
+
+#: templates/footer.htm:22
+msgid "Layout based on YAML"
+msgstr ""
+
+#: templates/footer.htm:24
+msgid "Valid CSS"
+msgstr ""
+
+#: templates/footer.htm:26
+msgid "Valid XHTML"
 msgstr ""
