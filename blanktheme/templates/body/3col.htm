@@ -1,7 +1,7 @@
 <!--[* $Id$ *]-->
 
 <!-- skip link navigation -->
-<ul id="skiplinks" dir="<!--[langdirection]-->">
+<ul id="skiplinks">
 	<li><a class="skip" href="#nav"><!--[gt text='Skip to navigation']--> <!--[gt text='(Press Enter)']-->.</a></li>
 	<li><a class="skip" href="#col1"><!--[gt text='Skip to main content']--> <!--[gt text='(Press Enter)']-->.</a></li>
 </ul>
@@ -10,8 +10,8 @@
 	<div class="page <!--[bt_htmloutput section='classesinnerpage']-->">
 
 		<!-- begin: #header -->
-		<div id="header" class="floatbox" role="banner">
-			<div id="topnav" role="contentinfo">
+		<div id="header" class="floatbox">
+			<div id="topnav">
 				<!--[bt_htmloutput section='topnavlinks']-->
 				<!--[bt_htmloutput section='fontresize']-->
 			</div>
@@ -22,7 +22,7 @@
 		<!-- end: #header -->
 
 		<!-- begin: main navigation #nav -->
-		<div id="nav" role="navigation">
+		<div id="nav">
 			<!--[if $usenavtop eq 'b']-->
 				<!--[blockposition name='navtop']-->
 			<!--[else]-->
@@ -32,9 +32,9 @@
 		<!-- end: main navigation -->
 
 		<!-- begin: main content area #main -->
-		<div id="main" class="floatbox">
+		<div id="main">
 			<!-- begin: #col1 - main column -->
-			<div id="col1" role="main">
+			<div id="col1">
 				<div id="col1_content" class="clearfix">
 					<!--[if $layout|checkzone:nc ne true]-->
 						<!--[blockposition name='center']-->
@@ -64,13 +64,13 @@
 					</div>
 					<!--[/if]-->
 				</div>
+				<!-- IE column Clearing -->
 				<div id="ie_clearing">&nbsp;</div>
-				<!-- End: IE Column Clearing -->
 			</div>
 			<!-- end: #col1 -->
 
 			<!-- begin: #col2 second column -->
-			<div id="col2" role="complementary">
+			<div id="col2">
 				<div id="col2_content" class="clearfix">
 					<!--[blockposition name='left']-->
 				</div>
@@ -78,7 +78,7 @@
 			<!-- end: #col2 -->
 
 			<!-- begin: #col3 third column -->
-			<div id="col3" role="complementary">
+			<div id="col3">
 				<div id="col3_content" class="clearfix">
 					<!--[blockposition name='right']-->
 				</div>
@@ -88,7 +88,7 @@
 		<!-- end: #main -->
 
 		<!-- begin: #footer -->
-		<div id="footer" role="contentinfo">
+		<div id="footer">
 		<!--[include file='footer.htm']-->
 		</div>
 		<!-- end: #footer -->

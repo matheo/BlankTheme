@@ -1,7 +1,7 @@
 <!--[* $Id$ *]-->
 
 <!-- skip link navigation -->
-<ul id="skiplinks" dir="<!--[langdirection]-->">
+<ul id="skiplinks">
 	<li><a class="skip" href="#nav"><!--[gt text='Skip to navigation']--> <!--[gt text='(Press Enter)']-->.</a></li>
 	<li><a class="skip" href="#col1_content"><!--[gt text='Skip to main content']--> <!--[gt text='(Press Enter)']-->.</a></li>
 </ul>
@@ -10,8 +10,8 @@
 	<div class="page <!--[bt_htmloutput section='classesinnerpage']-->">
 
 		<!-- begin: #header -->
-		<div id="header" class="floatbox" role="banner">
-			<div id="topnav" role="contentinfo">
+		<div id="header" class="floatbox">
+			<div id="topnav">
 				<!--[bt_htmloutput section='topnavlinks']-->
 				<!--[bt_htmloutput section='fontresize']-->
 			</div>
@@ -22,7 +22,7 @@
 		<!-- end: #header -->
 
 		<!-- begin: main navigation #nav -->
-		<div id="nav" role="navigation">
+		<div id="nav">
 			<!--[if $usenavtop eq 'b']-->
 				<!--[blockposition name='navtop']-->
 			<!--[else]-->
@@ -34,7 +34,7 @@
 		<!-- begin: main content area #main -->
 		<div id="main" class="floatbox">
 			<div class="subcolumns">
-				<div class="c62l" role="main">
+				<div class="c62l">
 					<div id="col1_content">
 						<!--[if $layout|checkzone:nc ne true]-->
 							<!--[blockposition name='center']-->
@@ -46,7 +46,7 @@
 				<div class="c38r">
 					<!--[if $layout|checklayout:123 OR $layout|checklayout:132]-->
 					<div class="subcolumns">
-						<div class="c50l" role="complementary">
+						<div class="c50l">
 							<div id="col2_content">
 							<!--[if $layout|checklayout:123]-->
 								<!--[blockposition name='left']-->
@@ -55,7 +55,7 @@
 							<!--[/if]-->
 							</div>
 						</div>
-						<div class="c50r" role="complementary">
+						<div class="c50r">
 							<div id="col3_content">
 							<!--[if $layout|checklayout:123]-->
 								<!--[blockposition name='right']-->
@@ -66,7 +66,7 @@
 						</div>
 					</div>
 					<!--[else]-->
-					<div class="subcr" role="complementary">
+					<div class="subcr">
 					<!--[if $layout|checklayout:12]-->
 						<!--[blockposition name='right']-->
 					<!--[elseif $layout|checklayout:13]-->
@@ -100,7 +100,7 @@
 		<!-- end: #main -->
 
 		<!-- begin: #footer -->
-		<div id="footer" role="contentinfo">
+		<div id="footer">
 			<!--[include file='footer.htm']-->
 		</div>
 		<!-- end: #footer -->
