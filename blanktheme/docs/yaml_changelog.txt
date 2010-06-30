@@ -1,4 +1,31 @@
 ===============================================================================================================================
+YAML Version 3.2.1 final
+===============================================================================================================================
+
+Improvements & Feature Changes in YAML-Core
+-------------------------------------------
+Renamed:      yaml-focusfix.js - The JS file webkit-focusfix.js (introduced in v3.2) was renamed due to the extended support for more browsers
+
+Improvement:  iehacks.css - simplified Clearfix adjustments for IE 5.x - 7.0 
+Improvement:  yaml-focusfix.js - no more pollution of global namespace
+Improvement:  yaml-focusfix.js - added IE8 support and fallback solution for older webkit browsers
+
+Improvements & Feature Changes in YAML
+--------------------------------------
+Improvement:  content_default.css - better contrast on a:focus {} (keyboard acessibility)
+Improvement:  yaml/navigation: all navigation stylesheets  - adjusted :focus() styles to avoid overruling
+
+Improvement:  forms.css - improved robustness for "columnar" and "full" form layout (avoiding float drops)
+Improvement:  forms.css - included fix for IE7 auto-padding bug when using buttons
+
+Changes in Examples
+--------------------
+Improvement:  equal_height_boxes.html - better accessibility for complex example (hidden more links within content boxes)
+
+Bugfix:       flexible_grids2.html - added new skiplink styling to its basemod_grids2.css
+Bugfix:       equal_height_boxes.html - added new skiplink styling to its basemod_equal_heights.css
+
+===============================================================================================================================
 YAML Version 3.2 final
 ===============================================================================================================================
 
