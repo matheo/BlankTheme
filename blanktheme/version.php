@@ -15,7 +15,7 @@ $dom = ZLanguage::getThemeDomain('blanktheme');
 $themeversion['name']           = 'blanktheme';
 $themeversion['displayname']    = __('BlankTheme', $dom);
 $themeversion['description']    = __('Theme development framework for Zikula', $dom);
-$themeversion['version']        = '0.9';
+$themeversion['version']        = '1.0';
 $themeversion['regid']          = '0';
 $themeversion['official']       = '0';
 $themeversion['author']         = 'BlankTheme Team';
@@ -29,5 +29,5 @@ $themeversion['help']           = 'docs/help.txt';
 $themeversion['license']        = 'docs/license.txt';
 $themeversion['xhtml']          = true;
 
-$themeversion['extra']          = array('blanktheme' => '0.9',
-                                        'yaml'       => '3.2');
+$themeversion['extra']          = array('blanktheme' => '1.0',
+                                        'yaml'       => '3.2.1');
