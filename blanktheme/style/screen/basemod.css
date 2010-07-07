@@ -142,6 +142,38 @@
    * @subsection layout-navigation
    */
 
+  #bt_topnavlinks {
+    float: left;
+  }
+
+  #bt_topnavlinks ul {
+    float: left;
+    list-style: none;
+    margin: 0 0.5em 0 0;
+    padding: 0;
+  }
+
+  #bt_topnavlinks li {
+    border-right: 1px solid #ddd;
+    float: left;
+    margin: 0;
+    padding: 0;
+  }
+
+  #bt_topnavlinks li.bt_last {
+    border-right: none;
+  }
+
+  #bt_topnavlinks li a {
+    display: block;
+    float: left;
+    height: 1.4em;
+    line-height: 1.4em;
+    padding: 0 0.5em;
+    text-align: center;
+    text-decoration: none;
+  }
+
   #nav_main {
     background: #efefef url(../../yaml/navigation/images/shiny_buttons/background.png) repeat-x; /* to-remove */
     border: none;

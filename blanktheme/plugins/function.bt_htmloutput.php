@@ -59,7 +59,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             }
             // Render the menu as an unordered list inside a div
             $count   = count($menu) - 1;
-            $output  = '<ul id="bt_topnavlinks">';
+            $output  = '<div id="bt_topnavlinks"><ul>';
             foreach ($menu as $k => $option) {
                 $class = '';
                 if ($k == 0) {
@@ -75,7 +75,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
                 }
                 $output .= '</li>';
             }
-            $output .= '</ul>';
+            $output .= '</ul></div>';
             break;
 
         case 'fontresize':
