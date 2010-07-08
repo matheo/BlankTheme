@@ -342,7 +342,7 @@
   /* 1X layouts */
   .bt_2col .bt_12 #col1,
   .bt_2col .bt_13 #col1 {
-    border-right: 1px dashed #DDDDDD;
+    border-right: 1px dashed #DDDDDD; /* to-remove */
     margin-left: 0;
     margin-right: 25%;
   }
@@ -360,7 +360,7 @@
   /* X1 layouts */
   .bt_2col .bt_21 #col1,
   .bt_2col .bt_31 #col1 {
-    border-left: 1px dashed #DDDDDD;
+    border-left: 1px dashed #DDDDDD; /* to-remove */
   }
   .bt_2col .bt_31 #col3_content {
     padding: 0 10px 0 15px;
@@ -474,8 +474,8 @@
 
   /* #col1 is the main column */
   .bt_3col231 #col1 {
-    border-left: 1px dashed #DDDDDD;
-    border-right: 1px dashed #DDDDDD;
+    border-left: 1px dashed #DDDDDD; /* to-remove */
+    border-right: 1px dashed #DDDDDD; /* to-remove */
     float: none;
     margin-left: 25%; /* leftcol width*/
     margin-right: 25%; /* rightcol width*/
