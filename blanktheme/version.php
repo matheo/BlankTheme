@@ -16,10 +16,11 @@ $themeversion['name']           = 'blanktheme';
 $themeversion['displayname']    = __('BlankTheme', $dom);
 $themeversion['description']    = __('Theme development framework for Zikula', $dom);
 $themeversion['version']        = '1.0';
-$themeversion['regid']          = '0';
-$themeversion['official']       = '0';
+
 $themeversion['author']         = 'BlankTheme Team';
 $themeversion['contact']        = 'http://www.blanktheme.org';
+$themeversion['official']       = '0';
+$themeversion['regid']          = '0';
 $themeversion['admin']          = 1;
 $themeversion['user']           = 1;
 $themeversion['system']         = 0;

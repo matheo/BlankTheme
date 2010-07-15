@@ -56,9 +56,20 @@ function smarty_function_bt_adminlinks($params, &$smarty)
     {
         /* Config options */
         $linkoptions = array(
-                             array(null, __('Settings', $dom),       pnModURL('Settings', 'admin')),
+                             array(null, __('Site settings', $dom),       pnModURL('Settings', 'admin'),
+                                 array(
+                                     array(null, __('Localization', $dom), pnModURL('Settings', 'admin', 'multilingual')),
+                                     array(null, __('HTML settings', $dom), pnModURL('SecurityCenter', 'admin', 'allowedhtml'))
+                                 )
+                             ),
                              array(null, __('Permissions', $dom),    pnModURL('Permissions', 'admin')),
-                             array(null, __('Categories', $dom),     pnModURL('Categories', 'admin')),
+                             array(null, __('Categories', $dom),     pnModURL('Categories', 'admin'),
+                                 array(
+                                     array(null, __('Category registry', $dom), pnModURL('Categories', 'admin', 'editregistry')),
+                                     array(null, __('New category', $dom), pnModURL('Categories', 'admin', 'new'))
+                                 )
+                             ),
+                             array(null, __('Admin panel', $dom),  pnModURL('Admin', 'admin')),
                              array(null, __('System mailer', $dom),  pnModURL('Mailer', 'admin')),
                              array(null, __('Search options', $dom), pnModURL('Search', 'admin')),
                        );
@@ -71,6 +82,9 @@ function smarty_function_bt_adminlinks($params, &$smarty)
         if (pnModAvailable('EZComments')) {
             $linkoptions[] = array(null, __('Comments options', $dom), pnModURL('EZComments', 'admin'));
         }
+        if (pnModAvailable('Thumbnail')) {
+            $linkoptions[] = array(null, __('Thumbnails', $dom), pnModURL('Thumbnail', 'admin'));
+        }
 
         $menu[] = array('config', __('Config', $dom),  '#', $linkoptions);
 
@@ -78,11 +92,18 @@ function smarty_function_bt_adminlinks($params, &$smarty)
         /* System link */
         $menu[] = array('system', __('System', $dom), '#',
                     array(
-                        array(null, __('Modules', $dom),            pnModURL('Modules', 'admin')),
+                        array(null, __('Modules', $dom),            pnModURL('Modules', 'admin'),
+                            array(
+                                array(null, __('System hooks', $dom), pnModURL('Modules', 'admin', 'hooks', array('id' => 0)))
+                            )
+                        ),
                         array(null, __('Blocks', $dom),             pnModURL('Blocks', 'admin')),
-                        array(null, __('Template engine', $dom),    pnModURL('pnRender', 'admin')),
-                        array(null, __('Theme engine', $dom),       pnModURL('Theme', 'admin')),
-                        array(null, __('Security center', $dom),    pnModURL('SecurityCenter', 'admin')),
+                        array(null, __('Themes', $dom),             pnModURL('Theme', 'admin')),
+                        array(null, __('Security center', $dom),    pnModURL('SecurityCenter', 'admin', 'modifyconfig'),
+                            array(
+                                array(null, __('Registered attacks', $dom), pnModURL('SecurityCenter', 'admin'))
+                            )
+                        ),
                         array(null, __('System information', $dom), pnModURL('SysInfo', 'admin'))
                     )
                 );
@@ -124,7 +145,7 @@ function smarty_function_bt_adminlinks($params, &$smarty)
                                    array(null, __('Clear pnRender cache', $dom),     pnModURL('pnRender', 'admin', 'clear_cache', array('authid' => $authidpnr)))
                                )
                            ),
-                           array(null, __('Theme engine', $dom), pnModURL('Theme', 'admin'),
+                           array(null, __('Theme engine', $dom), pnModURL('Theme', 'admin', 'modifyconfig'),
                                array(
                                    array(null, __('Clear compiled templates', $dom), pnModURL('Theme', 'admin', 'clear_compiled', array('authid' => $authidthm))),
                                    array(null, __('Clear Theme cache', $dom), pnModURL('Theme', 'admin', 'clear_cache', array('authid' => $authidthm)))

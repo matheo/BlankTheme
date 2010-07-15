@@ -27,30 +27,26 @@
  *                                        Default false
  * @return       string      the results of the module function
  */
-function smarty_function_bt_userlinks($params, &$smarty)
+function smarty_function_bt_userlinks($params, $smarty)
 {
-    extract($params);
-    unset($params);
+    $id = isset($params['id']) ? $params['id'] : 'nav_main';
 
-    if (!isset($id)) {
-        $id = 'nav_main';
-    }
-    if (!isset($currentclass)) {
-        $currentclass = 'current';
-    }
-    if (!isset($current)) {
+    $currentclass = isset($params['currentclass']) ? $params['currentclass'] : 'current';
+
+    if (!isset($params['current'])) {
         $current = (isset($smarty->_tpl_vars['current'])) ? $smarty->_tpl_vars['current'] : $smarty->toplevelmodule;
+    } else {
+        $current = $params['current'];
     }
-    if (!isset($span)) {
-        $span = false;
-    }
+
+    $span = isset($params['span']) ? (bool)$params['span'] :  false;
 
     $dom = ZLanguage::getThemeDomain('blanktheme');
 
     /*** Build the menu-array ***/
     /* Option format: id, lang_constant, link, array_of_sublinks */
     $menu   = array();
-    $menu[] = array('home', __('Home', $dom), $smarty->baseurl, null);
+    $menu[] = array('home', __('Home', $dom), pnGetHomepageURL(), null);
 
     if (pnModAvailable('News')) {
         $menu[] = array('News', __('News', $dom), pnModURL('News'), null);

@@ -7,46 +7,10 @@
  * @version         $Id$
  */
 
-
-/* /system/Admin/pnstyle/admin.css override */
-.bt_admin div.pn-adminformrow label + ul > li {
-  margin-left: 22.9em;
-}
-.bt_admin div.pn-adminformrow label + ul > li:first-child {
-  margin-left: 0em;
-}
-
-.bt_admin div.pn-adminformrow label + ul.selector_category > li {
-  margin-left: 23.8em;
-}
-
-.bt_admin table.pn-admintable {
-  border: 1px solid #DDDDDD;
-  margin-top: 0.6em;
-}
-.bt_admin table.pn-admintable ul {
-  padding: 0;
-  margin: 0;
-}
-
-.bt_admin div.pn-adminpageicon {
-  margin-bottom: 5px;
-  padding: 0 0 15px 5px;
-}
-
-/* fix for 1.1- */
-.bt_admin div#pn-securityanalyzer {
-  background-position: 2% 50%;
-}
-.bt_admin div#pn-securityanalyzer h2 {
-  margin: 0;
-  padding: 0;
-}
-
 .bt_admin .page,
 .bt_admin #page,
-.bt_admin .pn-adminbox,
-.bt_admin .pn-admincontainer {
+.bt_admin .z-adminbox,
+.bt_admin .z-admincontainer {
   background: #fff;
 }
 .bt_admin #col1 {

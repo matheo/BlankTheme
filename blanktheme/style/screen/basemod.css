@@ -28,7 +28,6 @@
  *     Layout Elements (layout-elements)
  *     Navigation menu adjustments (layout-navigation)
  *     Miscelaneous (layout-misc)
- *  Content containers default styles (layout-main)
  *  Specific templates and zones (layout-templates)
  */
 
@@ -263,35 +262,6 @@
   .coolsubcol .subcr {
     padding: 0 10px 0 0;
   }
-
-
-
-  /**
-   * Formatting content containers by default
-   *
-   * @section layout-main
-   */
-
-  #col1 {
-    width: 25%;
-  }
-    #col1_content {
-      padding: 0 10px;
-    }
-
-  #col2 {
-    width: 25%;
-  }
-    #col2_content {
-      padding: 0 10px;
-    }
-
-  #col3 {
-    margin: 0 25%;
-  }
-    #col3_content {
-      padding: 0 10px;
-    }
 
 
 
