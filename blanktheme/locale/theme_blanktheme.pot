@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Zikula component\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-15 02:13-0300\n"
+"POT-Creation-Date: 2010-07-16 08:36-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Add %1$s at %2$s"
 msgstr ""
 
-#: plugins/function.bt_adminlinks.php:53 plugins/function.bt_userlinks.php:53
+#: plugins/function.bt_adminlinks.php:53 plugins/function.bt_userlinks.php:49
 msgid "Home"
 msgstr ""
 
@@ -275,61 +275,61 @@ msgid "Create content"
 msgstr ""
 
 #: plugins/function.bt_adminlinks.php:278
-#: plugins/function.bt_htmloutput.php:55
+#: plugins/function.bt_htmloutput.php:59
 msgid "Log out"
 msgstr ""
 
-#: plugins/function.bt_userlinks.php:56
+#: plugins/function.bt_userlinks.php:52
 msgid "News"
 msgstr ""
 
-#: plugins/function.bt_userlinks.php:60
+#: plugins/function.bt_userlinks.php:56
 msgid "Pages"
 msgstr ""
 
-#: plugins/function.bt_userlinks.php:64 plugins/function.bt_userlinks.php:68
-#: plugins/function.bt_userlinks.php:72
+#: plugins/function.bt_userlinks.php:60 plugins/function.bt_userlinks.php:64
+#: plugins/function.bt_userlinks.php:68
 msgid "Forums"
 msgstr ""
 
-#: plugins/function.bt_userlinks.php:76
+#: plugins/function.bt_userlinks.php:72
 msgid "Faq"
 msgstr ""
 
-#: plugins/function.bt_userlinks.php:80
+#: plugins/function.bt_userlinks.php:76
 msgid "Wiki"
 msgstr ""
 
-#: plugins/function.bt_userlinks.php:84 plugins/function.bt_userlinks.php:88
-#: plugins/function.bt_userlinks.php:92
+#: plugins/function.bt_userlinks.php:80 plugins/function.bt_userlinks.php:84
+#: plugins/function.bt_userlinks.php:88
 msgid "Calendar"
 msgstr ""
 
-#: plugins/function.bt_userlinks.php:96 templates/footer.htm:14
+#: plugins/function.bt_userlinks.php:92 templates/footer.htm:14
 msgid "Contact"
 msgstr ""
 
-#: plugins/function.bt_htmloutput.php:53
+#: plugins/function.bt_htmloutput.php:57
 msgid "Your account"
 msgstr ""
 
-#: plugins/function.bt_htmloutput.php:57
+#: plugins/function.bt_htmloutput.php:61
 msgid "Register new account"
 msgstr ""
 
-#: plugins/function.bt_htmloutput.php:58
+#: plugins/function.bt_htmloutput.php:62
 msgid "Login"
 msgstr ""
 
-#: plugins/function.bt_htmloutput.php:91
+#: plugins/function.bt_htmloutput.php:95
 msgid "Increase font size"
 msgstr ""
 
-#: plugins/function.bt_htmloutput.php:92
+#: plugins/function.bt_htmloutput.php:96
 msgid "Reset font size"
 msgstr ""
 
-#: plugins/function.bt_htmloutput.php:93
+#: plugins/function.bt_htmloutput.php:97
 msgid "Decrease font size"
 msgstr ""
 
