@@ -37,7 +37,11 @@ function smarty_function_bt_htmloutput($params, &$smarty)
     $layout    = $smarty->_tpl_vars['layout'];
     $usefontr  = $smarty->_tpl_vars['usefontresize'];
     // check for the current variable
-    $current   = isset($smarty->_tpl_vars['current']) ? $smarty->_tpl_vars['current'] : $smarty->toplevelmodule;
+    if (isset($smarty->_tpl_vars['current'])) {
+        $current = $smarty->_tpl_vars['current'];
+    } else {
+        $current = $smarty->_tpl_vars['current'] = $smarty->toplevelmodule;
+    }
 
     // assign the respective output
     $output    = '';

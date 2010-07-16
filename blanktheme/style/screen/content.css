@@ -524,6 +524,9 @@
     }
 
   /* Scribite */
+  #main .htmlarea {
+    border: 1px solid #DDDDDD;
+  }
   /* openwysiwyg fix*/
   .tableTextareaEditor th,
   .tableTextareaEditor td {
