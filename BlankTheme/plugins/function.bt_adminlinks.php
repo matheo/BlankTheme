@@ -43,22 +43,22 @@ function smarty_function_bt_adminlinks($params, &$smarty)
         $currentclass = 'selected';
     }
 
-    $dom = ZLanguage::getThemeDomain('blanktheme');
+    $dom = ZLanguage::getThemeDomain('BlankTheme');
 
     /*** Build the menu-array ***/
     /* Option format: id, lang_constant, link, array_sublinks */
     $menu = array();
 
     /* Homepage link */
-    $menu[] = array('home',   __('Home', $dom),   pnGetHomepageURL());
+    $menu[] = array('home', __('Home', $dom), pnGetHomepageURL());
 
     if (SecurityUtil::checkPermission('Admin::', '::', ACCESS_EDIT))
     {
-        /* Config options */
+        /* Config menu */
         $linkoptions = array(
                              array(null, __('Site settings', $dom),       pnModURL('Settings', 'admin'),
                                  array(
-                                     array(null, __('Localization', $dom), pnModURL('Settings', 'admin', 'multilingual')),
+                                     array(null, __('Localization', $dom),  pnModURL('Settings', 'admin', 'multilingual')),
                                      array(null, __('HTML settings', $dom), pnModURL('SecurityCenter', 'admin', 'allowedhtml'))
                                  )
                              ),
@@ -66,10 +66,10 @@ function smarty_function_bt_adminlinks($params, &$smarty)
                              array(null, __('Categories', $dom),     pnModURL('Categories', 'admin'),
                                  array(
                                      array(null, __('Category registry', $dom), pnModURL('Categories', 'admin', 'editregistry')),
-                                     array(null, __('New category', $dom), pnModURL('Categories', 'admin', 'new'))
+                                     array(null, __('New category', $dom),      pnModURL('Categories', 'admin', 'new'))
                                  )
                              ),
-                             array(null, __('Admin panel', $dom),  pnModURL('Admin', 'admin')),
+                             array(null, __('Admin panel', $dom),    pnModURL('Admin', 'admin')),
                              array(null, __('System mailer', $dom),  pnModURL('Mailer', 'admin')),
                              array(null, __('Search options', $dom), pnModURL('Search', 'admin')),
                        );
@@ -79,9 +79,6 @@ function smarty_function_bt_adminlinks($params, &$smarty)
         if (pnModAvailable('scribite')) {
             $linkoptions[] = array(null, __('WYSIWYG editors', $dom), pnModURL('scribite', 'admin'));
         }
-        if (pnModAvailable('EZComments')) {
-            $linkoptions[] = array(null, __('Comments options', $dom), pnModURL('EZComments', 'admin'));
-        }
         if (pnModAvailable('Thumbnail')) {
             $linkoptions[] = array(null, __('Thumbnails', $dom), pnModURL('Thumbnail', 'admin'));
         }
@@ -89,13 +86,38 @@ function smarty_function_bt_adminlinks($params, &$smarty)
         $menu[] = array('config', __('Config', $dom),  '#', $linkoptions);
 
 
-        /* System link */
+        /* System menu */
+        /* Search for installed hooks*/
+        $linkoptions = array();
+
+        if (pnModAvailable('EZComments')) {
+            $linkoptions[] = array(null, __('Comments', $dom), pnModURL('EZComments', 'admin', 'modifyconfig'));
+        }
+        if (pnModAvailable('MultiHook')) {
+            $linkoptions[] = array(null, __('MultiHook', $dom), pnModURL('MultiHook', 'admin', 'modifyconfig'));
+        }
+        if (pnModAvailable('bbcode')) {
+            $linkoptions[] = array(null, __('BBCode', $dom), pnModURL('bbcode', 'admin', 'config'));
+        }
+        if (pnModAvailable('bbsmile')) {
+            $linkoptions[] = array(null, __('Smilies', $dom), pnModURL('bbsmile', 'admin', 'modifyconfig'));
+        }
+        if (pnModAvailable('Ratings')) {
+            $linkoptions[] = array(null, __('Ratings', $dom), pnModURL('Ratings', 'admin', 'modifyconfig'));
+        }
+        if (empty($linkoptions)) {
+            $linkoptions[] = array(null, __('No hooks installed', $dom), '#');
+        }
+
         $menu[] = array('system', __('System', $dom), '#',
                     array(
                         array(null, __('Modules', $dom),            pnModURL('Modules', 'admin'),
                             array(
                                 array(null, __('System hooks', $dom), pnModURL('Modules', 'admin', 'hooks', array('id' => 0)))
                             )
+                        ),
+                        array(null, __('Hooks', $dom), '#',
+                            $linkoptions
                         ),
                         array(null, __('Blocks', $dom),             pnModURL('Blocks', 'admin')),
                         array(null, __('Themes', $dom),             pnModURL('Theme', 'admin')),
@@ -109,7 +131,7 @@ function smarty_function_bt_adminlinks($params, &$smarty)
                 );
 
 
-        /* Users/Groups link */
+        /* Users/Groups menu */
         // build the Users management submenu options
         $subusr   = array();
         $subusr[] = array(null, __('Users settings', $dom), pnModURL('Users', 'admin', 'modifyconfig'));
@@ -129,8 +151,8 @@ function smarty_function_bt_adminlinks($params, &$smarty)
                         array(null, __('Manage users', $dom), pnModURL('Users', 'admin'),
                             $subusr
                         ),
-                        array(null, __('Search users', $dom), pnModURL('Users', 'admin', 'search')),
-                        array(null, __('Create user', $dom),  pnModURL('Users', 'admin', 'new'))
+                        array(null, __('Create user', $dom),  pnModURL('Users', 'admin', 'new')),
+                        array(null, __('Find and e-mail users', $dom), pnModURL('Users', 'admin', 'search'))
                     )
                 );
 
@@ -148,37 +170,33 @@ function smarty_function_bt_adminlinks($params, &$smarty)
                            array(null, __('Theme engine', $dom), pnModURL('Theme', 'admin', 'modifyconfig'),
                                array(
                                    array(null, __('Clear compiled templates', $dom), pnModURL('Theme', 'admin', 'clear_compiled', array('authid' => $authidthm))),
-                                   array(null, __('Clear Theme cache', $dom), pnModURL('Theme', 'admin', 'clear_cache', array('authid' => $authidthm)))
+                                   array(null, __('Clear Theme cache', $dom),        pnModURL('Theme', 'admin', 'clear_cache', array('authid' => $authidthm)))
                                )
                            ),
-                           array(null, __('Filesystem check', $dom),    pnModURL('SysInfo', 'admin', 'filesystem')),
+                           array(null, __('Filesystem check', $dom),       pnModURL('SysInfo', 'admin', 'filesystem')),
                            array(null, __('Temporary folder check', $dom), pnModURL('SysInfo', 'admin', 'pntemp'))
                        );
-
-        if (pnModAvailable('MailUsers')) {
-            $linkoptions[] = array(null, __('Mail users', $dom), pnModURL('MailUsers', 'admin'));
-        }
 
         $menu[] = array('routines', __('Routines', $dom), '#', $linkoptions);
 
 
     } /* Permission Admin:: | :: | ACCESS_EDIT ends here */
 
-    /* Create Content links */
+    /* Create content menu */
     $linkoptions = array();
 
     // Content Modules
     if (pnModAvailable('News') && (SecurityUtil::checkPermission('News::', '::', ACCESS_EDIT) || SecurityUtil::checkPermission('Stories::Story', '::', ACCESS_EDIT))) {
         $suboptions = array(
                          array(null, __('View list', $dom), pnModURL('News', 'admin', 'view')),
-                         array(null, __('Settings', $dom),   pnModURL('News', 'admin', 'modifyconfig'))
+                         array(null, __('Settings', $dom),  pnModURL('News', 'admin', 'modifyconfig'))
                       );
         $linkoptions[] = array(null, __('Add an article', $dom), pnModURL('News', 'admin', 'new'), $suboptions);
     }
     if (pnModAvailable('Pages') && SecurityUtil::checkPermission('Pages::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, __('View list', $dom), pnModURL('Pages', 'admin', 'view')),
-                         array(null, __('Settings', $dom),   pnModURL('Pages', 'admin', 'modifyconfig'))
+                         array(null, __('Settings', $dom),  pnModURL('Pages', 'admin', 'modifyconfig'))
                       );
         $linkoptions[] = array(null, __('Add a page', $dom), pnModURL('Pages', 'admin', 'new'), $suboptions);
     }
@@ -193,7 +211,7 @@ function smarty_function_bt_adminlinks($params, &$smarty)
     if (pnModAvailable('MediaAttach') && SecurityUtil::checkPermission('MediaAttach::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, __('View list', $dom), pnModURL('MediaAttach', 'admin', 'view')),
-                         array(null, __('Settings', $dom),   pnModURL('MediaAttach', 'admin'))
+                         array(null, __('Settings', $dom),  pnModURL('MediaAttach', 'admin'))
                       );
         $linkoptions[] = array(null, __('Add a download', $dom), pnModURL('MediaAttach', 'admin', 'view', array(), null, 'myuploadform_switch'), $suboptions);
     }
@@ -209,28 +227,28 @@ function smarty_function_bt_adminlinks($params, &$smarty)
     if (pnModAvailable('Polls') && SecurityUtil::checkPermission('Olls::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, __('View list', $dom), pnModURL('Polls', 'admin', 'view')),
-                         array(null, __('Settings', $dom),   pnModURL('Polls', 'admin', 'modifyconfig'))
+                         array(null, __('Settings', $dom),  pnModURL('Polls', 'admin', 'modifyconfig'))
                       );
         $linkoptions[] = array(null, __('Add a poll', $dom), pnModURL('Polls', 'admin', 'new'), $suboptions);
     }
     if (pnModAvailable('FAQ') && SecurityUtil::checkPermission('FAQ::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, __('View list', $dom), pnModURL('FAQ', 'admin', 'view')),
-                         array(null, __('Settings', $dom),   pnModURL('FAQ', 'admin', 'modifyconfig'))
+                         array(null, __('Settings', $dom),  pnModURL('FAQ', 'admin', 'modifyconfig'))
                       );
-        $linkoptions[] = array(null, __('Add a FAQ', $dom),  pnModURL('FAQ', 'admin', 'new'), $suboptions);
+        $linkoptions[] = array(null, __('Add a FAQ', $dom), pnModURL('FAQ', 'admin', 'new'), $suboptions);
     }
     if (pnModAvailable('Feeds') && SecurityUtil::checkPermission('Feeds::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, __('View list', $dom), pnModURL('Feeds', 'admin', 'view')),
-                         array(null, __('Settings', $dom),   pnModURL('Feeds', 'admin', 'modifyconfig'))
+                         array(null, __('Settings', $dom),  pnModURL('Feeds', 'admin', 'modifyconfig'))
                       );
         $linkoptions[] = array(null, __('Add a feed', $dom), pnModURL('Feeds', 'admin', 'new'), $suboptions);
     }
     if (pnModAvailable('Reviews') && SecurityUtil::checkPermission('Reviews::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, __('View list', $dom), pnModURL('Reviews', 'admin', 'view')),
-                         array(null, __('Settings', $dom),   pnModURL('Reviews', 'admin', 'modifyconfig'))
+                         array(null, __('Settings', $dom),  pnModURL('Reviews', 'admin', 'modifyconfig'))
                       );
         $linkoptions[] = array(null, __('Add a review', $dom), pnModURL('Reviews', 'admin', 'new'), $suboptions);
     }
@@ -242,7 +260,7 @@ function smarty_function_bt_adminlinks($params, &$smarty)
     if (pnModAvailable('EventLiner') && SecurityUtil::checkPermission('EventLiner::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, __('View list', $dom), pnModURL('EventLiner', 'admin', 'view')),
-                         array(null, __('Settings', $dom),   pnModURL('EventLiner', 'admin', 'modifyconfig'))
+                         array(null, __('Settings', $dom),  pnModURL('EventLiner', 'admin', 'modifyconfig'))
                       );
         $linkoptions[] = array(null, __('Add a calendar event', $dom), pnModURL('EventLiner', 'admin', 'new'), $suboptions);
     }
@@ -255,19 +273,16 @@ function smarty_function_bt_adminlinks($params, &$smarty)
     if (pnModAvailable('crpCalendar') && SecurityUtil::checkPermission('crpCalendar::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, __('View list', $dom), pnModURL('crpCalendar', 'admin', 'view')),
-                         array(null, __('Settings', $dom),   pnModURL('crpCalendar', 'admin', 'modifyconfig'))
+                         array(null, __('Settings', $dom),  pnModURL('crpCalendar', 'admin', 'modifyconfig'))
                       );
         $linkoptions[] = array(null, __('Add a calendar event', $dom), pnModURL('crpCalendar', 'admin', 'new'), $suboptions);
     }
 
     // Legacy modules
-    if (pnModAvailable('Topics') && SecurityUtil::checkPermission('Topics::', '::', ACCESS_EDIT)) {
-        $linkoptions[] = array(null, __('Manage topics', $dom), pnModURL('Topics', 'admin'));
-    }
     if (pnModAvailable('Admin_Messages') && SecurityUtil::checkPermission('Admin_Messages::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, __('View list', $dom), pnModURL('Admin_Messages', 'admin', 'view')),
-                         array(null, __('Settings', $dom),   pnModURL('Admin_Messages', 'admin', 'modifyconfig'))
+                         array(null, __('Settings', $dom),  pnModURL('Admin_Messages', 'admin', 'modifyconfig'))
                       );
         $linkoptions[] = array(null, __('Add an admin message', $dom), pnModURL('Admin_Messages', 'admin', 'new'), $suboptions);
     }

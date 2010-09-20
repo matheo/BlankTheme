@@ -29,7 +29,7 @@ function smarty_function_diggers($params, &$smarty)
         $url = pnGetCurrentURL();
     }
 
-    $dom = ZLanguage::getThemeDomain('blanktheme');
+    $dom = ZLanguage::getThemeDomain('BlankTheme');
 
     $theme = pnUserGetTheme();
     $imagepath = pnGetBaseURL() . 'themes/' . DataUtil::formatForOS($theme) . '/images/bookmarks/';

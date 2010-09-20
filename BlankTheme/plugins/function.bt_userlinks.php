@@ -41,7 +41,7 @@ function smarty_function_bt_userlinks($params, $smarty)
 
     $span = isset($params['span']) ? (bool)$params['span'] :  false;
 
-    $dom = ZLanguage::getThemeDomain('blanktheme');
+    $dom = ZLanguage::getThemeDomain('BlankTheme');
 
     /*** Build the menu-array ***/
     /* Option format: id, lang_constant, link, array_of_sublinks */

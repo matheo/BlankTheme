@@ -1,7 +1,7 @@
 /**
  * Screen layout styles
  *
- * @copyright       Copyright 2005-2008, Dirk Jesse
+ * @copyright       Copyright 2005-2010, Dirk Jesse
  * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
  *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
  * @link            http://www.yaml.de
@@ -75,6 +75,16 @@
     padding: 10px 0; /* to-remove */
   }
 
+  /* skiplinks */
+  #skiplinks a.skip:focus,
+  #skiplinks a.skip:active {
+    background: #333;
+    border-bottom: 1px #000 solid;
+    color: #fff;
+    padding: 10px 0;
+    text-decoration: none;
+  }
+
   /* general wrapper */
   .page_margins {
     border: 0px #889 solid;  /* to-remove */
@@ -91,7 +101,7 @@
     border: 10px #fff solid; /* to-remove */
   }
 
-      /* header */    
+      /* header */
       #header {
         /*background: #fff url(../../images/design/bg_header.gif) repeat-x top left;*/
         padding: 0 20px; /* do not use top/bottom paddings with fixed height */

@@ -30,7 +30,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
         return '';
     }
 
-    $dom = ZLanguage::getThemeDomain('blanktheme');
+    $dom = ZLanguage::getThemeDomain('BlankTheme');
 
     // blanktheme vars
     $body      = $smarty->_tpl_vars['body'];

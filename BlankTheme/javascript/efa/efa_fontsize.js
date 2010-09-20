@@ -24,7 +24,7 @@ var efa_increment = 10;  //%
 var efalang_zoomIn = 'Decrease font size';
 var efalang_zoomReset = 'Reset font size';
 var efalang_zoomOut = 'Increase font size';
-var efathemedir = 'blanktheme';
+var efathemedir = 'BlankTheme';
 
 function Efa_Fontsize(increment,def) {
 	this.w3c = (document.getElementById);
