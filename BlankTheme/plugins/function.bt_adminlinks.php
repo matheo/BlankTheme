@@ -2,7 +2,7 @@
 /**
  * Zikula Application Framework
  *
- * @copyright  (c) 2008, BlankTheme Team
+ * @copyright  (c) BlankTheme Team
  * @link       http://www.blanktheme.org
  * @license    GNU/GPL - http://www.gnu.org/copyleft/gpl.html
  * @version    $Id$
@@ -56,7 +56,7 @@ function smarty_function_bt_adminlinks($params, &$smarty)
     {
         /* Config menu */
         $linkoptions = array(
-                             array(null, __('Site settings', $dom),         ModUtil::url('Settings', 'admin'),
+                             array(null, __('Site settings', $dom),  ModUtil::url('Settings', 'admin'),
                                  array(
                                      array(null, __('Localization', $dom),  ModUtil::url('Settings', 'admin', 'multilingual')),
                                      array(null, __('HTML settings', $dom), ModUtil::url('SecurityCenter', 'admin', 'allowedhtml'))
@@ -91,19 +91,19 @@ function smarty_function_bt_adminlinks($params, &$smarty)
         $linkoptions = array();
 
         if (ModUtil::available('EZComments')) {
-            $linkoptions[] = array(null, __('Comments', $dom), ModUtil::url('EZComments', 'admin', 'modifyconfig'));
+            $linkoptions[] = array(null, __('Comments', $dom),  ModUtil::url('EZComments', 'admin', 'modifyconfig'));
         }
         if (ModUtil::available('MultiHook')) {
             $linkoptions[] = array(null, __('MultiHook', $dom), ModUtil::url('MultiHook', 'admin', 'modifyconfig'));
         }
         if (ModUtil::available('bbcode')) {
-            $linkoptions[] = array(null, __('BBCode', $dom), ModUtil::url('bbcode', 'admin', 'config'));
+            $linkoptions[] = array(null, __('BBCode', $dom),    ModUtil::url('bbcode', 'admin', 'config'));
         }
         if (ModUtil::available('bbsmile')) {
-            $linkoptions[] = array(null, __('Smilies', $dom), ModUtil::url('bbsmile', 'admin', 'modifyconfig'));
+            $linkoptions[] = array(null, __('Smilies', $dom),   ModUtil::url('bbsmile', 'admin', 'modifyconfig'));
         }
         if (ModUtil::available('Ratings')) {
-            $linkoptions[] = array(null, __('Ratings', $dom), ModUtil::url('Ratings', 'admin', 'modifyconfig'));
+            $linkoptions[] = array(null, __('Ratings', $dom),   ModUtil::url('Ratings', 'admin', 'modifyconfig'));
         }
         if (empty($linkoptions)) {
             $linkoptions[] = array(null, __('No hooks installed', $dom), '#');

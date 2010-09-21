@@ -2,7 +2,7 @@
 /**
  * Zikula Application Framework
  *
- * @copyright  (c), Mateo Tibaquirá
+ * @copyright  (c) Mateo Tibaquirá
  * @link       http://www.blanktheme.org
  * @license    GNU/GPL - http://www.gnu.org/copyleft/gpl.html
  * @version    $Id$
@@ -35,5 +35,6 @@ function smarty_modifier_checkzone($layout, $zone)
 
     $layout = explode('_', $layout);
     unset($layout[0]);
+
     return in_array((string)$zone, $layout);
 }

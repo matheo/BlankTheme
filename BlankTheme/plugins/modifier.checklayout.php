@@ -2,7 +2,7 @@
 /**
  * Zikula Application Framework
  *
- * @copyright  (c), Mateo Tibaquirá
+ * @copyright  (c) Mateo Tibaquirá
  * @link       http://www.blanktheme.org
  * @license    GNU/GPL - http://www.gnu.org/copyleft/gpl.html
  * @version    $Id$
@@ -37,5 +37,6 @@ function smarty_modifier_checklayout($layout, $columns)
     if (strpos($layout[0], (string)$columns) !== false) {
         return true;
     }
+
     return false;
 }
