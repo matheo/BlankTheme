@@ -15,7 +15,7 @@ $dom = ZLanguage::getThemeDomain('BlankTheme');
 $themeversion['name']           = 'BlankTheme';
 $themeversion['displayname']    = __('BlankTheme', $dom);
 $themeversion['description']    = __('Theme development framework for Zikula', $dom);
-$themeversion['version']        = '1.0';
+$themeversion['version']        = '1.1';
 
 $themeversion['author']         = 'BlankTheme Team';
 $themeversion['contact']        = 'http://www.blanktheme.org';
@@ -30,5 +30,11 @@ $themeversion['help']           = 'docs/help.txt';
 $themeversion['license']        = 'docs/license.txt';
 $themeversion['xhtml']          = true;
 
-$themeversion['extra']          = array('BlankTheme' => '1.0',
+$themeversion['extra']          = array('BlankTheme' => '1.1',
                                         'YAML'       => '3.2.1');
+
+/* themevariables.ini gettext strings*/
+no__('Master body template');
+no__('Master layout');
+no__('User menu to use');
+no__('Enable font resize buttons');

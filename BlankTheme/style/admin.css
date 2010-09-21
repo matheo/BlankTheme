@@ -30,13 +30,13 @@
 
 /* Theme-navigation */
 /* Admin menu based upon prodrop8 menu from cssplay.co.uk, default without tabimages */
-/* ================================================================ 
+/* ================================================================
 This copyright notice must be kept untouched in the stylesheet at all times.
 
 The original version of this stylesheet and the associated (x)html
 is available at http://www.cssplay.co.uk/menus/pro_drop8.html
 Copyright (c) 2005-2007 Stu Nicholls. All rights reserved.
-This stylesheet and the associated (x)html may be modified in any 
+This stylesheet and the associated (x)html may be modified in any
 way to fit your requirements.
 =================================================================== */
 /* Adapted for Zikula menutree, Erik Spaan, http://code.zikula.org/blanktheme */
@@ -110,7 +110,7 @@ way to fit your requirements.
   color: #222;
   line-height: 27px;
 }
-#nav_admin .cssplay_prodrop li a.top_link:hover span, 
+#nav_admin .cssplay_prodrop li a.top_link:hover span,
 #nav_admin .cssplay_prodrop li.selected a.top_link span {
   background: #B5B5B5;
 }
@@ -155,7 +155,7 @@ way to fit your requirements.
 
 /* keep the 'next' level invisible by placing it off screen. */
 #nav_admin .cssplay_prodrop ul,
-#nav_admin .cssplay_prodrop :hover ul ul, 
+#nav_admin .cssplay_prodrop :hover ul ul,
 #nav_admin .cssplay_prodrop :hover ul :hover ul ul,
 #nav_admin .cssplay_prodrop :hover ul :hover ul :hover ul ul,
 #nav_admin .cssplay_prodrop :hover ul :hover ul :hover ul :hover ul ul,
@@ -226,7 +226,7 @@ way to fit your requirements.
 #nav_admin .cssplay_prodrop :hover ul li:hover > a.fly {
   background: #959595 url(../images/adminmenu/cssplay_prodrop8_arrow_on.gif) 200px 7px no-repeat;
   color:#fff;
-} 
+}
 
 /* set up the flyout levels when hovering */
 #nav_admin .cssplay_prodrop :hover ul :hover ul,

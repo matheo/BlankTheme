@@ -43,7 +43,7 @@
   /**
    * Global elements
    * standar html elements styles
-   * 
+   *
    * @section content-global
    */
 
@@ -233,7 +233,7 @@
   /**
    * General layout elements
    * styles for the main containers and some of its specific contents
-   * 
+   *
    * @section content-layout
    */
 
@@ -266,7 +266,7 @@
   /**
    * Links
    * Formatting of hyperlinks
-   * 
+   *
    * @section content-links
    */
 
@@ -298,7 +298,7 @@
     font-weight: normal;
     text-decoration: none;
   }
-  #topnav a:focus, 
+  #topnav a:focus,
   #topnav a:hover,
   #topnav a:active {
     background-color: transparent;
@@ -306,7 +306,7 @@
   }
 
   /* title link */
-  #header h1 a:focus, 
+  #header h1 a:focus,
   #header h1 a:hover,
   #header h1 a:active {
     text-decoration: none;
@@ -318,7 +318,7 @@
     color: #999;
     font-weight: bold;
   }
-  #footer a:focus, 
+  #footer a:focus,
   #footer a:hover,
   #footer a:active {
     background: transparent;
@@ -330,7 +330,7 @@
 
   /**
    * Emphasizing external Hyperlinks via CSS
-   * 
+   *
    * @section             content-external-links
    * @app-yaml-default    disabled
    */
@@ -351,7 +351,7 @@
   /**
    * Tables
    * Generic classes for table-width and design definition
-   * 
+   *
    * @section content-tables
    */
 
@@ -411,7 +411,7 @@
   /**
    * Generic Content Classes
    * standard classes for positioning and highlighting
-   * 
+   *
    * @section content-generic-classes
    */
 
@@ -492,25 +492,25 @@
   /**
    * Theme specific styles
    * general styles defined by the theme
-   * 
+   *
    * @section content-theme-specific
    */
 
   /* efa font resize styles, if not used comment out */
   .fontresize-large,
-  .fontresize-reset, 
+  .fontresize-reset,
   .fontresize-small {
     width: 16px;
     height: 16px;
     padding: 3px 0;
   }
-  .fontresize-large { 
+  .fontresize-large {
     background: url(../../images/icons/font_resize.gif) no-repeat 0px 50%;
   }
-  .fontresize-reset { 
+  .fontresize-reset {
     background: url(../../images/icons/font_resize.gif) no-repeat -20px 50%;
   }
-  .fontresize-small { 
+  .fontresize-small {
     background: url(../../images/icons/font_resize.gif) no-repeat -40px 50%;
   }
 
@@ -525,7 +525,7 @@
   /**
    * Zikula specific styles
    * styles to be used in the Zikula templates
-   * 
+   *
    * @section content-zikula-specific
    */
 
@@ -592,7 +592,7 @@
    * Value Addons styles
    * @subsection content-zikula-addons
    */
-  
+
   /* News Articles */
   .news_index {
     padding: 5px 0px 10px 0px;

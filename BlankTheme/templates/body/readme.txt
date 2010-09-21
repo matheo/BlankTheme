@@ -23,7 +23,7 @@ all the columns are floating
 3col231:
 3col derivation with the #col1 at the end of the #main container to use #col1 static
 * Static main column to have fixed side columns but fluid main content
-* Same features that 3 col, but only supports the distributions '213' and '312' 
+* Same features that 3 col, but only supports the distributions '213' and '312'
 
 grid:
 uses the YAMl subtemplates like the flexible grids example to build the layout
@@ -31,5 +31,5 @@ uses the YAMl subtemplates like the flexible grids example to build the layout
 * Also supports the '3b' zone (3subcolumnsat-bottom)
   and uses the [bottoml]. [bottomc] and [bottomr] block positions
 
- 
+
 All of them also supports the additional zone 'nc' (no-center) to disable the [center] blocks

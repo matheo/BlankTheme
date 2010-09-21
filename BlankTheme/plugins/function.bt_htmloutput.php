@@ -125,7 +125,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
 //                    .'<script type="text/javascript" src="'.$smarty->scriptpath.'/minmax.js"></script>'
                       .'<style type="text/css">
                             img, div, a, input { behavior: url('.$smarty->stylepath.'/patches/iepngfix.htc) }
-                        </style>' 
+                        </style>'
 //                    .'<script type="text/javascript" src="'.$smarty->scriptpath.'/iepngfix_tilebg.js"></script>'
                       .'<![endif]-->
                        ';

@@ -117,7 +117,7 @@ function minmax_layout() {
 
 // Scanning. Check document every so often until it has finished loading. Do
 // nothing until <body> arrives, then call main init. Pass any new elements
-// found on each scan to be bound   
+// found on each scan to be bound
 
 var minmax_SCANDELAY= 500;
 

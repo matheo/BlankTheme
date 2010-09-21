@@ -35,20 +35,20 @@
 {
   /**
    * Global fixes
-   * 
+   *
    * @section layout-global
    */
 
   /* Centering layout in old IE-versions */
-  body { 
-    text-align: center; 
+  body {
+    text-align: center;
   }
 
-  .page_margins { 
-    text-align: left; 
+  .page_margins {
+    text-align: left;
   }
 
-  .bt_zone { 
+  .bt_zone {
     clear: both;
     display: block;
     overflow: hidden;
@@ -59,7 +59,7 @@
   /**
    * Design of the layout
    * Layout: width, background, borders of the main containers
-   * 
+   *
    * @section layout-basics
    */
 
@@ -128,19 +128,19 @@
             margin: 30px 12px 0 0;
           }
 
-      /* adjustment of main navigation */          
+      /* adjustment of main navigation */
       #nav ul {
         margin-left: 20px;
       }
 
-      /* content wrapper */      
+      /* content wrapper */
       #main {
         padding: 1em 0;
       }
 
       /* footer */
-      #footer { 
-        background: #efefef; 
+      #footer {
+        background: #efefef;
         border-top: 5px #dfdfdf solid; /* to-remove */
         padding: 12px 15px;
       }
@@ -263,11 +263,11 @@
     padding: 0 10px;
   }
 
-  /* cool subcolumns style */  
+  /* cool subcolumns style */
   .coolsubcol {
     background: #f9f9f9;
     border-top: 2px #efefef solid;
-    color: #666; 
+    color: #666;
     padding-top: 15px;
   }
   .coolsubcol .subcl {
@@ -284,7 +284,7 @@
 
   /**
    * Specific templates and zones
-   * 
+   *
    * @section layout-templates
    */
 
