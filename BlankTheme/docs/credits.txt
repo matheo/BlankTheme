@@ -2,7 +2,7 @@
   CREDITS
 
   Developer:
-    Mateo Tibaquir· [mateo]
+    Mateo Tibaquir√° [mateo]
     http://www.nestormateo.com/
 
   Menu management:

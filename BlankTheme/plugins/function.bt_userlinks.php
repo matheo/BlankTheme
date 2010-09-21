@@ -12,9 +12,9 @@
  * Smarty function to display the user navigation menu
  *
  * Example
- * <!--[bt_userlinks id='myId' current='home' currentclass='myActiveClass']-->
+ * {bt_userlinks id='myId' current='home' currentclass='myActiveClass'}
  *
- * @author       Mateo Tibaquira
+ * @author       Mateo Tibaquirá
  * @since        08/11/07
  * @param        array       $params      All attributes passed to this function from the template
  * @param        object      &$smarty     Reference to the Smarty object

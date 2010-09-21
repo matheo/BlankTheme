@@ -12,10 +12,10 @@
  * Smarty function to centralize important html outputs
  *
  * Example
- * <!--[bt_htmloutput section='head']-->
- * <!--[bt_htmloutput section='topnavlinks']-->
+ * {bt_htmloutput section='head'}
+ * {bt_htmloutput section='topnavlinks'}
  *
- * @author       Mateo Tibaquira
+ * @author       Mateo Tibaquirá
  * @since        05/07/08
  * @param        array       $params      All attributes passed to this function from the template
  * @param        object      &$smarty     Reference to the Smarty object

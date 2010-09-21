@@ -10,9 +10,9 @@
  *             services for specified article
  * 
  * @example
- * <!--[diggers ]--> : uses current url + sitename
- * <!--[diggers title=$info.title]--> : uses current url and given title
- * <!--[diggers title=$info.title url=$info.url]--> : uses given url and title
+ * {diggers} : uses current url + sitename
+ * {diggers title=$pubdata.core_title} : uses current url and given title
+ * {diggers title=$pubdata.core_title url=$returnurl} : uses given url and title
  */
 
 function smarty_function_diggers($params, &$smarty) 

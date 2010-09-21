@@ -2,7 +2,7 @@
 /**
  * Zikula Application Framework
  *
- * @copyright  (c) 2008, Mateo Tibaquira
+ * @copyright  (c), Mateo Tibaquirá
  * @link       http://www.blanktheme.org
  * @license    GNU/GPL - http://www.gnu.org/copyleft/gpl.html
  * @version    $Id$
@@ -17,11 +17,11 @@
  *
  * Example
  * with $layout = '213_cb2'
- * <!--[if $layout|checkzone:'cb2']-->
+ * {if $layout|checkzone:'cb2'}
  * do some stuff when 'cb2' (center-bottom zone with 2 subcolumns) zone is enabled
- * <!--[/if]-->
+ * {/if}
  *
- * @author   Mateo Tibaquir�
+ * @author   Mateo Tibaquirá
  * @since    30 Ene 08
  * @param    string   $string     Passed layout with the current definition
  * @param    string   $zone       The zone to check into the passed layout

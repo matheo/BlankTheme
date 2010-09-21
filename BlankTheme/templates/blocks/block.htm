@@ -1,12 +1,12 @@
-<!--[* $Id$ *]-->
+{* $Id$ *}
 
 <!-- Block Start -->
-<!--[if $title neq '']--><!--[* Display title if there is one *]-->
+{if $title neq ''}{* Display title if there is one *}
 <h4 class="pn-block-title">
-    <span><!--[$title]--></span>
+    <span>{$title}</span>
 </h4>
-<!--[/if]-->
+{/if}
 <div class="pn-block-content floatbox">
-    <!--[$content]-->
+    {$content}
 </div>
 <!-- Block End -->
