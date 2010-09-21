@@ -46,7 +46,7 @@ function Efa_Fontsize(increment,def) {
 efaInitValues = function(efaobject) {
   if ((efaobject.w3c || efaobject.ms) && !efaobject.isOldOp && !efaobject.isMacIE) {
 	var bigger = ['<span class="fontresize-large">',
-				  '<img src="'+document.location.pnbaseURL+'themes/'+efathemedir+'/images/pixel-trans.gif" width="16" height="16" alt="[+]" title="'+efalang_zoomIn+'" />',
+				  '<img src="'+Zikula.Config.baseURL+'themes/'+efathemedir+'/images/pixel-trans.gif" width="16" height="16" alt="[+]" title="'+efalang_zoomIn+'" />',
 				  efalang_zoomIn,
 				  '',
 				  '',
@@ -59,7 +59,7 @@ efaInitValues = function(efaobject) {
 				  ]
 
 	var reset = ['<span class="fontresize-reset">',
-				 '<img src="'+document.location.pnbaseURL+'themes/'+efathemedir+'/images/pixel-trans.gif" width="16" height="16" alt="[R]" title="'+efalang_zoomReset+'" />',
+				 '<img src="'+Zikula.Config.baseURL+'themes/'+efathemedir+'/images/pixel-trans.gif" width="16" height="16" alt="[R]" title="'+efalang_zoomReset+'" />',
 				 efalang_zoomReset,
 				 '',
 				 '',
@@ -72,7 +72,7 @@ efaInitValues = function(efaobject) {
 				 ]
 
 	var smaller = ['<span class="fontresize-small">',
-				   '<img src="'+document.location.pnbaseURL+'themes/'+efathemedir+'/images/pixel-trans.gif" width="16" height="16" alt="[-]" title="'+efalang_zoomOut+'" />',
+				   '<img src="'+Zikula.Config.baseURL+'themes/'+efathemedir+'/images/pixel-trans.gif" width="16" height="16" alt="[-]" title="'+efalang_zoomOut+'" />',
 				   efalang_zoomOut,
 				   '',
 				   '',

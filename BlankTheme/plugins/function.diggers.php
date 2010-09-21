@@ -21,18 +21,18 @@ function smarty_function_diggers($params, &$smarty)
     unset($params);
 
     if (!isset($title) || empty($title)) {
-        $title = pnConfigGetVar('sitename');
+        $title = System::getVar('sitename');
     }
 
     if (!isset($url) || empty($url)) {
         // get the recent url
-        $url = pnGetCurrentURL();
+        $url = System::getCurrentUrl();
     }
 
     $dom = ZLanguage::getThemeDomain('BlankTheme');
 
-    $theme = pnUserGetTheme();
-    $imagepath = pnGetBaseURL() . 'themes/' . DataUtil::formatForOS($theme) . '/images/bookmarks/';
+    $theme = UserUtil::getTheme();
+    $imagepath = System::getBaseUrl() . 'themes/' . DataUtil::formatForOS($theme) . '/images/bookmarks/';
 
     $title = DataUtil::formatForDisplay($title);
     $link_title = "'$title'";

@@ -51,15 +51,15 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             // build the menu list
             // Option: id, lang string, link
             $menu   = array();
-            if (pnUserLoggedIn()) {
-                $profileModule = pnConfigGetVar('profilemodule', '');
-                if (!empty($profileModule) && pnModAvailable($profileModule)) {
-                    $menu[] = array('account', __('Your account', $dom), pnModURL($profileModule));
+            if (UserUtil::isLoggedIn()) {
+                $profileModule = System::getVar('profilemodule', '');
+                if (!empty($profileModule) && ModUtil::available($profileModule)) {
+                    $menu[] = array('account', __('Your account', $dom), ModUtil::url($profileModule));
                 }
-                $menu[] = array('logout', __('Log out', $dom), pnModURL('Users', 'user', 'logout'));
+                $menu[] = array('logout', __('Log out', $dom), ModUtil::url('Users', 'user', 'logout'));
             } else {
-                $menu[] = array('register', __('Register new account', $dom), pnModURL('Users', 'user', 'register'));
-                $menu[] = array('login', __('Login', $dom), pnModURL('Users', 'user', 'loginscreen'));
+                $menu[] = array('register', __('Register new account', $dom), ModUtil::url('Users', 'user', 'register'));
+                $menu[] = array('login', __('Login', $dom), ModUtil::url('Users', 'user', 'loginscreen'));
             }
             // Render the menu as an unordered list inside a div
             $count   = count($menu) - 1;

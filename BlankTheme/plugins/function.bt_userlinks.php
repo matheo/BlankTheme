@@ -46,50 +46,50 @@ function smarty_function_bt_userlinks($params, $smarty)
     /*** Build the menu-array ***/
     /* Option format: id, lang_constant, link, array_of_sublinks */
     $menu   = array();
-    $menu[] = array('home', __('Home', $dom), pnGetHomepageURL(), null);
+    $menu[] = array('home', __('Home', $dom), System::getHomepageUrl(), null);
 
-    if (pnModAvailable('News')) {
-        $menu[] = array('News', __('News', $dom), pnModURL('News'), null);
+    if (ModUtil::available('News')) {
+        $menu[] = array('News', __('News', $dom), ModUtil::url('News'), null);
     }
 
-    if (pnModAvailable('Pages')) {
-        $menu[] = array('Pages', __('Pages', $dom), pnModURL('Pages'), null);
+    if (ModUtil::available('Pages')) {
+        $menu[] = array('Pages', __('Pages', $dom), ModUtil::url('Pages'), null);
     }
 
-    if (pnModAvailable('Dizkus')) {
-        $menu[] = array('Dizkus', __('Forums', $dom), pnModURL('Dizkus'), null);
+    if (ModUtil::available('Dizkus')) {
+        $menu[] = array('Dizkus', __('Forums', $dom), ModUtil::url('Dizkus'), null);
     }
 
-    if (pnModAvailable('PNphpBB2')) {
-        $menu[] = array('PNphpBB2', __('Forums', $dom), pnModURL('PNphpBB2'), null);
+    if (ModUtil::available('PNphpBB2')) {
+        $menu[] = array('PNphpBB2', __('Forums', $dom), ModUtil::url('PNphpBB2'), null);
     }
 
-    if (pnModAvailable('Zafenio')) {
-        $menu[] = array('Zafenio', __('Forums', $dom), pnModURL('Zafenio'), null);
+    if (ModUtil::available('Zafenio')) {
+        $menu[] = array('Zafenio', __('Forums', $dom), ModUtil::url('Zafenio'), null);
     }
 
-    if (pnModAvailable('FAQ')) {
-        $menu[] = array('FAQ', __('Faq', $dom), pnModURL('FAQ'), null);
+    if (ModUtil::available('FAQ')) {
+        $menu[] = array('FAQ', __('Faq', $dom), ModUtil::url('FAQ'), null);
     }
 
-    if (pnModAvailable('wikula')) {
-        $menu[] = array('wikula', __('Wiki', $dom), pnModURL('wikula'), null);
+    if (ModUtil::available('wikula')) {
+        $menu[] = array('wikula', __('Wiki', $dom), ModUtil::url('wikula'), null);
     }
 
-    if (pnModAvailable('crpCalendar')) {
-        $menu[] = array('crpCalendar', __('Calendar', $dom), pnModURL('crpCalendar'), null);
+    if (ModUtil::available('crpCalendar')) {
+        $menu[] = array('crpCalendar', __('Calendar', $dom), ModUtil::url('crpCalendar'), null);
     }
 
-    if (pnModAvailable('TimeIt')) {
-        $menu[] = array('TimeIt', __('Calendar', $dom), pnModURL('TimeIt'), null);
+    if (ModUtil::available('TimeIt')) {
+        $menu[] = array('TimeIt', __('Calendar', $dom), ModUtil::url('TimeIt'), null);
     }
 
-    if (pnModAvailable('Eventliner')) {
-        $menu[] = array('Eventliner', __('Calendar', $dom), pnModURL('Eventliner'), null);
+    if (ModUtil::available('Eventliner')) {
+        $menu[] = array('Eventliner', __('Calendar', $dom), ModUtil::url('Eventliner'), null);
     }
 
-    if (pnModAvailable('formicula')) {
-        $menu[] = array('formicula', __('Contact', $dom), pnModURL('formicula'), null);
+    if (ModUtil::available('formicula')) {
+        $menu[] = array('formicula', __('Contact', $dom), ModUtil::url('formicula'), null);
     }
 
     // Render the menu as an unordered list in a div

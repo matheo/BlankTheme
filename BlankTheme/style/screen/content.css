@@ -364,7 +364,7 @@
     font-variant: small-caps;
   }
   table.full,
-  table.pn-datatable {
+  table.z-datatable {
     width: 100%;
   }
   table.fixed {
@@ -537,9 +537,9 @@
 
   /* js context menus */
   #bt_wikula .bt_func_edit #col1_content,
-  #bt_wikula .bt_func_edit #pn-maincontent,
+  #bt_wikula .bt_func_edit #z-maincontent,
   #bt_content.bt_type_edit #col1_content,
-  #bt_content.bt_type_edit #pn-maincontent {
+  #bt_content.bt_type_edit #z-maincontent {
     position: inherit;
   }
   div.contextMenu ul li {
@@ -582,7 +582,7 @@
     }
 
   /* main content */
-  #pn-maincontent {
+  #z-maincontent {
     display: block;
     position: relative;
   }
@@ -639,37 +639,37 @@
    */
 
   /* General Blocks styles */
-  .pn-block {
+  .z-block {
     margin-bottom: 15px;
   }
-  .pn-block .pn-block-title {
+  .z-block .z-block-title {
     font-weight: 700;
     line-height: 22px;
     margin: 0;
     padding: 3px 4px;
   }
-  .pn-block .pn-block-content {
+  .z-block .z-block-content {
     padding: 5px;
   }
-  .pn-block ul,
-  .pn-block ol,
-  .pn-block dl {
+  .z-block ul,
+  .z-block ol,
+  .z-block dl {
     margin: 0px;
   }
 
   /* Top Navigation Blocks */
-  .pn-blockposition-navtop {
+  .z-blockposition-navtop {
     margin-bottom: 0px;
   }
 
   /* Right Blocks */
-  .pn-blockposition-right {
+  .z-blockposition-right {
   }
-  .pn-blockposition-right h4 {
+  .z-blockposition-right h4 {
   }
 
   /* Center Blocks */
-  .pn-blockposition-center {
+  .z-blockposition-center {
   }
 
 

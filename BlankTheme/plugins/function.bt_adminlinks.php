@@ -50,37 +50,37 @@ function smarty_function_bt_adminlinks($params, &$smarty)
     $menu = array();
 
     /* Homepage link */
-    $menu[] = array('home', __('Home', $dom), pnGetHomepageURL());
+    $menu[] = array('home', __('Home', $dom), System::getHomepageURL());
 
     if (SecurityUtil::checkPermission('Admin::', '::', ACCESS_EDIT))
     {
         /* Config menu */
         $linkoptions = array(
-                             array(null, __('Site settings', $dom),       pnModURL('Settings', 'admin'),
+                             array(null, __('Site settings', $dom),         ModUtil::url('Settings', 'admin'),
                                  array(
-                                     array(null, __('Localization', $dom),  pnModURL('Settings', 'admin', 'multilingual')),
-                                     array(null, __('HTML settings', $dom), pnModURL('SecurityCenter', 'admin', 'allowedhtml'))
+                                     array(null, __('Localization', $dom),  ModUtil::url('Settings', 'admin', 'multilingual')),
+                                     array(null, __('HTML settings', $dom), ModUtil::url('SecurityCenter', 'admin', 'allowedhtml'))
                                  )
                              ),
-                             array(null, __('Permissions', $dom),    pnModURL('Permissions', 'admin')),
-                             array(null, __('Categories', $dom),     pnModURL('Categories', 'admin'),
+                             array(null, __('Permissions', $dom),    ModUtil::url('Permissions', 'admin')),
+                             array(null, __('Categories', $dom),     ModUtil::url('Categories', 'admin'),
                                  array(
-                                     array(null, __('Category registry', $dom), pnModURL('Categories', 'admin', 'editregistry')),
-                                     array(null, __('New category', $dom),      pnModURL('Categories', 'admin', 'new'))
+                                     array(null, __('Category registry', $dom), ModUtil::url('Categories', 'admin', 'editregistry')),
+                                     array(null, __('New category', $dom),      ModUtil::url('Categories', 'admin', 'new'))
                                  )
                              ),
-                             array(null, __('Admin panel', $dom),    pnModURL('Admin', 'admin')),
-                             array(null, __('System mailer', $dom),  pnModURL('Mailer', 'admin')),
-                             array(null, __('Search options', $dom), pnModURL('Search', 'admin')),
+                             array(null, __('Admin panel', $dom),    ModUtil::url('Admin', 'admin')),
+                             array(null, __('System mailer', $dom),  ModUtil::url('Mailer', 'admin')),
+                             array(null, __('Search options', $dom), ModUtil::url('Search', 'admin')),
                        );
-        if (pnModAvailable('legal')) {
-            $linkoptions[] = array(null, __('Legal settings', $dom), pnModURL('legal', 'admin'));
+        if (ModUtil::available('legal')) {
+            $linkoptions[] = array(null, __('Legal settings', $dom), ModUtil::url('legal', 'admin'));
         }
-        if (pnModAvailable('scribite')) {
-            $linkoptions[] = array(null, __('WYSIWYG editors', $dom), pnModURL('scribite', 'admin'));
+        if (ModUtil::available('scribite')) {
+            $linkoptions[] = array(null, __('WYSIWYG editors', $dom), ModUtil::url('scribite', 'admin'));
         }
-        if (pnModAvailable('Thumbnail')) {
-            $linkoptions[] = array(null, __('Thumbnails', $dom), pnModURL('Thumbnail', 'admin'));
+        if (ModUtil::available('Thumbnail')) {
+            $linkoptions[] = array(null, __('Thumbnails', $dom), ModUtil::url('Thumbnail', 'admin'));
         }
 
         $menu[] = array('config', __('Config', $dom),  '#', $linkoptions);
@@ -90,20 +90,20 @@ function smarty_function_bt_adminlinks($params, &$smarty)
         /* Search for installed hooks*/
         $linkoptions = array();
 
-        if (pnModAvailable('EZComments')) {
-            $linkoptions[] = array(null, __('Comments', $dom), pnModURL('EZComments', 'admin', 'modifyconfig'));
+        if (ModUtil::available('EZComments')) {
+            $linkoptions[] = array(null, __('Comments', $dom), ModUtil::url('EZComments', 'admin', 'modifyconfig'));
         }
-        if (pnModAvailable('MultiHook')) {
-            $linkoptions[] = array(null, __('MultiHook', $dom), pnModURL('MultiHook', 'admin', 'modifyconfig'));
+        if (ModUtil::available('MultiHook')) {
+            $linkoptions[] = array(null, __('MultiHook', $dom), ModUtil::url('MultiHook', 'admin', 'modifyconfig'));
         }
-        if (pnModAvailable('bbcode')) {
-            $linkoptions[] = array(null, __('BBCode', $dom), pnModURL('bbcode', 'admin', 'config'));
+        if (ModUtil::available('bbcode')) {
+            $linkoptions[] = array(null, __('BBCode', $dom), ModUtil::url('bbcode', 'admin', 'config'));
         }
-        if (pnModAvailable('bbsmile')) {
-            $linkoptions[] = array(null, __('Smilies', $dom), pnModURL('bbsmile', 'admin', 'modifyconfig'));
+        if (ModUtil::available('bbsmile')) {
+            $linkoptions[] = array(null, __('Smilies', $dom), ModUtil::url('bbsmile', 'admin', 'modifyconfig'));
         }
-        if (pnModAvailable('Ratings')) {
-            $linkoptions[] = array(null, __('Ratings', $dom), pnModURL('Ratings', 'admin', 'modifyconfig'));
+        if (ModUtil::available('Ratings')) {
+            $linkoptions[] = array(null, __('Ratings', $dom), ModUtil::url('Ratings', 'admin', 'modifyconfig'));
         }
         if (empty($linkoptions)) {
             $linkoptions[] = array(null, __('No hooks installed', $dom), '#');
@@ -111,22 +111,22 @@ function smarty_function_bt_adminlinks($params, &$smarty)
 
         $menu[] = array('system', __('System', $dom), '#',
                     array(
-                        array(null, __('Modules', $dom),            pnModURL('Modules', 'admin'),
+                        array(null, __('Modules', $dom),              ModUtil::url('Modules', 'admin'),
                             array(
-                                array(null, __('System hooks', $dom), pnModURL('Modules', 'admin', 'hooks', array('id' => 0)))
+                                array(null, __('System hooks', $dom), ModUtil::url('Modules', 'admin', 'hooks', array('id' => 0)))
                             )
                         ),
                         array(null, __('Hooks', $dom), '#',
                             $linkoptions
                         ),
-                        array(null, __('Blocks', $dom),             pnModURL('Blocks', 'admin')),
-                        array(null, __('Themes', $dom),             pnModURL('Theme', 'admin')),
-                        array(null, __('Security center', $dom),    pnModURL('SecurityCenter', 'admin', 'modifyconfig'),
+                        array(null, __('Blocks', $dom),             ModUtil::url('Blocks', 'admin')),
+                        array(null, __('Themes', $dom),             ModUtil::url('Theme', 'admin')),
+                        array(null, __('Security center', $dom),    ModUtil::url('SecurityCenter', 'admin', 'modifyconfig'),
                             array(
-                                array(null, __('Registered attacks', $dom), pnModURL('SecurityCenter', 'admin'))
+                                array(null, __('Registered attacks', $dom), ModUtil::url('SecurityCenter', 'admin'))
                             )
                         ),
-                        array(null, __('System information', $dom), pnModURL('SysInfo', 'admin'))
+                        array(null, __('System information', $dom), ModUtil::url('SysInfo', 'admin'))
                     )
                 );
 
@@ -134,47 +134,46 @@ function smarty_function_bt_adminlinks($params, &$smarty)
         /* Users/Groups menu */
         // build the Users management submenu options
         $subusr   = array();
-        $subusr[] = array(null, __('Users settings', $dom), pnModURL('Users', 'admin', 'modifyconfig'));
+        $subusr[] = array(null, __('Users settings', $dom), ModUtil::url('Users', 'admin', 'modifyconfig'));
 
-        $profileModule = pnConfigGetVar('profilemodule', '');
-        if (!empty($profileModule) && pnModAvailable($profileModule)) {
-            $subusr[] = array(null, __('Account properties', $dom),     pnModURL($profileModule, 'admin', 'view'));
+        $profileModule = System::getVar('profilemodule', '');
+        if (!empty($profileModule) && ModUtil::available($profileModule)) {
+            $subusr[] = array(null, __('Account properties', $dom), ModUtil::url($profileModule, 'admin', 'view'));
         }
 
         $menu[] = array('users', __('Users', $dom), '#',
                     array(
-                        array(null, __('Manage groups', $dom), pnModURL('Groups', 'admin'),
+                        array(null, __('Manage groups', $dom), ModUtil::url('Groups', 'admin'),
                             array(
-                                array(null, __('Groups settings', $dom), pnModURL('Groups', 'admin', 'modifyconfig'))
+                                array(null, __('Groups settings', $dom), ModUtil::url('Groups', 'admin', 'modifyconfig'))
                             )
                         ),
-                        array(null, __('Manage users', $dom), pnModURL('Users', 'admin'),
+                        array(null, __('Manage users', $dom), ModUtil::url('Users', 'admin'),
                             $subusr
                         ),
-                        array(null, __('Create user', $dom),  pnModURL('Users', 'admin', 'new')),
-                        array(null, __('Find and e-mail users', $dom), pnModURL('Users', 'admin', 'search'))
+                        array(null, __('Create user', $dom), ModUtil::url('Users', 'admin', 'new')),
+                        array(null, __('Find and e-mail users', $dom), ModUtil::url('Users', 'admin', 'search'))
                     )
                 );
 
 
         /* Common Routines links */
-        $authidpnr = SecurityUtil::generateAuthKey('pnRender');
         $authidthm = SecurityUtil::generateAuthKey('Theme');
         $linkoptions = array(
-                           array(null, __('Template engine', $dom), pnModURL('pnRender', 'admin'),
+                           array(null, __('Template engine', $dom), '#',
                                array(
-                                   array(null, __('Clear compiled templates', $dom), pnModURL('pnRender', 'admin', 'clear_compiled', array('authid' => $authidpnr))),
-                                   array(null, __('Clear pnRender cache', $dom),     pnModURL('pnRender', 'admin', 'clear_cache', array('authid' => $authidpnr)))
+                                   array(null, __('Clear compiled templates', $dom), ModUtil::url('Theme', 'admin', 'render_clear_compiled', array('authid' => $authidthm))),
+                                   array(null, __('Clear cache', $dom),              ModUtil::url('Theme', 'admin', 'render_clear_cache', array('authid' => $authidthm)))
                                )
                            ),
-                           array(null, __('Theme engine', $dom), pnModURL('Theme', 'admin', 'modifyconfig'),
+                           array(null, __('Theme engine', $dom), ModUtil::url('Theme', 'admin', 'modifyconfig'),
                                array(
-                                   array(null, __('Clear compiled templates', $dom), pnModURL('Theme', 'admin', 'clear_compiled', array('authid' => $authidthm))),
-                                   array(null, __('Clear Theme cache', $dom),        pnModURL('Theme', 'admin', 'clear_cache', array('authid' => $authidthm)))
+                                   array(null, __('Clear compiled templates', $dom), ModUtil::url('Theme', 'admin', 'clear_compiled', array('authid' => $authidthm))),
+                                   array(null, __('Clear cache', $dom),              ModUtil::url('Theme', 'admin', 'clear_cache', array('authid' => $authidthm)))
                                )
                            ),
-                           array(null, __('Filesystem check', $dom),       pnModURL('SysInfo', 'admin', 'filesystem')),
-                           array(null, __('Temporary folder check', $dom), pnModURL('SysInfo', 'admin', 'pntemp'))
+                           array(null, __('Filesystem check', $dom),       ModUtil::url('SysInfo', 'admin', 'filesystem')),
+                           array(null, __('Temporary folder check', $dom), ModUtil::url('SysInfo', 'admin', 'ztemp'))
                        );
 
         $menu[] = array('routines', __('Routines', $dom), '#', $linkoptions);
@@ -186,111 +185,111 @@ function smarty_function_bt_adminlinks($params, &$smarty)
     $linkoptions = array();
 
     // Content Modules
-    if (pnModAvailable('News') && (SecurityUtil::checkPermission('News::', '::', ACCESS_EDIT) || SecurityUtil::checkPermission('Stories::Story', '::', ACCESS_EDIT))) {
+    if (ModUtil::available('News') && (SecurityUtil::checkPermission('News::', '::', ACCESS_EDIT) || SecurityUtil::checkPermission('Stories::Story', '::', ACCESS_EDIT))) {
         $suboptions = array(
-                         array(null, __('View list', $dom), pnModURL('News', 'admin', 'view')),
-                         array(null, __('Settings', $dom),  pnModURL('News', 'admin', 'modifyconfig'))
+                         array(null, __('View list', $dom), ModUtil::url('News', 'admin', 'view')),
+                         array(null, __('Settings', $dom),  ModUtil::url('News', 'admin', 'modifyconfig'))
                       );
-        $linkoptions[] = array(null, __('Add an article', $dom), pnModURL('News', 'admin', 'new'), $suboptions);
+        $linkoptions[] = array(null, __('Add an article', $dom), ModUtil::url('News', 'admin', 'new'), $suboptions);
     }
-    if (pnModAvailable('Pages') && SecurityUtil::checkPermission('Pages::', '::', ACCESS_EDIT)) {
+    if (ModUtil::available('Pages') && SecurityUtil::checkPermission('Pages::', '::', ACCESS_EDIT)) {
         $suboptions = array(
-                         array(null, __('View list', $dom), pnModURL('Pages', 'admin', 'view')),
-                         array(null, __('Settings', $dom),  pnModURL('Pages', 'admin', 'modifyconfig'))
+                         array(null, __('View list', $dom), ModUtil::url('Pages', 'admin', 'view')),
+                         array(null, __('Settings', $dom),  ModUtil::url('Pages', 'admin', 'modifyconfig'))
                       );
-        $linkoptions[] = array(null, __('Add a page', $dom), pnModURL('Pages', 'admin', 'new'), $suboptions);
+        $linkoptions[] = array(null, __('Add a page', $dom), ModUtil::url('Pages', 'admin', 'new'), $suboptions);
     }
-    if (pnModAvailable('Content') && SecurityUtil::checkPermission('Content::', '::', ACCESS_EDIT)) {
+    if (ModUtil::available('Content') && SecurityUtil::checkPermission('Content::', '::', ACCESS_EDIT)) {
         $suboptions = array(
-                         array(null, __('Settings', $dom), pnModURL('Content', 'admin', 'settings'))
+                         array(null, __('Settings', $dom), ModUtil::url('Content', 'admin', 'settings'))
                       );
-        $linkoptions[] = array(null, __('Edit contents', $dom), pnModURL('Content', 'edit'), $suboptions);
+        $linkoptions[] = array(null, __('Edit contents', $dom), ModUtil::url('Content', 'edit'), $suboptions);
     }
 
     // Downloads modules
-    if (pnModAvailable('MediaAttach') && SecurityUtil::checkPermission('MediaAttach::', '::', ACCESS_EDIT)) {
+    if (ModUtil::available('MediaAttach') && SecurityUtil::checkPermission('MediaAttach::', '::', ACCESS_EDIT)) {
         $suboptions = array(
-                         array(null, __('View list', $dom), pnModURL('MediaAttach', 'admin', 'view')),
-                         array(null, __('Settings', $dom),  pnModURL('MediaAttach', 'admin'))
+                         array(null, __('View list', $dom), ModUtil::url('MediaAttach', 'admin', 'view')),
+                         array(null, __('Settings', $dom),  ModUtil::url('MediaAttach', 'admin'))
                       );
-        $linkoptions[] = array(null, __('Add a download', $dom), pnModURL('MediaAttach', 'admin', 'view', array(), null, 'myuploadform_switch'), $suboptions);
+        $linkoptions[] = array(null, __('Add a download', $dom), ModUtil::url('MediaAttach', 'admin', 'view', array(), null, 'myuploadform_switch'), $suboptions);
     }
-    if (pnModAvailable('Downloads') && SecurityUtil::checkPermission('Downloads::', '::', ACCESS_EDIT)) {
+    if (ModUtil::available('Downloads') && SecurityUtil::checkPermission('Downloads::', '::', ACCESS_EDIT)) {
         $suboptions = array(
-                         array(null, __('Add category', $dom), pnModURL('Downloads', 'admin', 'category_menu')),
-                         array(null, __('Settings', $dom),     pnModURL('Downloads', 'admin'))
+                         array(null, __('Add category', $dom), ModUtil::url('Downloads', 'admin', 'category_menu')),
+                         array(null, __('Settings', $dom),     ModUtil::url('Downloads', 'admin'))
                       );
-        $linkoptions[] = array(null, __('Add a download', $dom), pnModURL('Downloads', 'admin', 'newdownload'), $suboptions);
+        $linkoptions[] = array(null, __('Add a download', $dom), ModUtil::url('Downloads', 'admin', 'newdownload'), $suboptions);
     }
 
     // Community modules
-    if (pnModAvailable('Polls') && SecurityUtil::checkPermission('Olls::', '::', ACCESS_EDIT)) {
+    if (ModUtil::available('Polls') && SecurityUtil::checkPermission('Olls::', '::', ACCESS_EDIT)) {
         $suboptions = array(
-                         array(null, __('View list', $dom), pnModURL('Polls', 'admin', 'view')),
-                         array(null, __('Settings', $dom),  pnModURL('Polls', 'admin', 'modifyconfig'))
+                         array(null, __('View list', $dom), ModUtil::url('Polls', 'admin', 'view')),
+                         array(null, __('Settings', $dom),  ModUtil::url('Polls', 'admin', 'modifyconfig'))
                       );
-        $linkoptions[] = array(null, __('Add a poll', $dom), pnModURL('Polls', 'admin', 'new'), $suboptions);
+        $linkoptions[] = array(null, __('Add a poll', $dom), ModUtil::url('Polls', 'admin', 'new'), $suboptions);
     }
-    if (pnModAvailable('FAQ') && SecurityUtil::checkPermission('FAQ::', '::', ACCESS_EDIT)) {
+    if (ModUtil::available('FAQ') && SecurityUtil::checkPermission('FAQ::', '::', ACCESS_EDIT)) {
         $suboptions = array(
-                         array(null, __('View list', $dom), pnModURL('FAQ', 'admin', 'view')),
-                         array(null, __('Settings', $dom),  pnModURL('FAQ', 'admin', 'modifyconfig'))
+                         array(null, __('View list', $dom), ModUtil::url('FAQ', 'admin', 'view')),
+                         array(null, __('Settings', $dom),  ModUtil::url('FAQ', 'admin', 'modifyconfig'))
                       );
-        $linkoptions[] = array(null, __('Add a FAQ', $dom), pnModURL('FAQ', 'admin', 'new'), $suboptions);
+        $linkoptions[] = array(null, __('Add a FAQ', $dom), ModUtil::url('FAQ', 'admin', 'new'), $suboptions);
     }
-    if (pnModAvailable('Feeds') && SecurityUtil::checkPermission('Feeds::', '::', ACCESS_EDIT)) {
+    if (ModUtil::available('Feeds') && SecurityUtil::checkPermission('Feeds::', '::', ACCESS_EDIT)) {
         $suboptions = array(
-                         array(null, __('View list', $dom), pnModURL('Feeds', 'admin', 'view')),
-                         array(null, __('Settings', $dom),  pnModURL('Feeds', 'admin', 'modifyconfig'))
+                         array(null, __('View list', $dom), ModUtil::url('Feeds', 'admin', 'view')),
+                         array(null, __('Settings', $dom),  ModUtil::url('Feeds', 'admin', 'modifyconfig'))
                       );
-        $linkoptions[] = array(null, __('Add a feed', $dom), pnModURL('Feeds', 'admin', 'new'), $suboptions);
+        $linkoptions[] = array(null, __('Add a feed', $dom), ModUtil::url('Feeds', 'admin', 'new'), $suboptions);
     }
-    if (pnModAvailable('Reviews') && SecurityUtil::checkPermission('Reviews::', '::', ACCESS_EDIT)) {
+    if (ModUtil::available('Reviews') && SecurityUtil::checkPermission('Reviews::', '::', ACCESS_EDIT)) {
         $suboptions = array(
-                         array(null, __('View list', $dom), pnModURL('Reviews', 'admin', 'view')),
-                         array(null, __('Settings', $dom),  pnModURL('Reviews', 'admin', 'modifyconfig'))
+                         array(null, __('View list', $dom), ModUtil::url('Reviews', 'admin', 'view')),
+                         array(null, __('Settings', $dom),  ModUtil::url('Reviews', 'admin', 'modifyconfig'))
                       );
-        $linkoptions[] = array(null, __('Add a review', $dom), pnModURL('Reviews', 'admin', 'new'), $suboptions);
+        $linkoptions[] = array(null, __('Add a review', $dom), ModUtil::url('Reviews', 'admin', 'new'), $suboptions);
     }
-    if (pnModAvailable('Web_Links') && SecurityUtil::checkPermission('Web_Links::', '::', ACCESS_EDIT)) {
-        $linkoptions[] = array(null, __('Add a web link', $dom), pnModURL('Web_Links', 'admin', 'main', array('op' => 'LinksAddLink')));
+    if (ModUtil::available('Web_Links') && SecurityUtil::checkPermission('Web_Links::', '::', ACCESS_EDIT)) {
+        $linkoptions[] = array(null, __('Add a web link', $dom), ModUtil::url('Web_Links', 'admin', 'main', array('op' => 'LinksAddLink')));
     }
 
     // Calendar modules
-    if (pnModAvailable('EventLiner') && SecurityUtil::checkPermission('EventLiner::', '::', ACCESS_EDIT)) {
+    if (ModUtil::available('EventLiner') && SecurityUtil::checkPermission('EventLiner::', '::', ACCESS_EDIT)) {
         $suboptions = array(
-                         array(null, __('View list', $dom), pnModURL('EventLiner', 'admin', 'view')),
-                         array(null, __('Settings', $dom),  pnModURL('EventLiner', 'admin', 'modifyconfig'))
+                         array(null, __('View list', $dom), ModUtil::url('EventLiner', 'admin', 'view')),
+                         array(null, __('Settings', $dom),  ModUtil::url('EventLiner', 'admin', 'modifyconfig'))
                       );
-        $linkoptions[] = array(null, __('Add a calendar event', $dom), pnModURL('EventLiner', 'admin', 'new'), $suboptions);
+        $linkoptions[] = array(null, __('Add a calendar event', $dom), ModUtil::url('EventLiner', 'admin', 'new'), $suboptions);
     }
-    if (pnModAvailable('TimeIt') && SecurityUtil::checkPermission('TimeIt::', '::', ACCESS_EDIT)) {
+    if (ModUtil::available('TimeIt') && SecurityUtil::checkPermission('TimeIt::', '::', ACCESS_EDIT)) {
         $suboptions = array(
-                         array(null, __('Settings', $dom), pnModURL('TimeIt', 'admin', 'modifyconfig'))
+                         array(null, __('Settings', $dom), ModUtil::url('TimeIt', 'admin', 'modifyconfig'))
                       );
-        $linkoptions[] = array(null, __('Add a calendar event', $dom), pnModURL('TimeIt', 'admin', 'new'), $suboptions);
+        $linkoptions[] = array(null, __('Add a calendar event', $dom), ModUtil::url('TimeIt', 'admin', 'new'), $suboptions);
     }
-    if (pnModAvailable('crpCalendar') && SecurityUtil::checkPermission('crpCalendar::', '::', ACCESS_EDIT)) {
+    if (ModUtil::available('crpCalendar') && SecurityUtil::checkPermission('crpCalendar::', '::', ACCESS_EDIT)) {
         $suboptions = array(
-                         array(null, __('View list', $dom), pnModURL('crpCalendar', 'admin', 'view')),
-                         array(null, __('Settings', $dom),  pnModURL('crpCalendar', 'admin', 'modifyconfig'))
+                         array(null, __('View list', $dom), ModUtil::url('crpCalendar', 'admin', 'view')),
+                         array(null, __('Settings', $dom),  ModUtil::url('crpCalendar', 'admin', 'modifyconfig'))
                       );
-        $linkoptions[] = array(null, __('Add a calendar event', $dom), pnModURL('crpCalendar', 'admin', 'new'), $suboptions);
+        $linkoptions[] = array(null, __('Add a calendar event', $dom), ModUtil::url('crpCalendar', 'admin', 'new'), $suboptions);
     }
 
     // Legacy modules
-    if (pnModAvailable('Admin_Messages') && SecurityUtil::checkPermission('Admin_Messages::', '::', ACCESS_EDIT)) {
+    if (ModUtil::available('Admin_Messages') && SecurityUtil::checkPermission('Admin_Messages::', '::', ACCESS_EDIT)) {
         $suboptions = array(
-                         array(null, __('View list', $dom), pnModURL('Admin_Messages', 'admin', 'view')),
-                         array(null, __('Settings', $dom),  pnModURL('Admin_Messages', 'admin', 'modifyconfig'))
+                         array(null, __('View list', $dom), ModUtil::url('Admin_Messages', 'admin', 'view')),
+                         array(null, __('Settings', $dom),  ModUtil::url('Admin_Messages', 'admin', 'modifyconfig'))
                       );
-        $linkoptions[] = array(null, __('Add an admin message', $dom), pnModURL('Admin_Messages', 'admin', 'new'), $suboptions);
+        $linkoptions[] = array(null, __('Add an admin message', $dom), ModUtil::url('Admin_Messages', 'admin', 'new'), $suboptions);
     }
 
     $menu[] = array('content', __('Create content', $dom), '#', $linkoptions);
 
     /* Logout link */
-    $menu[] = array('logout', __('Log out', $dom), pnModURL('Users', 'user', 'logout'));
+    $menu[] = array('logout', __('Log out', $dom), ModUtil::url('Users', 'user', 'logout'));
 
 
     /* Actually create the menu based on the array above */
