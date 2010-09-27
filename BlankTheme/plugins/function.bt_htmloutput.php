@@ -66,7 +66,9 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             $output  = '<div id="bt_topnavlinks"><ul>';
             foreach ($menu as $k => $option) {
                 $class = '';
-                if ($k == 0) {
+                if (count($menu) == 1) {
+                    $class = 'unique';
+                } elseif ($k == 0) {
                     $class = 'first';
                 } elseif ($k == $count) {
                     $class = 'last';

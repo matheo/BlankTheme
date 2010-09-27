@@ -169,6 +169,7 @@
     padding: 0;
   }
 
+  #bt_topnavlinks li.bt_unique,
   #bt_topnavlinks li.bt_last {
     border-right: none;
   }
