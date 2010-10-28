@@ -280,7 +280,6 @@
     color: #036;
   }
   a:focus {
-    background: #fff;
     color: #000;
     text-decoration: underline;
   }
@@ -356,7 +355,6 @@
    */
 
   table {
-    border-collapse: collapse;
     margin-bottom: 0.5em;
     /*width: auto;*/
   }
@@ -371,11 +369,13 @@
     table-layout: fixed;
   }
 
-  th,td {
-    padding: 0.5em;
+  th,
+  td {
+    line-height: 1.4em;
+    padding: 5px;
   }
   thead th {
-    color: #000;
+    color: #333;
   }
   tbody th {
     background: #e0e0e0;
@@ -403,7 +403,7 @@
 
   thead th a {
     color: #000;
-    text-decoration: underline;
+    text-decoration: none;
   }
 
 
