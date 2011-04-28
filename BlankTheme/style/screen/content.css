@@ -393,11 +393,11 @@
     /*border-bottom: 1px solid #eee;*/
   }
 
-  tbody tr:hover th[scope="row"],
-  tbody tr:hover tbody th.sub {
+  table.z-datatable tbody tr:hover th[scope="row"],
+  table.z-datatable tbody tr:hover tbody th.sub {
     background: #d9e9d9;
   }
-  tbody tr:hover td {
+  table.z-datatable tbody tr:hover td {
     background: #e9f9e9;
   }
 
@@ -536,10 +536,12 @@
    */
 
   /* js context menus */
-  #bt_wikula .bt_func_edit #col1_content,
-  #bt_wikula .bt_func_edit #z-maincontent,
-  #bt_content.bt_type_edit #col1_content,
-  #bt_content.bt_type_edit #z-maincontent {
+  #bt_Wikula .bt_func_edit #col1_content,
+  #bt_Wikula .bt_func_edit #z-maincontent,
+  #bt_Content.bt_admin #col1_content,
+  #bt_Content.bt_type_edit #col1_content,
+  #bt_Content.bt_admin #z-maincontent,
+  #bt_Content.bt_type_edit #z-maincontent {
     position: inherit;
   }
   div.contextMenu ul li {
