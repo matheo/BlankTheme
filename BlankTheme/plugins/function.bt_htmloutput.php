@@ -164,10 +164,25 @@ function smarty_function_bt_htmloutput($params, &$smarty)
                 case 'Pages':
                     switch ($smarty->func) {
                         case 'display':
-                            // Example: add the current pageid in a class
+                            // Example: add the current pageid in a CSS class (bt_pageid_PID)
                             // note: this only works when using normal urls, shortURLs uses the title field
                             $output .= ' bt_pageid_'.FormUtil::getPassedValue('pageid');
                             break;
+                    }
+                    break;
+                case 'Content':
+                    switch ($smarty->func) {
+                        case 'view':
+                            // Example: add the current page category id in a CSS class (bt_contentcatpage_CID)
+                            // works for normal and shortURLs
+                            if (System::getVar('shorturls') == '1' && System::getVar('shorturlstype') == '0') {
+                                $urlname = $smarty->getRequest()->getGet()->get('name');
+                                $pageId = ModUtil::apiFunc('Content', 'Page', 'solveURLPath', compact('urlname'));
+                            } else {
+                                $pageId = $smarty->getRequest()->getGet()->get('pid');
+                            }
+                            $page = ModUtil::apiFunc('Content', 'Page', 'getPage', array('id' => $pageId));
+                            $output .= ' bt_contentcatpage_'.$page['categoryId'];
                     }
                     break;
             }
