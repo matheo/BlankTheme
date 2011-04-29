@@ -117,7 +117,7 @@
   /* page wrapper */
   .page {
     background: #fff;
-    border: 10px #fff solid; /* to-remove */
+    border: 10px #fff solid; /* to-remove : add the 20px to the fixed-width columns */
   }
 
       /* header */
@@ -436,7 +436,7 @@
     margin-left: -740px; /* col1 + col2 widths */
   }
   .bt_3col .bt_213 #col3 {
-    margin-left: -5px;
+    /*margin-left: -5px; Not needed for fixed widths */
   }
 
 
@@ -457,7 +457,7 @@
   /* 132 layout */
   .bt_3col .bt_132 #col2 {
     float: right;
-    margin-left: -5px;
+    /*margin-left: -5px; Not needed for fixed widths */
   }
   .bt_3col .bt_132 #col3 {
     float: left;
@@ -468,7 +468,7 @@
   .bt_3col .bt_231 #col1,
   .bt_3col .bt_321 #col1 {
     float: right;
-    margin-left: -5px;
+    /*margin-left: -5px; Not needed for fixed widths */
   }
   .bt_3col .bt_321 #col2 {
     float: right;
@@ -501,11 +501,11 @@
 
   /* #col1 is the main column */
   .bt_3col231 #col1 {
-    border-left: 1px dashed #DDDDDD; /* to-remove */
-    border-right: 1px dashed #DDDDDD; /* to-remove */
+    border-left: 1px dashed #DDDDDD; /* to-customize */
+    border-right: 1px dashed #DDDDDD; /* to-customize */
     float: none;
-    margin-left: 25%; /* leftcol width*/
-    margin-right: 25%; /* rightcol width*/
+    margin-left: 23%; /* leftcol width*/
+    margin-right: 23%; /* rightcol width*/
     width: auto;
   }
   .bt_3col231 #col1_content {
@@ -516,20 +516,20 @@
   .bt_3col231 #col2 {
     float: left;
     margin: 0;
-    width: 25%;
+    width: 23%;
   }
   .bt_3col231 #col2_content {
-    padding: 0 10px 0 15px;
+    padding: 0 5px 0 10px;
   }
 
   /* #col3 contains the right blocks */
   .bt_3col231 #col3 {
     float: right;
     margin: 0;
-    width: 25%;
+    width: 23%;
   }
   .bt_3col231 #col3_content {
-    padding: 0 15px 0 10px;
+    padding: 0 10px 0 5px;
   }
 
 
@@ -539,13 +539,13 @@
     margin-left: -5px;
   }
   .bt_3col231 .bt_312 #col2_content {
-    padding: 0 15px 0 10px;
+    padding: 0 10px 0 5px;
   }
   .bt_3col231 .bt_312 #col3 {
     float: left;
   }
   .bt_3col231 .bt_312 #col3_content {
-    padding: 0 10px 0 15px;
+    padding: 0 5px 0 10px;
   }
 
 }
