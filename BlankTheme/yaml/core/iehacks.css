@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /**
  * "Yet Another Multicolumn Layout" - (X)HTML/CSS Framework
  *
@@ -13,9 +12,9 @@
  *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
  * @link            http://www.yaml.de
  * @package         yaml
- * @version         3.2.1
- * @revision        $Revision: 454 $
- * @lastmodified    $Date: 2010-01-01 14:31:10 -0200 (vie 01 de ene de 2010) $
+ * @version         3.3
+ * @revision        $Revision: 470 $
+ * @lastmodified    $Date: 2010-10-03 11:16:04 -0500 (dom 03 de oct de 2010) $
  * @appdef yaml
  */
 
@@ -57,8 +56,11 @@
    * @valid      no
    */
 
+  * html iframe,
+  * html frame { overflow:auto; }
+  * html input,
+  * html frameset { overflow:hidden; }
   * html textarea { overflow:scroll; overflow-x:hidden; }
-  * html input { overflow:hidden; }
 
   /*------------------------------------------------------------------------------------------------------*/
 
@@ -92,21 +94,7 @@
    */
 
   .clearfix { height:1%; }  /* hasLayout aktivieren */
-
-  /*------------------------------------------------------------------------------------------------------*/
-
-  /**
-   * (en) Adjustment of .floatbox class for IE
-   * (de) Anpassung der .floatbox-Klasse für IE
-   *
-   * @workaround
-   * @affected   IE 5.x/Win, IE6, IE7
-   * @css-for    IE 5.x/Win, IE6, IE7
-   * @valid      yes
-   */
-
-  .floatbox { width:100%; }
-  
+ 
   /*------------------------------------------------------------------------------------------------------*/
 
   /**
@@ -348,5 +336,8 @@
    * @valid      yes
    */
 
-  #col3 { height:1%; }
+  .subc,
+  .subcl,
+  .subcr,
+  .col3 { height:1%; }
 }

@@ -63,7 +63,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    color: #666;
+    color: #222;
     font-family: "Times New Roman", Times, serif;
     font-weight: bold;
     margin: 0 0 0.25em 0;
@@ -137,6 +137,7 @@
     font-style: italic
   }
   blockquote {
+    color: #666;
     margin: 0 0 1em 1.6em;
   }
 
@@ -172,9 +173,13 @@
     letter-spacing: .07em;
   }
 
-  sub, sup {
-    font-size: 91.6667%;
-    line-height: 0;
+  sub{
+    font-size: smaller;
+    vertical-align: sub;
+  }
+  sup {
+    font-size: smaller;
+    vertical-align: sup;
   }
 
   hr {
@@ -252,6 +257,7 @@
     #topnav {
       color: #aaa;
       font-size: 12px;
+      text-align: right; /* LTR */
     }
 
   #footer {
@@ -292,8 +298,8 @@
 
   /* top navigation links */
   #topnav a {
-    color: #999;
     background: transparent;
+    color: #999;
     font-weight: normal;
     text-decoration: none;
   }
@@ -338,7 +344,7 @@
   #main a[href^="http://www.my-domain.com"],
   #main a[href^="https://www.my-domain.com"]
   {
-    background-image: url('../../images/icons/ext_link.gif');
+    background-image: url('../../yaml/add-ons/microformats/images/external_link.png');
     background-position: 0 0.45em;
     background-repeat: no-repeat;
     padding-left: 12px;
@@ -371,11 +377,10 @@
 
   th,
   td {
-    line-height: 1.4em;
-    padding: 5px;
+    padding: 0.5em;
   }
   thead th {
-    color: #333;
+    color: #000;
   }
   tbody th {
     background: #e0e0e0;

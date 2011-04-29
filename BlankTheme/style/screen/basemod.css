@@ -34,6 +34,19 @@
 @media screen, projection
 {
   /**
+   * Forcing vertical scrollbars in IE8, Firefox, Webkit & Opera
+   *
+   * @workaround
+   * @affected IE8, FF, Webkit, Opera
+   * @css-for all
+   * @valid CSS3
+   */
+
+  body {
+    overflow-y: scroll;
+  }
+
+  /**
    * Global fixes
    *
    * @section layout-global
@@ -52,6 +65,13 @@
     clear: both;
     display: block;
     overflow: hidden;
+  }
+
+  #header,
+  #nav,
+  #main,
+  #footer {
+    clear:both;
   }
 
 
@@ -87,7 +107,6 @@
 
   /* general wrapper */
   .page_margins {
-    border: 0px #889 solid;  /* to-remove */
     margin: 0 auto;
 
     width: 980px;
@@ -103,20 +122,23 @@
 
       /* header */
       #header {
-        /*background: #fff url(../../images/design/bg_header.gif) repeat-x top left;*/
-        padding: 0 20px; /* do not use top/bottom paddings with fixed height */
         height: 110px;
+        padding: 0 20px; /* do not use top/bottom paddings with fixed height */
+        position:relative;
         /*z-index: 100;*/ /* when the navigation is placed inside the header and a multi level menu is used this is needed for ie */
       }
 
           /* top navigation container */
-          #header #topnav {
+          #topnav {
             background: transparent;
+            position: absolute;
+            right: 10px; /* LTR */
+            top: 10px;
           }
 
           /* title and slogan */
           #header h1 {
-            margin: 37px 0 0.25em 20px;
+            padding: 37px 0 0 0;
           }
           #header .slogan {
             float: left;
@@ -130,7 +152,7 @@
 
       /* adjustment of main navigation */
       #nav ul {
-        margin-left: 20px;
+        margin-left: 15px;
       }
 
       /* content wrapper */

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /**
  * "Yet Another Multicolumn Layout" - (X)HTML/CSS Framework
  *
@@ -12,9 +11,9 @@
  *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
  * @link            http://www.yaml.de
  * @package         yaml
- * @version         3.2.1
- * @revision        $Revision: 455 $
- * @lastmodified    $Date: 2010-01-01 14:33:05 -0200 (vie 01 de ene de 2010) $
+ * @version         3.3
+ * @revision        $Revision: 470 $
+ * @lastmodified    $Date: 2010-10-03 11:16:04 -0500 (dom 03 de oct de 2010) $
  */
 
 @media screen, projection
@@ -37,7 +36,7 @@
     border:1px #ddd solid;
     background:#fafafa;
     margin:0 0 1em 0;
-    padding: 0.5em;
+    padding:0.5em;
   }
   
   .yform legend {
@@ -141,7 +140,7 @@
 
   /* General form styling  | Allgemeine Formatierung des Formulars */
   .yform { overflow:hidden; }
-  .yform fieldset { overflow:hidden; }
+  .yform fieldset { display:block; zoom:1; }
   .yform label { display:block; cursor:pointer; }
   .yform legend { background:transparent; border:0; padding:0 0.5em; }
   .yform .message { display:block; margin-bottom:0.5em; color:#666; }
@@ -152,17 +151,32 @@
   /* Highlight mandatory fields | Pflichtfeldkennzeichnung hervorheben */
   .yform sup { color:#800; font-weight:bold; }
 
+  /* per row float clearing | zeilenweises Float-Clearing */
+  fieldset:after,
+  .yform div.type-text:after,
+  .yform div.type-select:after,
+  .yform div.type-check:after,
+  .yform div.type-button:after {
+    clear:both;
+    content:".";
+    display:block;
+    font-size:0;
+    height:0;
+    visibility:hidden;
+  }
+
   /* styling containing DIV elements | Gestaltung der kapselnden DIV-Elemente */
   .yform div.type-text,
   .yform div.type-select,
   .yform div.type-check,
   .yform div.type-button {
+	display:block;
     margin:0.5em 0;
     padding:3px 0.5em;  
     position:relative;
-    overflow:hidden;
+	zoom:1; 
   }
-
+  
   .yform div.type-button {
     padding:3px 0em;  
   }
