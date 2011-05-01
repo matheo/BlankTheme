@@ -33,7 +33,7 @@ function smarty_function_bt_userlinks($params, $smarty)
     $currentclass = isset($params['currentclass']) ? $params['currentclass'] : 'current';
 
     if (!isset($params['current'])) {
-        $current = (isset($smarty->_tpl_vars['current'])) ? $smarty->_tpl_vars['current'] : $smarty->toplevelmodule;
+        $current = $smarty->get_template_vars('current') ? $smarty->get_template_vars('current') : $smarty->getToplevelmodule();
     } else {
         $current = $params['current'];
     }

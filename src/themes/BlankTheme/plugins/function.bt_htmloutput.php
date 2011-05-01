@@ -33,18 +33,21 @@ function smarty_function_bt_htmloutput($params, &$smarty)
     $dom = ZLanguage::getThemeDomain('BlankTheme');
 
     // blanktheme vars
-    $body      = $smarty->_tpl_vars['body'];
-    $layout    = $smarty->_tpl_vars['layout'];
-    $usefontr  = $smarty->_tpl_vars['usefontresize'];
+    $body      = $smarty->get_template_vars('body');
+    $layout    = $smarty->get_template_vars('layout');
+    $btconfig  = $smarty->get_template_vars('btconfig');
+    $btcssbody = $smarty->get_template_vars('btcssbody');
+
     // check for the current variable
-    if (isset($smarty->_tpl_vars['current'])) {
-        $current = $smarty->_tpl_vars['current'];
+    if ($smarty->get_template_vars('current')) {
+        $current = $smarty->get_template_vars('current');
     } else {
-        $current = $smarty->_tpl_vars['current'] = $smarty->toplevelmodule;
+        $current = $smarty->getToplevelmodule();
+        $smarty->assign('current', $current);
     }
 
     // assign the respective output
-    $output = isset($params['start']) ? $params['start'].' ' : '';
+    $output = '';
     switch ($params['section'])
     {
         case 'topnavlinks':
@@ -85,19 +88,19 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             break;
 
         case 'fontresize':
-            if ($usefontr != 'y') {
+            if ($btconfig['fontresize'] != 'y') {
                 break;
             }
             // font resize based in the efa script
-            //PageUtil::addVar('javascript', $smarty->scriptpath.'/efa/efa_fontsize_packed.js');
-            PageUtil::addVar('javascript', $smarty->scriptpath.'/efa/efa_fontsize.js');
+            //PageUtil::addVar('javascript', $smarty->getScriptpath().'/efa/efa_fontsize_packed.js');
+            PageUtil::addVar('javascript', $smarty->getScriptpath().'/efa/efa_fontsize.js');
             $output = '<script type="text/javascript">
                          // <![CDATA[
                          if (efa_fontSize) {
                            var efalang_zoomIn = "'.__('Increase font size', $dom).'";
                            var efalang_zoomReset = "'.__('Reset font size', $dom).'";
                            var efalang_zoomOut = "'.__('Decrease font size', $dom).'";
-                           var efathemedir = "'.$smarty->directory.'";
+                           var efathemedir = "'.$smarty->getDirectory().'";
                            efa_fontSize.efaInit();
                            document.write(efa_fontSize.allLinks);
                          }
@@ -112,29 +115,29 @@ function smarty_function_bt_htmloutput($params, &$smarty)
 
             if ($optimize) {
                 // do not load the layout_* stylesheet and load the basic styles directly
-                $output = '<link rel="stylesheet" href="'.$smarty->themepath.'/yaml/core/slim_base.css" type="text/css"/>
-                           <link rel="stylesheet" href="'.$smarty->stylepath.'/screen/basemod.css" type="text/css"/>
-                           <link rel="stylesheet" href="'.$smarty->stylepath.'/screen/content.css" type="text/css"/>';
+                $output = '<link rel="stylesheet" href="'.$smarty->getThemepath().'/yaml/core/slim_base.css" type="text/css"/>
+                           <link rel="stylesheet" href="'.$smarty->getStylepath().'/screen/basemod.css" type="text/css"/>
+                           <link rel="stylesheet" href="'.$smarty->getStylepath().'/screen/content.css" type="text/css"/>';
             } else {
-                $output = '<link rel="stylesheet" href="'.$smarty->stylepath.'/layout_'.$body.'.css" type="text/css"/>';
+                $output = '<link rel="stylesheet" href="'.$smarty->getStylepath().'/layout_'.$body.'.css" type="text/css"/>';
             }
 
             $output .= '<!--[if lte IE 7]>'
-                      .'<link rel="stylesheet" href="'.$smarty->stylepath.'/patches/patch_'.$body.'.css" type="text/css" />'
-//                    .'<link rel="stylesheet" href="'.$smarty->themepath.'/yaml/core/slim_iehacks.css" type="text/css" />'
+                      .'<link rel="stylesheet" href="'.$smarty->getStylepath().'/patches/patch_'.$body.'.css" type="text/css" />'
+//                    .'<link rel="stylesheet" href="'.$smarty->getThemepath().'/yaml/core/slim_iehacks.css" type="text/css" />'
                       .'<![endif]-->';
 /*                    .'<!--[if lte IE 6]>'
-//                    .'<script type="text/javascript" src="'.$smarty->scriptpath.'/minmax.js"></script>'
+//                    .'<script type="text/javascript" src="'.$smarty->getScriptpath().'/minmax.js"></script>'
                       .'<style type="text/css">
-                            img, div, a, input { behavior: url('.$smarty->stylepath.'/patches/iepngfix.htc) }
+                            img, div, a, input { behavior: url('.$smarty->getStylepath().'/patches/iepngfix.htc) }
                         </style>'
-//                    .'<script type="text/javascript" src="'.$smarty->scriptpath.'/iepngfix_tilebg.js"></script>'
+//                    .'<script type="text/javascript" src="'.$smarty->getScriptpath().'/iepngfix_tilebg.js"></script>'
                       .'<![endif]-->
                        ';
 */
             // Add content in the final if needed
-            if (isset($smarty->_tpl_vars['additionalhead'])) {
-                $output .= $smarty->_tpl_vars['additionalhead'];
+            if ($smarty->get_template_vars('additionalhead')) {
+                $output .= $smarty->get_template_vars('additionalhead');
             }
             break;
 
@@ -144,7 +147,10 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             if (!empty($current)) {
                 $output .= 'bt_'.$current.' ';
             }
-            $output .= 'bt_'.$body.' bt_type_'.$smarty->type.' bt_lang_'.$smarty->language;
+            if ($btcssbody && isset($btcssbody[$body]) && $btcssbody[$body]) {
+                $output .= $btcssbody[$body].' ';
+            };
+            $output .= 'bt_'.$body.' bt_type_'.$smarty->getType().' bt_lang_'.$smarty->getLanguage();
             break;
 
         /* Second CSS level */
@@ -153,16 +159,16 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             // add the current layout and enabled zones
             $output .= 'bt_'.str_replace('_', ' bt_', $layout);
             // add the current function name
-            $output .= ' bt_func_'.$smarty->func;
+            $output .= ' bt_func_'.$smarty->getFunc();
             break;
 
         /* Third CSS level */
         case 'classesinnerpage':
             // add a customized third level of CSS classes like specific parameters for specific modules
             /*
-            switch ($smarty->toplevelmodule) {
+            switch ($smarty->getToplevelmodule()) {
                 case 'Pages':
-                    switch ($smarty->func) {
+                    switch ($smarty->getFunc()) {
                         case 'display':
                             // Example: add the current pageid in a CSS class (bt_pageid_PID)
                             // note: this only works when using normal urls, shortURLs uses the title field
@@ -171,7 +177,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
                     }
                     break;
                 case 'Content':
-                    switch ($smarty->func) {
+                    switch ($smarty->getFunc()) {
                         case 'view':
                             // Example: add the current page category id in a CSS class (bt_contentcatpage_CID)
                             // works for normal and shortURLs
@@ -192,7 +198,6 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             }
             break;
     }
-    $output .= isset($params['end']) ? ' '.$params['end'] : '';
 
     return $output;
 }
