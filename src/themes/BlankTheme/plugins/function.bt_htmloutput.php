@@ -118,6 +118,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
                 $output = '<link rel="stylesheet" href="'.$smarty->getThemepath().'/yaml/core/slim_base.css" type="text/css"/>
                            <link rel="stylesheet" href="'.$smarty->getStylepath().'/screen/basemod.css" type="text/css"/>
                            <link rel="stylesheet" href="'.$smarty->getStylepath().'/screen/content.css" type="text/css"/>';
+                // TODO rtl-support load yaml/add-ons/rtl-support/core/base-rtl.css with the respective basemod-rtl.css and content-rtl.css
             } else {
                 $output = '<link rel="stylesheet" href="'.$smarty->getStylepath().'/layout_'.$body.'.css" type="text/css"/>';
             }
