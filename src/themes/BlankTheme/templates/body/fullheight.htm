@@ -95,3 +95,19 @@
     </div>
 </div>
 <!-- end: #footer -->
+
+{* this body relies on a layout style, so, check if it's not loaded *}
+{if $btconfig.optimize}
+{capture assign='fullheightcss'}
+<style type="text/css">
+@media screen, projection
+{
+  html {
+    height: 100% !important;
+    padding: 0;
+  }
+}
+</style>
+{/capture}
+{pageaddvar name='header' value=$fullheightcss}
+{/if}

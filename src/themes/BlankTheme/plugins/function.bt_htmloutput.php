@@ -111,9 +111,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
 
         case 'head':
             // head stylesheets
-            $optimize = isset($params['optimize']) ? (bool)$params['optimize'] : false;
-
-            if ($optimize) {
+            if ($btconfig['optimize'] == 'y') {
                 // do not load the layout_* stylesheet and load the basic styles directly
                 $output = '<link rel="stylesheet" href="'.$smarty->getThemepath().'/yaml/core/slim_base.css" type="text/css"/>
                            <link rel="stylesheet" href="'.$smarty->getStylepath().'/screen/basemod.css" type="text/css"/>

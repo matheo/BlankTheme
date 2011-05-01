@@ -37,4 +37,4 @@ no__('Master body template');
 no__('Master layout');
 no__('User menu to use');
 no__('Enable font resize buttons');
-no__('Use the layout_BODY.css');
+no__('Enable optimized mode');
