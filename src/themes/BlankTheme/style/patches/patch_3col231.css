@@ -23,7 +23,7 @@
    */
 
   * html #col1 { height: 1%; } /* Activate hack for 3-Pixel-Jog Bug */
-  * html #col1 { margin-left: 24%; margin-right: 24%; }
+  * html #col1 { margin-left: 22%; margin-right: 22%; }
 
   /* 213 layout */
   * html .bt_213 #col2 { margin-right: -3px; }
