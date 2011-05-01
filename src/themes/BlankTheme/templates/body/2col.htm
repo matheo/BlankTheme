@@ -33,26 +33,6 @@
 
 		<!-- begin: main content area #main -->
 		<div id="main">
-			{if $layout|checklayout:2}
-			<!-- begin: #col2 column -->
-			<div id="col2">
-				<div id="col2_content" class="clearfix">
-					{blockposition name='left'}
-				</div>
-			</div>
-			<!-- end: #col2 -->
-			{/if}
-
-			{if $layout|checklayout:3}
-			<!-- begin: #col3 column -->
-			<div id="col3">
-				<div id="col3_content" class="clearfix">
-					{blockposition name='right'}
-				</div>
-			</div>
-			<!-- end: #col3 -->
-			{/if}
-
 			<!-- begin: #col1 - main column -->
 			<div id="col1">
 				<div id="col1_content" class="clearfix">
@@ -81,6 +61,26 @@
 				<div id="ie_clearing">&nbsp;</div>
 			</div>
 			<!-- end: #col1 -->
+
+			{if $layout|checklayout:2}
+			<!-- begin: #col2 column -->
+			<div id="col2">
+				<div id="col2_content" class="clearfix">
+					{blockposition name='left'}
+				</div>
+			</div>
+			<!-- end: #col2 -->
+			{/if}
+
+			{if $layout|checklayout:3}
+			<!-- begin: #col3 column -->
+			<div id="col3">
+				<div id="col3_content" class="clearfix">
+					{blockposition name='right'}
+				</div>
+			</div>
+			<!-- end: #col3 -->
+			{/if}
 		</div>
 		<!-- end: #main -->
 

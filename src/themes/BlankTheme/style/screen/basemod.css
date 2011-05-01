@@ -311,13 +311,6 @@
    * @section layout-templates
    */
 
-  /* Example: #col1 style for the -grid- template and the -123- layout */
-  .bt_grid .bt_123 #col1 {
-    width: 25%; /* width does not affect grid template, don't worry ;-) */
-  }
-
-
-
   /**
    * 2col template
    * x1 is the default distribution
@@ -326,43 +319,43 @@
 
   /* #col1 is the main column */
   .bt_2col #col1 {
-    float: none;
-    margin-left: 25%;
-    width: auto;
+    float: right;
+    width: 75%;
   }
   .bt_2col #col1_content {
-    padding: 0 10px;
+    padding: 0 15px 0 10px;
   }
 
   /* #col2 and #col3 contains side blocks */
   .bt_2col #col2,
   .bt_2col #col3 {
-    float: left;
-    margin: 0;
-    width: 25%;
+    float: none;
+    width: auto;
   }
-  .bt_2col #col2_content {
-    padding: 0 10px 0 15px;
-  }
+  .bt_2col #col2_content,
   .bt_2col #col3_content {
-    padding: 0 15px 0 10px;
+    padding: 0 10px 0 15px;
   }
 
 
   /* 1X layouts */
   .bt_2col .bt_12 #col1,
   .bt_2col .bt_13 #col1 {
-    border-right: 1px dashed #DDDDDD; /* to-remove */
-    margin-left: 0;
-    margin-right: 25%;
+    float: left;
   }
   .bt_2col .bt_12 #col2,
   .bt_2col .bt_13 #col3 {
-    float: right;
-    margin-left: -5px;
+    border-left: 1px solid #DDDDDD; /* to-remove */
+    margin-left: 75%;
+    margin-right: 0;
   }
   /* padding changes */
-  .bt_2col .bt_12 #col2_content {
+  .bt_2col .bt_12 #col1_content,
+  .bt_2col .bt_13 #col1_content {
+    padding: 0 10px 0 15px;
+  }
+  .bt_2col .bt_12 #col2_content,
+  .bt_2col .bt_13 #col3_content {
     padding: 0 15px 0 10px;
   }
 
@@ -370,10 +363,13 @@
   /* X1 layouts */
   .bt_2col .bt_21 #col1,
   .bt_2col .bt_31 #col1 {
-    border-left: 1px dashed #DDDDDD; /* to-remove */
+    margin-left: -5px;
   }
-  .bt_2col .bt_31 #col3_content {
-    padding: 0 10px 0 15px;
+  .bt_2col .bt_21 #col2,
+  .bt_2col .bt_31 #col3 {
+    border-right: 1px solid #DDDDDD; /* to-remove */
+    margin-left: 0;
+    margin-right: 75%;
   }
 
 
@@ -499,10 +495,10 @@
    * @subsection layout-template-3col231
    */
 
-  /* #col1 is the main column */
+  /* #col1 is the main column (static) */
   .bt_3col231 #col1 {
-    border-left: 1px dashed #DDDDDD; /* to-customize */
-    border-right: 1px dashed #DDDDDD; /* to-customize */
+    border-left: 1px solid #DDDDDD; /* to-customize */
+    border-right: 1px solid #DDDDDD; /* to-customize */
     float: none;
     margin-left: 23%; /* leftcol width*/
     margin-right: 23%; /* rightcol width*/
