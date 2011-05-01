@@ -14,6 +14,7 @@
  * Example
  * {bt_htmloutput section='head'}
  * {bt_htmloutput section='topnavlinks'}
+ * {bt_htmloutput section='classespage' start='bt_myclass'}
  *
  * @author       Mateo Tibaquirá
  * @since        05/07/08
@@ -44,7 +45,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
     }
 
     // assign the respective output
-    $output    = '';
+    $output = isset($params['start']) ? $params['start'].' ' : '';
     switch ($params['section'])
     {
         case 'topnavlinks':
@@ -192,6 +193,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             }
             break;
     }
+    $output .= isset($params['end']) ? ' '.$params['end'] : '';
 
     return $output;
 }
