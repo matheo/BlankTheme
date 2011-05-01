@@ -24,7 +24,7 @@
 * Adminmenu now is a CSSplay based menu
 * Now the body ID is the $modname and the current layout is a class
 
-## Version 0.8	
+## Version 0.8
 * Menu plugins checks for module availability
 * YAML styles `basemod_*` files ordered in a consistent way
 * `E_ALL` errors fixes in the menu plugins 

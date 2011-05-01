@@ -64,7 +64,7 @@
   /* (en) HTML 5 - Anpassung des visuellen Formatmodells auf Blockelemente */
   article,aside,canvas,details,figcaption,figure,
   footer,header,hgroup,menu,nav,section,summary { 
-  	display:block;
+    display:block;
   }
   
   /* (en) Clear borders for <fieldset> and <img> elements */

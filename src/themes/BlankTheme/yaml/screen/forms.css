@@ -170,11 +170,11 @@
   .yform div.type-select,
   .yform div.type-check,
   .yform div.type-button {
-	display:block;
+    display:block;
     margin:0.5em 0;
     padding:3px 0.5em;  
     position:relative;
-	zoom:1; 
+    zoom:1;
   }
   
   .yform div.type-button {
