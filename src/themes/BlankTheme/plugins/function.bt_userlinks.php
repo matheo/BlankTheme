@@ -19,11 +19,11 @@
  * @param        object      &$smarty     Reference to the Smarty object
  * @param        string      $class       CSS class
  * @param        string      $current     the current tab (i.e. home, account, news, forum)
- *                                        No default value
- * @param        string      $currentclass CSS class for the current link
- *                                        Default = 'current'
+ * @param        string      $currentclass CSS class for the current link (default: current)
+ * @param        boolean     $desc        Put the title in a <span> inside the link instead the link title
+ *                                        for extended parent info (default: false)
  * @param        boolean     $span        Put the menu text inside a <span> for sliding doors usage
- *                                        Default false
+ *                                        (default: false)
  * @return       string      the results of the module function
  */
 function smarty_function_bt_userlinks($params, $smarty)
@@ -38,63 +38,106 @@ function smarty_function_bt_userlinks($params, $smarty)
         $current = $params['current'];
     }
 
-    $span = isset($params['span']) ? (bool)$params['span'] :  false;
+    $span = isset($params['span']) ? (bool)$params['span'] : false;
+    $desc = isset($params['desc']) ? (bool)$params['desc'] : false;
 
     $dom = ZLanguage::getThemeDomain('BlankTheme');
 
     /*** Build the menu-array ***/
-    /* Option format: id, lang_constant, link, array_of_sublinks */
     $menu   = array();
-    $menu[] = array('home', __('Home', $dom), System::getHomepageUrl(), null);
+    $menu[] = array(
+                  'home',                     // page id / module name
+                  __('Home', $dom),           // translatable title
+                  __('Go to home page', $dom), // translatable description
+                  System::getHomepageUrl(),   // link
+                  null                        // array of sublinks (optional)
+              );
 
     if (ModUtil::available('News')) {
-        $menu[] = array('News', __('News', $dom), ModUtil::url('News'), null);
+        $menu[] = array(
+                      'News',
+                      __('News', $dom),
+                      __('Articles index', $dom),
+                      ModUtil::url('News', 'user', 'main')
+                  );
     }
 
     if (ModUtil::available('Pages')) {
-        $menu[] = array('Pages', __('Pages', $dom), ModUtil::url('Pages'), null);
+        $menu[] = array(
+                      'Pages',
+                      __('Pages', $dom),
+                      __('Content section', $dom),
+                      ModUtil::url('Pages', 'user', 'main')
+                  );
     }
 
     if (ModUtil::available('Dizkus')) {
-        $menu[] = array('Dizkus', __('Forums', $dom), ModUtil::url('Dizkus'), null);
-    }
-
-    if (ModUtil::available('PNphpBB2')) {
-        $menu[] = array('PNphpBB2', __('Forums', $dom), ModUtil::url('PNphpBB2'), null);
+        $menu[] = array(
+                      'Dizkus',
+                      __('Forums', $dom),
+                      __('Discuss area', $dom),
+                      ModUtil::url('Dizkus', 'user', 'main')
+                  );
     }
 
     if (ModUtil::available('Zafenio')) {
-        $menu[] = array('Zafenio', __('Forums', $dom), ModUtil::url('Zafenio'), null);
+        $menu[] = array(
+                      'Zafenio',
+                      __('Forums', $dom),
+                      __('Discuss area', $dom),
+                      ModUtil::url('Zafenio', 'user', 'main')
+                  );
     }
 
     if (ModUtil::available('FAQ')) {
-        $menu[] = array('FAQ', __('Faq', $dom), ModUtil::url('FAQ'), null);
+        $menu[] = array(
+                      'FAQ',
+                      __('FAQ', $dom),
+                      __('Frequent questions', $dom),
+                      ModUtil::url('FAQ', 'user', 'main')
+                  );
     }
 
-    if (ModUtil::available('wikula')) {
-        $menu[] = array('wikula', __('Wiki', $dom), ModUtil::url('wikula'), null);
-    }
-
-    if (ModUtil::available('crpCalendar')) {
-        $menu[] = array('crpCalendar', __('Calendar', $dom), ModUtil::url('crpCalendar'), null);
+    if (ModUtil::available('Wikula')) {
+        $menu[] = array(
+                      'Wikula',
+                      __('Wiki', $dom),
+                      __('Documents', $dom),
+                      ModUtil::url('Wikula', 'user', 'main')
+                  );
     }
 
     if (ModUtil::available('TimeIt')) {
-        $menu[] = array('TimeIt', __('Calendar', $dom), ModUtil::url('TimeIt'), null);
+        $menu[] = array(
+                      'TimeIt',
+                      __('Calendar', $dom),
+                      __('List of events', $dom),
+                      ModUtil::url('TimeIt', 'user', 'main')
+                  );
     }
 
-    if (ModUtil::available('Eventliner')) {
-        $menu[] = array('Eventliner', __('Calendar', $dom), ModUtil::url('Eventliner'), null);
+    if (ModUtil::available('crpCalendar')) {
+        $menu[] = array(
+                      'crpCalendar',
+                      __('Calendar', $dom),
+                      __('List of events', $dom),
+                      ModUtil::url('crpCalendar', 'user', 'main')
+                  );
     }
 
-    if (ModUtil::available('formicula')) {
-        $menu[] = array('formicula', __('Contact', $dom), ModUtil::url('formicula'), null);
+    if (ModUtil::available('Formicula')) {
+        $menu[] = array(
+                      'Formicula',
+                      __('Contact us', $dom),
+                      __('Comment or suggest', $dom),
+                      ModUtil::url('Formicula', 'user', 'main')
+                  );
     }
 
     // Render the menu as an unordered list in a div
     $output  = '<div id="'.$id.'"><ul>';
     foreach ($menu as $option) {
-        $output .= bt_userlinks_drawmenu($option, $current, $currentclass, $span);
+        $output .= bt_userlinks_drawmenu($option, $current, $currentclass, $span, $desc);
     }
     $output .= '</ul></div>';
 
@@ -104,26 +147,35 @@ function smarty_function_bt_userlinks($params, $smarty)
 /**
  * Draw the arra-menu recursively
  */
-function bt_userlinks_drawmenu($option, $current, $currentclass, $span=false)
+function bt_userlinks_drawmenu($option, $current, $currentclass, $span=false, $desc=false)
 {
     $return = '';
 
     if (is_array($option)) {
-        $return .= '<li'. ($option[0] == $current ? " id=\"$currentclass\"" : '' ) .'>';
-        if (!empty($option[2])) {
-            $return .= '<a'. ((isset($option[3]) && is_array($option[3]))?' class="navparent"':''). ' title="'. DataUtil::formatForDisplay($option[1]). '" href="'.DataUtil::formatForDisplay($option[2]).'">'. ($span ? '<span>' : ''). DataUtil::formatForDisplay($option[1]). ($span ? '</span>' : ''). '</a>';
+        $option[3] = !empty($option[3]) ? $option[3] : '#';
+
+        $return .= "\n".'<li'. ($option[0] == $current ? " class=\"$currentclass\"" : '' ) .'>';
+
+        $linkclass = (isset($option[4]) && is_array($option[4]))?' class="navparent"' : '';
+        $return .= "\n".'<a'.$linkclass;
+        $return .= $desc ? '' : ' title="'.DataUtil::formatForDisplay($option[2]).'"';
+        $return .= ' href="'.DataUtil::formatForDisplay($option[3]).'">';
+        if ($desc) {
+            $return .= DataUtil::formatForDisplay($option[1]).' <span class="bt_desc">'.DataUtil::formatForDisplay($option[2]).'</span>';
         } else {
             $return .= ($span ? '<span>' : ''). DataUtil::formatForDisplay($option[1]). ($span ? '</span>' : '');
         }
-        // Render the optional suboptions recursively
-        if (isset($option[3]) && is_array($option[3])) {
-            $return .= '<ul>';
-            foreach ($option[3] as $suboption) {
-                $return .= bt_userlinks_drawmenu($suboption, $current, $currentclass, $span);
+        $return .= '</a>';
+
+        // render the optional suboptions recursively
+        if (isset($option[4]) && is_array($option[4])) {
+            $return .= "\n".'<ul>';
+            foreach ($option[4] as $suboption) {
+                $return .= bt_userlinks_drawmenu($suboption, $current, $currentclass, $span, false);
             }
-            $return .= '</ul>';
+            $return .= "\n".'</ul>';
         }
-        $return .= '</li>';
+        $return .= "\n".'</li>';
     }
 
     return $return;

@@ -146,11 +146,6 @@
             margin: 30px 12px 0 0;
           }
 
-      /* adjustment of main navigation */
-      #nav ul {
-        margin-left: 15px;
-      }
-
       /* content wrapper */
       #main {
         padding: 1em 0;
@@ -217,7 +212,6 @@
     float: left;
     list-style: none;
     margin: 0;
-    margin-left: 10px;
     padding: 0;
   }
 
@@ -238,12 +232,21 @@
     display: block;
     font-size: 14px;
     font-weight: bold;
-    line-height: 18px;
+    line-height: 30px;
     margin: 0;
-    padding: 8px 16px;
+    padding: 0 16px;
     text-decoration: none;
     width: auto;
   }
+    #nav_main ul li a span.bt_desc {
+      color: #777;
+      display: block;
+      font-size: 11px;
+      font-weight: normal;
+      line-height: 12px;
+      margin-top: -8px;
+      padding-bottom: 6px;
+    }
 
   #nav_main ul li a:focus,
   #nav_main ul li a:hover,
@@ -253,17 +256,25 @@
     color: #fff;
     text-decoration: none;
   }
+    #nav_main ul li a:focus span.bt_desc,
+    #nav_main ul li a:hover span.bt_desc,
+    #nav_main ul li a:active span.bt_desc {
+      color: #ccc;
+    }
 
-  #nav_main ul li#current {
+  #nav_main ul li.current {
     background: #4d87c7;
     border: none; /* to-remove */
   }
+    #nav_main ul li.current a span.bt_desc {
+      color: #ccc;
+    }
 
-  #nav_main ul li#current strong,
-  #nav_main ul li#current a,
-  #nav_main ul li#current a:focus,
-  #nav_main ul li#current a:hover,
-  #nav_main ul li#current a:active {
+  #nav_main ul li.current strong,
+  #nav_main ul li.current a,
+  #nav_main ul li.current a:focus,
+  #nav_main ul li.current a:hover,
+  #nav_main ul li.current a:active {
     background: transparent;
     color: #fff;
     font-weight: bold;
