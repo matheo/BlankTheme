@@ -544,8 +544,8 @@
 
   /**
    * fullwidth template
-   * 213 is the default layout
-   * @subsection layout-template-3col231
+   * @see layout-template-2col subsection
+   * @subsection layout-template-fullwidth
    */
 
   body.bt_fullwidth {
@@ -572,4 +572,53 @@
   .bt_fullwidth #main {
     background: #fff;
   }
+
+
+
+  /**
+   * fullheight template
+   * @see layout-template-3col subsection
+   * @subsection layout-template-fullheight
+   */
+
+  .bt_fullheight {
+    height: 100% !important;
+    padding: 0;
+  }
+  .bt_fullheight .page_margins {
+    background: #fff;
+    height: auto !important;
+    min-height: 100%; /* real browsers */
+    position: relative !important;
+  }
+  * html .bt_fullheight .page_margins {
+    height: 100% !important;
+  }
+
+  /* allocate space for footer ... */
+  .bt_fullheight .page {
+    padding-bottom: 70px;
+  }
+
+  /* revert default styles and apply them to #footer_content */
+  .bt_fullheight #footer {
+    position: relative !important;
+    /* .page_margins settings */
+    max-width: 80em;
+    min-width: 980px;
+    /* move #footer to its position */
+    margin: -70px auto 0;
+
+    background: #FFFFFF;
+    border: 0 none;
+    padding: 0;
+  }
+    .bt_fullheight #footer_content {
+      background: #F9F9F9;
+      border-top: 5px solid #efefef;
+      color: #666666;
+      margin: 0 10px;
+      padding: 10px 20px;
+      text-align: left;
+    }
 }
