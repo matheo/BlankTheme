@@ -2,10 +2,9 @@
 /**
  * Zikula Application Framework
  *
- * @copyright  (c) BlankTheme Team
- * @link       http://www.blanktheme.org
- * @license    GNU/GPL - http://www.gnu.org/copyleft/gpl.html
- * @version    $Id$
+ * @copyright (c) BlankTheme Team
+ * @link      http://www.blanktheme.org
+ * @license   GNU/GPL - http://www.gnu.org/copyleft/gpl.html
  */
 
 /**

@@ -11,7 +11,6 @@ http://www.erikspaan.nl/
 
 ## BlankTheme Documentation:
 **Dave Pahl [ammodump]**  
-http://www.dpahl.com/
 
 
 # Special thanks to:
