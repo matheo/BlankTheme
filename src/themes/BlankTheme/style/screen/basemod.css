@@ -544,4 +544,36 @@
     padding: 0 5px 0 10px;
   }
 
+
+
+  /**
+   * fullwidth template
+   * 213 is the default layout
+   * @subsection layout-template-3col231
+   */
+
+  body.bt_fullwidth {
+    background: #efefef;
+    padding: 0;
+  }
+  .bt_fullwidth .page {
+    background: none;
+    border: none; /* to-remove */
+    position: relative;
+  }
+  .bt_fullwidth #header {
+    background: #4d87c7 url(../../images/design/bg_blue.gif) repeat-x top left scroll;
+  }
+    .bt_fullwidth #header h1 a {
+      color: #fff;
+    }
+  .bt_fullwidth #nav {
+    background: url("../../yaml/navigation/images/shiny_buttons/background.png") repeat-x scroll 0 0 #EFEFEF
+  }
+    .bt_fullwidth #nav_main ul li:first-child {
+      border-left: 1px solid #aaa;
+    }
+  .bt_fullwidth #main {
+    background: #fff;
+  }
 }

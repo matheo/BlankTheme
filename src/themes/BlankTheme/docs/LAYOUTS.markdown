@@ -19,6 +19,10 @@ Supports the classic three column distributions, with the main column at the mid
 
 As an example of [YAML subtemplates](http://www.yaml.de/en/documentation/practice/subtemplates.html) there is a example of its use, with the main column at the left, taking the 60% of the total width, and the side columns the other 40%.
 
+## Full width (fullwidth)
+
+Is the same 2col except for the multiple use of the containers .page_margins and .page to fill all the width.
+
 ---
 
 BlankTheme also supports zones, which are in charge to handle custom blockpositions, and complete complex layouts. See more details here:  
