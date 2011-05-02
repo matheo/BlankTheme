@@ -13,7 +13,6 @@
  * Example
  * {bt_htmloutput section='head'}
  * {bt_htmloutput section='topnavlinks'}
- * {bt_htmloutput section='classespage' start='bt_myclass'}
  *
  * @author       Mateo Tibaquirá
  * @since        05/07/08
@@ -61,7 +60,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
                 }
                 $menu[] = array('logout', __('Log out', $dom), ModUtil::url('Users', 'user', 'logout'));
             } else {
-                $menu[] = array('register', __('Register new account', $dom), ModUtil::url('Users', 'user', 'register'));
+                $menu[] = array('register', __('Register', $dom), ModUtil::url('Users', 'user', 'register'));
                 $menu[] = array('login', __('Login', $dom), ModUtil::url('Users', 'user', 'loginscreen'));
             }
             // Render the menu as an unordered list inside a div
@@ -92,8 +91,8 @@ function smarty_function_bt_htmloutput($params, &$smarty)
                 break;
             }
             // font resize based in the efa script
-            //PageUtil::addVar('javascript', $smarty->getScriptpath().'/efa/efa_fontsize_packed.js');
-            PageUtil::addVar('javascript', $smarty->getScriptpath().'/efa/efa_fontsize.js');
+            PageUtil::addVar('javascript', $smarty->getScriptpath().'/efa/efa_fontsize_packed.js');
+            //PageUtil::addVar('javascript', $smarty->getScriptpath().'/efa/efa_fontsize.js');
             $output = '<script type="text/javascript">
                          // <![CDATA[
                          if (efa_fontSize) {
@@ -111,14 +110,15 @@ function smarty_function_bt_htmloutput($params, &$smarty)
 
         case 'head':
             // head stylesheets
+            // TODO pending review with PageUtil weight assignment (when implemented)
             if ($btconfig['optimize'] == 'y') {
                 // do not load the layout_* stylesheet and load the basic styles directly
-                $output = '<link rel="stylesheet" href="'.$smarty->getThemepath().'/yaml/core/slim_base.css" type="text/css"/>
-                           <link rel="stylesheet" href="'.$smarty->getStylepath().'/screen/basemod.css" type="text/css"/>
-                           <link rel="stylesheet" href="'.$smarty->getStylepath().'/screen/content.css" type="text/css"/>';
+                PageUtil::addVar('stylesheet', $smarty->getThemepath().'/yaml/core/slim_base.css');
+                PageUtil::addVar('stylesheet', $smarty->getStylepath().'/screen/basemod.css');
+                PageUtil::addVar('stylesheet', $smarty->getStylepath().'/screen/content.css');
                 // TODO rtl-support load yaml/add-ons/rtl-support/core/base-rtl.css with the respective basemod-rtl.css and content-rtl.css
             } else {
-                $output = '<link rel="stylesheet" href="'.$smarty->getStylepath().'/layout_'.$body.'.css" type="text/css"/>';
+                PageUtil::addVar('stylesheet', $smarty->getStylepath()."/layout_{$body}.css");
             }
 
             $output .= '<!--[if lte IE 7]>'
@@ -126,11 +126,11 @@ function smarty_function_bt_htmloutput($params, &$smarty)
 //                    .'<link rel="stylesheet" href="'.$smarty->getThemepath().'/yaml/core/slim_iehacks.css" type="text/css" />'
                       .'<![endif]-->';
 /*                    .'<!--[if lte IE 6]>'
-//                    .'<script type="text/javascript" src="'.$smarty->getScriptpath().'/minmax.js"></script>'
+//                    .'<script type="text/javascript" src="'.$smarty->getScriptpath().'/ie_minmax.js"></script>'
                       .'<style type="text/css">
                             img, div, a, input { behavior: url('.$smarty->getStylepath().'/patches/iepngfix.htc) }
                         </style>'
-//                    .'<script type="text/javascript" src="'.$smarty->getScriptpath().'/iepngfix_tilebg.js"></script>'
+//                    .'<script type="text/javascript" src="'.$smarty->getScriptpath().'/ie_pngfix_tilebg.js"></script>'
                       .'<![endif]-->
                        ';
 */
