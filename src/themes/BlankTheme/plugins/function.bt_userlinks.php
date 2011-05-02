@@ -80,15 +80,6 @@ function smarty_function_bt_userlinks($params, $smarty)
                   );
     }
 
-    if (ModUtil::available('Zafenio')) {
-        $menu[] = array(
-                      'Zafenio',
-                      __('Forums', $dom),
-                      __('Discuss area', $dom),
-                      ModUtil::url('Zafenio', 'user', 'main')
-                  );
-    }
-
     if (ModUtil::available('FAQ')) {
         $menu[] = array(
                       'FAQ',
