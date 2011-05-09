@@ -371,10 +371,6 @@
     table-layout: fixed;
   }
 
-  th,
-  td {
-    padding: 0.5em;
-  }
   thead th {
     color: #000;
   }
@@ -382,7 +378,8 @@
     background: #e0e0e0;
     color: #333;
   }
-  tbody th[scope="row"], tbody th.sub {
+  tbody th[scope="row"],
+  tbody th.sub {
     background: #f0f0f0;
   }
 
@@ -394,6 +391,10 @@
     /*border-bottom: 1px solid #eee;*/
   }
 
+  table.z-datatable th,
+  table.z-datatable td {
+    padding: 0.5em;
+  }
   table.z-datatable tbody tr:hover th[scope="row"],
   table.z-datatable tbody tr:hover tbody th.sub {
     background: #d9e9d9;
