@@ -340,7 +340,7 @@
   #main a[href^="http://www.my-domain.com"],
   #main a[href^="https://www.my-domain.com"]
   {
-    background-image: url('../../yaml/add-ons/microformats/images/external_link.png');
+    background-image: url('../yaml/add-ons/microformats/images/external_link.png');
     background-position: 0 0.45em;
     background-repeat: no-repeat;
     padding-left: 12px;
@@ -507,13 +507,13 @@
     padding: 3px 0;
   }
   .fontresize-large {
-    background: url(../../images/icons/font_resize.gif) no-repeat 0px 50%;
+    background: url(../images/icons/font_resize.gif) no-repeat 0px 50%;
   }
   .fontresize-reset {
-    background: url(../../images/icons/font_resize.gif) no-repeat -20px 50%;
+    background: url(../images/icons/font_resize.gif) no-repeat -20px 50%;
   }
   .fontresize-small {
-    background: url(../../images/icons/font_resize.gif) no-repeat -40px 50%;
+    background: url(../images/icons/font_resize.gif) no-repeat -40px 50%;
   }
 
   /* Special styles for entries or menus ... */

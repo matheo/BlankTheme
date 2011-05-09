@@ -114,21 +114,21 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             if ($btconfig['optimize'] == 'y') {
                 // do not load the layout_* stylesheet and load the basic styles directly
                 PageUtil::addVar('stylesheet', $smarty->getThemepath().'/yaml/core/slim_base.css');
-                PageUtil::addVar('stylesheet', $smarty->getStylepath().'/screen/basemod.css');
-                PageUtil::addVar('stylesheet', $smarty->getStylepath().'/screen/content.css');
+                PageUtil::addVar('stylesheet', $smarty->getStylepath().'/basemod.css');
+                PageUtil::addVar('stylesheet', $smarty->getStylepath().'/content.css');
                 // TODO rtl-support load yaml/add-ons/rtl-support/core/base-rtl.css with the respective basemod-rtl.css and content-rtl.css
             } else {
                 PageUtil::addVar('stylesheet', $smarty->getStylepath()."/layout_{$body}.css");
             }
 
             $output .= '<!--[if lte IE 7]>'
-                      .'<link rel="stylesheet" href="'.$smarty->getStylepath().'/patches/patch_'.$body.'.css" type="text/css" />'
+                      .'<link rel="stylesheet" href="'.$smarty->getStylepath().'/patch_'.$body.'.css" type="text/css" />'
 //                    .'<link rel="stylesheet" href="'.$smarty->getThemepath().'/yaml/core/slim_iehacks.css" type="text/css" />'
                       .'<![endif]-->';
 /*                    .'<!--[if lte IE 6]>'
 //                    .'<script type="text/javascript" src="'.$smarty->getScriptpath().'/ie_minmax.js"></script>'
                       .'<style type="text/css">
-                            img, div, a, input { behavior: url('.$smarty->getStylepath().'/patches/iepngfix.htc) }
+                            img, div, a, input { behavior: url('.$smarty->getStylepath().'/iepngfix.htc) }
                         </style>'
 //                    .'<script type="text/javascript" src="'.$smarty->getScriptpath().'/ie_pngfix_tilebg.js"></script>'
                       .'<![endif]-->

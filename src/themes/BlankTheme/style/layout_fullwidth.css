@@ -11,8 +11,8 @@
 @import url(../yaml/core/slim_base.css);
 
 /* import screen layout */
-@import url(screen/basemod.css);
-@import url(screen/content.css);
+@import url(basemod.css);
+@import url(content.css);
 
 /* import navigation styles */
 /*@import url(../yaml/navigation/nav_shinybuttons.css);*/

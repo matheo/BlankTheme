@@ -87,7 +87,7 @@
 
   /* marginal area */
   body {
-    background: #4d87c7 url(../../images/design/bg_blue.gif) repeat-x top left fixed;
+    background: #4d87c7 url(../images/design/bg_blue.gif) repeat-x top left fixed;
     padding: 10px 0; /* to-remove */
   }
 
@@ -198,7 +198,7 @@
   }
 
   #nav_main {
-    background: #efefef url(../../yaml/navigation/images/shiny_buttons/background.png) repeat-x; /* to-remove */
+    background: #ccc url(../yaml/navigation/images/shiny_buttons/background.png) repeat-x; /* to-remove */
     border: none;
     display: inline;
     float: left;
@@ -569,13 +569,13 @@
     position: relative;
   }
   .bt_fullwidth #header {
-    background: #4d87c7 url(../../images/design/bg_blue.gif) repeat-x top left scroll;
+    background: #4d87c7 url(../images/design/bg_blue.gif) repeat-x top left scroll;
   }
     .bt_fullwidth #header h1 a {
       color: #fff;
     }
   .bt_fullwidth #nav {
-    background: url("../../yaml/navigation/images/shiny_buttons/background.png") repeat-x scroll 0 0 #EFEFEF
+    background: url("../yaml/navigation/images/shiny_buttons/background.png") repeat-x scroll 0 0 #EFEFEF
   }
     .bt_fullwidth #nav_main ul li:first-child {
       border-left: 1px solid #aaa;
