@@ -253,6 +253,7 @@
     #topnav {
       color: #aaa;
       font-size: 12px;
+      line-height: 15px;
       text-align: right; /* LTR */
     }
 
@@ -262,6 +263,9 @@
     line-height: 150%;
     text-align: left;
   }
+    #footer #footer_sublinks {
+      font-size: 0.8em;
+    }
 
 
 
@@ -287,6 +291,8 @@
   }
   a:hover,
   a:active {
+    /* if you use backgrounds or borders here
+       you will interfere zikula core styles */
     color: #182E7A;
     outline: 0 none;
     text-decoration: underline;
@@ -310,6 +316,7 @@
   #header h1 a:focus,
   #header h1 a:hover,
   #header h1 a:active {
+    background: transparent;
     text-decoration: none;
   }
 
@@ -326,6 +333,9 @@
     color: #4D87C7;
     text-decoration: underline;
   }
+    #footer_sublinks a {
+      font-weight: normal;
+    }
 
 
 
@@ -681,10 +691,5 @@
    * Miscelaneous styles
    * @subsection content-misc
    */
-
-  /* Example: Homepage main container */
-  .bt_home #main {
-    /*padding: 10px 0;*/
-  }
 
 }

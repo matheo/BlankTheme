@@ -56,12 +56,6 @@
         </div>
         <!-- end: #footer -->
     </div>
-{* commented line
-<div>
-{nocache}{pagerendertime}{/nocache}
-{nocache}{sqldebug}{/nocache}
-</div>
-commented line *}
 </div>
 </body>
 </html>

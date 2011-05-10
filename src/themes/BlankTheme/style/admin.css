@@ -7,10 +7,12 @@
  */
 
 .bt_admin .page,
-.bt_admin #page,
 .bt_admin .z-adminbox,
 .bt_admin .z-admincontainer {
   background: #fff;
+}
+.bt_admin #main {
+  padding: 1em 0;
 }
 .bt_admin #col1 {
   float: none;
@@ -44,8 +46,8 @@ way to fit your requirements.
 #nav_admin ul { margin: 0; }
 
 #nav_admin {
-  position:relative;
-  z-index:100;
+  position: relative;
+  z-index: 100;
   background: transparent;
   display: block;
   float: none;
@@ -54,8 +56,8 @@ way to fit your requirements.
 }
 
 #nav_admin .cssplay_prodrop li {
-  display:block;
-  float:left;
+  display: block;
+  float: left;
   margin: 0;
   position: relative;
   z-index: auto !important /*Non-IE6*/;
@@ -106,6 +108,7 @@ way to fit your requirements.
 #nav_admin .cssplay_prodrop li a.top_link:hover,
 #nav_admin .cssplay_prodrop li.selected a.top_link {
   background: #B5B5B5;
+  border: none;
   color: #222;
   line-height: 27px;
 }
@@ -145,11 +148,11 @@ way to fit your requirements.
 #nav_admin .cssplay_prodrop a:hover {
   position: relative;
   visibility: visible;
-  z-index:200;
+  z-index: 200;
 } /* for IE6 */
 #nav_admin .cssplay_prodrop li:hover {
   position: relative;
-  z-index:200;
+  z-index: 200;
 } /* for IE7 */
 
 /* keep the 'next' level invisible by placing it off screen. */
@@ -224,7 +227,7 @@ way to fit your requirements.
 }
 #nav_admin .cssplay_prodrop :hover ul li:hover > a.fly {
   background: #959595 url(../images/adminmenu/cssplay_prodrop8_arrow_on.gif) 200px 7px no-repeat;
-  color:#fff;
+  color: #fff;
 }
 
 /* set up the flyout levels when hovering */
@@ -240,5 +243,5 @@ way to fit your requirements.
   top: 0;
   white-space: nowrap;
   width: 210px;
-  z-index:300;
+  z-index: 300;
 }

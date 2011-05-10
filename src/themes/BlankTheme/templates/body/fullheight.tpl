@@ -97,8 +97,8 @@
 <!-- end: #footer -->
 
 {* this body relies on a layout style, so, check if it's not loaded *}
-{if $btconfig.optimize}
-{capture assign='fullheightcss'}
+{if $btconfig.optimize eq 'y'}
+{pageaddvarblock name='header'}
 <style type="text/css">
 @media screen, projection
 {
@@ -108,6 +108,5 @@
   }
 }
 </style>
-{/capture}
-{pageaddvar name='header' value=$fullheightcss}
+{/pageaddvarblock}
 {/if}
