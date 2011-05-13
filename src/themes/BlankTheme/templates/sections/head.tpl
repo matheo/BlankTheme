@@ -15,7 +15,6 @@
 <link rel="shortcut icon" type="image/ico" href="{$imagepath}/favicon.ico" /> {* IE *}
 
 <!-- pagevars -->
-
 {bt_htmloutput section='head'}
 
 </head>

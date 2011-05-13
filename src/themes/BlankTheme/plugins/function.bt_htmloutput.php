@@ -110,17 +110,6 @@ function smarty_function_bt_htmloutput($params, &$smarty)
 
         case 'head':
             // head stylesheets
-            // TODO pending review with PageUtil weight assignment (when implemented)
-            if ($btconfig['optimize'] == 'y') {
-                // do not load the layout_* stylesheet and load the basic styles directly
-                PageUtil::addVar('stylesheet', $smarty->getThemepath().'/yaml/core/slim_base.css');
-                PageUtil::addVar('stylesheet', $smarty->getStylepath().'/basemod.css');
-                PageUtil::addVar('stylesheet', $smarty->getStylepath().'/content.css');
-                // TODO rtl-support load yaml/add-ons/rtl-support/core/base-rtl.css with the respective basemod-rtl.css and content-rtl.css
-            } else {
-                PageUtil::addVar('stylesheet', $smarty->getStylepath()."/layout_{$body}.css");
-            }
-
             $output .= '<!--[if lte IE 7]>'
                       .'<link rel="stylesheet" href="'.$smarty->getStylepath().'/patch_'.$body.'.css" type="text/css" />'
 //                    .'<link rel="stylesheet" href="'.$smarty->getThemepath().'/yaml/core/slim_iehacks.css" type="text/css" />'
@@ -134,9 +123,19 @@ function smarty_function_bt_htmloutput($params, &$smarty)
                       .'<![endif]-->
                        ';
 */
-            // Add content in the final if needed
-            if ($smarty->get_template_vars('additionalhead')) {
-                $output .= $smarty->get_template_vars('additionalhead');
+            break;
+
+        case 'footer':
+            // load the Theme styles in the very end of the page rendering
+            // TODO pending review with PageUtil weight assignment (when implemented)
+            if ($btconfig['optimize'] == 'y') {
+                // do not load the layout_* stylesheet and load the basic styles directly
+                PageUtil::addVar('stylesheet', $smarty->getThemepath().'/yaml/core/slim_base.css');
+                PageUtil::addVar('stylesheet', $smarty->getStylepath().'/basemod.css');
+                PageUtil::addVar('stylesheet', $smarty->getStylepath().'/content.css');
+                // TODO rtl-support load yaml/add-ons/rtl-support/core/base-rtl.css with the respective basemod-rtl.css and content-rtl.css
+            } else {
+                PageUtil::addVar('stylesheet', $smarty->getStylepath()."/layout_{$body}.css");
             }
             break;
 

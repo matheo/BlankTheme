@@ -1,6 +1,5 @@
 
-<!-- Block Start -->
+<!-- Block Content -->
 <div class="z-block-content floatbox">
     {$content}
 </div>
-<!-- Block End -->

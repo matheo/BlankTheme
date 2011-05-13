@@ -2,10 +2,9 @@
      PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{lang}" lang="{lang}" dir="{langdirection}">
-{capture assign='additionalhead'}
-<link rel="stylesheet" href="{$themepath}/style/admin.css" type="text/css" media="screen,projection" />
-{/capture}
-{include file='head.tpl'}
+
+{pageaddvar name='stylesheet' value="`$themepath`/style/admin.css"}
+{include file='sections/head.tpl'}
 
 <!-- Admin template -->
 <body id="bt_{$module}" class="bt_admin">
@@ -53,6 +52,7 @@
         <!-- begin: #footer -->
         <div id="footer">
             <a href="{gt text='http://community.zikula.org/'}" title="{gt text='Powered by Zikula'}">{gt text='Powered by Zikula'}</a>
+            {bt_htmloutput section='footer'}
         </div>
         <!-- end: #footer -->
     </div>

@@ -55,13 +55,6 @@
                         </div>
                     </div>
                     {/if}
-                    {if $layout|checkzone:cb}
-                    <div id="bt_cb" class="bt_zone">
-                        <div id="bt_cb_content">
-                            {blockposition name='bottom'}
-                        </div>
-                    </div>
-                    {/if}
                 </div>
                 <!-- IE column Clearing -->
                 <div id="ie_clearing">&nbsp;</div>
@@ -88,7 +81,7 @@
 
         <!-- begin: #footer -->
         <div id="footer">
-            {include file='footer.tpl'}
+            {include file='sections/footer.tpl'}
         </div>
         <!-- end: #footer -->
     </div>

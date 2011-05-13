@@ -96,7 +96,7 @@
 <div id="footer">
     <div class="page_margins">
         <div class="page">
-            {include file='footer.tpl'}
+            {include file='sections/footer.tpl'}
         </div>
     </div>
 </div>

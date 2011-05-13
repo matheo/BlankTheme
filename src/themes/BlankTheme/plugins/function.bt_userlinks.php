@@ -52,7 +52,14 @@ function smarty_function_bt_userlinks($params, $smarty)
                   System::getHomepageUrl(),   // link
                   null                        // array of sublinks (optional)
               );
-
+/*
+    $menu[] = array(
+                  'ModName / Current',
+                  __('Home', $dom),
+                  __('Go to home page', $dom),
+                  ModUtil::url('Modname', 'type', 'func', array('param' => 'value'))
+              );
+*/
     if (ModUtil::available('News')) {
         $menu[] = array(
                       'News',

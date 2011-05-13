@@ -1,4 +1,3 @@
 
-<!-- Nav Block Start -->
+<!-- Nav Block -->
 {$content}
-<!-- Nav Block End -->

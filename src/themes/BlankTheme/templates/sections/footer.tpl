@@ -1,3 +1,5 @@
+{bt_htmloutput section='footer'}
+
 {*
      * Note:
      * If you want to remove the YAML backlink,

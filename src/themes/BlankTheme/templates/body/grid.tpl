@@ -100,7 +100,7 @@
 
         <!-- begin: #footer -->
         <div id="footer">
-            {include file='footer.tpl'}
+            {include file='sections/footer.tpl'}
         </div>
         <!-- end: #footer -->
 
