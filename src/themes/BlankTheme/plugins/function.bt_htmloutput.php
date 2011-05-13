@@ -147,7 +147,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             }
             if ($btcssbody && isset($btcssbody[$body]) && $btcssbody[$body]) {
                 $output .= $btcssbody[$body].' ';
-            };
+            }
             $output .= 'bt_'.$body.' bt_type_'.$smarty->getType().' bt_lang_'.$smarty->getLanguage();
             break;
 
