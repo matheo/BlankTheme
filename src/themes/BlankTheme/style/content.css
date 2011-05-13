@@ -232,44 +232,6 @@
 
 
   /**
-   * General layout elements
-   * styles for the main containers and some of its specific contents
-   *
-   * @section content-layout
-   */
-
-  #header h1 {
-    color: #000;
-    font-size: 36px;
-    letter-spacing: -1px;
-    line-height: 65%;
-  }
-
-  #header .slogan {
-    color: #999;
-    font-size: 16px;
-  }
-
-    #topnav {
-      color: #aaa;
-      font-size: 12px;
-      line-height: 15px;
-      text-align: right; /* LTR */
-    }
-
-  #footer {
-    color: #666;
-    font-size: 12px;
-    line-height: 150%;
-    text-align: left;
-  }
-    #footer #footer_sublinks {
-      font-size: 0.8em;
-    }
-
-
-
-  /**
    * Links
    * Formatting of hyperlinks
    *
@@ -335,6 +297,44 @@
   }
     #footer_sublinks a {
       font-weight: normal;
+    }
+
+
+
+  /**
+   * General layout elements
+   * styles for the main containers and some of its specific contents
+   *
+   * @section content-layout
+   */
+
+  #header h1 {
+    color: #000;
+    font-size: 36px;
+    letter-spacing: -1px;
+    line-height: 65%;
+  }
+
+  #header .slogan {
+    color: #999;
+    font-size: 16px;
+  }
+
+    #topnav {
+      color: #aaa;
+      font-size: 12px;
+      line-height: 15px;
+      text-align: right; /* LTR */
+    }
+
+  #footer {
+    color: #666;
+    font-size: 12px;
+    line-height: 150%;
+    text-align: left;
+  }
+    #footer #footer_sublinks {
+      font-size: 0.8em;
     }
 
 
@@ -421,12 +421,13 @@
 
 
   /**
-   * Generic Content Classes
-   * standard classes for positioning and highlighting
+   * Theme specific styles
+   * general styles defined by the theme
    *
-   * @section content-generic-classes
+   * @section content-theme-specific
    */
 
+  /* Generic YAML classes */
   .highlight {
     color: #c30;
   }
@@ -499,15 +500,6 @@
     padding: 0 2px;
   }
 
-
-
-  /**
-   * Theme specific styles
-   * general styles defined by the theme
-   *
-   * @section content-theme-specific
-   */
-
   /* efa font resize styles, if not used comment out */
   .fontresize-large,
   .fontresize-reset,
@@ -548,12 +540,12 @@
    */
 
   /* js context menus */
-  #bt_Wikula .bt_func_edit #col1_content,
-  #bt_Wikula .bt_func_edit #z-maincontent,
-  #bt_Content.bt_admin #col1_content,
-  #bt_Content.bt_type_edit #col1_content,
-  #bt_Content.bt_admin #z-maincontent,
-  #bt_Content.bt_type_edit #z-maincontent {
+  #bt_wikula .bt_func_edit #col1_content,
+  #bt_wikula .bt_func_edit #z-maincontent,
+  #bt_content.bt_admin #col1_content,
+  #bt_content.bt_type_edit #col1_content,
+  #bt_content.bt_admin #z-maincontent,
+  #bt_content.bt_type_edit #z-maincontent {
     position: inherit;
   }
   div.contextMenu ul li {
@@ -603,9 +595,15 @@
 
 
   /**
-   * Value Addons styles
-   * @subsection content-zikula-addons
+   * Miscelaneous styles
+   * @subsection content-misc
    */
+
+  /* Zikula Blocks */
+  .z-block .z-block-title {
+    font-weight: 700;
+    line-height: 22px;
+  }
 
   /* News Articles */
   .news_index {
@@ -645,51 +643,4 @@
   #ratingsratecontent p {
     margin: 0;
   }
-
-
-  /**
-   * Zikula Blocks
-   * @subsection content-zikula-blocks
-   */
-
-  /* General Blocks styles */
-  .z-block {
-    margin-bottom: 15px;
-  }
-  .z-block .z-block-title {
-    font-weight: 700;
-    line-height: 22px;
-    margin: 0;
-    padding: 3px 4px;
-  }
-  .z-block .z-block-content {
-    padding: 5px;
-  }
-  .z-block ul,
-  .z-block ol,
-  .z-block dl {
-    margin: 0px;
-  }
-
-  /* Top Navigation Blocks */
-  .z-blockposition-navtop {
-    margin-bottom: 0px;
-  }
-
-  /* Right Blocks */
-  .z-blockposition-right {
-  }
-  .z-blockposition-right h4 {
-  }
-
-  /* Center Blocks */
-  .z-blockposition-center {
-  }
-
-
-  /**
-   * Miscelaneous styles
-   * @subsection content-misc
-   */
-
 }

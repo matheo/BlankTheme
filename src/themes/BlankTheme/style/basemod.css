@@ -638,4 +638,37 @@
       padding: 10px 20px;
       text-align: left;
     }
+
+
+
+  /**
+   * Miscelaneous styles
+   * @subsection basemod-misc
+   */
+
+  /* Zikula Blocks */
+  .z-block {
+    margin-bottom: 15px;
+  }
+  .z-block .z-block-title {
+    margin: 0;
+    padding: 3px 4px;
+  }
+  .z-block .z-block-content {
+    padding: 5px;
+  }
+  .z-block ul,
+  .z-block ol,
+  .z-block dl {
+    margin: 0px;
+  }
+
+  /* Top Navigation Blocks */
+  .z-blockposition-navtop {
+    margin-bottom: 0px;
+  }
+
+  /* Center Blocks */
+  .z-blockposition-center {
+  }
 }
