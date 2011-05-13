@@ -5,6 +5,6 @@
     <span>{$title}</span>
 </h4>
 {/if}
-<div class="z-block-content floatbox">
+<div class="z-block-content">
     {$content}
 </div>
