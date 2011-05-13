@@ -663,12 +663,15 @@
     margin: 0px;
   }
 
-  /* Top Navigation Blocks */
-  .z-blockposition-navtop {
-    margin-bottom: 0px;
+  /* Top and bottom navigation blocks */
+  .z-blockposition-topnav,
+  .z-blockposition-bottomnav {
+    margin: 0px;
   }
 
-  /* Center Blocks */
-  .z-blockposition-center {
+  /* Header and footer blocks default styles */
+  .z-blockposition-header,
+  .z-blockposition-footer {
+    float: right;
   }
 }

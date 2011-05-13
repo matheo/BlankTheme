@@ -14,6 +14,9 @@
                 {bt_htmloutput section='topnavlinks'}
                 {bt_htmloutput section='fontresize'}
             </div>
+            {if $btconfig.header eq 1}
+                {blockposition name='header'}
+            {/if}
             <a href="{$baseurl}">{img src='logo.png' class='logo' __alt='logo'}</a>
             <h1><a href="{$baseurl}" title="{gt text='Go to the homepage'}">{$modvars.ZConfig.sitename}</a></h1>
             <span class="slogan">{$modvars.ZConfig.slogan}</span>
@@ -22,8 +25,8 @@
 
         <!-- begin: main navigation #nav -->
         <div id="nav">
-            {if $btconfig.navtop eq 'b'}
-                {blockposition name='navtop'}
+            {if $btconfig.topnav eq 1}
+                {blockposition name='topnav'}
             {else}
                 {bt_userlinks}
             {/if}
@@ -75,6 +78,7 @@
             <!-- begin: #col3 column -->
             <div id="col3">
                 <div id="col3_content" class="clearfix">
+                    {*blockposition name='search'*}
                     {blockposition name='right'}
                 </div>
             </div>
