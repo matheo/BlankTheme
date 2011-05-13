@@ -31,11 +31,3 @@ $themeversion['xhtml']          = true;
 
 $themeversion['extra']          = array('BlankTheme' => '1.3',
                                         'YAML'       => '3.3');
-
-/* themevariables.ini gettext strings*/
-no__('Master body template');
-no__('Master layout');
-no__('User menu to use');
-no__('Enable font resize buttons');
-no__('Enable optimized mode');
-no__('Full height body required CSS class');
