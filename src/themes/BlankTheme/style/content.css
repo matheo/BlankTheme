@@ -60,26 +60,26 @@
 
   h1, h2, h3, h4, h5, h6 {
     color: #222;
-    font-family: "Times New Roman", Times, serif;
-    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: normal;
     margin: 0 0 0.25em 0;
   }
 
   h1 {
-    font-size: 200%; /* 24px */
+    font-size: 250%; /* 30px */
   }
   h2 {
     color: #182E7A;
     font-size: 200%; /* 24px */
   }
   h3 {
-    font-size: 150%; /* 18px */
+    font-size: 166.66%; /* 20px */
   }
   h4 {
-    font-size: 133.33%; /* 16px */
+    font-size: 150%; /* 18px */
   }
   h5 {
-    font-size: 116.67%; /* 14px */
+    font-size: 133.33%; /* 16px */
   }
   h6 {
     font-size: 116.67%; /* 14px */
@@ -601,7 +601,6 @@
 
   /* Zikula Blocks */
   .z-block .z-block-title {
-    font-weight: 700;
     line-height: 22px;
   }
 
