@@ -2,8 +2,8 @@
 
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset={charset}" />
 <title>{pagegetvar name='title'}</title>
-<meta name="description" content="{$modvars.ZConfig.slogan}" />
-<meta name="keywords" content="{$modvars.ZConfig.metakeywords}" />
+<meta name="description" content="{$metatags.description}" />
+<meta name="keywords" content="{$metatags.keywords}" />
 <meta name="Author" content="{$modvars.ZConfig.sitename}" />
 <meta name="Copyright" content="Copyright (c) {'Y'|date} by {$modvars.ZConfig.sitename}" />
 <meta name="Robots" content="index,follow" />
