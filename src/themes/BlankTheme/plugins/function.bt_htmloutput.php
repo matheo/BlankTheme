@@ -61,7 +61,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
                 $menu[] = array('logout', __('Log out', $dom), ModUtil::url('Users', 'user', 'logout'));
             } else {
                 $menu[] = array('register', __('Register', $dom), ModUtil::url('Users', 'user', 'register'));
-                $menu[] = array('login', __('Login', $dom), ModUtil::url('Users', 'user', 'loginscreen'));
+                $menu[] = array('login', __('Login', $dom), ModUtil::url('Users', 'user', 'login'));
             }
             // Render the menu as an unordered list inside a div
             $count   = count($menu) - 1;
