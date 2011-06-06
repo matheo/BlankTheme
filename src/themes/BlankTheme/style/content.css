@@ -405,6 +405,7 @@
   table.z-datatable td {
     padding: 0.5em;
   }
+  /*
   table.z-datatable tbody tr:hover th[scope="row"],
   table.z-datatable tbody tr:hover tbody th.sub {
     background: #d9e9d9;
@@ -412,6 +413,7 @@
   table.z-datatable tbody tr:hover td {
     background: #e9f9e9;
   }
+  */
 
   thead th a {
     color: #000;
