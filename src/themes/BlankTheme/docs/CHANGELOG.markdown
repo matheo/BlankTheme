@@ -1,9 +1,17 @@
 
 # CHANGELOG
 
-## Version 1.1
+## Version 1.3
 
 * Upgraded to work with Zikula 1.3+
+* Updated admin links according Zikula 1.3 changes
+* YAML upgraded to the 3.3 version
+* INI files are noe in charge of everything, over the unique master.tpl
+* Theme Variables rework according 1.3 capabilities
+* CSS files reordered on the /style folder to avoid module override clashes
+* Template files renamed to TPL
+* Context templates moved to the root folder, moving head footer to /templates/sections
+* Added fullheight and fullwidth body templates
 
 ## Version 1.0
 
