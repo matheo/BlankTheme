@@ -150,7 +150,7 @@ function smarty_function_bt_adminlinks($params, &$smarty)
                         ),
                         array(null, __('Themes', $dom),                     ModUtil::url('Theme', 'admin', 'main'),
                             array(
-                                array(null, __("Edit default theme", $dom), ModUtil::url('Theme', 'admin', 'modify', array('theme' => $theme)))
+                                array(null, __("Edit default theme", $dom), ModUtil::url('Theme', 'admin', 'modify', array('themename' => $theme)))
                             )
                         ),
                         array(null, __('Security center', $dom),               ModUtil::url('SecurityCenter', 'admin', 'modifyconfig'),
