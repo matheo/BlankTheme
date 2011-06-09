@@ -52,11 +52,14 @@ function smarty_function_bt_htmloutput($params, &$smarty)
         case 'topnavlinks':
             // build the menu list
             // Option: id, lang string, link
-            $menu   = array();
+            $menu = array();
             if (UserUtil::isLoggedIn()) {
+                if (SecurityUtil::checkPermission('::', '::', ACCESS_ADMIN)) {
+                    $menu[] = array('admin', __('Admin', $dom), ModUtil::url('Admin', 'admin', 'adminpanel'));
+                }
                 $profileModule = System::getVar('profilemodule', '');
                 if (!empty($profileModule) && ModUtil::available($profileModule)) {
-                    $menu[] = array('account', __('Your account', $dom), ModUtil::url($profileModule));
+                    $menu[] = array('account', __('Your account', $dom), ModUtil::url($profileModule, 'user', 'main'));
                 }
                 $menu[] = array('logout', __('Log out', $dom), ModUtil::url('Users', 'user', 'logout'));
             } else {
