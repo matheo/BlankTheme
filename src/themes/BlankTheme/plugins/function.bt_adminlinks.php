@@ -78,30 +78,9 @@ function smarty_function_bt_adminlinks($params, &$smarty)
                              array(null, __('System mailer', $dom),  ModUtil::url('Mailer', 'admin')),
                              array(null, __('Search options', $dom), ModUtil::url('Search', 'admin')),
                        );
-        // File handling
-        if (ModUtil::available('Files')) {
-            $linkoptions[] = array(null, __('File manager', $dom), ModUtil::url('Files', 'admin', 'main'));
-        }
         // Legal
         if (ModUtil::available('Legal')) {
             $linkoptions[] = array(null, __('Legal settings', $dom), ModUtil::url('Legal', 'admin', 'main'));
-        }
-        // WYSIWYG handling
-        if (ModUtil::available('Scribite') || ModUtil::available('LuMicuLa')) {
-            $subopt = array();
-            if (ModUtil::available('Scribite')) {
-                $subopt[] = array(null, 'Scribite', ModUtil::url('Scribite', 'admin', 'main'));
-            }
-            if (ModUtil::available('LuMicuLa')) {
-                $subopt[] = array(null, 'LuMicuLa', ModUtil::url('LuMicuLa', 'admin', 'main'));
-            }
-        }
-        if (isset($subopt)) {
-            $linkoptions[] = array(null, __('WYSIWYG editors', $dom), '#', $subopt);
-        }
-        // Thumbnails handling
-        if (ModUtil::available('Thumbnail')) {
-            $linkoptions[] = array(null, __('Thumbnails', $dom), ModUtil::url('Thumbnail', 'admin', 'main'));
         }
 
         $menu[] = array('config', __('Config', $dom),  '#', $linkoptions);
@@ -148,11 +127,7 @@ function smarty_function_bt_adminlinks($params, &$smarty)
                                 array(null, __('New position', $dom), ModUtil::url('Blocks', 'admin', 'newposition'))
                             )
                         ),
-                        array(null, __('Themes', $dom),                     ModUtil::url('Theme', 'admin', 'main'),
-                            array(
-                                array(null, __("Edit default theme", $dom), ModUtil::url('Theme', 'admin', 'modify', array('themename' => $theme)))
-                            )
-                        ),
+                        array(null, __('Themes', $dom),                        ModUtil::url('Theme', 'admin', 'main')),
                         array(null, __('Security center', $dom),               ModUtil::url('SecurityCenter', 'admin', 'modifyconfig'),
                             array(
                                 array(null, __('View IDS log', $dom),          ModUtil::url('SecurityCenter', 'admin', 'viewidslog')),
@@ -198,6 +173,37 @@ function smarty_function_bt_adminlinks($params, &$smarty)
                 );
 
 
+        /* Common Utils */
+        $linkoptions = array(
+                           array(null, __("Edit default theme", $dom), ModUtil::url('Theme', 'admin', 'modify', array('themename' => $theme)))
+                       );
+
+        // File handling
+        if (ModUtil::available('Files')) {
+            $linkoptions[] = array(null, __('File manager', $dom), ModUtil::url('Files', 'admin', 'main'));
+        }
+
+        // WYSIWYG handling
+        if (ModUtil::available('Scribite') || ModUtil::available('LuMicuLa')) {
+            $subopt = array();
+            if (ModUtil::available('Scribite')) {
+                $subopt[] = array(null, 'Scribite', ModUtil::url('Scribite', 'admin', 'main'));
+            }
+            if (ModUtil::available('LuMicuLa')) {
+                $subopt[] = array(null, 'LuMicuLa', ModUtil::url('LuMicuLa', 'admin', 'main'));
+            }
+        }
+        if (isset($subopt)) {
+            $linkoptions[] = array(null, __('WYSIWYG editors', $dom), '#', $subopt);
+        }
+        // Thumbnails handling
+        if (ModUtil::available('Thumbnail')) {
+            $linkoptions[] = array(null, __('Thumbnails', $dom), ModUtil::url('Thumbnail', 'admin', 'main'));
+        }
+
+        $menu[] = array('utils', __('Utils', $dom), '#', $linkoptions);
+
+
         /* Common Routines links */
         $token = SecurityUtil::generateCsrfToken();
         $linkoptions = array(
@@ -213,7 +219,8 @@ function smarty_function_bt_adminlinks($params, &$smarty)
                                    array(null, __('Delete cached theme templates', $dom),   ModUtil::url('Theme', 'admin', 'clear_cache', array('csrftoken' => $token)))
                                )
                            ),
-                           array(null, __('Clear combination cache', $dom), ModUtil::url('Theme', 'admin', 'clear_cssjscombinecache', array('csrftoken' => $token)))
+                           array(null, __('Clear combination cache', $dom), ModUtil::url('Theme', 'admin', 'clear_cssjscombinecache', array('csrftoken' => $token))),
+                           array(null, __('Delete theme configurations', $dom), ModUtil::url('Theme', 'admin', 'clear_config', array('csrftoken' => $token)))
                        );
 
         if (ModUtil::available('SysInfo')) {
@@ -231,10 +238,10 @@ function smarty_function_bt_adminlinks($params, &$smarty)
     // Content Modules
     if (ModUtil::available('Clip') && SecurityUtil::checkPermission('Clip::', '::', ACCESS_EDIT)) {
         $suboptions = array(
-                         array(null, __('Create publication type', $dom), ModUtil::url('Clip', 'admin', 'pubtype')),
-                         array(null, __('Settings', $dom),  ModUtil::url('Clip', 'admin', 'main'))
+                         array(null, __('Clip Editor Panel', $dom), ModUtil::url('Clip', 'editor', 'main')),
+                         array(null, __('Create publication type', $dom), ModUtil::url('Clip', 'admin', 'pubtype'))
                       );
-        $linkoptions[] = array(null, __('Clip Editor Panel', $dom), ModUtil::url('Clip', 'editor', 'main'), $suboptions);
+        $linkoptions[] = array(null, __('Clip Admin Panel', $dom), ModUtil::url('Clip', 'admin', 'main'), $suboptions);
     }
     if (ModUtil::available('News') && (SecurityUtil::checkPermission('News::', '::', ACCESS_EDIT) || SecurityUtil::checkPermission('Stories::Story', '::', ACCESS_EDIT))) {
         $suboptions = array(
