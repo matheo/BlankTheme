@@ -17,14 +17,14 @@
  * @author       Erik Spaan [espaan]
  * @since        08/11/2007
  * @param        array       $params       All attributes passed to this function from the template
- * @param        object      &$smarty      Reference to the Smarty object
+ * @param        object      &$view        Reference to the Smarty object
  * @param        string      $id           CSS surrounding div id, default = 'nav_admin'
  * @param        string      $ulclass      UL class, default = 'cssplay_prodrop'
  * @param        string      $current      the current tab (i.e. home, account, news, forum)
  * @param        string      $currentclass CSS class for the current link, default = 'selected'
  * @return       string      the results of the module function
  */
-function smarty_function_bt_adminlinks($params, &$smarty)
+function smarty_function_bt_adminlinks($params, Zikula_View_Theme &$view)
 {
     extract($params);
     unset($params);

@@ -17,11 +17,11 @@
  * @author       Mateo Tibaquirá
  * @since        05/07/08
  * @param        array       $params      All attributes passed to this function from the template
- * @param        object      &$smarty     Reference to the Smarty object
+ * @param        object      &$view     Reference to the Smarty object
  * @param        string      $section     Output section to return
  * @return       string      the results of the module function
  */
-function smarty_function_bt_htmloutput($params, &$smarty)
+function smarty_function_bt_htmloutput($params, Zikula_View_Theme &$view)
 {
     // variables to use
     // parameters
@@ -32,17 +32,17 @@ function smarty_function_bt_htmloutput($params, &$smarty)
     $dom = ZLanguage::getThemeDomain('BlankTheme');
 
     // blanktheme vars
-    $body      = $smarty->get_template_vars('body');
-    $layout    = $smarty->get_template_vars('layout');
-    $btconfig  = $smarty->get_template_vars('btconfig');
-    $btcssbody = $smarty->get_template_vars('btcssbody');
+    $body      = $view->getTplVar('body');
+    $layout    = $view->getTplVar('layout');
+    $btconfig  = $view->getTplVar('btconfig');
+    $btcssbody = $view->getTplVar('btcssbody');
 
     // check for the current variable
-    if ($smarty->get_template_vars('current')) {
-        $current = $smarty->get_template_vars('current');
+    if ($view->getTplVar('current')) {
+        $current = $view->getTplVar('current');
     } else {
-        $current = $smarty->getToplevelmodule();
-        $smarty->assign('current', $current);
+        $current = $view->getToplevelmodule();
+        $view->assign('current', $current);
     }
 
     // assign the respective output
@@ -54,7 +54,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             // Option: id, lang string, link
             $menu = array();
             if (UserUtil::isLoggedIn()) {
-                if (SecurityUtil::checkPermission('::', '::', ACCESS_ADMIN)) {
+                if ($view->getTplVar('type') != 'admin' && SecurityUtil::checkPermission('::', '::', ACCESS_ADMIN)) {
                     $menu[] = array('admin', __('Admin', $dom), ModUtil::url('Admin', 'admin', 'adminpanel'));
                 }
                 $profileModule = System::getVar('profilemodule', '');
@@ -94,15 +94,15 @@ function smarty_function_bt_htmloutput($params, &$smarty)
                 break;
             }
             // font resize based in the efa script
-            PageUtil::addVar('javascript', $smarty->getScriptpath().'/efa/efa_fontsize_packed.js');
-            //PageUtil::addVar('javascript', $smarty->getScriptpath().'/efa/efa_fontsize.js');
+            PageUtil::addVar('javascript', $view->getScriptpath().'/efa/efa_fontsize_packed.js');
+            //PageUtil::addVar('javascript', $view->getScriptpath().'/efa/efa_fontsize.js');
             $output = '<script type="text/javascript">
                          // <![CDATA[
                          if (efa_fontSize) {
                            var efalang_zoomIn = "'.__('Increase font size', $dom).'";
                            var efalang_zoomReset = "'.__('Reset font size', $dom).'";
                            var efalang_zoomOut = "'.__('Decrease font size', $dom).'";
-                           var efathemedir = "'.$smarty->getDirectory().'";
+                           var efathemedir = "'.$view->getDirectory().'";
                            efa_fontSize.efaInit();
                            document.write(efa_fontSize.allLinks);
                          }
@@ -114,15 +114,15 @@ function smarty_function_bt_htmloutput($params, &$smarty)
         case 'head':
             // head stylesheets
             $output .= '<!--[if lte IE 7]>'
-                      .'<link rel="stylesheet" href="'.$smarty->getStylepath().'/patch_'.$body.'.css" type="text/css" />'
-//                    .'<link rel="stylesheet" href="'.$smarty->getThemepath().'/yaml/core/slim_iehacks.css" type="text/css" />'
+                      .'<link rel="stylesheet" href="'.$view->getStylepath().'/patch_'.$body.'.css" type="text/css" />'
+//                    .'<link rel="stylesheet" href="'.$view->getThemepath().'/yaml/core/slim_iehacks.css" type="text/css" />'
                       .'<![endif]-->';
 /*                    .'<!--[if lte IE 6]>'
-//                    .'<script type="text/javascript" src="'.$smarty->getScriptpath().'/ie_minmax.js"></script>'
+//                    .'<script type="text/javascript" src="'.$view->getScriptpath().'/ie_minmax.js"></script>'
                       .'<style type="text/css">
-                            img, div, a, input { behavior: url('.$smarty->getStylepath().'/iepngfix.htc) }
+                            img, div, a, input { behavior: url('.$view->getStylepath().'/iepngfix.htc) }
                         </style>'
-//                    .'<script type="text/javascript" src="'.$smarty->getScriptpath().'/ie_pngfix_tilebg.js"></script>'
+//                    .'<script type="text/javascript" src="'.$view->getScriptpath().'/ie_pngfix_tilebg.js"></script>'
                       .'<![endif]-->
                        ';
 */
@@ -133,12 +133,12 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             // TODO pending review with PageUtil weight assignment (when implemented)
             if ($btconfig['optimize'] == 'y') {
                 // do not load the layout_* stylesheet and load the basic styles directly
-                PageUtil::addVar('stylesheet', $smarty->getThemepath().'/yaml/core/slim_base.css');
-                PageUtil::addVar('stylesheet', $smarty->getStylepath().'/basemod.css');
-                PageUtil::addVar('stylesheet', $smarty->getStylepath().'/content.css');
+                PageUtil::addVar('stylesheet', $view->getThemepath().'/yaml/core/slim_base.css');
+                PageUtil::addVar('stylesheet', $view->getStylepath().'/basemod.css');
+                PageUtil::addVar('stylesheet', $view->getStylepath().'/content.css');
                 // TODO rtl-support load yaml/add-ons/rtl-support/core/base-rtl.css with the respective basemod-rtl.css and content-rtl.css
             } else {
-                PageUtil::addVar('stylesheet', $smarty->getStylepath()."/layout_{$body}.css");
+                PageUtil::addVar('stylesheet', $view->getStylepath()."/layout_{$body}.css");
             }
             break;
 
@@ -151,7 +151,7 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             if ($btcssbody && isset($btcssbody[$body]) && $btcssbody[$body]) {
                 $output .= $btcssbody[$body].' ';
             }
-            $output .= 'bt_'.$body.' bt_type_'.$smarty->getType().' bt_lang_'.$smarty->getLanguage();
+            $output .= 'bt_'.$body.' bt_type_'.$view->getType().' bt_lang_'.$view->getLanguage();
             break;
 
         /* Second CSS level */
@@ -160,16 +160,16 @@ function smarty_function_bt_htmloutput($params, &$smarty)
             // add the current layout and enabled zones
             $output .= 'bt_'.str_replace('_', ' bt_', $layout);
             // add the current function name
-            $output .= ' bt_func_'.$smarty->getFunc();
+            $output .= ' bt_func_'.$view->getFunc();
             break;
 
         /* Third CSS level */
         case 'classesinnerpage':
             // add a customized third level of CSS classes like specific parameters for specific modules
             /*
-            switch ($smarty->getToplevelmodule()) {
+            switch ($view->getToplevelmodule()) {
                 case 'Pages':
-                    switch ($smarty->getFunc()) {
+                    switch ($view->getFunc()) {
                         case 'display':
                             // Example: add the current pageid in a CSS class (bt_pageid_PID)
                             // note: this only works when using normal urls, shortURLs uses the title field
@@ -178,15 +178,15 @@ function smarty_function_bt_htmloutput($params, &$smarty)
                     }
                     break;
                 case 'Content':
-                    switch ($smarty->getFunc()) {
+                    switch ($view->getFunc()) {
                         case 'view':
                             // Example: add the current page category id in a CSS class (bt_contentcatpage_CID)
                             // works for normal and shortURLs
                             if (System::getVar('shorturls') == '1' && System::getVar('shorturlstype') == '0') {
-                                $urlname = $smarty->getRequest()->getGet()->get('name');
+                                $urlname = $view->getRequest()->getGet()->get('name');
                                 $pageId = ModUtil::apiFunc('Content', 'Page', 'solveURLPath', compact('urlname'));
                             } else {
-                                $pageId = $smarty->getRequest()->getGet()->get('pid');
+                                $pageId = $view->getRequest()->getGet()->get('pid');
                             }
                             $page = ModUtil::apiFunc('Content', 'Page', 'getPage', array('id' => $pageId));
                             $output .= ' bt_contentcatpage_'.$page['categoryId'];

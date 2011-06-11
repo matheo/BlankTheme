@@ -16,7 +16,7 @@
  * @author       Mateo Tibaquirá
  * @since        08/11/07
  * @param        array       $params      All attributes passed to this function from the template
- * @param        object      &$smarty     Reference to the Smarty object
+ * @param        object      &$view       Reference to the Smarty object
  * @param        string      $class       CSS class
  * @param        string      $current     the current tab (i.e. home, account, news, forum)
  * @param        string      $currentclass CSS class for the current link (default: current)
@@ -26,14 +26,14 @@
  *                                        (default: false)
  * @return       string      the results of the module function
  */
-function smarty_function_bt_userlinks($params, $smarty)
+function smarty_function_bt_userlinks($params, Zikula_View_Theme &$view)
 {
     $id = isset($params['id']) ? $params['id'] : 'nav_main';
 
     $currentclass = isset($params['currentclass']) ? $params['currentclass'] : 'current';
 
     if (!isset($params['current'])) {
-        $current = $smarty->get_template_vars('current') ? $smarty->get_template_vars('current') : $smarty->getToplevelmodule();
+        $current = $view->getTplVar('current') ? $view->getTplVar('current') : $view->getToplevelmodule();
     } else {
         $current = $params['current'];
     }
