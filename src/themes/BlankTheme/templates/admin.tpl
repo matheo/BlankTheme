@@ -7,7 +7,7 @@
 {include file='sections/head.tpl'}
 
 <!-- Admin template -->
-<body id="bt_{$module}" class="bt_admin">
+<body id="bt_{$module}" class="bt_2col bt_admin">
 
 <!-- skip link navigation -->
 <ul id="skiplinks" dir="{langdirection}">
@@ -16,14 +16,15 @@
 </ul>
 
 {* for the backend we do not use a body template *}
-<div class="page_margins bt_1">
-    <div class="page">
+<div class="page_margins bt_12 bt_func_{$func}">
+    <div class="page {bt_htmloutput section='classesinnerpage'}">
 
         <!-- begin: #header -->
         <div id="header">
             <div id="topnav">
-                {userlinks start='' end='' seperator='<span class="text_separator">|</span>'}
+                {bt_htmloutput section='topnavlinks'}
             </div>
+            {img src='logo.gif' modname='core' set='' class='logo' __alt='logo' height='25'}
             <h1><a href="{$baseurl}" title="{gt text='Go to the homepage'}">{$modvars.ZConfig.sitename}</a></h1>
             <span class="slogan">{$modvars.ZConfig.slogan}</span>
         </div>
@@ -37,21 +38,19 @@
 
         <!-- begin: main content area #main -->
         <div id="main">
-            <!-- begin: #col1 - main column -->
-            <div id="col1">
-                <div id="col1_content" class="clearfix">
-                    {$maincontent}
-                </div>
-                <div id="ie_clearing">&nbsp;</div>
-                <!-- End: IE Column Clearing -->
+            {$maincontent}
+            </div> {* end: col1_content *}
+            <div id="ie_clearing">&nbsp;</div>
+            <!-- End: IE Column Clearing -->
             </div>
-            <!-- end: #col1 -->
+            <!-- end: #col2 -->
+            </div> {* close admin_categorymenu cols wrapper *}
         </div>
         <!-- end: #main -->
 
         <!-- begin: #footer -->
         <div id="footer">
-            <a href="{gt text='http://community.zikula.org/'}" title="{gt text='Powered by Zikula'}">{gt text='Powered by Zikula'}</a>
+            <a href="{gt text='http://community.zikula.org/'}" title="{gt text='Powered by Zikula'}">{gt text='Powered by Zikula'} {$coredata.version_num}</a>
             {bt_htmloutput section='footer'}
         </div>
         <!-- end: #footer -->

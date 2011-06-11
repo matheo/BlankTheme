@@ -6,6 +6,136 @@
  * @license   GNU/GPL - http://www.gnu.org/copyleft/gpl.html
  */
 
+body.bt_admin {
+  height: 100%;
+  padding: 0;
+}
+.bt_admin .page_margins {
+  max-width: none;
+  width: auto;
+}
+
+.bt_admin #header {
+  height: 70px;
+}
+.bt_admin #header h1 {
+  padding: 10px 0 0;
+}
+.bt_admin #header .logo {
+  margin: 10px 5px 0 0;
+}
+
+.bt_admin.bt_2col .bt_12 #col1 {
+  width: 140px;
+}
+.bt_admin.bt_2col .bt_12 #col2 {
+  border-left: none;
+  margin-left: 140px;
+}
+.bt_admin.bt_2col .bt_12 #col1_content,
+.bt_admin.bt_2col .bt_12 #col2_content {
+  padding: 0;
+}
+
+.bt_admin ul#admintabs {
+  -webkit-border-radius: 5px 0 0 5px;
+  -moz-border-radius: 5px 0 0 5px;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #ccc;
+  border-right: none;
+  width: auto;
+}
+.bt_admin ul#admintabs li {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  float: none;
+  margin: 0;
+}
+.bt_admin ul#admintabs li > a {
+  display: block;
+  float: none;
+  margin-right: 15px;
+}
+.bt_admin ul#admintabs li > a:hover {
+  background: #eee;
+  border-right: none;
+}
+.bt_admin ul#admintabs li > .z-admindrop {
+  float: right;
+}
+.bt_admin ul#admintabs li > .z-admindrop:hover {
+  border-left: none;
+}
+
+.bt_admin ul#admintabs li:first-child {
+  -webkit-border-radius: 5px 0 0 0;
+  -moz-border-radius: 5px 0 0 0;
+  border-radius: 5px 0 0 0;
+}
+.bt_admin ul#admintabs li:last-child {
+  -webkit-border-radius: 0 0 0 5px;
+  -moz-border-radius: 0 0 0 5px;
+  border-radius: 0 0 0 5px;
+  border-bottom: none;
+}
+.bt_admin ul#admintabs li.active {
+  border-right: 1px solid #fff;
+}
+
+ul#admintabs li#addcat #addcatlink {
+  background: url("../images/icons/tab_new.png") no-repeat scroll 5px 50% transparent;
+  border: none;
+  margin: 0;
+  padding: 5px 0;
+  width: 100%;
+}
+ul#admintabs li#addcat a#addcatlink:hover {
+  -webkit-border-radius: 0 0 0 5px;
+  -moz-border-radius: 0 0 0 5px;
+  border-radius: 0 0 0 5px;
+  background: url("../images/icons/tab_new.png") no-repeat scroll 5px 50% #fff !important;
+}
+ul#admintabs #ajaxNewCatForm {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background: none;
+  float: none;
+}
+ul#admintabs #ajaxNewCatForm input.ajaxNewCat {
+  border: 1px solid #eee;
+  max-width: 7em;
+}
+ul#admintabs #ajaxNewCatForm a.ajaxCatImage img {
+  margin: -4x 2px 0 0;
+}
+
+.bt_admin .z-adminbox {
+  -webkit-border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+  border-radius: 0 5px 0 0;
+  border-top: 1px solid #ccc;
+}
+.bt_admin .z-admincontainer {
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+#bt_Admin.bt_admin .bt_func_adminpanel .z-admincontainer {
+  -webkit-border-radius: 0 5px 5px 5px;
+  -moz-border-radius: 0 5px 5px 5px;
+  border-radius: 0 5px 5px 5px;
+  border-top: 1px solid #ccc;
+}
+
+.bt_admin .z-admincontainer {
+  padding-left: 1.2%;
+  padding-right: 1.2%;
+}
 .bt_admin .page,
 .bt_admin .z-adminbox,
 .bt_admin .z-admincontainer {
@@ -53,6 +183,7 @@ way to fit your requirements.
   float: none;
   overflow: visible;
   height: auto;
+  z-index: 3000;
 }
 
 #nav_admin .cssplay_prodrop li {
