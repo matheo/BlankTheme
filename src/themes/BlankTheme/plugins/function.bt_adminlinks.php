@@ -205,7 +205,7 @@ function smarty_function_bt_adminlinks($params, &$smarty)
 
 
         /* Common Routines links */
-        $token = SecurityUtil::generateCsrfToken();
+        $token = SecurityUtil::generateCsrfToken(null, true);
         $linkoptions = array(
                            array(null, __('Template engine', $dom), ModUtil::url('Theme', 'admin', 'modifyconfig', array(), null, 'render_compile_dir'),
                                array(
