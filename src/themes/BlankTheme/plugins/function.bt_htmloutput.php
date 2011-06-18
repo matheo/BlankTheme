@@ -182,7 +182,7 @@ function smarty_function_bt_htmloutput($params, Zikula_View_Theme &$view)
                         case 'view':
                             // Example: add the current page category id in a CSS class (bt_contentcatpage_CID)
                             // works for normal and shortURLs
-                            if (System::getVar('shorturls') == '1' && System::getVar('shorturlstype') == '0') {
+                            if (System::getVar('shorturls')) {
                                 $urlname = $view->getRequest()->getGet()->get('name');
                                 $pageId = ModUtil::apiFunc('Content', 'Page', 'solveURLPath', compact('urlname'));
                             } else {

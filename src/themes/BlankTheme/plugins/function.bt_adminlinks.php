@@ -75,8 +75,8 @@ function smarty_function_bt_adminlinks($params, Zikula_View_Theme &$view)
                                      array(null, __('Help', $dom),     ModUtil::url('Admin', 'admin', 'help'))
                                  )
                              ),
-                             array(null, __('System mailer', $dom),  ModUtil::url('Mailer', 'admin')),
-                             array(null, __('Search options', $dom), ModUtil::url('Search', 'admin')),
+                             array(null, __('System mailer', $dom),  ModUtil::url('Mailer', 'admin', 'main')),
+                             array(null, __('Search options', $dom), ModUtil::url('Search', 'admin', 'main')),
                        );
         // Legal
         if (ModUtil::available('Legal')) {
@@ -158,7 +158,7 @@ function smarty_function_bt_adminlinks($params, Zikula_View_Theme &$view)
 
         $menu[] = array('users', __('Users', $dom), '#',
                     array(
-                        array(null, __('Manage groups', $dom), ModUtil::url('Groups', 'admin'),
+                        array(null, __('Manage groups', $dom), ModUtil::url('Groups', 'admin', 'main'),
                             array(
                                 array(null, __('Groups settings', $dom), ModUtil::url('Groups', 'admin', 'modifyconfig'))
                             )
@@ -268,14 +268,14 @@ function smarty_function_bt_adminlinks($params, Zikula_View_Theme &$view)
     if (ModUtil::available('MediaAttach') && SecurityUtil::checkPermission('MediaAttach::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, __('View list', $dom), ModUtil::url('MediaAttach', 'admin', 'view')),
-                         array(null, __('Settings', $dom),  ModUtil::url('MediaAttach', 'admin'))
+                         array(null, __('Settings', $dom),  ModUtil::url('MediaAttach', 'admin', 'main'))
                       );
         $linkoptions[] = array(null, __('Add a download', $dom), ModUtil::url('MediaAttach', 'admin', 'view', array(), null, 'myuploadform_switch'), $suboptions);
     }
     if (ModUtil::available('Downloads') && SecurityUtil::checkPermission('Downloads::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, __('Add category', $dom), ModUtil::url('Downloads', 'admin', 'category_menu')),
-                         array(null, __('Settings', $dom),     ModUtil::url('Downloads', 'admin'))
+                         array(null, __('Settings', $dom),     ModUtil::url('Downloads', 'admin', 'main'))
                       );
         $linkoptions[] = array(null, __('Add a download', $dom), ModUtil::url('Downloads', 'admin', 'newdownload'), $suboptions);
     }
@@ -310,7 +310,7 @@ function smarty_function_bt_adminlinks($params, Zikula_View_Theme &$view)
         $linkoptions[] = array(null, __('Add a review', $dom), ModUtil::url('Reviews', 'admin', 'new'), $suboptions);
     }
     if (ModUtil::available('WebLinks') && SecurityUtil::checkPermission('Web_Links::', '::', ACCESS_EDIT)) {
-        $linkoptions[] = array(null, __('Add a web link', $dom), ModUtil::url('Web_Links', 'admin', 'main', array('op' => 'LinksAddLink')));
+        $linkoptions[] = array(null, __('Add a web link', $dom), ModUtil::url('WebLinks', 'admin', 'main', array('op' => 'LinksAddLink')));
     }
 
     // Calendar modules
