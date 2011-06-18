@@ -19,7 +19,6 @@ $themeversion['version']        = '1.3';
 $themeversion['author']         = 'BlankTheme Team';
 $themeversion['contact']        = 'http://www.blanktheme.org';
 $themeversion['official']       = '0';
-$themeversion['regid']          = '0';
 $themeversion['admin']          = 1;
 $themeversion['user']           = 1;
 $themeversion['system']         = 0;
