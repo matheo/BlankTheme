@@ -113,7 +113,7 @@
   /* page wrapper */
   .page {
     background: #fff;
-    border: 10px #fff solid; /* to-remove : add the 20px to the fixed-width columns */
+    border: 10px solid #fff; /* to-remove : add the 20px to the fixed-width columns */
   }
 
       /* header */
@@ -389,10 +389,10 @@
   /* 1 layout */
   /* full main column */
   .bt_2col .bt_1 #col1 {
-    margin: 0;
-    width: 100%;
+    float: none;
     margin-left: 0;
     margin-right: 0;
+    width: 100%;
   }
   .bt_2col .bt_1 #col1_content {
     padding: 0 10px;
@@ -455,7 +455,7 @@
   }
   .bt_3col .bt_312 #col2 {
     float: right;
-    margin-left: -5px;
+    /*margin-left: -5px; Not needed for fixed widths */
   }
   .bt_3col .bt_312 #col3 {
     float: left;

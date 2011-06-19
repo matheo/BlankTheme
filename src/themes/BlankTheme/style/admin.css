@@ -173,9 +173,9 @@ way to fit your requirements.
 /* Adapted for Zikula menutree, Erik Spaan, http://code.zikula.org/blanktheme */
 
 /* Set margins of surrounding div to zero */
-#nav_admin ul { margin: 0; }
+#nav #nav_admin ul { margin: 0; }
 
-#nav_admin {
+#nav #nav_admin {
   position: relative;
   z-index: 100;
   background: transparent;
@@ -186,7 +186,7 @@ way to fit your requirements.
   z-index: 3000;
 }
 
-#nav_admin .cssplay_prodrop li {
+#nav #nav_admin .cssplay_prodrop li {
   display: block;
   float: left;
   margin: 0;
@@ -196,7 +196,7 @@ way to fit your requirements.
 }
 
 /* The menu styling */
-#nav_admin .cssplay_prodrop {
+#nav #nav_admin .cssplay_prodrop {
   background: transparent url(../yaml/navigation/images/shiny_buttons/background.png);
   border: 0;
   font: bold 12px 'Lucida Grande', Verdana, Arial, Sans-Serif;
@@ -210,13 +210,13 @@ way to fit your requirements.
 }
 
 /* Default top link link styling, current tab li.select, float left to place inline */
-#nav_admin .cssplay_prodrop li.top {
+#nav #nav_admin .cssplay_prodrop li.top {
   border-right: 1px solid #AAA;
   display: block;
   float: left;
   margin: 0;
 }
-#nav_admin .cssplay_prodrop li a.top_link {
+#nav #nav_admin .cssplay_prodrop li a.top_link {
   background: none;
   color: #444;
   cursor: pointer;
@@ -229,37 +229,37 @@ way to fit your requirements.
   text-decoration: none;
   padding: 0;
 }
-#nav_admin .cssplay_prodrop li a.top_link span {
+#nav #nav_admin .cssplay_prodrop li a.top_link span {
   display: block;
   float: left;
   height: 28px;
   padding: 0 25px;
   text-align: center;
 }
-#nav_admin .cssplay_prodrop li a.top_link:hover,
-#nav_admin .cssplay_prodrop li.selected a.top_link {
+#nav #nav_admin .cssplay_prodrop li a.top_link:hover,
+#nav #nav_admin .cssplay_prodrop li.selected a.top_link {
   background: #B5B5B5;
   border: none;
   color: #222;
   line-height: 27px;
 }
-#nav_admin .cssplay_prodrop li a.top_link:hover span,
-#nav_admin .cssplay_prodrop li.selected a.top_link span {
+#nav #nav_admin .cssplay_prodrop li a.top_link:hover span,
+#nav #nav_admin .cssplay_prodrop li.selected a.top_link span {
   background: #B5B5B5;
 }
-#nav_admin .cssplay_prodrop li:hover > a.top_link,
-#nav_admin .cssplay_prodrop li.selected > a.top_link {
+#nav #nav_admin .cssplay_prodrop li:hover > a.top_link,
+#nav #nav_admin .cssplay_prodrop li.selected > a.top_link {
   background: #C5C5C5;
   color: #222;
   line-height: 27px;
 }
-#nav_admin .cssplay_prodrop li:hover > a.top_link span,
-#nav_admin .cssplay_prodrop li.selected > a.top_link span {
+#nav #nav_admin .cssplay_prodrop li:hover > a.top_link span,
+#nav #nav_admin .cssplay_prodrop li.selected > a.top_link span {
   background: transparent;
 }
 
 /* Style and position the table so it takes no part in the menu function. */
-#nav_admin .cssplay_prodrop table {
+#nav #nav_admin .cssplay_prodrop table {
   border-collapse: collapse;
   height: 0;
   left: 0;
@@ -268,7 +268,7 @@ way to fit your requirements.
   width: 0;
 }
 /* The iframe shim, width and height should reflect the dropmenu. */
-#nav_admin .cssplay_prodrop :hover iframe {
+#nav #nav_admin .cssplay_prodrop :hover iframe {
   height: 120px;
   left: 0;
   top: 27px;
@@ -276,23 +276,23 @@ way to fit your requirements.
 }
 
 /* Style the list OR link hover. Depends on which browser is used */
-#nav_admin .cssplay_prodrop a:hover {
+#nav #nav_admin .cssplay_prodrop a:hover {
   position: relative;
   visibility: visible;
   z-index: 200;
 } /* for IE6 */
-#nav_admin .cssplay_prodrop li:hover {
+#nav #nav_admin .cssplay_prodrop li:hover {
   position: relative;
   z-index: 200;
 } /* for IE7 */
 
 /* keep the 'next' level invisible by placing it off screen. */
-#nav_admin .cssplay_prodrop ul,
-#nav_admin .cssplay_prodrop :hover ul ul,
-#nav_admin .cssplay_prodrop :hover ul :hover ul ul,
-#nav_admin .cssplay_prodrop :hover ul :hover ul :hover ul ul,
-#nav_admin .cssplay_prodrop :hover ul :hover ul :hover ul :hover ul ul,
-#nav_admin .cssplay_prodrop iframe {
+#nav #nav_admin .cssplay_prodrop ul,
+#nav #nav_admin .cssplay_prodrop :hover ul ul,
+#nav #nav_admin .cssplay_prodrop :hover ul :hover ul ul,
+#nav #nav_admin .cssplay_prodrop :hover ul :hover ul :hover ul ul,
+#nav #nav_admin .cssplay_prodrop :hover ul :hover ul :hover ul :hover ul ul,
+#nav #nav_admin .cssplay_prodrop iframe {
   height: 0;
   left: -9999px;
   list-style: none;
@@ -304,12 +304,12 @@ way to fit your requirements.
 }
 
 /* set up the first drop down sub level, change the width of the submenus below */
-#nav_admin .cssplay_prodrop ul.drop {
+#nav #nav_admin .cssplay_prodrop ul.drop {
   margin: 0;
   padding: 0;
   width: 210px;
 }
-#nav_admin .cssplay_prodrop :hover ul {
+#nav #nav_admin .cssplay_prodrop :hover ul {
   background: #C5C5C5;
   border: none;
   height: auto;
@@ -320,24 +320,24 @@ way to fit your requirements.
   white-space: nowrap;
   z-index: 200;
 }
-#nav_admin .cssplay_prodrop :hover ul li {
+#nav #nav_admin .cssplay_prodrop :hover ul li {
   border-left: 1px solid #C6C6C6;
   border-right: 1px solid #9F9F9F;
   color: #222;
   display: block;
-  font-size: 12px;
   font-weight: normal;
   height: 22px;
   padding: 0;
   text-decoration: none;
   width: 100%;
 }
-#nav_admin .cssplay_prodrop :hover ul li a {
+#nav #nav_admin .cssplay_prodrop :hover ul li a {
   background: #C5C5C5;
   border-bottom: 1px solid #9F9F9F;
   border-top: 1px solid #D6D6D6;
   color: #000;
   display: block;
+  font-size: 12px;
   font-weight: normal;
   height: 22px;
   line-height: 22px;
@@ -345,27 +345,27 @@ way to fit your requirements.
   text-decoration: none;
   width: 100%;
 }
-#nav_admin .cssplay_prodrop :hover ul li a:hover {
+#nav #nav_admin .cssplay_prodrop :hover ul li a:hover {
   background: #959595;
   color: #fff;
 }
-#nav_admin .cssplay_prodrop :hover ul li a.fly {
+#nav #nav_admin .cssplay_prodrop :hover ul li a.fly {
   background: #C5C5C5 url(../images/adminmenu/cssplay_prodrop8_arrow_off.gif) 200px 7px no-repeat;
 }
-#nav_admin .cssplay_prodrop :hover ul li a.fly:hover {
+#nav #nav_admin .cssplay_prodrop :hover ul li a.fly:hover {
   background: #959595 url(../images/adminmenu/cssplay_prodrop8_arrow_on.gif) 200px 7px no-repeat;
   color: #fff;
 }
-#nav_admin .cssplay_prodrop :hover ul li:hover > a.fly {
+#nav #nav_admin .cssplay_prodrop :hover ul li:hover > a.fly {
   background: #959595 url(../images/adminmenu/cssplay_prodrop8_arrow_on.gif) 200px 7px no-repeat;
   color: #fff;
 }
 
 /* set up the flyout levels when hovering */
-#nav_admin .cssplay_prodrop :hover ul :hover ul,
-#nav_admin .cssplay_prodrop :hover ul :hover ul :hover ul,
-#nav_admin .cssplay_prodrop :hover ul :hover ul :hover ul :hover ul,
-#nav_admin .cssplay_prodrop :hover ul :hover ul :hover ul :hover ul :hover ul {
+#nav #nav_admin .cssplay_prodrop :hover ul :hover ul,
+#nav #nav_admin .cssplay_prodrop :hover ul :hover ul :hover ul,
+#nav #nav_admin .cssplay_prodrop :hover ul :hover ul :hover ul :hover ul,
+#nav #nav_admin .cssplay_prodrop :hover ul :hover ul :hover ul :hover ul :hover ul {
   border: none;
   height: auto;
   left: 209px;

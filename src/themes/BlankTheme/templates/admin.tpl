@@ -37,7 +37,7 @@
         <!-- end: main navigation -->
 
         <!-- begin: main content area #main -->
-        <div id="main">
+        <div id="main" class="floatbox">
             {$maincontent}
             </div> {* end: col1_content *}
             <div id="ie_clearing">&nbsp;</div>

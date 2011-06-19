@@ -69,7 +69,6 @@
     font-size: 250%; /* 30px */
   }
   h2 {
-    color: #182E7A;
     font-size: 200%; /* 24px */
   }
   h3 {
@@ -147,6 +146,7 @@
   pre {
     line-height: 1.5em;
     margin: 0 0 1em 0;
+    white-space: pre;
   }
   pre, code, kbd, tt, samp, var {
     font-size: 100%;
@@ -163,13 +163,13 @@
   }
 
   acronym, abbr {
-    border-bottom: 1px #aaa dotted;
+    border-bottom: 1px dotted #aaa;
     cursor: help;
     font-variant: small-caps;
     letter-spacing: .07em;
   }
 
-  sub{
+  sub {
     font-size: smaller;
     vertical-align: sub;
   }
@@ -202,7 +202,7 @@
 
   p.icaption_left img,
   p.icaption_right img {
-    border: 1px #888 solid;
+    border: 1px solid #888;
     padding: 0;
   }
 
@@ -225,7 +225,7 @@
   }
 
   fieldset {
-    border: 1px solid #D9DAD5;
+    border: 1px solid #d9dAd5;
     padding: 5px 10px 10px;
   }
 
@@ -437,34 +437,39 @@
     color: #888;
   }
 
-  .info {
-    background: #f8f8f8;
-    color: #666;
-    font-size: 91.7%;
-    margin-bottom: 0.5em;
-    padding: 10px;
+  div.note,
+  div.info,
+  div.notice,
+  div.success,
+  div.error {
+    border: 1px solid #ddd;
+    margin-bottom: 10px !important;
+    padding: 5px 8px !important;
   }
 
-  .note {
-    background: #efe;
-    border: 1px #484 solid;
-    color: #040;
-    margin-bottom: 1em;
-    padding: 10px;
+  div.note {
+    background: #f8f8f8;
+    color: #666;
   }
-  .important {
-    background: #ffe;
-    border: 1px #884 solid;
-    color: #440;
-    margin-bottom: 1em;
-    padding: 10px;
+  div.info {
+    background: #e6e6ff;
+    border-color: #9bb8d9;
+    color: #27427D;
   }
-  .warning {
-    background: #fee;
-    border: 1px #844 solid;
-    color: #400;
-    margin-bottom: 1em;
-    padding: 10px;
+  div.notice {
+    background: #fff6bf;
+    border-color: #ffd324;
+    color: #514721;
+  }
+  div.success {
+    background: #e6efc2;
+    border-color: #c6d880;
+    color: #264409;
+  }
+  div.error {
+    background: #fbe3e4;
+    border-color: #fbc2c4;
+    color: #8A1F11;
   }
 
   .text_left {
@@ -564,7 +569,7 @@
 
   /* Scribite */
   #main .htmlarea {
-    border: 1px solid #DDDDDD;
+    border: 1px solid #ddd;
   }
   /* openwysiwyg fix*/
   .tableTextareaEditor th,
