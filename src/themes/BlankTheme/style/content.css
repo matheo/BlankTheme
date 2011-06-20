@@ -182,7 +182,7 @@
     color: #fff;
     background: transparent;
     border: 0;
-    border-bottom: 1px #eee solid;
+    border-bottom: 1px solid #eee;
     margin: 0 0 0.5em 0;
     padding: 0 0 0.5em 0;
   }
@@ -241,7 +241,7 @@
   /* general links */
   a {
     background: transparent;
-    color: #4D87C7;
+    color: #4d87c7;
     text-decoration: none;
   }
   a:visited {
@@ -255,7 +255,7 @@
   a:active {
     /* if you use backgrounds or borders here
        you will interfere zikula core styles */
-    color: #182E7A;
+    color: #182e7A;
     outline: 0 none;
     text-decoration: underline;
   }
@@ -292,7 +292,7 @@
   #footer a:hover,
   #footer a:active {
     background: transparent;
-    color: #4D87C7;
+    color: #4d87c7;
     text-decoration: underline;
   }
     #footer_sublinks a {
@@ -433,8 +433,29 @@
   .highlight {
     color: #c30;
   }
-  .dimmed {
+  .dimmed,
+  .dimmed a {
     color: #888;
+  }
+
+  .small {
+    font-size: 0.9em;
+  }
+  .smaller {
+    font-size: 0.8em;
+  }
+  .smallest {
+    font-size: 0.7em;
+  }
+
+  .large {
+    font-size: 1.15em;
+  }
+  .larger {
+    font-size: 1.25em;
+  }
+  .largest {
+    font-size: 1.35em;
   }
 
   div.note,
@@ -454,7 +475,7 @@
   div.info {
     background: #e6e6ff;
     border-color: #9bb8d9;
-    color: #27427D;
+    color: #27427d;
   }
   div.notice {
     background: #fff6bf;
@@ -469,7 +490,7 @@
   div.error {
     background: #fbe3e4;
     border-color: #fbc2c4;
-    color: #8A1F11;
+    color: #8A1f11;
   }
 
   .text_left {
@@ -498,12 +519,12 @@
   }
 
   .content_separator {
-    border-bottom: 1px solid #DDDDDD;
+    border-bottom: 1px solid #ddd;
     display: block;
     margin: 22px 0 18px;
   }
   .text_separator {
-    color: #BBBBBB;
+    color: #bbb;
     padding: 0 2px;
   }
 
@@ -637,7 +658,7 @@
     line-height: 1.5em;
   }
   .news_categories {
-    border-top: 1px solid #EFEFEF;
+    border-top: 1px solid #efefef;
     margin-top: 1em; /* optional */
     text-align: right;
   }
