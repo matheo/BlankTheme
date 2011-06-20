@@ -208,7 +208,14 @@
 
   /* navigation bar */
   #nav_main {
-    background: #ccc url(../yaml/navigation/images/shiny_buttons/background.png) repeat-x; /* to-remove */
+    background: #ccc url(../yaml/navigation/images/shiny_buttons/background.png) repeat-x; /* to-customize */
+  }
+  #nav_sub {
+    background: #999; /* to-customize */
+  }
+
+  #nav_main,
+  #nav_sub {
     border: none;
     display: inline;
     float: left;
@@ -216,7 +223,8 @@
     width: 100%;
   }
 
-  #nav_main ul {
+  #nav_main ul,
+  #nav_sub ul {
     border: none;
     display: inline;
     float: left;
@@ -225,7 +233,8 @@
     padding: 0;
   }
 
-  #nav_main ul li {
+  #nav_main ul li,
+  #nav_sub ul li {
     border: none;
     border-right: 1px solid #aaa; /* to-remove */
     display: inline;
@@ -235,6 +244,7 @@
     padding: 0;
   }
 
+  /* navigation links */
   #nav_main ul li a,
   #nav_main ul li strong {
     background: transparent;
@@ -261,7 +271,7 @@
   #nav_main ul li a:focus,
   #nav_main ul li a:hover,
   #nav_main ul li a:active {
-    background: #3b69ad;
+    background: #888;
     border: none;
     color: #fff;
     text-decoration: none;
@@ -273,7 +283,7 @@
     }
 
   #nav_main ul li.current {
-    background: #4d87c7;
+    background: #666;
     border: none; /* to-remove */
   }
     #nav_main ul li.current a span.bt_desc {
@@ -288,6 +298,43 @@
     background: transparent;
     color: #fff;
     font-weight: bold;
+  }
+
+  /* subnavigation links */
+  #nav_sub ul li {
+    border-right: 1px solid #aaa; /* to-remove */
+  }
+  #nav_sub ul li a,
+  #nav_sub ul li strong {
+    background: transparent;
+    color: #eee;
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 24px;
+    margin: 0;
+    padding: 0 10px;
+    text-decoration: none;
+    width: auto;
+  }
+  #nav_sub ul li a:focus,
+  #nav_sub ul li a:hover,
+  #nav_sub ul li a:active {
+    background: #888;
+    border: none;
+    color: #fff;
+    text-decoration: none;
+  }
+  #nav_sub ul li.current {
+  }
+  #nav_sub ul li.current strong,
+  #nav_sub ul li.current a,
+  #nav_sub ul li.current a:focus,
+  #nav_sub ul li.current a:hover,
+  #nav_sub ul li.current a:active {
+    background: transparent;
+    color: #fff;
+    font-weight: normal;
   }
 
 
