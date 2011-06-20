@@ -175,7 +175,7 @@
   }
   sup {
     font-size: smaller;
-    vertical-align: sup;
+    vertical-align: super;
   }
 
   hr {
@@ -225,7 +225,7 @@
   }
 
   fieldset {
-    border: 1px solid #d9dAd5;
+    border: 1px solid #d9dad5;
     padding: 5px 10px 10px;
   }
 
@@ -255,7 +255,7 @@
   a:active {
     /* if you use backgrounds or borders here
        you will interfere zikula core styles */
-    color: #182e7A;
+    color: #182e7a;
     outline: 0 none;
     text-decoration: underline;
   }
@@ -490,7 +490,7 @@
   div.error {
     background: #fbe3e4;
     border-color: #fbc2c4;
-    color: #8A1f11;
+    color: #8a1f11;
   }
 
   .text_left {
@@ -648,7 +648,7 @@
     margin: 0;
   }
   .news_index_date {
-    color: #AAA;
+    color: #aaa;
   }
   .news_title {
     margin-top: 10px;
