@@ -1,3 +1,3 @@
 
-<!-- Nav Block -->
+<!-- OnlyContent Block -->
 {$content}
