@@ -142,6 +142,19 @@ function smarty_function_bt_htmloutput($params, Zikula_View_Theme &$view)
             }
             break;
 
+        /* Body ID */
+        case 'bodyid':
+            if ($view->getToplevelmodule()) {
+                $output = 'bt_'.$view->getToplevelmodule();
+
+            } elseif (!empty($current)) {
+                $output = 'bt_'.$current;
+
+            } else {
+                $output = 'bt_staticpage';
+            }
+            break;
+
         /* First CSS level */
         case 'classesbody':
             // add a first level of CSS classes like current language, type parameter and body template in use with a 'bt_' prefix
