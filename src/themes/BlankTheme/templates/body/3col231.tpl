@@ -23,7 +23,7 @@
         </div>
         <!-- end: #header -->
 
-        <!-- begin: main navigation #nav -->
+        <!-- begin: #nav -->
         <div id="nav">
             {if $btconfig.topnav eq 1}
                 {blockposition name='topnav'}
@@ -31,11 +31,11 @@
                 {bt_userlinks}
             {/if}
         </div>
-        <!-- end: main navigation -->
+        <!-- end: #nav -->
 
-        <!-- begin: main content area #main -->
+        <!-- begin: #main -->
         <div id="main">
-            <!-- begin: #col2 second column -->
+            <!-- begin: #col2 column -->
             <div id="col2">
                 <div id="col2_content" class="clearfix">
                     {blockposition name='left'}
@@ -43,7 +43,7 @@
             </div>
             <!-- end: #col2 -->
 
-            <!-- begin: #col3 third column -->
+            <!-- begin: #col3 column -->
             <div id="col3">
                 <div id="col3_content" class="clearfix">
                     {*blockposition name='search'*}

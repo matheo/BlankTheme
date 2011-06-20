@@ -1,11 +1,11 @@
-{bt_htmloutput section='footer'}
-
 {**
  * Note:
  * If you want to remove the YAML backlink,
  * please check the YAML license conditions:
  * http://www.yaml.de/en/license/license-conditions.html
  *}
+
+{bt_htmloutput section='footer'}
 
 {* default styles of footer block is float: right *}
 {if $btconfig.footer eq 1}

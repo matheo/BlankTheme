@@ -30,13 +30,13 @@
         </div>
         <!-- end: #header -->
 
-        <!-- begin: main navigation #nav -->
+        <!-- begin: #nav -->
         <div id="nav">
             {bt_adminlinks current=$module}
         </div>
-        <!-- end: main navigation -->
+        <!-- end: #nav -->
 
-        <!-- begin: main content area #main -->
+        <!-- begin: #main -->
         <div id="main" class="floatbox">
             {$maincontent}
             </div> {* end: col1_content *}

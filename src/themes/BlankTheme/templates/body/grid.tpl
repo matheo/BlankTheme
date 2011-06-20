@@ -23,7 +23,7 @@
         </div>
         <!-- end: #header -->
 
-        <!-- begin: main navigation #nav -->
+        <!-- begin: #nav -->
         <div id="nav">
             {if $btconfig.topnav eq 1}
                 {blockposition name='topnav'}
@@ -31,11 +31,12 @@
                 {bt_userlinks}
             {/if}
         </div>
-        <!-- end: main navigation -->
+        <!-- end: #nav -->
 
-        <!-- begin: main content area #main -->
+        <!-- begin: #main -->
         <div id="main">
             <div class="subcolumns">
+                <!-- begin: #col1 main column -->
                 <div class="c62l">
                     <div id="col1_content">
                         {if $layout|checkzone:nc ne true}
@@ -45,11 +46,13 @@
                         {$maincontent}
                     </div>
                 </div>
+                <!-- end: #col1 -->
                 <div class="c38r">
                     {*blockposition name='search'*}
 
                     {if $layout|checklayout:123 OR $layout|checklayout:132}
                     <div class="subcolumns">
+                        <!-- begin: #col2 column -->
                         <div class="c50l">
                             <div id="col2_content">
                             {if $layout|checklayout:123}
@@ -59,6 +62,8 @@
                             {/if}
                             </div>
                         </div>
+                        <!-- end: #col2 -->
+                        <!-- begin: #col3 column -->
                         <div class="c50r">
                             <div id="col3_content">
                             {if $layout|checklayout:123}
@@ -68,6 +73,7 @@
                             {/if}
                             </div>
                         </div>
+                        <!-- end: #col3 -->
                     </div>
                     {else}
                     <div id="sidecol_content" class="subcr">
@@ -108,6 +114,5 @@
             {include file='sections/footer.tpl'}
         </div>
         <!-- end: #footer -->
-
     </div>
 </div>

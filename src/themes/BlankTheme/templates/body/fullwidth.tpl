@@ -24,7 +24,7 @@
 </div>
 <!-- end: #header -->
 
-<!-- begin: main navigation #nav -->
+<!-- begin: #nav -->
 <div id="nav" class="clearfix">
     <div class="page_margins">
         <div class="page">
@@ -36,13 +36,13 @@
         </div>
     </div>
 </div>
-<!-- end: main navigation -->
+<!-- end: #nav -->
 
-<!-- begin: main content area #main -->
+<!-- begin: #main -->
 <div id="main" class="bt_2col">
     <div class="page_margins {bt_htmloutput section='classespage'}">
         <div class="page {bt_htmloutput section='classesinnerpage'}">
-            <!-- begin: #col1 - main column -->
+            <!-- begin: #col1 main column -->
             <div id="col1">
                 <div id="col1_content" class="clearfix">
                     {if $layout|checkzone:nc ne true}
