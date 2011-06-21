@@ -51,7 +51,7 @@ function smarty_function_bt_usersublinks($params, Zikula_View_Theme &$view)
                       );
 
     $menu['home'][] = array(
-                          'home-user-list',
+                          '',
                           __('Second Sublink', $dom),
                           '',
                           '#'

@@ -102,7 +102,7 @@
 <!-- end: #footer -->
 
 {* this body relies on a layout style, so, check if it's not loaded *}
-{if $btconfig.optimize eq 'y'}
+{if $btconfig.optimize eq '1'}
 {pageaddvarblock name='header'}
 <style type="text/css">
 @media screen, projection
