@@ -28,4 +28,4 @@ $themeversion['license']        = 'docs/license.txt';
 $themeversion['xhtml']          = true;
 
 $themeversion['extra']          = array('BlankTheme' => '1.3',
-                                        'YAML'       => '3.3');
+                                        'YAML'       => '3.3.1');

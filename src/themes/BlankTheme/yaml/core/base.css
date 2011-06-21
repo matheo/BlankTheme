@@ -7,14 +7,14 @@
  * Don't make any changes in this file!
  * Your changes should be placed in any css-file in your own stylesheet folder.
  *
- * @copyright       Copyright 2005-2010, Dirk Jesse
+ * @copyright       Copyright 2005-2011, Dirk Jesse
  * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
  *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
  * @link            http://www.yaml.de
  * @package         yaml
- * @version         3.3
- * @revision        $Revision: 480 $
- * @lastmodified    $Date: 2010-10-12 14:56:55 -0500 (mar 12 de oct de 2010) $
+ * @version         3.3.1
+ * @revision        $Revision: 501 $
+ * @lastmodified    $Date: 2011-06-18 10:27:44 -0500 (sáb 18 de jun de 2011) $
  */
 
 @media all
@@ -64,7 +64,7 @@
   /* (en) HTML 5 - Anpassung des visuellen Formatmodells auf Blockelemente */
   article,aside,canvas,details,figcaption,figure,
   footer,header,hgroup,menu,nav,section,summary { 
-    display:block;
+  	display:block;
   }
   
   /* (en) Clear borders for <fieldset> and <img> elements */
@@ -155,8 +155,8 @@
     list-style-type:none;   
   }
   
-  #skiplinks a.skip:focus,
-  #skiplinks a.skip:active {
+  #skiplinks .skip:focus,
+  #skiplinks .skip:active {
     left:32768px; 
     outline:0 none;
     position:absolute; 
@@ -173,7 +173,7 @@
   *
   * |-------------------------------|
   * | #col1   | #col3     | #col2   |
-  * | 200 px  | flexible  | 200px   |
+  * | 20%     | flexible  | 20%     |
   * |-------------------------------|
   */
 
