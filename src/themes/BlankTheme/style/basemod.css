@@ -386,19 +386,12 @@
     float: right;
     width: 75%;
   }
-  .bt_2col #col1_content {
-    padding: 0 15px 0 10px;
-  }
 
   /* #col2 and #col3 contains side blocks */
   .bt_2col #col2,
   .bt_2col #col3 {
     float: none;
     width: auto;
-  }
-  .bt_2col #col2_content,
-  .bt_2col #col3_content {
-    padding: 0 10px 0 15px;
   }
 
 
@@ -412,15 +405,6 @@
     border-left: 1px solid #ddd; /* to-remove */
     margin-left: 75%;
     margin-right: 0;
-  }
-  /* padding changes */
-  .bt_2col .bt_12 #col1_content,
-  .bt_2col .bt_13 #col1_content {
-    padding: 0 10px 0 15px;
-  }
-  .bt_2col .bt_12 #col2_content,
-  .bt_2col .bt_13 #col3_content {
-    padding: 0 15px 0 10px;
   }
 
 
@@ -445,6 +429,24 @@
     margin-right: 0;
     width: 100%;
   }
+
+
+  /* col_content paddings */
+  .bt_2col #col1_content {
+    padding: 0 15px 0 10px;
+  }
+  .bt_2col #col2_content,
+  .bt_2col #col3_content {
+    padding: 0 10px 0 15px;
+  }
+  .bt_2col .bt_12 #col1_content,
+  .bt_2col .bt_13 #col1_content {
+    padding: 0 10px 0 15px;
+  }
+  .bt_2col .bt_12 #col2_content,
+  .bt_2col .bt_13 #col3_content {
+    padding: 0 15px 0 10px;
+  }
   .bt_2col .bt_1 #col1_content {
     padding: 0 10px;
   }
@@ -463,9 +465,6 @@
     margin: 0;
     width: 520px;
   }
-  .bt_3col #col1_content {
-    padding: 0 10px;
-  }
 
   /* #col2 contains the left blocks */
   .bt_3col #col2 {
@@ -473,18 +472,12 @@
     margin: 0;
     width: 220px;
   }
-  .bt_3col #col2_content {
-    padding: 0 5px 0 10px;
-  }
 
   /* #col3 contains the right blocks */
   .bt_3col #col3 {
     float: right;
     margin: 0;
     width: 220px;
-  }
-  .bt_3col #col3_content {
-    padding: 0 10px 0 5px;
   }
 
 
@@ -535,7 +528,16 @@
   }
 
 
-  /* padding adjustments */
+  /* col_content paddings */
+  .bt_3col #col1_content {
+    padding: 0 10px;
+  }
+  .bt_3col #col2_content {
+    padding: 0 5px 0 10px;
+  }
+  .bt_3col #col3_content {
+    padding: 0 10px 0 5px;
+  }
   .bt_3col .bt_123 #col2_content,
   .bt_3col .bt_321 #col2_content,
   .bt_3col .bt_132 #col3_content,
@@ -568,18 +570,12 @@
     margin-right: 23%; /* rightcol width*/
     width: auto;
   }
-  .bt_3col231 #col1_content {
-    padding: 0 10px;
-  }
 
   /* #col2 contains the left blocks */
   .bt_3col231 #col2 {
     float: left;
     margin: 0;
     width: 23%;
-  }
-  .bt_3col231 #col2_content {
-    padding: 0 5px 0 10px;
   }
 
   /* #col3 contains the right blocks */
@@ -588,9 +584,6 @@
     margin: 0;
     width: 23%;
   }
-  .bt_3col231 #col3_content {
-    padding: 0 10px 0 5px;
-  }
 
 
   /* 312 layout */
@@ -598,11 +591,23 @@
     float: right;
     margin-left: -5px;
   }
-  .bt_3col231 .bt_312 #col2_content {
-    padding: 0 10px 0 5px;
-  }
   .bt_3col231 .bt_312 #col3 {
     float: left;
+  }
+
+
+  /* col_content paddings */
+  .bt_3col231 #col1_content {
+    padding: 0 10px;
+  }
+  .bt_3col231 #col2_content {
+    padding: 0 5px 0 10px;
+  }
+  .bt_3col231 #col3_content {
+    padding: 0 10px 0 5px;
+  }
+  .bt_3col231 .bt_312 #col2_content {
+    padding: 0 10px 0 5px;
   }
   .bt_3col231 .bt_312 #col3_content {
     padding: 0 5px 0 10px;
@@ -674,6 +679,7 @@
     /* .page_margins settings */
     max-width: 80em;
     min-width: 980px;
+    width: 980px;
     /* move #footer to its position */
     margin: -65px auto 0; /* to-customize */
 

@@ -327,7 +327,7 @@
       text-align: right; /* LTR */
     }
 
-  #footer {
+  #footer { /* affects #footer_wrapper too */
     color: #666;
     font-size: 12px;
     line-height: 150%;
