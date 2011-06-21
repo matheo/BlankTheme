@@ -219,7 +219,7 @@
     background: #ccc url(../yaml/navigation/images/shiny_buttons/background.png) repeat-x; /* to-customize */
   }
   #nav_sub {
-    background: #aaa; /* to-customize */
+    background: #dfdfdf; /* to-customize */
   }
 
   #nav_main,
@@ -310,12 +310,12 @@
 
   /* subnavigation links */
   #nav_sub ul li {
-    border-right: 1px solid #bbb; /* to-remove */
+    border-right: 1px solid #ccc; /* to-remove */
   }
   #nav_sub ul li a,
   #nav_sub ul li strong {
     background: transparent;
-    color: #fff;
+    color: #6f6f6f;
     display: block;
     font-size: 12px;
     font-weight: normal;
@@ -328,13 +328,13 @@
   #nav_sub ul li a:focus,
   #nav_sub ul li a:hover,
   #nav_sub ul li a:active {
-    background: #888;
+    background: #999;
     border: none;
     color: #fff;
     text-decoration: none;
   }
   #nav_sub ul li.current {
-    background: #999;
+    background: #bfbfbf;
   }
   #nav_sub ul li.current strong,
   #nav_sub ul li.current a,
@@ -342,7 +342,7 @@
   #nav_sub ul li.current a:hover,
   #nav_sub ul li.current a:active {
     background: transparent;
-    color: #fff;
+    color: #444;
     font-weight: normal;
   }
 
