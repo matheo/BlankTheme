@@ -28,10 +28,7 @@
  *  Zikula Specific styles (content-zikula-specific)
  *     Fixes (content-zikula-fixes)
  *     Core styles (content-zikula-core)
- *     Value Addons (content-zikula-addons)
- *     Zikula Blocks (content-zikula-blocks)
- *     Miscelaneous (content-zikula-misc)
- *     Specific Zikula Zones (content-zikula-zones)
+ *  Customized styles (content-custom)
  */
 
 @media all
@@ -46,12 +43,12 @@
   /* reset font size for all elements to standard (16 pixel) */
   html * { font-size: 100.01%; }
 
-  /* reset monospaced elements to font size 16px in Gecko browsers */
+  /* reset monospaced elements to font size 16px in all browsers */
   textarea, pre, code, kbd, samp, var, tt {
     font-family: Consolas, "Lucida Console", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier;
   }
 
-  /* base layout gets standard */
+  /* base layout */
   body {
     color: #444;
     font-family: Verdana, Arial, sans-serif;
@@ -85,7 +82,7 @@
     font-style: italic;
   }
 
-  /* Lists */
+  /* lists */
 
   ul, ol, dl {
     line-height: 1.5em;
@@ -217,7 +214,7 @@
     padding: 0.3em 0.5em;
   }
 
-  /* Miscellaneous */
+  /* miscellaneous */
 
   a img,
   button img {
@@ -228,6 +225,44 @@
     border: 1px solid #d9dad5;
     padding: 5px 10px 10px;
   }
+
+
+
+  /**
+   * General layout elements
+   * styles for the main containers and some of its specific contents
+   *
+   * @section content-layout
+   */
+
+  #header h1 {
+    color: #000;
+    font-size: 36px;
+    letter-spacing: -1px;
+    line-height: 65%;
+  }
+
+  #header .slogan {
+    color: #999;
+    font-size: 16px;
+  }
+
+    #topnav {
+      color: #aaa;
+      font-size: 12px;
+      line-height: 15px;
+      text-align: right; /* LTR */
+    }
+
+  #footer { /* affects #footer_wrapper too */
+    color: #666;
+    font-size: 12px;
+    line-height: 150%;
+    text-align: left;
+  }
+    #footer #footer_sublinks {
+      font-size: 0.8em;
+    }
 
 
 
@@ -299,53 +334,7 @@
       font-weight: normal;
     }
 
-
-
-  /**
-   * General layout elements
-   * styles for the main containers and some of its specific contents
-   *
-   * @section content-layout
-   */
-
-  #header h1 {
-    color: #000;
-    font-size: 36px;
-    letter-spacing: -1px;
-    line-height: 65%;
-  }
-
-  #header .slogan {
-    color: #999;
-    font-size: 16px;
-  }
-
-    #topnav {
-      color: #aaa;
-      font-size: 12px;
-      line-height: 15px;
-      text-align: right; /* LTR */
-    }
-
-  #footer { /* affects #footer_wrapper too */
-    color: #666;
-    font-size: 12px;
-    line-height: 150%;
-    text-align: left;
-  }
-    #footer #footer_sublinks {
-      font-size: 0.8em;
-    }
-
-
-
-  /**
-   * Emphasizing external Hyperlinks via CSS
-   *
-   * @section             content-external-links
-   * @app-yaml-default    disabled
-   */
-
+  /* emphasizing external Hyperlinks via CSS */
   /*
   #main a[href^="http://www.my-domain.com"],
   #main a[href^="https://www.my-domain.com"]
@@ -429,7 +418,7 @@
    * @section content-theme-specific
    */
 
-  /* Generic YAML classes */
+  /* generic content classes */
   .highlight {
     color: #c30;
   }
@@ -456,41 +445,6 @@
   }
   .largest {
     font-size: 1.35em;
-  }
-
-  div.note,
-  div.info,
-  div.notice,
-  div.success,
-  div.error {
-    border: 1px solid #ddd;
-    margin-bottom: 10px !important;
-    padding: 5px 8px !important;
-  }
-
-  div.note {
-    background: #f8f8f8;
-    color: #666;
-  }
-  div.info {
-    background: #e6e6ff;
-    border-color: #9bb8d9;
-    color: #27427d;
-  }
-  div.notice {
-    background: #fff6bf;
-    border-color: #ffd324;
-    color: #514721;
-  }
-  div.success {
-    background: #e6efc2;
-    border-color: #c6d880;
-    color: #264409;
-  }
-  div.error {
-    background: #fbe3e4;
-    border-color: #fbc2c4;
-    color: #8a1f11;
   }
 
   .text_left {
@@ -528,7 +482,43 @@
     padding: 0 2px;
   }
 
-  /* efa font resize styles, if not used comment out */
+  /* messages containers */
+  div.note,
+  div.info,
+  div.notice,
+  div.success,
+  div.error {
+    border: 1px solid #ddd;
+    margin-bottom: 10px !important;
+    padding: 5px 8px !important;
+  }
+
+  div.note {
+    background: #f8f8f8;
+    color: #666;
+  }
+  div.info {
+    background: #e6e6ff;
+    border-color: #9bb8d9;
+    color: #27427d;
+  }
+  div.notice {
+    background: #fff6bf;
+    border-color: #ffd324;
+    color: #514721;
+  }
+  div.success {
+    background: #e6efc2;
+    border-color: #c6d880;
+    color: #264409;
+  }
+  div.error {
+    background: #fbe3e4;
+    border-color: #fbc2c4;
+    color: #8a1f11;
+  }
+
+  /* efa font resize styles */
   .fontresize-large,
   .fontresize-reset,
   .fontresize-small {
@@ -576,7 +566,7 @@
     color: #999;
   }
 
-  /* Special styles for entries or menus ... */
+  /* special styles for entries or menus ... */
   .post {
   }
   .menu {
@@ -622,7 +612,7 @@
   #main .htmlarea {
     border: 1px solid #ddd;
   }
-  /* openwysiwyg fix*/
+  /* openwysiwyg fix */
   .tableTextareaEditor th,
   .tableTextareaEditor td {
     padding: 0;
@@ -653,8 +643,10 @@
 
 
   /**
-   * Miscelaneous styles
-   * @subsection content-misc
+   * Customized styles
+   * Special look'n feel for this website
+   *
+   * @section content-custom
    */
 
   /* Zikula Blocks */
