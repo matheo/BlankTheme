@@ -8,36 +8,39 @@
  */
 
 /**
- * Smarty function to display the user subnavigation menu
+ * BlankTheme plugin to display the user navigation submenu.
  *
- * Example
- * {bt_usersublinks id='nav' current='home' currentclass='myActiveClass'}
+ * Available parameters:
+ *  - id           (string) ID of the wrapper div (default: 'nav_main')
+ *  - current      (string) Current screen ID (.ini current value or module name) (optional)
+ *  - currentclass (string) CSS class name of the current tab, list item (default: 'current')
+ *  - span         (bool)   Flag to enable SPAN wrappers on the links text, useful for sliding doors (default: false)
  *
- * @author       Mateo Tibaquirá
- * @since        19/06/11
- * @param        array       $params      All attributes passed to this function from the template
- * @param        object      &$view       Reference to the Smarty object
- * @param        string      $current     the current tab (i.e. home, account, news, forum)
- * @param        string      $currentclass CSS class for the current link (default: current)
- * @param        boolean     $span        Put the menu text inside a <span> for sliding doors usage
- *                                        (default: false)
- * @return       string      the results of the module function
+ * Example:
+ *  {bt_usersublinks id='nav' current='home' currentclass='myActiveClass'}
+ *
+ * @author Mateo Tibaquirá
+ * @since  19/06/11
+ *
+ * @param array             $params All parameters passed to this function from the template.
+ * @param Zikula_View_Theme &$view  Reference to the View_Theme object.
+ *
+ * @return string User submenu output.
  */
 function smarty_function_bt_usersublinks($params, Zikula_View_Theme &$view)
 {
-    $id = isset($params['id']) ? $params['id'] : 'nav_sub';
-    $span = isset($params['span']) ? (bool)$params['span'] : false;
-    $currentclass = isset($params['currentclass']) ? $params['currentclass'] : 'current';
+    $dom = ZLanguage::getThemeDomain('BlankTheme');
 
+    $id = isset($params['id']) ? $params['id'] : 'nav_sub';
     if (!isset($params['current'])) {
         $current = $view->getTplVar('current') ? $view->getTplVar('current') : $view->getToplevelmodule();
     } else {
         $current = $params['current'];
     }
+    $currentclass = isset($params['currentclass']) ? $params['currentclass'] : 'current';
+    $span = isset($params['span']) ? (bool)$params['span'] : false;
 
     $currentsub = $current.'-'.$view->getTplVar('type').'-'.$view->getTplVar('func');
-
-    $dom = ZLanguage::getThemeDomain('BlankTheme');
 
     /*** Build the submenu-array ***/
     $menu = array();
@@ -57,7 +60,7 @@ function smarty_function_bt_usersublinks($params, Zikula_View_Theme &$view)
                           '#'
                       );
 
-    // Render the submenu as an unordered list in a div
+    // render the submenu
     $output = '';
 
     if (isset($menu[$current])) {
@@ -72,7 +75,7 @@ function smarty_function_bt_usersublinks($params, Zikula_View_Theme &$view)
 }
 
 /**
- * Draw the array-submenu recursively
+ * Draw the array-submenu recursively.
  */
 function bt_usersublinks_drawmenu($option, $current, $currentclass, $span=false)
 {
@@ -90,7 +93,7 @@ function bt_usersublinks_drawmenu($option, $current, $currentclass, $span=false)
         $return .= ($span ? '<span>' : ''). DataUtil::formatForDisplay($option[1]). ($span ? '</span>' : '');
         $return .= '</a>';
 
-        // render the optional suboptions recursively
+        // render the suboptions recursively
         if (isset($option[4]) && is_array($option[4])) {
             $return .= "\n".'<ul>';
             foreach ($option[4] as $suboption) {

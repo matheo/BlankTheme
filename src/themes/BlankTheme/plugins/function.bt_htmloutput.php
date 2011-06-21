@@ -8,28 +8,32 @@
  */
 
 /**
- * Smarty function to centralize important html outputs
+ * BlankTheme plugin to centralize important outputs.
  *
- * Example
- * {bt_htmloutput section='head'}
- * {bt_htmloutput section='topnavlinks'}
+ * Available parameters:
+ *  - section (string) Name of the output section to return.
+ *  - noempty (bool)   Flag to disable the "bt-empty" CSS class for the classesinnerpage section.
  *
- * @author       Mateo Tibaquirá
- * @since        05/07/08
- * @param        array       $params      All attributes passed to this function from the template
- * @param        object      &$view     Reference to the Smarty object
- * @param        string      $section     Output section to return
- * @return       string      the results of the module function
+ * Example:
+ *  {bt_htmloutput section='head'}
+ *  {bt_htmloutput section='topnavlinks'}
+ *
+ * @author Mateo Tibaquirá
+ * @since  05/07/08
+ *
+ * @param array             $params All parameters passed to this function from the template.
+ * @param Zikula_View_Theme &$view  Reference to the View_Theme object.
+ *
+ * @return string Output of the requested section.
  */
 function smarty_function_bt_htmloutput($params, Zikula_View_Theme &$view)
 {
-    // variables to use
-    // parameters
+    $dom = ZLanguage::getThemeDomain('BlankTheme');
+
+    // section parameter check
     if (!isset($params['section']) || empty($params['section'])) {
         return '';
     }
-
-    $dom = ZLanguage::getThemeDomain('BlankTheme');
 
     // blanktheme vars
     $body      = $view->getTplVar('body');
@@ -45,13 +49,14 @@ function smarty_function_bt_htmloutput($params, Zikula_View_Theme &$view)
         $view->assign('current', $current);
     }
 
-    // assign the respective output
+    // process the respective output
     $output = '';
+
     switch ($params['section'])
     {
         case 'topnavlinks':
             // build the menu list
-            // Option: id, lang string, link
+            // option: {id, translatable link text, link}
             $menu = array();
             if (UserUtil::isLoggedIn()) {
                 if ($view->getTplVar('type') != 'admin' && SecurityUtil::checkPermission('::', '::', ACCESS_ADMIN)) {
@@ -66,7 +71,7 @@ function smarty_function_bt_htmloutput($params, Zikula_View_Theme &$view)
                 $menu[] = array('register', __('Register', $dom), ModUtil::url('Users', 'user', 'register'));
                 $menu[] = array('login', __('Login', $dom), ModUtil::url('Users', 'user', 'login'));
             }
-            // Render the menu as an unordered list inside a div
+            // render the menu
             $count   = count($menu) - 1;
             $output  = '<div id="bt_topnavlinks"><ul>';
             foreach ($menu as $k => $option) {

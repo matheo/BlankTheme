@@ -8,58 +8,50 @@
  */
 
 /**
- * Smarty function to display the user navigation menu
+ * BlankTheme plugin to display the user navigation menu.
  *
- * Example
- * {bt_userlinks id='myId' current='home' currentclass='myActiveClass'}
+ * Available parameters:
+ *  - id           (string) ID of the wrapper div (default: 'nav_main')
+ *  - current      (string) Current screen ID (.ini current value or module name) (optional)
+ *  - currentclass (string) CSS class name of the current tab, list item (default: 'current')
+ *  - span         (bool)   Flag to enable SPAN wrappers on the links text, useful for sliding doors (default: false)
+ *  - desc         (bool)   Flag to put the parent links descriptions inside SPAN.bt_desc instead the link title (default: false)
  *
- * @author       Mateo Tibaquirá
- * @since        08/11/07
- * @param        array       $params      All attributes passed to this function from the template
- * @param        object      &$view       Reference to the Smarty object
- * @param        string      $class       CSS class
- * @param        string      $current     the current tab (i.e. home, account, news, forum)
- * @param        string      $currentclass CSS class for the current link (default: current)
- * @param        boolean     $desc        Put the title in a <span> inside the link instead the link title
- *                                        for extended parent info (default: false)
- * @param        boolean     $span        Put the menu text inside a <span> for sliding doors usage
- *                                        (default: false)
- * @return       string      the results of the module function
+ * Example:
+ *  {bt_userlinks id='myId' current='home' currentclass='myActiveClass'}
+ *
+ * @author Mateo Tibaquirá
+ * @since  08/11/07
+ *
+ * @param array             $params All parameters passed to this function from the template.
+ * @param Zikula_View_Theme &$view  Reference to the View_Theme object.
+ *
+ * @return string User menu output.
  */
 function smarty_function_bt_userlinks($params, Zikula_View_Theme &$view)
 {
+    $dom = ZLanguage::getThemeDomain('BlankTheme');
+
     $id = isset($params['id']) ? $params['id'] : 'nav_main';
-
-    $currentclass = isset($params['currentclass']) ? $params['currentclass'] : 'current';
-
     if (!isset($params['current'])) {
         $current = $view->getTplVar('current') ? $view->getTplVar('current') : $view->getToplevelmodule();
     } else {
         $current = $params['current'];
     }
-
+    $currentclass = isset($params['currentclass']) ? $params['currentclass'] : 'current';
     $span = isset($params['span']) ? (bool)$params['span'] : false;
     $desc = isset($params['desc']) ? (bool)$params['desc'] : false;
-
-    $dom = ZLanguage::getThemeDomain('BlankTheme');
 
     /*** Build the menu-array ***/
     $menu   = array();
     $menu[] = array(
-                  'home',                     // page id / module name
-                  __('Home', $dom),           // translatable title
+                  'home',                      // page id / module name
+                  __('Home', $dom),            // translatable title
                   __('Go to home page', $dom), // translatable description
-                  System::getHomepageUrl(),   // link
-                  null                        // array of sublinks (optional)
+                  System::getHomepageUrl(),    // link
+                  null                         // array of sublinks (optional)
               );
-/*
-    $menu[] = array(
-                  'ModName / Current',
-                  __('Home', $dom),
-                  __('Go to home page', $dom),
-                  ModUtil::url('Modname', 'type', 'func', array('param' => 'value'))
-              );
-*/
+
     if (ModUtil::available('News')) {
         $menu[] = array(
                       'News',
@@ -132,7 +124,7 @@ function smarty_function_bt_userlinks($params, Zikula_View_Theme &$view)
                   );
     }
 
-    // Render the menu as an unordered list in a div
+    // render the menu
     $output  = '<div id="'.$id.'"><ul>';
     foreach ($menu as $option) {
         $output .= bt_userlinks_drawmenu($option, $current, $currentclass, $span, $desc);
@@ -143,7 +135,7 @@ function smarty_function_bt_userlinks($params, Zikula_View_Theme &$view)
 }
 
 /**
- * Draw the arra-menu recursively
+ * Draw the array-menu recursively.
  */
 function bt_userlinks_drawmenu($option, $current, $currentclass, $span=false, $desc=false)
 {
@@ -165,7 +157,7 @@ function bt_userlinks_drawmenu($option, $current, $currentclass, $span=false, $d
         }
         $return .= '</a>';
 
-        // render the optional suboptions recursively
+        // render the suboptions recursively
         if (isset($option[4]) && is_array($option[4])) {
             $return .= "\n".'<ul>';
             foreach ($option[4] as $suboption) {
