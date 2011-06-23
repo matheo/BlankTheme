@@ -254,7 +254,7 @@ function smarty_function_bt_adminlinks($params, Zikula_View_Theme &$view)
         $suboptions = array(
                          array(null, __('Settings', $dom), ModUtil::url('Content', 'admin', 'settings'))
                       );
-        $linkoptions[] = array(null, __('Edit contents', $dom), ModUtil::url('Content', 'edit'), $suboptions);
+        $linkoptions[] = array(null, __('Edit contents', $dom), ModUtil::url('Content', 'edit', 'main'), $suboptions);
     }
 
     // Downloads modules
