@@ -62,8 +62,6 @@
   /* BlankTheme zones */
   .bt_zone {
     clear: both;
-    display: block;
-    overflow: hidden;
   }
 
   /* Backup for correct positioning */
