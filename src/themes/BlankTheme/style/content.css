@@ -221,6 +221,11 @@
     vertical-align: middle;
   }
 
+  .z-buttons a img,
+  .z-buttons button img {
+    vertical-align: baseline;
+  }
+
   fieldset {
     border: 1px solid #d9dad5;
     padding: 5px 10px 10px;
