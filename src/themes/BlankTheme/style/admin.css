@@ -114,28 +114,22 @@ ul#admintabs #ajaxNewCatForm a.ajaxCatImage img {
   margin: -4px 2px 0 0;
 }
 
-.bt_admin .z-adminbox {
-  -webkit-border-radius: 0 5px 0 0;
-  -moz-border-radius: 0 5px 0 0;
-  border-radius: 0 5px 0 0;
-  border-top: 1px solid #ccc;
+
+#admin-systemnotices li {
+  margin-bottom: 0.5em;
 }
-.bt_admin .z-admincontainer {
-  -webkit-border-radius: 0 0 5px 5px;
-  -moz-border-radius: 0 0 5px 5px;
-  border-radius: 0 0 5px 5px;
-}
-#bt_Admin.bt_admin .bt_func_adminpanel .z-admincontainer {
-  -webkit-border-radius: 0 5px 5px 5px;
-  -moz-border-radius: 0 5px 5px 5px;
-  border-radius: 0 5px 5px 5px;
+.bt_admin #z-maincontent div.z-admin-content {
+  -webkit-border-radius: 0 10px 10px 10px;
+  -moz-border-radius: 0 10px 10px 10px;
+  border-radius: 0 10px 10px 10px;
   border-top: 1px solid #ccc;
+  margin: 0 0 1.25em;
+}
+#z-maincontent .z-admin-coreversion {
+  margin: 3px 10px 1.25em;
 }
 
-.bt_admin .z-admincontainer {
-  padding-left: 1.2%;
-  padding-right: 1.2%;
-}
+
 .bt_admin .page,
 .bt_admin .z-adminbox,
 .bt_admin .z-admincontainer {
