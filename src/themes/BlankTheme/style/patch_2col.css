@@ -8,7 +8,7 @@
  */
 
 /* Layout-independent adjustments */
-@import url(../../yaml/core/slim_iehacks.css);
+@import url(../yaml/core/slim_iehacks.css);
 
 /* Layout-dependent adjustments */
 @media screen, projection
