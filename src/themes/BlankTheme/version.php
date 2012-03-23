@@ -2,7 +2,7 @@
 /**
  * Zikula Application Framework
  *
- * @copyright (c) 2007-2011 Mateo Tibaquirá
+ * @copyright (c) 2007-2012 Mateo Tibaquirá
  * @link      http://www.blanktheme.org
  * @license   GNU/GPL - http://www.gnu.org/copyleft/gpl.html
  * @abstract  Blank theme to develop new themes with ease

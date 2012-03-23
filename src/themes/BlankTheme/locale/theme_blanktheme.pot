@@ -6,100 +6,15 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Zikula component\n"
+"Project-Id-Version: BlankTheme 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-21 00:43-0500\n"
+"POT-Creation-Date: 2012-03-23 17:30-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: gettext.php:12
-msgid "yes"
-msgstr ""
-
-#: gettext.php:13
-msgid "no"
-msgstr ""
-
-#: gettext.php:15
-msgid "Master body template"
-msgstr ""
-
-#: gettext.php:16
-msgid "2 columns"
-msgstr ""
-
-#: gettext.php:17
-msgid "3 columns"
-msgstr ""
-
-#: gettext.php:18
-msgid "3 columns static"
-msgstr ""
-
-#: gettext.php:19
-msgid "grid"
-msgstr ""
-
-#: gettext.php:20
-msgid "full width"
-msgstr ""
-
-#: gettext.php:21
-msgid "full height"
-msgstr ""
-
-#: gettext.php:23
-msgid "Master layout"
-msgstr ""
-
-#: gettext.php:25
-msgid "Enable 'header' block position?"
-msgstr ""
-
-#: gettext.php:27
-msgid "User menu to use"
-msgstr ""
-
-#: gettext.php:28
-msgid "bt_userlinks plugin"
-msgstr ""
-
-#: gettext.php:29
-msgid "'topnav' block position"
-msgstr ""
-
-#: gettext.php:31
-msgid "Bottom navigation to use"
-msgstr ""
-
-#: gettext.php:32
-msgid "footer HTML links"
-msgstr ""
-
-#: gettext.php:33
-msgid "'bottomnav' block position"
-msgstr ""
-
-#: gettext.php:35
-msgid "Enable 'footer' block position?"
-msgstr ""
-
-#: gettext.php:37
-msgid "Enable font resize buttons"
-msgstr ""
-
-#: gettext.php:39
-msgid "Enable optimized mode"
-msgstr ""
-
-#: gettext.php:41
-msgid "Full height body required CSS class"
-msgstr ""
 
 #: plugins/function.bt_adminlinks.php:45 plugins/function.bt_userlinks.php:49
 msgid "Home"
@@ -444,12 +359,32 @@ msgstr ""
 msgid "Log out"
 msgstr ""
 
-#: plugins/function.bt_usersublinks.php:51
-msgid "Home Sublink"
+#: plugins/function.bt_htmloutput.php:63
+msgid "Admin"
 msgstr ""
 
-#: plugins/function.bt_usersublinks.php:58
-msgid "Second Sublink"
+#: plugins/function.bt_htmloutput.php:67
+msgid "Your account"
+msgstr ""
+
+#: plugins/function.bt_htmloutput.php:71
+msgid "Register"
+msgstr ""
+
+#: plugins/function.bt_htmloutput.php:72
+msgid "Login"
+msgstr ""
+
+#: plugins/function.bt_htmloutput.php:107
+msgid "Increase font size"
+msgstr ""
+
+#: plugins/function.bt_htmloutput.php:108
+msgid "Reset font size"
+msgstr ""
+
+#: plugins/function.bt_htmloutput.php:109
+msgid "Decrease font size"
 msgstr ""
 
 #: plugins/function.bt_userlinks.php:50
@@ -512,32 +447,12 @@ msgstr ""
 msgid "Comment or suggest"
 msgstr ""
 
-#: plugins/function.bt_htmloutput.php:63
-msgid "Admin"
+#: plugins/function.bt_usersublinks.php:51
+msgid "Home Sublink"
 msgstr ""
 
-#: plugins/function.bt_htmloutput.php:67
-msgid "Your account"
-msgstr ""
-
-#: plugins/function.bt_htmloutput.php:71
-msgid "Register"
-msgstr ""
-
-#: plugins/function.bt_htmloutput.php:72
-msgid "Login"
-msgstr ""
-
-#: plugins/function.bt_htmloutput.php:107
-msgid "Increase font size"
-msgstr ""
-
-#: plugins/function.bt_htmloutput.php:108
-msgid "Reset font size"
-msgstr ""
-
-#: plugins/function.bt_htmloutput.php:109
-msgid "Decrease font size"
+#: plugins/function.bt_usersublinks.php:58
+msgid "Second Sublink"
 msgstr ""
 
 #: version.php:15
@@ -546,6 +461,90 @@ msgstr ""
 
 #: version.php:16
 msgid "Theme development framework for Zikula"
+msgstr ""
+
+#: gettext.php:12
+msgid "yes"
+msgstr ""
+
+#: gettext.php:13
+msgid "no"
+msgstr ""
+
+#: gettext.php:15
+msgid "Master body template"
+msgstr ""
+
+#: gettext.php:16
+msgid "2 columns"
+msgstr ""
+
+#: gettext.php:17
+msgid "3 columns"
+msgstr ""
+
+#: gettext.php:18
+msgid "3 columns static"
+msgstr ""
+
+#: gettext.php:19
+msgid "grid"
+msgstr ""
+
+#: gettext.php:20
+msgid "full width"
+msgstr ""
+
+#: gettext.php:21
+msgid "full height"
+msgstr ""
+
+#: gettext.php:23
+msgid "Master layout"
+msgstr ""
+
+#: gettext.php:25
+msgid "Enable 'header' block position?"
+msgstr ""
+
+#: gettext.php:27
+msgid "User menu to use"
+msgstr ""
+
+#: gettext.php:28
+msgid "bt_userlinks plugin"
+msgstr ""
+
+#: gettext.php:29
+msgid "'topnav' block position"
+msgstr ""
+
+#: gettext.php:31
+msgid "Bottom navigation to use"
+msgstr ""
+
+#: gettext.php:32
+msgid "footer HTML links"
+msgstr ""
+
+#: gettext.php:33
+msgid "'bottomnav' block position"
+msgstr ""
+
+#: gettext.php:35
+msgid "Enable 'footer' block position?"
+msgstr ""
+
+#: gettext.php:37
+msgid "Enable font resize buttons"
+msgstr ""
+
+#: gettext.php:39
+msgid "Enable optimized mode"
+msgstr ""
+
+#: gettext.php:41
+msgid "Full height body required CSS class"
 msgstr ""
 
 #: templates/modules/Admin/admin_admin_categorymenu.tpl:5
@@ -584,40 +583,40 @@ msgstr ""
 msgid "My Link"
 msgstr ""
 
-#: templates/body/fullwidth.tpl:4 templates/body/2col.tpl:4
-#: templates/body/3col231.tpl:4 templates/body/3col.tpl:4
-#: templates/body/grid.tpl:4 templates/body/fullheight.tpl:4
+#: templates/body/2col.tpl:4 templates/body/3col.tpl:4
+#: templates/body/3col231.tpl:4 templates/body/grid.tpl:4
+#: templates/body/fullwidth.tpl:4 templates/body/fullheight.tpl:4
 #: templates/admin.tpl:14
 msgid "Skip to navigation"
 msgstr ""
 
-#: templates/body/fullwidth.tpl:4 templates/body/fullwidth.tpl:5
 #: templates/body/2col.tpl:4 templates/body/2col.tpl:5
-#: templates/body/3col231.tpl:4 templates/body/3col231.tpl:5
 #: templates/body/3col.tpl:4 templates/body/3col.tpl:5
+#: templates/body/3col231.tpl:4 templates/body/3col231.tpl:5
 #: templates/body/grid.tpl:4 templates/body/grid.tpl:5
+#: templates/body/fullwidth.tpl:4 templates/body/fullwidth.tpl:5
 #: templates/body/fullheight.tpl:4 templates/body/fullheight.tpl:5
 #: templates/admin.tpl:14 templates/admin.tpl:15
 msgid "(Press Enter)"
 msgstr ""
 
-#: templates/body/fullwidth.tpl:5 templates/body/2col.tpl:5
-#: templates/body/3col231.tpl:5 templates/body/3col.tpl:5
-#: templates/body/grid.tpl:5 templates/body/fullheight.tpl:5
+#: templates/body/2col.tpl:5 templates/body/3col.tpl:5
+#: templates/body/3col231.tpl:5 templates/body/grid.tpl:5
+#: templates/body/fullwidth.tpl:5 templates/body/fullheight.tpl:5
 #: templates/admin.tpl:15
 msgid "Skip to main content"
 msgstr ""
 
-#: templates/body/fullwidth.tpl:19 templates/body/2col.tpl:20
-#: templates/body/3col231.tpl:20 templates/body/3col.tpl:20
-#: templates/body/grid.tpl:20 templates/body/fullheight.tpl:20
+#: templates/body/2col.tpl:20 templates/body/3col.tpl:20
+#: templates/body/3col231.tpl:20 templates/body/grid.tpl:20
+#: templates/body/fullwidth.tpl:19 templates/body/fullheight.tpl:20
 #: templates/admin.tpl:27
 msgid "logo"
 msgstr ""
 
-#: templates/body/fullwidth.tpl:20 templates/body/2col.tpl:21
-#: templates/body/3col231.tpl:21 templates/body/3col.tpl:21
-#: templates/body/grid.tpl:21 templates/body/fullheight.tpl:21
+#: templates/body/2col.tpl:21 templates/body/3col.tpl:21
+#: templates/body/3col231.tpl:21 templates/body/grid.tpl:21
+#: templates/body/fullwidth.tpl:20 templates/body/fullheight.tpl:21
 #: templates/admin.tpl:28
 msgid "Go to the homepage"
 msgstr ""
