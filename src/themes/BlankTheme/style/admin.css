@@ -6,55 +6,55 @@
  * @license   GNU/GPL - http://www.gnu.org/copyleft/gpl.html
  */
 
-body.bt_admin {
+body.bt-admin {
   font-size: 75%;
 }
-.bt_admin .ym-wrapper {
+.bt-admin .ym-wrapper {
   max-width: none;
   width: auto;
 }
-.bt_admin .ym-wbox {
+.bt-admin .ym-wbox {
   height: 100%;
   margin: 0;
 }
-.bt_admin .z-adminbox,
-.bt_admin .z-admincontainer {
+.bt-admin .z-adminbox,
+.bt-admin .z-admincontainer {
   background: #fff;
 }
 
-.bt_admin header {
+.bt-admin header {
   height: 70px;
 }
-.bt_admin header h1 {
+.bt-admin header h1 {
   padding: 10px 0 0;
 }
-.bt_admin header .logo {
+.bt-admin header .logo {
   margin: 10px 5px 0 0;
 }
-.bt_admin #main {
+.bt-admin #main {
   padding: 1em;
 }
-.bt_admin.bt_2col .bt_12 .ym-col1 {
+.bt-admin.bt-2col .bt-12 .ym-col1 {
   width: 140px;
 }
-.bt_admin.bt_2col .bt_12 .ym-col2 {
+.bt-admin.bt-2col .bt-12 .ym-col2 {
   border-left: none;
   margin-left: 140px;
 }
-.bt_admin.bt_2col .bt_12 .ym-col1 .ym-cbox,
-.bt_admin.bt_2col .bt_12 .ym-col2 .ym-cbox {
+.bt-admin.bt-2col .bt-12 .ym-col1 .ym-cbox,
+.bt-admin.bt-2col .bt-12 .ym-col2 .ym-cbox {
   padding: 0;
 }
-.bt_admin footer {
+.bt-admin footer {
   text-align: center;
 }
 
-.bt_admin a {
+.bt-admin a {
   color: #4D87C7;
 }
 
 
-.bt_admin ul#admintabs {
+.bt-admin ul#admintabs {
   -webkit-border-radius: 5px 0 0 5px;
   -moz-border-radius: 5px 0 0 5px;
   border-radius: 5px 0 0 5px;
@@ -62,7 +62,7 @@ body.bt_admin {
   border-right: none;
   width: auto;
 }
-.bt_admin ul#admintabs li {
+.bt-admin ul#admintabs li {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
@@ -71,34 +71,34 @@ body.bt_admin {
   float: none;
   margin: 0;
 }
-.bt_admin ul#admintabs li > a {
+.bt-admin ul#admintabs li > a {
   display: block;
   float: none;
   margin-right: 15px;
 }
-.bt_admin ul#admintabs li > a:hover {
+.bt-admin ul#admintabs li > a:hover {
   background: #eee;
   border-right: none;
 }
-.bt_admin ul#admintabs li > .z-admindrop {
+.bt-admin ul#admintabs li > .z-admindrop {
   float: right;
 }
-.bt_admin ul#admintabs li > .z-admindrop:hover {
+.bt-admin ul#admintabs li > .z-admindrop:hover {
   border-left: none;
 }
 
-.bt_admin ul#admintabs li:first-child {
+.bt-admin ul#admintabs li:first-child {
   -webkit-border-radius: 5px 0 0 0;
   -moz-border-radius: 5px 0 0 0;
   border-radius: 5px 0 0 0;
 }
-.bt_admin ul#admintabs li:last-child {
+.bt-admin ul#admintabs li:last-child {
   -webkit-border-radius: 0 0 0 5px;
   -moz-border-radius: 0 0 0 5px;
   border-radius: 0 0 0 5px;
   border-bottom: none;
 }
-.bt_admin ul#admintabs li.active {
+.bt-admin ul#admintabs li.active {
   border-right: 1px solid #fff;
   margin-right: -1px;
 }
@@ -135,7 +135,7 @@ ul#admintabs #ajaxNewCatForm a.ajaxCatImage img {
 #admin-systemnotices li {
   margin-bottom: 0.5em;
 }
-.bt_admin #z-maincontent div.z-admin-content {
+.bt-admin #z-maincontent div.z-admin-content {
   -webkit-border-radius: 0 10px 10px 10px;
   -moz-border-radius: 0 10px 10px 10px;
   border-radius: 0 10px 10px 10px;

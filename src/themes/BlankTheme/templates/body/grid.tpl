@@ -94,7 +94,7 @@
             </div>
 
             {if $layout|checkzone:3b}
-            <div id="bt_3b" class="bt_zone ym-grid linearize-level-1 coolsubcol">
+            <div id="bt-3b" class="bt-zone ym-grid linearize-level-1 coolsubcol">
                 <div class="ym-g33 ym-gl">
                     <div class="ym-gbox">
                         {blockposition name='bottoml'}

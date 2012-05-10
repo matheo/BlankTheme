@@ -15,7 +15,7 @@
  *  - current      (string) Current screen ID (.ini current value or module name) (optional)
  *  - currentclass (string) CSS class name of the current tab, list item (default: 'active')
  *  - span         (bool)   Flag to enable SPAN wrappers on the links text, useful for sliding doors (default: false)
- *  - desc         (bool)   Flag to put the parent links descriptions inside SPAN.bt_desc instead the link title (default: false)
+ *  - desc         (bool)   Flag to put the parent links descriptions inside SPAN.bt-desc instead the link title (default: false)
  *
  * Example:
  *  {bt_userlinks id='myId' current='home' currentclass='myActiveClass'}
@@ -153,7 +153,7 @@ function bt_userlinks_drawmenu($option, $current, $currentclass, $span=false, $d
         $return .= $desc ? '' : ' title="'.DataUtil::formatForDisplay($option[2]).'"';
         $return .= ' href="'.DataUtil::formatForDisplay($option[3]).'">';
         if ($desc) {
-            $return .= DataUtil::formatForDisplay($option[1]).' <span class="bt_desc">'.DataUtil::formatForDisplay($option[2]).'</span>';
+            $return .= DataUtil::formatForDisplay($option[1]).' <span class="bt-desc">'.DataUtil::formatForDisplay($option[2]).'</span>';
         } else {
             $return .= ($span ? '<span>' : ''). DataUtil::formatForDisplay($option[1]). ($span ? '</span>' : '');
         }

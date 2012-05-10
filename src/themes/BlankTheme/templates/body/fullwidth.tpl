@@ -39,7 +39,7 @@
 <!-- end: #nav -->
 
 <!-- begin: #main -->
-<div id="main" class="bt_2col">
+<div id="main" class="bt-2col">
     <div class="ym-wrapper {bt_htmloutput section='classespage'}">
         <div class="ym-wbox {bt_htmloutput section='classesinnerpage'}">
             <div class="ym-column linearize-level-1">
@@ -54,7 +54,7 @@
                     {$maincontent}
 
                     {if $layout|checkzone:2cb}
-                    <div id="bt_2cb" class="bt_zone ym-grid">
+                    <div id="bt-2cb" class="bt-zone ym-grid">
                         <div class="ym-g50 ym-gl">
                             <div class="ym-gbox">
                                 {blockposition name='centerbl'}

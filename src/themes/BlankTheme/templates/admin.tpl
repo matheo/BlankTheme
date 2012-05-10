@@ -5,7 +5,7 @@
 {include file='sections/head.tpl'}
 
 <!-- Admin template -->
-<body id="bt_{$module}" class="bt_2col bt_admin">
+<body id="bt-{$module}" class="bt-2col bt-admin">
 
 <!-- skip link navigation -->
 <ul class="ym-skiplinks">
@@ -14,7 +14,7 @@
 </ul>
 
 {* for the backend we do not use a body template *}
-<div class="ym-wrapper bt_12 bt_func_{$func}">
+<div class="ym-wrapper bt-12 bt-func-{$func}">
     <div class="ym-wbox {bt_htmloutput section='classesinnerpage'}">
 
         <!-- begin: header -->

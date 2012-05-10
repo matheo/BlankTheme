@@ -142,30 +142,30 @@
    */
 
   /* topnav navigation */
-  #bt_topnavlinks {
+  #bt-topnavlinks {
     float: left;
   }
 
-  #bt_topnavlinks ul {
+  #bt-topnavlinks ul {
     float: left;
     list-style: none;
     margin: 0 0.5em 0 0;
     padding: 0;
   }
 
-  #bt_topnavlinks li {
+  #bt-topnavlinks li {
     border-right: 1px solid #ddd;
     float: left;
     margin: 0;
     padding: 0;
   }
 
-  #bt_topnavlinks li.bt_unique,
-  #bt_topnavlinks li.bt_last {
+  #bt-topnavlinks li.bt-unique,
+  #bt-topnavlinks li.bt-last {
     border-right: none;
   }
 
-  #bt_topnavlinks li a {
+  #bt-topnavlinks li a {
     display: block;
     float: left;
     height: 1.4em;
@@ -227,7 +227,7 @@
     text-decoration: none;
     width: auto;
   }
-    #nav_main ul li a span.bt_desc {
+    #nav_main ul li a span.bt-desc {
       color: #777;
       display: block;
       font-size: 11px;
@@ -245,9 +245,9 @@
     color: #fff;
     text-decoration: none;
   }
-    #nav_main ul li a:focus span.bt_desc,
-    #nav_main ul li a:hover span.bt_desc,
-    #nav_main ul li a:active span.bt_desc {
+    #nav_main ul li a:focus span.bt-desc,
+    #nav_main ul li a:hover span.bt-desc,
+    #nav_main ul li a:active span.bt-desc {
       color: #ccc;
     }
 
@@ -255,7 +255,7 @@
     background: #6f6f6f;
     border: none; /* to-remove * /
   }
-    #nav_main ul li.current a span.bt_desc {
+    #nav_main ul li.current a span.bt-desc {
       color: #ccc;
     }
 
@@ -343,26 +343,26 @@
    */
 
   /* .ym-col1 is the main column */
-  .bt_2col .ym-col1 {
+  .bt-2col .ym-col1 {
     float: right;
     width: 75%;
   }
 
   /* .ym-col2 and .ym-col3 contains side blocks */
-  .bt_2col .ym-col2,
-  .bt_2col .ym-col3 {
+  .bt-2col .ym-col2,
+  .bt-2col .ym-col3 {
     float: none;
     width: auto;
   }
 
 
   /* 1X layouts */
-  .bt_2col .bt_12 .ym-col1,
-  .bt_2col .bt_13 .ym-col1 {
+  .bt-2col .bt-12 .ym-col1,
+  .bt-2col .bt-13 .ym-col1 {
     float: left;
   }
-  .bt_2col .bt_12 .ym-col2,
-  .bt_2col .bt_13 .ym-col3 {
+  .bt-2col .bt-12 .ym-col2,
+  .bt-2col .bt-13 .ym-col3 {
     border-left: 1px solid #ddd; /* to-remove */
     margin-left: 75%;
     margin-right: 0;
@@ -370,12 +370,12 @@
 
 
   /* X1 layouts */
-  .bt_2col .bt_21 .ym-col1,
-  .bt_2col .bt_31 .ym-col1 {
+  .bt-2col .bt-21 .ym-col1,
+  .bt-2col .bt-31 .ym-col1 {
     margin-left: -5px;
   }
-  .bt_2col .bt_21 .ym-col2,
-  .bt_2col .bt_31 .ym-col3 {
+  .bt-2col .bt-21 .ym-col2,
+  .bt-2col .bt-31 .ym-col3 {
     border-right: 1px solid #ddd; /* to-remove */
     margin-left: 0;
     margin-right: 75%;
@@ -384,7 +384,7 @@
 
   /* 1 layout */
   /* full main column */
-  .bt_2col .bt_1 .ym-col1 {
+  .bt-2col .bt-1 .ym-col1 {
     float: none;
     margin-left: 0;
     margin-right: 0;
@@ -393,22 +393,22 @@
 
 
   /* col_content paddings */
-  .bt_2col .ym-col1 .ym-cbox {
+  .bt-2col .ym-col1 .ym-cbox {
     padding: 0 15px 0 10px;
   }
-  .bt_2col .ym-col2 .ym-cbox,
-  .bt_2col .ym-col3 .ym-cbox {
+  .bt-2col .ym-col2 .ym-cbox,
+  .bt-2col .ym-col3 .ym-cbox {
     padding: 0 10px 0 15px;
   }
-  .bt_2col .bt_12 .ym-col1 .ym-cbox,
-  .bt_2col .bt_13 .ym-col1 .ym-cbox {
+  .bt-2col .bt-12 .ym-col1 .ym-cbox,
+  .bt-2col .bt-13 .ym-col1 .ym-cbox {
     padding: 0 10px 0 15px;
   }
-  .bt_2col .bt_12 .ym-col2 .ym-cbox,
-  .bt_2col .bt_13 .ym-col3 .ym-cbox {
+  .bt-2col .bt-12 .ym-col2 .ym-cbox,
+  .bt-2col .bt-13 .ym-col3 .ym-cbox {
     padding: 0 15px 0 10px;
   }
-  .bt_2col .bt_1 .ym-col1 .ym-cbox {
+  .bt-2col .bt-1 .ym-col1 .ym-cbox {
     padding: 0 10px;
   }
 
@@ -421,21 +421,21 @@
    */
 
   /* .ym-col1 is the main column */
-  .bt_3col .ym-col1 {
+  .bt-3col .ym-col1 {
     float: left;
     margin: 0;
     width: 520px;
   }
 
   /* .ym-col2 contains the left blocks */
-  .bt_3col .ym-col2 {
+  .bt-3col .ym-col2 {
     float: left;
     margin: 0;
     width: 220px;
   }
 
   /* .ym-col3 contains the right blocks */
-  .bt_3col .ym-col3 {
+  .bt-3col .ym-col3 {
     float: right;
     margin: 0;
     width: 220px;
@@ -443,74 +443,74 @@
 
 
   /* 213 layout */
-  .bt_3col .bt_213 .ym-col1 {
+  .bt-3col .bt-213 .ym-col1 {
     margin-left: 220px; /* col2 width */
   }
-  .bt_3col .bt_213 .ym-col2 {
+  .bt-3col .bt-213 .ym-col2 {
     margin-left: -740px; /* col1 + col2 widths */
   }
-  .bt_3col .bt_213 .ym-col3 {
+  .bt-3col .bt-213 .ym-col3 {
     /*margin-left: -5px; Not needed for fixed widths */
   }
 
 
   /* 312 layout */
-  .bt_3col .bt_312 .ym-col1 {
+  .bt-3col .bt-312 .ym-col1 {
     margin-left: 220px; /* col3 width */
   }
-  .bt_3col .bt_312 .ym-col2 {
+  .bt-3col .bt-312 .ym-col2 {
     float: right;
     /*margin-left: -5px; Not needed for fixed widths */
   }
-  .bt_3col .bt_312 .ym-col3 {
+  .bt-3col .bt-312 .ym-col3 {
     float: left;
     margin-left: -740px; /* col1 + col2 widths */
   }
 
 
   /* 132 layout */
-  .bt_3col .bt_132 .ym-col2 {
+  .bt-3col .bt-132 .ym-col2 {
     float: right;
     /*margin-left: -5px; Not needed for fixed widths */
   }
-  .bt_3col .bt_132 .ym-col3 {
+  .bt-3col .bt-132 .ym-col3 {
     float: left;
   }
 
 
   /* XX1 layouts */
-  .bt_3col .bt_231 .ym-col1,
-  .bt_3col .bt_321 .ym-col1 {
+  .bt-3col .bt-231 .ym-col1,
+  .bt-3col .bt-321 .ym-col1 {
     float: right;
     /*margin-left: -5px; Not needed for fixed widths */
   }
-  .bt_3col .bt_321 .ym-col2 {
+  .bt-3col .bt-321 .ym-col2 {
     float: right;
   }
 
 
   /* col_content paddings */
-  .bt_3col .ym-col1 .ym-cbox {
+  .bt-3col .ym-col1 .ym-cbox {
     padding: 0 10px;
   }
-  .bt_3col .ym-col2 .ym-cbox {
+  .bt-3col .ym-col2 .ym-cbox {
     padding: 0 5px 0 10px;
   }
-  .bt_3col .ym-col3 .ym-cbox {
+  .bt-3col .ym-col3 .ym-cbox {
     padding: 0 10px 0 5px;
   }
-  .bt_3col .bt_123 .ym-col2 .ym-cbox,
-  .bt_3col .bt_321 .ym-col2 .ym-cbox,
-  .bt_3col .bt_132 .ym-col3 .ym-cbox,
-  .bt_3col .bt_231 .ym-col3 .ym-cbox {
+  .bt-3col .bt-123 .ym-col2 .ym-cbox,
+  .bt-3col .bt-321 .ym-col2 .ym-cbox,
+  .bt-3col .bt-132 .ym-col3 .ym-cbox,
+  .bt-3col .bt-231 .ym-col3 .ym-cbox {
     padding: 0 5px;
   }
-  .bt_3col .bt_132 .ym-col2 .ym-cbox,
-  .bt_3col .bt_312 .ym-col2 .ym-cbox {
+  .bt-3col .bt-132 .ym-col2 .ym-cbox,
+  .bt-3col .bt-312 .ym-col2 .ym-cbox {
     padding: 0 10px 0 5px;
   }
-  .bt_3col .bt_321 .ym-col3 .ym-cbox,
-  .bt_3col .bt_312 .ym-col3 .ym-cbox {
+  .bt-3col .bt-321 .ym-col3 .ym-cbox,
+  .bt-3col .bt-312 .ym-col3 .ym-cbox {
     padding: 0 5px 0 10px;
   }
 
@@ -523,7 +523,7 @@
    */
 
   /* .ym-col1 is the main column (static) */
-  .bt_3col231 .ym-col1 {
+  .bt-3col231 .ym-col1 {
     border-left: 1px solid #ddd; /* to-customize */
     border-right: 1px solid #ddd; /* to-customize */
     float: none;
@@ -533,14 +533,14 @@
   }
 
   /* .ym-col2 contains the left blocks */
-  .bt_3col231 .ym-col2 {
+  .bt-3col231 .ym-col2 {
     float: left;
     margin: 0;
     width: 23%;
   }
 
   /* .ym-col3 contains the right blocks */
-  .bt_3col231 .ym-col3 {
+  .bt-3col231 .ym-col3 {
     float: right;
     margin: 0;
     width: 23%;
@@ -548,29 +548,29 @@
 
 
   /* 312 layout */
-  .bt_3col231 .bt_312 .ym-col2 {
+  .bt-3col231 .bt-312 .ym-col2 {
     float: right;
     margin-left: -5px;
   }
-  .bt_3col231 .bt_312 .ym-col3 {
+  .bt-3col231 .bt-312 .ym-col3 {
     float: left;
   }
 
 
   /* col_content paddings */
-  .bt_3col231 .ym-col1 .ym-cbox {
+  .bt-3col231 .ym-col1 .ym-cbox {
     padding: 0 10px;
   }
-  .bt_3col231 .ym-col2 .ym-cbox {
+  .bt-3col231 .ym-col2 .ym-cbox {
     padding: 0 5px 0 10px;
   }
-  .bt_3col231 .ym-col3 .ym-cbox {
+  .bt-3col231 .ym-col3 .ym-cbox {
     padding: 0 10px 0 5px;
   }
-  .bt_3col231 .bt_312 .ym-col2 .ym-cbox {
+  .bt-3col231 .bt-312 .ym-col2 .ym-cbox {
     padding: 0 10px 0 5px;
   }
-  .bt_3col231 .bt_312 .ym-col3 .ym-cbox {
+  .bt-3col231 .bt-312 .ym-col3 .ym-cbox {
     padding: 0 5px 0 10px;
   }
 
@@ -582,28 +582,28 @@
    * @subsection layout-template-fullwidth
    */
 
-  body.bt_fullwidth {
+  body.bt-fullwidth {
     background: #efefef;
     padding: 0;
   }
-  .bt_fullwidth .page {
+  .bt-fullwidth .page {
     background: none;
     border: none; /* to-remove */
     position: relative;
   }
-  .bt_fullwidth header {
+  .bt-fullwidth header {
     background: #4d87c7 url(../images/design/bg_blue.gif) repeat-x top left scroll;
   }
-    .bt_fullwidth header h1 a {
+    .bt-fullwidth header h1 a {
       color: #fff;
     }
-  .bt_fullwidth #nav {
+  .bt-fullwidth nav {
     background: url(../images/design/bg-nav.png) repeat-x scroll 0 0 #efefef;
   }
-    .bt_fullwidth #nav_main ul li:first-child {
+    .bt-fullwidth nav ul li:first-child {
       border-left: 1px solid #aaa;
     }
-  .bt_fullwidth #main {
+  .bt-fullwidth #main {
     background: #fff;
   }
 

@@ -66,7 +66,7 @@
                     {$maincontent}
 
                     {if $layout|checkzone:2cb}
-                    <div id="bt_2cb" class="bt_zone ym-grid">
+                    <div id="bt-2cb" class="bt-zone ym-grid">
                         <div class="ym-g50 ym-gl">
                             <div class="ym-gbox">
                                 {blockposition name='centerbl'}

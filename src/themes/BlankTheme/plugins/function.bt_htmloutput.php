@@ -73,7 +73,7 @@ function smarty_function_bt_htmloutput($params, Zikula_View_Theme &$view)
             }
             // render the menu
             $count   = count($menu) - 1;
-            $output  = '<div id="bt_topnavlinks"><ul>';
+            $output  = '<div id="bt-topnavlinks"><ul>';
             foreach ($menu as $k => $option) {
                 $class = '';
                 if (count($menu) == 1) {
@@ -83,7 +83,7 @@ function smarty_function_bt_htmloutput($params, Zikula_View_Theme &$view)
                 } elseif ($k == $count) {
                     $class = 'last';
                 }
-                $output .= '<li '.($class ? ' class="bt_'.$class.'"' : '').'>';
+                $output .= '<li '.($class ? ' class="bt-'.$class.'"' : '').'>';
                 if (!empty($option[2])) {
                     $output .= '<a title="'. DataUtil::formatForDisplay($option[1]). '" href="'.DataUtil::formatForDisplay($option[2]).'"><span>'. DataUtil::formatForDisplay($option[1]). '</span></a>';
                 } else {
@@ -152,35 +152,35 @@ function smarty_function_bt_htmloutput($params, Zikula_View_Theme &$view)
         /* Body ID */
         case 'bodyid':
             if ($view->getToplevelmodule()) {
-                $output = 'bt_'.$view->getToplevelmodule();
+                $output = 'bt-'.$view->getToplevelmodule();
 
             } elseif (!empty($current)) {
-                $output = 'bt_'.$current;
+                $output = 'bt-'.$current;
 
             } else {
-                $output = 'bt_staticpage';
+                $output = 'bt-staticpage';
             }
             break;
 
         /* First CSS level */
         case 'classesbody':
-            // add a first level of CSS classes like current language, type parameter and body template in use with a 'bt_' prefix
+            // add a first level of CSS classes like current language, type parameter and body template in use with a 'bt-' prefix
             if (!empty($current)) {
-                $output .= 'bt_'.$current.' ';
+                $output .= 'bt-'.$current.' ';
             }
             if ($btcssbody && isset($btcssbody[$body]) && $btcssbody[$body]) {
                 $output .= $btcssbody[$body].' ';
             }
-            $output .= 'bt_'.$body.' bt_type_'.$view->getType().' bt_lang_'.$view->getLanguage();
+            $output .= 'bt-'.$body.' bt-type-'.$view->getType().' bt-lang-'.$view->getLanguage();
             break;
 
         /* Second CSS level */
         case 'classespage':
             // add a second level of CSS classes
             // add the current layout and enabled zones
-            $output .= 'bt_'.str_replace('_', ' bt_', $layout);
+            $output .= 'bt-'.str_replace('_', ' bt-', $layout);
             // add the current function name
-            $output .= ' bt_func_'.$view->getFunc();
+            $output .= ' bt-func-'.$view->getFunc();
             break;
 
         /* Third CSS level */
@@ -191,16 +191,16 @@ function smarty_function_bt_htmloutput($params, Zikula_View_Theme &$view)
                 case 'Pages':
                     switch ($view->getFunc()) {
                         case 'display':
-                            // Example: add the current pageid in a CSS class (bt_pageid_PID)
+                            // Example: add the current pageid in a CSS class (bt-pageid-PID)
                             // note: this only works when using normal urls, shortURLs uses the title field
-                            $output .= ' bt_pageid_'.FormUtil::getPassedValue('pageid');
+                            $output .= ' bt-pageid-'.FormUtil::getPassedValue('pageid');
                             break;
                     }
                     break;
                 case 'Content':
                     switch ($view->getFunc()) {
                         case 'view':
-                            // Example: add the current page category id in a CSS class (bt_contentcatpage_CID)
+                            // Example: add the current page category id in a CSS class (bt-contentcatpage-CID)
                             // works for normal and shortURLs
                             if (System::getVar('shorturls')) {
                                 $urlname = $view->getRequest()->getGet()->get('name');
@@ -209,7 +209,7 @@ function smarty_function_bt_htmloutput($params, Zikula_View_Theme &$view)
                                 $pageId = $view->getRequest()->getGet()->get('pid');
                             }
                             $page = ModUtil::apiFunc('Content', 'Page', 'getPage', array('id' => $pageId));
-                            $output .= ' bt_contentcatpage_'.$page['categoryId'];
+                            $output .= ' bt-contentcatpage-'.$page['categoryId'];
                     }
                     break;
             }

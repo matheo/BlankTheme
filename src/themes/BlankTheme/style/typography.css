@@ -268,8 +268,9 @@
     color: #ccc;
   }
 
-  header h1 {
-    color: #fff;
+  header h1,
+  header h1 a {
+    color: #349 !important;
     font-size: 36px;
     letter-spacing: -1px;
     line-height: 65%;
@@ -351,7 +352,7 @@
   /* footer links */
   footer a {
     background: transparent;
-    color: #999;
+    color: #777;
     font-weight: bold;
   }
   footer a:focus,
@@ -360,6 +361,9 @@
     background: transparent;
     color: #4d87c7;
     text-decoration: underline;
+  }
+  footer a:visited {
+    color: #999;
   }
     #footer_sublinks a {
       font-weight: normal;
@@ -666,12 +670,12 @@
    */
 
   /* js context menus */
-  #bt_wikula .bt_func_edit .ym-col1 .ym-cbox,
-  #bt_wikula .bt_func_edit #z-maincontent,
-  #bt_content.bt_admin .ym-col1 .ym-cbox,
-  #bt_content.bt_type_edit .ym-col1 .ym-cbox,
-  #bt_content.bt_admin #z-maincontent,
-  #bt_content.bt_type_edit #z-maincontent {
+  #bt-wikula .bt-func-edit .ym-col1 .ym-cbox,
+  #bt-wikula .bt-func-edit #z-maincontent,
+  #bt-content.bt-admin .ym-col1 .ym-cbox,
+  #bt-content.bt-type-edit .ym-col1 .ym-cbox,
+  #bt-content.bt-admin #z-maincontent,
+  #bt-content.bt-type-edit #z-maincontent {
     position: inherit;
   }
   div.contextMenu ul li {
