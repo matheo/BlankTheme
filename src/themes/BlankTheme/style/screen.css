@@ -151,7 +151,7 @@
 
   /* navigation bar * /
   #nav_main {
-    background: #ccc url(../yaml/navigation/images/shiny_buttons/background.png) repeat-x; /* to-customize * /
+    background: #ccc url(../images/design/bg-nav.png) repeat-x; /* to-customize * /
   }
   #nav_sub {
     background: #dfdfdf; /* to-customize * /
@@ -565,14 +565,14 @@
     border: none; /* to-remove */
     position: relative;
   }
-  .bt_fullwidth #header {
+  .bt_fullwidth header {
     background: #4d87c7 url(../images/design/bg_blue.gif) repeat-x top left scroll;
   }
-    .bt_fullwidth #header h1 a {
+    .bt_fullwidth header h1 a {
       color: #fff;
     }
   .bt_fullwidth #nav {
-    background: url("../yaml/navigation/images/shiny_buttons/background.png") repeat-x scroll 0 0 #efefef;
+    background: url(../images/design/bg-nav.png) repeat-x scroll 0 0 #efefef;
   }
     .bt_fullwidth #nav_main ul li:first-child {
       border-left: 1px solid #aaa;

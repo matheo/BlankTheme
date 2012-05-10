@@ -341,22 +341,22 @@
   }
 
   /* title link */
-  #header h1 a:focus,
-  #header h1 a:hover,
-  #header h1 a:active {
+  header h1 a:focus,
+  header h1 a:hover,
+  header h1 a:active {
     background: transparent;
     text-decoration: none;
   }
 
   /* footer links */
-  #footer a {
+  footer a {
     background: transparent;
     color: #999;
     font-weight: bold;
   }
-  #footer a:focus,
-  #footer a:hover,
-  #footer a:active {
+  footer a:focus,
+  footer a:hover,
+  footer a:active {
     background: transparent;
     color: #4d87c7;
     text-decoration: underline;

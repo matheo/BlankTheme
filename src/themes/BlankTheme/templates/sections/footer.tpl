@@ -5,8 +5,6 @@
  * http://www.yaml.de/en/license/license-conditions.html
  *}
 
-{bt_htmloutput section='footer'}
-
 {* default styles of footer block is float: right *}
 {if $btconfig.footer eq 1}
     {blockposition name='footer'}
@@ -40,3 +38,5 @@
         <a href="http://validator.w3.org/check?uri=referer" title="{gt text='Valid XHTML'}">XHTML</a>
     {/if}
 </p>
+
+{bt_htmloutput section='footer'}

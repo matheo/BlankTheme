@@ -7,35 +7,52 @@
  */
 
 body.bt_admin {
-  height: 100%;
-  padding: 0;
+  font-size: 75%;
 }
-.bt_admin .page_margins {
+.bt_admin .ym-wrapper {
   max-width: none;
   width: auto;
 }
+.bt_admin .ym-wbox {
+  height: 100%;
+  padding: 0;
+}
+.bt_admin .z-adminbox,
+.bt_admin .z-admincontainer {
+  background: #fff;
+}
 
-.bt_admin #header {
+.bt_admin header {
   height: 70px;
 }
-.bt_admin #header h1 {
+.bt_admin header h1 {
   padding: 10px 0 0;
 }
-.bt_admin #header .logo {
+.bt_admin header .logo {
   margin: 10px 5px 0 0;
 }
-
-.bt_admin.bt_2col .bt_12 #col1 {
+.bt_admin #main {
+  padding: 1em;
+}
+.bt_admin.bt_2col .bt_12 .ym-col1 {
   width: 140px;
 }
-.bt_admin.bt_2col .bt_12 #col2 {
+.bt_admin.bt_2col .bt_12 .ym-col2 {
   border-left: none;
   margin-left: 140px;
 }
-.bt_admin.bt_2col .bt_12 #col1_content,
-.bt_admin.bt_2col .bt_12 #col2_content {
+.bt_admin.bt_2col .bt_12 .ym-col1 .ym-cbox,
+.bt_admin.bt_2col .bt_12 .ym-col2 .ym-cbox {
   padding: 0;
 }
+.bt_admin footer {
+  text-align: center;
+}
+
+.bt_admin a {
+  color: #4D87C7;
+}
+
 
 .bt_admin ul#admintabs {
   -webkit-border-radius: 5px 0 0 5px;
@@ -51,7 +68,6 @@ body.bt_admin {
   border-radius: 0;
   border: none;
   border-bottom: 1px solid #ccc;
-  border-right: 1px solid #ccc;
   float: none;
   margin: 0;
 }
@@ -84,6 +100,7 @@ body.bt_admin {
 }
 .bt_admin ul#admintabs li.active {
   border-right: 1px solid #fff;
+  margin-right: -1px;
 }
 
 ul#admintabs li#addcat #addcatlink {
@@ -130,29 +147,6 @@ ul#admintabs #ajaxNewCatForm a.ajaxCatImage img {
 }
 
 
-.bt_admin .page,
-.bt_admin .z-adminbox,
-.bt_admin .z-admincontainer {
-  background: #fff;
-}
-.bt_admin #main {
-  padding: 1em 0;
-}
-.bt_admin #col1 {
-  float: none;
-  width: 100%;
-}
-.bt_admin #col1_content {
-  padding: 0 5px;
-}
-.bt_admin #footer {
-  text-align: center;
-}
-
-.bt_admin a {
-  color: #4D87C7;
-}
-
 /* Theme-navigation */
 /* Admin menu based upon prodrop8 menu from cssplay.co.uk, default without tabimages */
 /* ================================================================
@@ -191,7 +185,7 @@ way to fit your requirements.
 
 /* The menu styling */
 #nav #nav_admin .cssplay_prodrop {
-  background: transparent url(../yaml/navigation/images/shiny_buttons/background.png);
+  background: transparent url(../images/design/bg-nav.png);
   border: 0;
   font: bold 12px 'Lucida Grande', Verdana, Arial, Sans-Serif;
   height: 28px;

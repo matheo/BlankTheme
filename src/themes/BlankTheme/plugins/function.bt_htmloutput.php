@@ -145,6 +145,8 @@ function smarty_function_bt_htmloutput($params, Zikula_View_Theme &$view)
             } else {
                 PageUtil::addVar('stylesheet', $view->getStylepath()."/layout_{$body}.css");
             }
+            // full skip link functionality in webkit browsers
+            PageUtil::addVar('footer', '<script src="'.$view->getThemepath().'/yaml/core/js/yaml-focusfix.js"></script>');
             break;
 
         /* Body ID */

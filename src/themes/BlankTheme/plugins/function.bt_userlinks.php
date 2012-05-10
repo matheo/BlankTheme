@@ -11,9 +11,9 @@
  * BlankTheme plugin to display the user navigation menu.
  *
  * Available parameters:
- *  - id           (string) ID of the wrapper div (default: 'nav_main')
+ *  - id           (string) ID of the wrapper div (default: null)
  *  - current      (string) Current screen ID (.ini current value or module name) (optional)
- *  - currentclass (string) CSS class name of the current tab, list item (default: 'current')
+ *  - currentclass (string) CSS class name of the current tab, list item (default: 'active')
  *  - span         (bool)   Flag to enable SPAN wrappers on the links text, useful for sliding doors (default: false)
  *  - desc         (bool)   Flag to put the parent links descriptions inside SPAN.bt_desc instead the link title (default: false)
  *
@@ -32,13 +32,13 @@ function smarty_function_bt_userlinks($params, Zikula_View_Theme &$view)
 {
     $dom = ZLanguage::getThemeDomain('BlankTheme');
 
-    $id = isset($params['id']) ? $params['id'] : 'nav_main';
+    $id = isset($params['id']) ? $params['id'] : null;
     if (!isset($params['current'])) {
         $current = $view->getTplVar('current') ? $view->getTplVar('current') : $view->getToplevelmodule();
     } else {
         $current = $params['current'];
     }
-    $currentclass = isset($params['currentclass']) ? $params['currentclass'] : 'current';
+    $currentclass = isset($params['currentclass']) ? $params['currentclass'] : 'active';
     $span = isset($params['span']) ? (bool)$params['span'] : false;
     $desc = isset($params['desc']) ? (bool)$params['desc'] : false;
 
@@ -125,11 +125,13 @@ function smarty_function_bt_userlinks($params, Zikula_View_Theme &$view)
     }
 
     // render the menu
-    $output  = '<div id="'.$id.'"><ul>';
+    $output  = $id ? '<div id="'.$id.'">' : '';
+    $output .= '<ul>';
     foreach ($menu as $option) {
         $output .= bt_userlinks_drawmenu($option, $current, $currentclass, $span, $desc);
     }
-    $output .= '</ul></div>';
+    $output .= '</ul>';
+    $output .= $id ? '</div>' : '';
 
     return $output;
 }

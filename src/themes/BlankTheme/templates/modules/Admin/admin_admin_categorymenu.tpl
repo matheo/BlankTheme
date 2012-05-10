@@ -45,8 +45,8 @@
 
 {insert name="getstatusmsg"}
 
-<div> {* closed by admin.tpl *}
-    <div id="col1">
+<div class="ym-column linearize-level-1"> {* closed by admin.tpl *}
+    <div class="ym-col1">
 
 <div class="admintabs-container" id="admintabs-container">
     <ul class="clearfix" id="admintabs">
@@ -88,5 +88,5 @@
     </div>
 
     <!-- begin: #col1 - main column -->
-    <div id="col2"> {* closed by admin.tpl *}
-        <div id="col2_content" class="floatbox"> {* closed by admin.tpl *}
+    <div class="ym-col2"> {* closed by admin.tpl *}
+        <div class="ym-cbox ym-contain-oh"> {* closed by admin.tpl *}
