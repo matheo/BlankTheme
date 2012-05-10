@@ -119,8 +119,7 @@ function smarty_function_bt_htmloutput($params, Zikula_View_Theme &$view)
         case 'head':
             // head stylesheets
             $output .= '<!--[if lte IE 7]>'
-                      .'<link rel="stylesheet" href="'.$view->getStylepath().'/patch_'.$body.'.css" type="text/css" />'
-//                    .'<link rel="stylesheet" href="'.$view->getThemepath().'/yaml/core/slim_iehacks.css" type="text/css" />'
+                      .'<link rel="stylesheet" href="'.$view->getThemepath().'/yaml/core/iehacks.min.css" type="text/css" />'
                       .'<![endif]-->';
 /*                    .'<!--[if lte IE 6]>'
 //                    .'<script type="text/javascript" src="'.$view->getScriptpath().'/ie_minmax.js"></script>'
@@ -138,10 +137,11 @@ function smarty_function_bt_htmloutput($params, Zikula_View_Theme &$view)
             // TODO pending review with PageUtil weight assignment (when implemented)
             if ($btconfig['optimize'] == '1') {
                 // do not load the layout_* stylesheet and load the basic styles directly
-                PageUtil::addVar('stylesheet', $view->getThemepath().'/yaml/core/slim_base.css');
-                PageUtil::addVar('stylesheet', $view->getStylepath().'/basemod.css');
-                PageUtil::addVar('stylesheet', $view->getStylepath().'/content.css');
-                // TODO rtl-support load yaml/add-ons/rtl-support/core/base-rtl.css with the respective basemod-rtl.css and content-rtl.css
+                PageUtil::addVar('stylesheet', $view->getThemepath().'/yaml/core/base.min.css');
+                PageUtil::addVar('stylesheet', $view->getThemepath().'/yaml/navigation/hlist.css');
+                PageUtil::addVar('stylesheet', $view->getStylepath().'/screen.css');
+                PageUtil::addVar('stylesheet', $view->getStylepath().'/typography.css');
+                // TODO rtl-support load yaml/add-ons/rtl-support/core/base-rtl.css with the respective typography-rtl.css
             } else {
                 PageUtil::addVar('stylesheet', $view->getStylepath()."/layout_{$body}.css");
             }

@@ -1,6 +1,10 @@
 
 # CHANGELOG
 
+## Version 1.3.3
+* YAML updated to 4.0.1
+* Removed fullheight body template
+
 ## Version 1.3
 
 * Upgraded to work with Zikula 1.3+

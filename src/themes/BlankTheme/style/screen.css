@@ -584,48 +584,6 @@
 
 
   /**
-   * fullheight template
-   * @see layout-template-3col subsection
-   * @subsection layout-template-fullheight
-   */
-
-  .bt_fullheight {
-    height: 100% !important;
-    padding: 0;
-  }
-  .bt_fullheight .page_margins {
-    background: #fff; /* to-customize */
-    height: auto !important;
-    min-height: 100%; /* real browsers */
-    position: relative !important;
-  }
-  * html .bt_fullheight .page_margins {
-    height: 100% !important;
-  }
-
-  /* allocate space for footer ... */
-  .bt_fullheight .page {
-    padding-bottom: 65px; /* to-customize */
-  }
-
-  /* revert default styles as #footer_wrapper gets in charge */
-  .bt_fullheight #footer {
-    position: relative !important;
-    /* .page_margins settings */
-    max-width: 80em;
-    min-width: 980px;
-    width: 980px;
-    /* move #footer to its position */
-    margin: -65px auto 0; /* to-customize */
-
-    background: #fff; /* to-customize */
-    border: 0 none;
-    padding: 0;
-  }
-
-
-
-  /**
    * Customized styles
    * Special layout elements of this website
    *

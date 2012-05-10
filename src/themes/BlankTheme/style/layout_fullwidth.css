@@ -8,14 +8,13 @@
  */
 
 /* import core styles */
-@import url(../yaml/core/slim_base.css);
+@import url(../yaml/core/base.min.css);
 
 /* import screen layout */
-@import url(basemod.css);
-@import url(content.css);
+@import url(../yaml/navigation/hlist.css);
 
-/* import navigation styles */
-/*@import url(../yaml/navigation/nav_shinybuttons.css);*/
+@import url(screen.css);
+@import url(typography.css);
 
 /* import print layout */
-/*@import url(../yaml/print/print_100_draft.css);*/
+/*@import url(../yaml/print/print.css);*/
