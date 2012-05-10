@@ -6,7 +6,7 @@
 </ul>
 
 <div class="ym-wrapper {bt_htmloutput section='classespage'}">
-    <div class="ym-wbox {bt_htmloutput section='classesinnerpage'}">
+    <div class="ym-wbox bordered {bt_htmloutput section='classesinnerpage'}">
 
         <!-- begin: header -->
         <header>

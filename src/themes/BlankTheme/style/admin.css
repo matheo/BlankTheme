@@ -15,7 +15,7 @@ body.bt_admin {
 }
 .bt_admin .ym-wbox {
   height: 100%;
-  padding: 0;
+  margin: 0;
 }
 .bt_admin .z-adminbox,
 .bt_admin .z-admincontainer {
