@@ -1,25 +1,23 @@
 /**
- * Content elements styles
+ * Uniform design of standard content elements.
  *
- * @copyright Copyright 2005-2011, Dirk Jesse
- * @license   CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
- *            YAML-C (http://www.yaml.de/en/license/license-conditions.html)
+ * @copyright Copyright 2005-2012, Dirk Jesse
+ * @license   CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *            YAML-CDL (http://www.yaml.de/license.html)
  * @link      http://www.yaml.de
  */
 
 /**
  * Zikula BlankTheme adaptation
- * @link      http://www.blanktheme.org
  *
  * @author    Mateo Tibaquirá
- * @author    Erik Spaan
- * @author    Dave Pahl
+ * @link      http://www.blanktheme.org
  */
 
 /**
  * CSS Table of Contents
  *
- *  Global elements (content-global)
+ *  Global typography settings (content-global)
  *  General layout elements (content-layout)
  *  Links (content-links)
  *  Tables (content-tables)
@@ -34,13 +32,12 @@
 @media all
 {
   /**
-   * Global elements
-   * standar html elements styles
+   * Global typography settings
    *
    * @section content-global
    */
 
-  /* reset font size for all elements to standard (16 pixel) */
+  /* reset font size for all elements to standard (16 Pixel) */
   html * { font-size: 100.01%; }
 
   /* reset monospaced elements to font size 16px in all browsers */
@@ -48,45 +45,61 @@
     font-family: Consolas, "Lucida Console", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier;
   }
 
-  /* base layout */
+  /* base layout gets standard font size 14px */
   body {
     color: #444;
     font-family: Verdana, Arial, sans-serif;
-    font-size: 75.00%; /* font size 12px */
+    font-size: 87.50%; /* base: 14px */
+    /* prevent auto-scaling of text in mobile webkit browsers */
+    -webkit-text-size-adjust:100%;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    color: #222;
+    color: #161e21;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: normal;
-    margin: 0 0 0.25em 0;
+    font-weight: 400;
+    margin: 0;
   }
 
   h1 {
-    font-size: 250%; /* 30px */
+    font-size: 350%;
+    line-height: 0.8571em;
+    margin: 0 0 0 0.4286em;
   }
   h2 {
-    font-size: 200%; /* 24px */
+    font-size: 250%;
+    line-height: 1.2em;
+    margin: 0 0 0 0.6em;
   }
   h3 {
-    font-size: 166.66%; /* 20px */
+    font-size: 175%;
+    line-height: 0.8571em;
+    margin: 0 0 0 0.8571em;
   }
   h4 {
-    font-size: 150%; /* 18px */
+    font-size: 133.33%;
+    line-height: 1.125em;
+    margin: 0 0 0 1.125em;
   }
   h5 {
-    font-size: 133.33%; /* 16px */
+    font-size: 116.67%;
+    line-height: 1.2857em;
+    margin: 0 0 0 1.2857em;
   }
   h6 {
-    font-size: 116.67%; /* 14px */
+    font-weight: bold;
+    font-size: 100%;
+    line-height: 1.5em;
+    margin: 0 0 0 1.5em;
     font-style: italic;
   }
 
   /* lists */
 
   ul, ol, dl {
+    font-size: 1em;
     line-height: 1.5em;
-    margin: 0 0 1em 1em;
+    margin: 0 0 1.5em 1em;
   }
 
   ul {
@@ -106,6 +119,7 @@
   }
 
   li {
+    font-size: 1em;
     line-height: 1.5em;
     margin-left: 0.8em;
   }
@@ -114,14 +128,15 @@
     font-weight: bold;
   }
   dd {
-    margin: 0 0 1em 0.8em;
+    margin: 0 0 1.5em 0.8em;
   }
 
   /* text formatting */
 
   p {
+    font-size: 1em;
     line-height: 1.5em;
-    margin: 0 0 1em 0;
+    margin: 0 0 1.5em 0;
   }
 
   cite, blockquote, q {
@@ -140,9 +155,19 @@
     font-style: italic;
   }
 
+  big {
+    font-size: 116.667%;
+  }
+  small {
+    font-size: 85.71%;
+  }
+
   pre {
     line-height: 1.5em;
-    margin: 0 0 1em 0;
+    margin: 0 0 1.5em 0;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
   }
   pre, code, kbd, tt, samp, var {
     font-size: 100%;
@@ -150,7 +175,7 @@
   pre, code {
     color: #800;
   }
-  kbd, samp, var {
+  kbd, samp, var, tt {
     color: #666;
     font-weight: bold;
   }
@@ -165,52 +190,34 @@
     letter-spacing: .07em;
   }
 
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
   sub {
-    font-size: smaller;
-    vertical-align: sub;
+    bottom: -0.25em;
   }
   sup {
-    font-size: smaller;
-    vertical-align: super;
+    top: -0.5em;
   }
 
+  mark {
+    background: #ff0;
+    color: #000;
+  }
   hr {
     color: #fff;
     background: transparent;
     border: 0;
     border-bottom: 1px solid #eee;
-    margin: 0 0 0.5em 0;
-    padding: 0 0 0.5em 0;
+    margin: 0 0 0.75em 0;
+    padding: 0 0 0.75em 0;
   }
 
-  /* images (with optional captions) */
-
-  p.icaption_left {
-    display: inline;
-    float: left;
-    margin: 0 1em 0.15em 0;
-  }
-  p.icaption_right {
-    display: inline;
-    float: right;
-    margin: 0 0 0.15em 1em;
-  }
-
-  p.icaption_left img,
-  p.icaption_right img {
-    border: 1px solid #888;
-    padding: 0;
-  }
-
-  p.icaption_left strong,
-  p.icaption_right strong {
-    background: #eee;
-    display: block;
-    font-size: 91.667%;
-    font-weight: normal;
-    margin-top: 2px;
-    overflow: hidden;
-    padding: 0.3em 0.5em;
+  img, figure {
+    margin: 0;
   }
 
   /* miscellaneous */
@@ -230,6 +237,24 @@
     padding: 5px 10px 10px;
   }
 
+  .flexible {
+    height: auto;
+    margin-top: 1.5em;
+    max-width: 100%;
+  }
+
+  * html .flexible { /* IE6 support */
+    width: 98%; /* 2% space for borders */
+  }
+
+  .bordered {
+    border: 2px #eee solid;
+    border: 2px rgba(255,255,255,1) solid;
+    -webkit-box-shadow: 0 0 3px rgba(0,0,0,.25);
+    -moz-box-shadow: 0 0 3px rgba(0,0,0,.25);
+    box-shadow: 0 0 3px rgba(0,0,0,.25);
+    margin-top: 1.5em;
+  }
 
 
   /**
@@ -239,14 +264,18 @@
    * @section content-layout
    */
 
-  #header h1 {
-    color: #000;
+  header {
+    color: #ccc;
+  }
+
+  header h1 {
+    color: #fff;
     font-size: 36px;
     letter-spacing: -1px;
     line-height: 65%;
   }
 
-  #header .slogan {
+  header .slogan {
     color: #999;
     font-size: 16px;
   }
@@ -258,13 +287,13 @@
       text-align: right; /* LTR */
     }
 
-  #footer { /* affects #footer_wrapper too */
-    color: #666;
+  footer { /* affects #footer_wrapper too */
+    color: #444;
     font-size: 12px;
     line-height: 150%;
     text-align: left;
   }
-    #footer #footer_sublinks {
+    footer #footer_sublinks {
       font-size: 0.8em;
     }
 
@@ -283,19 +312,17 @@
     color: #4d87c7;
     text-decoration: none;
   }
+  a:active {
+    outline: none;
+  }
   a:visited {
     color: #036;
   }
-  a:focus {
-    color: #000;
-    text-decoration: underline;
-  }
   a:hover,
-  a:active {
+  a:focus {
     /* if you use backgrounds or borders here
        you will interfere zikula core styles */
     color: #182e7a;
-    outline: 0 none;
     text-decoration: underline;
   }
 
@@ -338,18 +365,6 @@
       font-weight: normal;
     }
 
-  /* emphasizing external Hyperlinks via CSS */
-  /*
-  #main a[href^="http://www.my-domain.com"],
-  #main a[href^="https://www.my-domain.com"]
-  {
-    background-image: url('../yaml/add-ons/microformats/images/external_link.png');
-    background-position: 0 0.45em;
-    background-repeat: no-repeat;
-    padding-left: 12px;
-  }
-  */
-
 
 
   /**
@@ -360,8 +375,19 @@
    */
 
   table {
-    margin-bottom: 0.5em;
+    margin: 0 0 0 1.3571em;
     /*width: auto;*/
+  }
+  table.narrow {
+    margin: 0 0 0 1.4286em;
+  }
+  table.narrow th,
+  table.narrow td {
+    padding: 0 0.5em;
+    line-height: 1.4286em;
+  }
+  table.bordertable {
+    border: 1px #ccc solid;
   }
   table caption {
     font-variant: small-caps;
@@ -392,6 +418,20 @@
   }
   tbody td {
     /*border-bottom: 1px solid #eee;*/
+  }
+  th.nowrap,
+  td.nowrap {
+    white-space: nowrap;
+  }
+
+  .bordertable thead th {
+    background: #e0e0e0;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+  }
+  tbody tr:hover th,
+  tbody tr:hover td {
+    background: #f0f0f0;
   }
 
   table.z-datatable th,
@@ -451,37 +491,35 @@
     font-size: 1.35em;
   }
 
-  .text_left {
+  .text-left {
     text-align: left;
   }
-  .text_right {
+  .text-right {
     text-align: right;
   }
 
-  .float_left {
+  .float-left {
     display: inline;
     float: left;
-    margin-bottom: 0.15em;
-    margin-right: 1em;
+    margin: 0 1em 1.5em 0;
   }
-  .float_right {
+  .float-right {
     display: inline;
     float: right;
-    margin-bottom: 0.15em;
-    margin-left: 1em;
+    margin: 0 0 1.5em 1em;
   }
   .center {
     display: block;
-    margin: 0.5em auto;
+    margin: 0 auto 1.5em auto;
     text-align: center;
   }
 
-  .content_separator {
+  .content-separator {
     border-bottom: 1px solid #ddd;
     display: block;
     margin: 22px 0 18px;
   }
-  .text_separator {
+  .text-separator {
     color: #bbb;
     padding: 0 2px;
   }
@@ -540,6 +578,42 @@
     background: url(../images/icons/font_resize.gif) no-repeat -40px 50%;
   }
 
+  /* utilities */
+  .box {
+    border-radius: 0.3em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #888;
+    border-color: rgba(0,0,0,.3);
+    -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+    -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+    color: #444;
+    color: rgba(0,0,0,.8);
+    margin: 1.5em 0 0 0;
+    padding: 1.4286em;
+  }
+
+  .box > *:first-child {
+    margin-top: 0;
+  }
+
+  .label {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #06C;
+    color: #fff;
+    display: inline-block;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 10px;
+    letter-spacing: normal;
+    line-height: 12px;
+    padding: 1px 6px 2px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
   /* .bt-menublock styles */
   /* defaults for menu and menutree blocks inside #main : to-customize */
   #main ul.navlist,
@@ -592,10 +666,10 @@
    */
 
   /* js context menus */
-  #bt_wikula .bt_func_edit #col1_content,
+  #bt_wikula .bt_func_edit .ym-col1 .ym-cbox,
   #bt_wikula .bt_func_edit #z-maincontent,
-  #bt_content.bt_admin #col1_content,
-  #bt_content.bt_type_edit #col1_content,
+  #bt_content.bt_admin .ym-col1 .ym-cbox,
+  #bt_content.bt_type_edit .ym-col1 .ym-cbox,
   #bt_content.bt_admin #z-maincontent,
   #bt_content.bt_type_edit #z-maincontent {
     position: inherit;
@@ -659,42 +733,5 @@
     line-height: 22px;
   }
 
-  /* News Articles */
-  .news_index {
-    padding: 5px 0px 10px 0px;
-  }
-  .news_index h2 {
-    margin: 0;
-    padding: 2px 0px;
-  }
-  .news_index .news_hometext,
-  .news_index .news_hometext p {
-    line-height: 1.5em;
-  }
-  .news_index .news_hometext p {
-    margin: 0;
-  }
-  .news_index_date {
-    color: #aaa;
-  }
-  .news_title {
-    margin-top: 10px;
-  }
-  .news_body,
-  .news_body p {
-    line-height: 1.5em;
-  }
-  .news_categories {
-    border-top: 1px solid #efefef;
-    margin-top: 1em; /* optional */
-    text-align: right;
-  }
-  #news_topic {
-    float: right;
-  }
-
-  /* Ratings hook */
-  #ratingsratecontent p {
-    margin: 0;
-  }
+  /* Third party styles */
 }

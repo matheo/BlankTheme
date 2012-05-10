@@ -1,19 +1,17 @@
 /**
- * Screen layout styles
+ * Default screen stylesheets
  *
- * @copyright Copyright 2005-2011, Dirk Jesse
- * @license   CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
- *            YAML-C (http://www.yaml.de/en/license/license-conditions.html)
+ * @copyright Copyright 2005-2012, Dirk Jesse
+ * @license   CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *            YAML-CDL (http://www.yaml.de/license.html)
  * @link      http://www.yaml.de
  */
 
 /**
  * Zikula BlankTheme Adaptation
- * @link      http://www.blanktheme.org
  *
  * @author    Mateo Tibaquirá
- * @author    Erik Spaan
- * @author    Dave Pahl
+ * @link      http://www.blanktheme.org
  */
 
 /**
@@ -29,46 +27,26 @@
  *  Customized styles (layout-custom)
  */
 
-@media screen, projection
+@media screen
 {
-  /**
-   * Forcing vertical scrollbars in IE8, Firefox, Webkit & Opera
-   *
-   * @workaround
-   * @affected IE8, FF, Webkit, Opera
-   * @css-for all
-   * @valid CSS3
-   */
-
+  /* force vertical scrollbar */
   body {
     overflow-y: scroll;
   }
 
-  /**
-   * Global fixes
-   *
-   * @section layout-global
-   */
-
-  /* Centering layout in old IE-versions */
-  body {
-    text-align: center;
+  /* layout Module Configuration & fallback for unsupported media queries */
+  .ym-wrapper {
+    min-width: 760px;
+    max-width: 80em;
+    margin: 0 auto;
   }
 
-  .page_margins {
-    text-align: left;
+  .ym-wbox {
+    padding: 10px;
   }
 
   /* BlankTheme zones */
-  .bt_zone {
-    clear: both;
-  }
-
-  /* Backup for correct positioning */
-  #header,
-  #nav,
-  #main,
-  #footer {
+  .bt-zone {
     clear: both;
   }
 
@@ -87,75 +65,32 @@
    * @subsection layout-elements
    */
 
-  /* marginal area */
-  body {
-    background: #4d87c7 url(../images/design/bg_blue.gif) repeat-x top left fixed;
-    padding: 10px 0; /* to-remove */
-  }
+   header {
+     background: #444;
+     padding: 1.5em;
+   }
 
-  /* general wrapper */
-  .page_margins {
-    margin: 0 auto;
+     header h1 {
+       background: transparent;
+     }
 
-    width: 980px;
-    min-width: 980px;
-    max-width: 80em;
-  }
+   nav {
+     background: #222222;
+   }
 
-  /* page wrapper */
-  .page {
-    background: #fff;
-    border: 10px solid #fff; /* to-remove : add the 20px to the fixed-width columns */
-  }
+   #main {
+   }
 
-      /* header */
-      #header {
-        height: 110px;
-        padding: 0 20px; /* do not use top/bottom paddings with fixed height */
-        position: relative;
-        /*z-index: 100;*/ /* when the navigation is placed inside the header and a multi level menu is used this is needed for ie */
-      }
+   footer {
+     background: #eee;
+     margin: 1.5em 0 0 0;
+     padding: 1.5em;
+   }
 
-          /* top navigation container */
-          #topnav {
-            background: transparent;
-            position: absolute;
-            right: 10px; /* LTR */
-            top: 10px;
-          }
+     footer p {
+       margin: 0;
+     }
 
-          /* title and slogan */
-          #header h1 {
-            padding: 37px 0 0 0;
-          }
-          #header .slogan {
-            float: left;
-          }
-
-          /* logo */
-          #header .logo {
-            float: left;
-            margin: 30px 12px 0 0;
-          }
-
-      /* content wrapper */
-      #main {
-        padding: 1em 0;
-      }
-
-      /* footer */
-      #footer,
-      #footer_wrapper {
-        background: #efefef;
-        border-top: 5px solid #dfdfdf; /* to-remove */
-        padding: 12px 15px;
-      }
-        #footer_wrapper {
-          margin: 0 10px; /* to-remove : .page border adjustment */
-        }
-        #footer #footer_sublinks {
-          margin: 0.4em 0 0;
-        }
 
 
   /**
@@ -163,14 +98,16 @@
    * @subsection layout-skiplinks
    */
 
-  #skiplinks a.skip:focus,
-  #skiplinks a.skip:active {
+  .ym-skiplinks a.ym-skip:focus,
+  .ym-skiplinks a.ym-skip:active {
     background: #333;
     border-bottom: 1px solid #000;
     color: #fff;
     padding: 10px 0;
+    text-align: center;
     text-decoration: none;
   }
+
 
 
   /**
@@ -178,7 +115,7 @@
    * @subsection layout-navigation
    */
 
-  /* topnav navigation */
+  /* topnav navigation * /
   #bt_topnavlinks {
     float: left;
   }
@@ -212,12 +149,12 @@
     text-decoration: none;
   }
 
-  /* navigation bar */
+  /* navigation bar * /
   #nav_main {
-    background: #ccc url(../yaml/navigation/images/shiny_buttons/background.png) repeat-x; /* to-customize */
+    background: #ccc url(../yaml/navigation/images/shiny_buttons/background.png) repeat-x; /* to-customize * /
   }
   #nav_sub {
-    background: #dfdfdf; /* to-customize */
+    background: #dfdfdf; /* to-customize * /
   }
 
   #nav_main,
@@ -242,7 +179,7 @@
   #nav_main ul li,
   #nav_sub ul li {
     border: none;
-    border-right: 1px solid #aaa; /* to-remove */
+    border-right: 1px solid #aaa; /* to-remove * /
     display: inline;
     float: left;
     list-style-type: none;
@@ -250,7 +187,7 @@
     padding: 0;
   }
 
-  /* navigation links */
+  /* navigation links * /
   #nav_main ul li a,
   #nav_main ul li strong {
     background: transparent;
@@ -290,7 +227,7 @@
 
   #nav_main ul li.current {
     background: #6f6f6f;
-    border: none; /* to-remove */
+    border: none; /* to-remove * /
   }
     #nav_main ul li.current a span.bt_desc {
       color: #ccc;
@@ -306,9 +243,9 @@
     font-weight: bold;
   }
 
-  /* subnavigation links */
+  /* subnavigation links * /
   #nav_sub ul li {
-    border-right: 1px solid #ccc; /* to-remove */
+    border-right: 1px solid #ccc; /* to-remove * /
   }
   #nav_sub ul li a,
   #nav_sub ul li strong {
@@ -343,7 +280,7 @@
     color: #444;
     font-weight: normal;
   }
-
+*/
 
   /**
    * Miscellaneous
@@ -351,9 +288,9 @@
    */
 
   /* default content paddings */
-  #col1_content,
-  #col2_content,
-  #col3_content {
+  .ym-col1 .ym-cbox,
+  .ym-col2 .ym-cbox,
+  .ym-col3 .ym-cbox {
     padding: 0 10px;
   }
 
@@ -363,15 +300,6 @@
     border-top: 2px solid #efefef;
     color: #666;
     padding-top: 15px;
-  }
-  .coolsubcol .subcl {
-    padding: 0 0 0 10px;
-  }
-  .coolsubcol .subc {
-    padding: 0 5px 0 5px;
-  }
-  .coolsubcol .subcr {
-    padding: 0 10px 0 0;
   }
 
 
@@ -388,27 +316,27 @@
    * @subsection layout-template-2col
    */
 
-  /* #col1 is the main column */
-  .bt_2col #col1 {
+  /* .ym-col1 is the main column */
+  .bt_2col .ym-col1 {
     float: right;
     width: 75%;
   }
 
-  /* #col2 and #col3 contains side blocks */
-  .bt_2col #col2,
-  .bt_2col #col3 {
+  /* .ym-col2 and .ym-col3 contains side blocks */
+  .bt_2col .ym-col2,
+  .bt_2col .ym-col3 {
     float: none;
     width: auto;
   }
 
 
   /* 1X layouts */
-  .bt_2col .bt_12 #col1,
-  .bt_2col .bt_13 #col1 {
+  .bt_2col .bt_12 .ym-col1,
+  .bt_2col .bt_13 .ym-col1 {
     float: left;
   }
-  .bt_2col .bt_12 #col2,
-  .bt_2col .bt_13 #col3 {
+  .bt_2col .bt_12 .ym-col2,
+  .bt_2col .bt_13 .ym-col3 {
     border-left: 1px solid #ddd; /* to-remove */
     margin-left: 75%;
     margin-right: 0;
@@ -416,12 +344,12 @@
 
 
   /* X1 layouts */
-  .bt_2col .bt_21 #col1,
-  .bt_2col .bt_31 #col1 {
+  .bt_2col .bt_21 .ym-col1,
+  .bt_2col .bt_31 .ym-col1 {
     margin-left: -5px;
   }
-  .bt_2col .bt_21 #col2,
-  .bt_2col .bt_31 #col3 {
+  .bt_2col .bt_21 .ym-col2,
+  .bt_2col .bt_31 .ym-col3 {
     border-right: 1px solid #ddd; /* to-remove */
     margin-left: 0;
     margin-right: 75%;
@@ -430,7 +358,7 @@
 
   /* 1 layout */
   /* full main column */
-  .bt_2col .bt_1 #col1 {
+  .bt_2col .bt_1 .ym-col1 {
     float: none;
     margin-left: 0;
     margin-right: 0;
@@ -439,22 +367,22 @@
 
 
   /* col_content paddings */
-  .bt_2col #col1_content {
+  .bt_2col .ym-col1 .ym-cbox {
     padding: 0 15px 0 10px;
   }
-  .bt_2col #col2_content,
-  .bt_2col #col3_content {
+  .bt_2col .ym-col2 .ym-cbox,
+  .bt_2col .ym-col3 .ym-cbox {
     padding: 0 10px 0 15px;
   }
-  .bt_2col .bt_12 #col1_content,
-  .bt_2col .bt_13 #col1_content {
+  .bt_2col .bt_12 .ym-col1 .ym-cbox,
+  .bt_2col .bt_13 .ym-col1 .ym-cbox {
     padding: 0 10px 0 15px;
   }
-  .bt_2col .bt_12 #col2_content,
-  .bt_2col .bt_13 #col3_content {
+  .bt_2col .bt_12 .ym-col2 .ym-cbox,
+  .bt_2col .bt_13 .ym-col3 .ym-cbox {
     padding: 0 15px 0 10px;
   }
-  .bt_2col .bt_1 #col1_content {
+  .bt_2col .bt_1 .ym-col1 .ym-cbox {
     padding: 0 10px;
   }
 
@@ -466,22 +394,22 @@
    * @subsection layout-template-3col
    */
 
-  /* #col1 is the main column */
-  .bt_3col #col1 {
+  /* .ym-col1 is the main column */
+  .bt_3col .ym-col1 {
     float: left;
     margin: 0;
     width: 520px;
   }
 
-  /* #col2 contains the left blocks */
-  .bt_3col #col2 {
+  /* .ym-col2 contains the left blocks */
+  .bt_3col .ym-col2 {
     float: left;
     margin: 0;
     width: 220px;
   }
 
-  /* #col3 contains the right blocks */
-  .bt_3col #col3 {
+  /* .ym-col3 contains the right blocks */
+  .bt_3col .ym-col3 {
     float: right;
     margin: 0;
     width: 220px;
@@ -489,74 +417,74 @@
 
 
   /* 213 layout */
-  .bt_3col .bt_213 #col1 {
+  .bt_3col .bt_213 .ym-col1 {
     margin-left: 220px; /* col2 width */
   }
-  .bt_3col .bt_213 #col2 {
+  .bt_3col .bt_213 .ym-col2 {
     margin-left: -740px; /* col1 + col2 widths */
   }
-  .bt_3col .bt_213 #col3 {
+  .bt_3col .bt_213 .ym-col3 {
     /*margin-left: -5px; Not needed for fixed widths */
   }
 
 
   /* 312 layout */
-  .bt_3col .bt_312 #col1 {
+  .bt_3col .bt_312 .ym-col1 {
     margin-left: 220px; /* col3 width */
   }
-  .bt_3col .bt_312 #col2 {
+  .bt_3col .bt_312 .ym-col2 {
     float: right;
     /*margin-left: -5px; Not needed for fixed widths */
   }
-  .bt_3col .bt_312 #col3 {
+  .bt_3col .bt_312 .ym-col3 {
     float: left;
     margin-left: -740px; /* col1 + col2 widths */
   }
 
 
   /* 132 layout */
-  .bt_3col .bt_132 #col2 {
+  .bt_3col .bt_132 .ym-col2 {
     float: right;
     /*margin-left: -5px; Not needed for fixed widths */
   }
-  .bt_3col .bt_132 #col3 {
+  .bt_3col .bt_132 .ym-col3 {
     float: left;
   }
 
 
   /* XX1 layouts */
-  .bt_3col .bt_231 #col1,
-  .bt_3col .bt_321 #col1 {
+  .bt_3col .bt_231 .ym-col1,
+  .bt_3col .bt_321 .ym-col1 {
     float: right;
     /*margin-left: -5px; Not needed for fixed widths */
   }
-  .bt_3col .bt_321 #col2 {
+  .bt_3col .bt_321 .ym-col2 {
     float: right;
   }
 
 
   /* col_content paddings */
-  .bt_3col #col1_content {
+  .bt_3col .ym-col1 .ym-cbox {
     padding: 0 10px;
   }
-  .bt_3col #col2_content {
+  .bt_3col .ym-col2 .ym-cbox {
     padding: 0 5px 0 10px;
   }
-  .bt_3col #col3_content {
+  .bt_3col .ym-col3 .ym-cbox {
     padding: 0 10px 0 5px;
   }
-  .bt_3col .bt_123 #col2_content,
-  .bt_3col .bt_321 #col2_content,
-  .bt_3col .bt_132 #col3_content,
-  .bt_3col .bt_231 #col3_content {
+  .bt_3col .bt_123 .ym-col2 .ym-cbox,
+  .bt_3col .bt_321 .ym-col2 .ym-cbox,
+  .bt_3col .bt_132 .ym-col3 .ym-cbox,
+  .bt_3col .bt_231 .ym-col3 .ym-cbox {
     padding: 0 5px;
   }
-  .bt_3col .bt_132 #col2_content,
-  .bt_3col .bt_312 #col2_content {
+  .bt_3col .bt_132 .ym-col2 .ym-cbox,
+  .bt_3col .bt_312 .ym-col2 .ym-cbox {
     padding: 0 10px 0 5px;
   }
-  .bt_3col .bt_321 #col3_content,
-  .bt_3col .bt_312 #col3_content {
+  .bt_3col .bt_321 .ym-col3 .ym-cbox,
+  .bt_3col .bt_312 .ym-col3 .ym-cbox {
     padding: 0 5px 0 10px;
   }
 
@@ -568,8 +496,8 @@
    * @subsection layout-template-3col231
    */
 
-  /* #col1 is the main column (static) */
-  .bt_3col231 #col1 {
+  /* .ym-col1 is the main column (static) */
+  .bt_3col231 .ym-col1 {
     border-left: 1px solid #ddd; /* to-customize */
     border-right: 1px solid #ddd; /* to-customize */
     float: none;
@@ -578,15 +506,15 @@
     width: auto;
   }
 
-  /* #col2 contains the left blocks */
-  .bt_3col231 #col2 {
+  /* .ym-col2 contains the left blocks */
+  .bt_3col231 .ym-col2 {
     float: left;
     margin: 0;
     width: 23%;
   }
 
-  /* #col3 contains the right blocks */
-  .bt_3col231 #col3 {
+  /* .ym-col3 contains the right blocks */
+  .bt_3col231 .ym-col3 {
     float: right;
     margin: 0;
     width: 23%;
@@ -594,29 +522,29 @@
 
 
   /* 312 layout */
-  .bt_3col231 .bt_312 #col2 {
+  .bt_3col231 .bt_312 .ym-col2 {
     float: right;
     margin-left: -5px;
   }
-  .bt_3col231 .bt_312 #col3 {
+  .bt_3col231 .bt_312 .ym-col3 {
     float: left;
   }
 
 
   /* col_content paddings */
-  .bt_3col231 #col1_content {
+  .bt_3col231 .ym-col1 .ym-cbox {
     padding: 0 10px;
   }
-  .bt_3col231 #col2_content {
+  .bt_3col231 .ym-col2 .ym-cbox {
     padding: 0 5px 0 10px;
   }
-  .bt_3col231 #col3_content {
+  .bt_3col231 .ym-col3 .ym-cbox {
     padding: 0 10px 0 5px;
   }
-  .bt_3col231 .bt_312 #col2_content {
+  .bt_3col231 .bt_312 .ym-col2 .ym-cbox {
     padding: 0 10px 0 5px;
   }
-  .bt_3col231 .bt_312 #col3_content {
+  .bt_3col231 .bt_312 .ym-col3 .ym-cbox {
     padding: 0 5px 0 10px;
   }
 
@@ -731,5 +659,70 @@
   .z-blockposition-header,
   .z-blockposition-footer {
     float: right;
+  }
+}
+
+/* reset fallback values in modern browsers */
+@media screen and ( min-width: 0px )
+{
+  .ym-wrapper {
+    min-width: 0px;
+  }
+}
+
+@media screen and ( max-width: 740px )
+{
+  nav .ym-hlist ul {
+    padding-right: 10px;
+  }
+
+  .ym-searchform {
+    display:block;
+    float: none;
+    padding-right: 10px;
+    text-align: right;
+    width: auto;
+  }
+
+  .ym-searchform input[type="search"] {
+    width: 14%;
+  }
+}
+
+@media screen and ( max-width: 480px)
+{
+  .ym-wbox {
+    padding: 0;
+  }
+
+  header {
+    padding: 0.75em 10px;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+    line-height: 1em;
+    margin: 0;
+  }
+
+  #main,
+  footer,
+  .ym-searchform,
+  nav .ym-hlist ul {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .ym-searchform,
+  nav .ym-hlist ul,
+  nav .ym-hlist li {
+    display: block;
+    float: none;
+    text-align: left;
+    width: auto;
+  }
+
+  .ym-searchform input[type="search"] {
+    width: 75%;
   }
 }
