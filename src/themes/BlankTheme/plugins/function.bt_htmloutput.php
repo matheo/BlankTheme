@@ -99,8 +99,8 @@ function smarty_function_bt_htmloutput($params, Zikula_View_Theme &$view)
                 break;
             }
             // font resize based in the efa script
-            PageUtil::addVar('javascript', $view->getScriptpath().'/efa/efa_fontsize_packed.js');
-            //PageUtil::addVar('javascript', $view->getScriptpath().'/efa/efa_fontsize.js');
+            PageUtil::addVar('javascript', $view->getScriptpath().'/efa_fontsize.min.js');
+            //PageUtil::addVar('javascript', $view->getScriptpath().'/efa_fontsize.js');
             $output = '<script type="text/javascript">
                          // <![CDATA[
                          if (efa_fontSize) {

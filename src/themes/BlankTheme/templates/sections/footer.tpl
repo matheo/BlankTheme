@@ -24,7 +24,7 @@
     <a href="#header" title="{gt text='Back to top'}">{gt text='Back to top'}</a>
 {/if}
 
-<p id="footer_sublinks">
+<p id="footer-sublinks">
     &copy; {'Y'|date} <a href="{$baseurl}">{$modvars.ZConfig.sitename}</a>.
     &nbsp;&nbsp;&nbsp;
     <a href="http://community.zikula.org/" title="{gt text='Powered by Zikula'}">Zikula</a>

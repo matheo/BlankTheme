@@ -294,7 +294,7 @@
     line-height: 150%;
     text-align: left;
   }
-    footer #footer_sublinks {
+    #footer-sublinks {
       font-size: 0.8em;
     }
 
@@ -365,7 +365,7 @@
   footer a:visited {
     color: #999;
   }
-    #footer_sublinks a {
+    #footer-sublinks a {
       font-weight: normal;
     }
 
