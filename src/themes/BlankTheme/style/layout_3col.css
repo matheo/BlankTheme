@@ -11,7 +11,7 @@
 @import url(../yaml/core/base.min.css);
 
 /* import screen layout */
-@import url(../yaml/navigation/hlist.css);
+@import url(navigation.css);
 
 @import url(screen.css);
 @import url(typography.css);

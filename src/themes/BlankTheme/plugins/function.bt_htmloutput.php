@@ -138,7 +138,7 @@ function smarty_function_bt_htmloutput($params, Zikula_View_Theme &$view)
             if ($btconfig['optimize'] == '1') {
                 // do not load the layout_* stylesheet and load the basic styles directly
                 PageUtil::addVar('stylesheet', $view->getThemepath().'/yaml/core/base.min.css');
-                PageUtil::addVar('stylesheet', $view->getThemepath().'/yaml/navigation/hlist.css');
+                PageUtil::addVar('stylesheet', $view->getStylepath().'/navigation.css');
                 PageUtil::addVar('stylesheet', $view->getStylepath().'/screen.css');
                 PageUtil::addVar('stylesheet', $view->getStylepath().'/typography.css');
                 // TODO rtl-support load yaml/add-ons/rtl-support/core/base-rtl.css with the respective typography-rtl.css
