@@ -35,4 +35,4 @@ no__("Enable 'footer' block position?");
 
 no__('Enable font resize buttons');
 
-no__('Enable optimized mode');
+no__('Use the layout_X.css');

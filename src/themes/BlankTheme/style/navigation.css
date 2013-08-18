@@ -82,6 +82,7 @@
   }
 
   .ym-hlist ul li.active strong,
+  .ym-hlist ul li.active a,
   .ym-hlist ul li.active a:focus,
   .ym-hlist ul li.active a:hover,
   .ym-hlist ul li.active a:active {

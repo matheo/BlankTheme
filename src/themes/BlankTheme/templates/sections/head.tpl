@@ -12,13 +12,14 @@
 <meta name="Copyright" content="Copyright (c) {'Y'|date} by {$modvars.ZConfig.sitename}" />
 <meta name="Robots" content="index,follow" />
 <meta name="Generator" content="Zikula - www.zikula.org" />
-<meta http-equiv="X-UA-Compatible" content="chrome=1" />
 
 <link rel="alternate" href="{modurl modname='News' type='user' func='view' theme='RSS'}" type="application/rss+xml" title="{$modvars.ZConfig.sitename}" />
 <link rel="icon" type="image/x-icon" href="{$imagepath}/favicon.ico" /> {* W3C *}
 <link rel="shortcut icon" type="image/ico" href="{$imagepath}/favicon.ico" /> {* IE *}
 
 <!-- pagevars -->
+
 {bt_htmloutput section='head'}
-{browserhack condition='if lt IE 9'}<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>{/browserhack}
+
+{browserhack condition='if lt IE 9'}<script src="{$themepath}/javascript/html5shiv/html5shiv.js"></script>{/browserhack}
 </head>

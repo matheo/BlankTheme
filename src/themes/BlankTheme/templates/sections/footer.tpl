@@ -20,8 +20,10 @@
     <a href="{modurl modname='Legal' type='user' func='main'}" title="{gt text='Terms of use'}">{gt text='Terms of use'}</a>
     <span class="text-separator">|</span>
     <a href="{modurl modname='Formicula' type='user' func='main'}" title="{gt text='Contact'}">{gt text='Contact'}</a>
+    {*
     <span class="text-separator">|</span>
     <a href="#header" title="{gt text='Back to top'}">{gt text='Back to top'}</a>
+    *}
 {/if}
 
 <p id="footer-sublinks">

@@ -42,9 +42,32 @@
 
   .ym-wbox {
     margin: 1em 0;
+    position: relative;
   }
 
-  /* BlankTheme zones */
+  /* fullwidth layouts adjustments*/
+  body[class~="bt-full2col"] .ym-wrapper,
+  body[class~="bt-full3col"] .ym-wrapper {
+    min-width: 0
+  }
+  /* fallback for missing media queries support*/
+  body[class~="bt-full2col"] > header,
+  body[class~="bt-full3col"] > header,
+  body[class~="bt-full2col"] > nav,
+  body[class~="bt-full3col"] > nav,
+  body[class~="bt-full2col"] > main,
+  body[class~="bt-full3col"] > main,
+  body[class~="bt-full2col"] > footer,
+  body[class~="bt-full3col"] > footer {
+    min-width: 760px;
+  }
+  body[class~="bt-full2col"] .ym-wbox,
+  body[class~="bt-full3col"] .ym-wbox {
+    margin: 0;
+    overflow: hidden;
+  }
+
+    /* BlankTheme zones */
   .bt-zone {
     clear: both;
   }
@@ -104,7 +127,7 @@
      background: #222222;
    }
 
-   #main {
+   main {
      padding: 1em 0;
    }
 
@@ -404,39 +427,6 @@
 
 
   /**
-   * fullwidth template
-   * @see layout-template-2col subsection
-   * @subsection layout-template-fullwidth
-   */
-
-  body.bt-fullwidth {
-    background: #efefef;
-    padding: 0;
-  }
-  .bt-fullwidth .page {
-    background: none;
-    border: none; /* to-remove */
-    position: relative;
-  }
-  .bt-fullwidth header {
-    background: #4d87c7 url(../images/design/bg_blue.gif) repeat-x top left scroll;
-  }
-    .bt-fullwidth header h1 a {
-      color: #fff;
-    }
-  .bt-fullwidth nav {
-    background: url(../images/design/bg-nav.png) repeat-x scroll 0 0 #efefef;
-  }
-    .bt-fullwidth nav ul li:first-child {
-      border-left: 1px solid #aaa;
-    }
-  .bt-fullwidth #main {
-    background: #fff;
-  }
-
-
-
-  /**
    * Customized styles
    * Special layout elements of this website
    *
@@ -522,6 +512,121 @@
   nav .ym-hlist ul {
     padding-left: 10px;
     padding-right: 10px;
+  }
+
+  .ym-searchform,
+  nav .ym-hlist ul,
+  nav .ym-hlist li {
+    display: block;
+    float: none;
+    text-align: left;
+    width: auto;
+  }
+
+  .ym-searchform input[type="search"] {
+    width: 75%;
+  }
+}
+
+/* reset fallback values in modern browsers */
+@media screen and (min-width: 0px)
+{
+  body[class~="bt-full2col"] > header,
+  body[class~="bt-full3col"] > header,
+  body[class~="bt-full2col"] > nav,
+  body[class~="bt-full3col"] > nav,
+  body[class~="bt-full2col"] > main,
+  body[class~="bt-full3col"] > main,
+  body[class~="bt-full2col"] > footer,
+  body[class~="bt-full3col"] > footer,
+  .ym-wrapper {
+    min-width: 0px;
+  }
+}
+
+@media screen and (max-width: 740px)
+{
+  /* Linearisation for Grid- and Column-Module, based on CSS class .linearize-level-1 */
+  .linearize-level-1, .linearize-level-1 > [class*="ym-c"], .linearize-level-1 > [class*="ym-g"] {
+    /* linearization for grids and columns module */
+    display: block;
+    float: none;
+    margin: 0;
+    padding: 0;
+    width: auto !important;
+  }
+  .linearize-level-1 > [class*="ym-c"] > [class*="ym-cbox"], .linearize-level-1 > [class*="ym-g"] > [class*="ym-gbox"] {
+    /* reset defined gutter values */
+    margin: 0;
+    padding: 0;
+    /* optional for containing floats */
+    overflow: hidden;
+  }
+
+  nav .ym-hlist ul {
+    padding-right: 10px;
+  }
+
+  .ym-searchform {
+    display: block;
+    float: none;
+    padding-right: 10px;
+    text-align: right;
+    width: auto;
+  }
+
+  .ym-searchform input[type="search"] {
+    width: 14%;
+  }
+}
+
+@media screen and (max-width: 480px)
+{
+  /* linearisation for Grid- and Column-Module, based on CSS class .linearize-level-2 */
+  .linearize-level-2, .linearize-level-2 > [class*="ym-c"], .linearize-level-2 > [class*="ym-g"] {
+    /* linearization for grids and columns module */
+    display: block;
+    float: none;
+    margin: 0;
+    padding: 0;
+    width: auto !important;
+  }
+  .linearize-level-2 > [class*="ym-c"] > [class*="ym-cbox"], .linearize-level-2 > [class*="ym-g"] > [class*="ym-gbox"] {
+    /* reset defined gutter values */
+    margin: 0;
+    padding: 0;
+    /* optional for containing floats */
+    overflow: hidden;
+  }
+
+  .ym-wbox {
+    margin: 0;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+    line-height: 1em;
+    margin: 0;
+  }
+
+  footer,
+  main,
+  .ym-searchform,
+  nav .ym-hlist ul,
+  body[class~="bt-full2col"] footer .ym-wbox,
+  body[class~="bt-full3col"] footer .ym-wbox,
+  body[class~="bt-full2col"] .ym-wbox,
+  body[class~="bt-full3col"] .ym-wbox {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  body[class~="bt-full2col"] footer,
+  body[class~="bt-full3col"] footer,
+  body[class~="bt-full2col"] main,
+  body[class~="bt-full3col"] main {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .ym-searchform,

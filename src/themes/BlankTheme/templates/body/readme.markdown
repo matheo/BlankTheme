@@ -42,11 +42,17 @@ Uses the YAML subtemplates like the flexible grids example to build the layout
 * Also supports the '3b' zone (3subcolumnsat-bottom)
   and uses the [bottoml]. [bottomc] and [bottomr] block positions
 
-## fullwidth
+## full2col
 
 A 2col derivation changing the HTML structure of the template to get a full width layout
 
 * As 2col, supports the '2cb' zone only
+
+## full3col
+
+A 3col derivation changing the HTML structure of the template to get a full width layout
+
+* As 3col, supports the '2cb' and 'cb' zones
 
 
 All of them also supports the additional zone 'nc' (no-center) to disable the [center] blocks

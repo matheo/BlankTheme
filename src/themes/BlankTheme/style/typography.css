@@ -277,7 +277,7 @@
   }
 
   header .slogan {
-    color: #999;
+    color: #777;
     font-size: 16px;
   }
 
@@ -330,7 +330,7 @@
   /* top navigation links */
   #topnav a {
     background: transparent;
-    color: #999;
+    color: #4d87c7;
     font-weight: normal;
     text-decoration: none;
   }
@@ -352,7 +352,7 @@
   /* footer links */
   footer a {
     background: transparent;
-    color: #777;
+    color: #555;
     font-weight: bold;
   }
   footer a:focus,

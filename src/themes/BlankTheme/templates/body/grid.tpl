@@ -39,8 +39,8 @@
         </nav>
         <!-- end: nav -->
 
-        <!-- begin: #main -->
-        <div id="main">
+        <!-- begin: main -->
+        <main>
             <div class="ym-grid linearize-level-1">
                 <!-- begin: col1 main column -->
                 <div class="ym-g62 ym-gl">
@@ -90,11 +90,11 @@
                         {/if}
                     </div>
                     {/if}
-                </aside>
+                </div>
             </div>
 
             {if $layout|checkzone:3b}
-            <div id="bt-3b" class="bt-zone ym-grid linearize-level-1 coolsubcol">
+            <section id="bt-3b" class="bt-zone ym-grid linearize-level-1 coolsubcol">
                 <div class="ym-g33 ym-gl">
                     <div class="ym-gbox">
                         {blockposition name='bottoml'}
@@ -110,10 +110,10 @@
                         {blockposition name='bottomr'}
                     </div>
                 </div>
-            </div>
+            </section>
             {/if}
-        </div>
-        <!-- end: #main -->
+        </main>
+        <!-- end: main -->
 
         <!-- begin: footer -->
         <footer>

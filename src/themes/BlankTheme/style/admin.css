@@ -185,7 +185,7 @@ way to fit your requirements.
 
 /* The menu styling */
 #nav #nav_admin .cssplay_prodrop {
-  background: transparent url(../images/design/bg-nav.png);
+  background: #ccc url(../images/design/bg-nav.png);
   border: 0;
   font: bold 12px 'Lucida Grande', Verdana, Arial, Sans-Serif;
   height: 28px;

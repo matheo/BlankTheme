@@ -35,13 +35,13 @@
         </nav>
         <!-- end: nav -->
 
-        <!-- begin: #main -->
-        <div id="main">
+        <!-- begin: main -->
+        <main>
             <div class="ym-column linearize-level-1">
 
             <!-- begin: col1 main column -->
             <div class="ym-col1">
-                <div class="ym-cbox">
+                <div class="ym-cbox ym-clearfix">
                     {if $layout|checkzone:nc ne true}
                         {blockposition name='center'}
                     {/if}
@@ -49,7 +49,7 @@
                     {$maincontent}
 
                     {if $layout|checkzone:2cb}
-                    <div id="bt-2cb" class="bt-zone ym-grid">
+                    <section id="bt-2cb" class="bt-zone ym-grid linearize-level-2">
                         <div class="ym-g50 ym-gl">
                             <div class="ym-gbox">
                                 {blockposition name='centerbl'}
@@ -69,25 +69,25 @@
             <!-- end: col1 -->
 
             <!-- begin: col2 column -->
-            <div class="ym-col2">
+            <aside class="ym-col2">
                 <div class="ym-cbox">
                     {blockposition name='left'}
                 </div>
-            </div>
+            </aside>
             <!-- end: col2 -->
 
             <!-- begin: col3 column -->
-            <div class="ym-col3">
+            <aside class="ym-col3">
                 <div class="ym-cbox">
                     {*blockposition name='search'*}
                     {blockposition name='right'}
                 </div>
-            </div>
+            </aside>
             <!-- end: col3 -->
 
             </div>
-        </div>
-        <!-- end: #main -->
+        </main>
+        <!-- end: main -->
 
         <!-- begin: footer -->
         <footer>

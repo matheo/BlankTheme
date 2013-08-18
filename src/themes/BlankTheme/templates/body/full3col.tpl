@@ -24,10 +24,10 @@
 </header>
 <!-- end: header -->
 
-<!-- begin: #nav -->
+<!-- begin: nav -->
 <nav id="nav">
     <div class="ym-wrapper">
-        <div class="ym-wbox">
+        <div class="ym-hlist">
             {if $btconfig.topnav eq 1}
                 {blockposition name='topnav'}
             {else}
@@ -36,10 +36,10 @@
         </div>
     </div>
 </nav>
-<!-- end: #nav -->
+<!-- end: nav -->
 
-<!-- begin: #main -->
-<div id="main" class="bt-2col">
+<!-- begin: main -->
+<main class="bt-2col">
     <div class="ym-wrapper {bt_htmloutput section='classespage'}">
         <div class="ym-wbox {bt_htmloutput section='classesinnerpage'}">
             <div class="ym-column linearize-level-1">
@@ -54,7 +54,7 @@
                     {$maincontent}
 
                     {if $layout|checkzone:2cb}
-                    <div id="bt-2cb" class="bt-zone ym-grid">
+                    <section id="bt-2cb" class="bt-zone ym-grid linearize-level-2">
                         <div class="ym-g50 ym-gl">
                             <div class="ym-gbox">
                                 {blockposition name='centerbl'}
@@ -65,7 +65,7 @@
                                 {blockposition name='centerbr'}
                             </div>
                         </div>
-                    </div>
+                    </section>
                     {/if}
                 </div>
 
@@ -73,32 +73,28 @@
             </div>
             <!-- end: col1 -->
 
-            {if $layout|checklayout:2}
             <!-- begin: col2 column -->
-            <div class="ym-col2">
+            <aside class="ym-col2">
                 <div class="ym-cbox">
                     {blockposition name='left'}
                 </div>
-            </div>
+            </aside>
             <!-- end: col2 -->
-            {/if}
 
-            {if $layout|checklayout:3}
             <!-- begin: col3 column -->
-            <div class="ym-col3">
+            <aside class="ym-col3">
                 <div class="ym-cbox">
                     {*blockposition name='search'*}
                     {blockposition name='right'}
                 </div>
-            </div>
+            </aside>
             <!-- end: col3 -->
-            {/if}
 
             </div>
         </div>
     </div>
-</div>
-<!-- end: #main -->
+</main>
+<!-- end: main -->
 
 <!-- begin: footer -->
 <footer>

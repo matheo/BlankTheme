@@ -26,3 +26,6 @@ http://www.erikspaan.nl/
 
 * EFA fontsize script  
   http://www.einfach-fuer-alle.de/artikel/fontsize/
+
+* html5shiv
+  http://code.google.com/p/html5shiv/

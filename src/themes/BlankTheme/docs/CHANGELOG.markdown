@@ -2,8 +2,9 @@
 # CHANGELOG
 
 ## Version 1.3.3
-* YAML updated to 4.0.1
+* YAML updated to 4.1.0
 * Removed fullheight body template
+* Reworked fullwidth template to full2col and full3col
 
 ## Version 1.3
 
