@@ -11,7 +11,7 @@
  *                  YAML-CDL (http://www.yaml.de/license.html)
  * @link            http://www.yaml.de
  * @package         yaml
- * @version         4.1.0
+ * @version         4.1.2
  * @appdef yaml
  */
 @media all {
@@ -50,7 +50,7 @@
   * (de) HTML5 - Standard Eigenschaften für Media-Elemente
   */
   article, aside, details, figcaption, figure,
-  footer, header, main, hgroup, nav, section {
+  footer, header, main, nav, section {
     zoom: 1;
   }
 
@@ -294,7 +294,7 @@
     display: inline !important;
     width: auto !important;
     background: transparent !important;
-    border: 0 none  !important;
+    border: 0 none !important;
     padding: 0 !important;
   }
   * html .ym-form .ym-fbox-wrap .ym-fbox-check input {
