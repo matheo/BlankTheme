@@ -146,8 +146,6 @@ function smarty_function_bt_adminlinks($params, Zikula_View_Theme &$view)
         }
 
         $subusr[] = array(null, __('Users settings', $dom), ModUtil::url('Users', 'admin', 'config'));
-        $subusr[] = array(null, __('Import users', $dom), ModUtil::url('Users', 'admin', 'import'));
-        $subusr[] = array(null, __('Export users', $dom), ModUtil::url('Users', 'admin', 'exporter'));
 
         $menu[] = array('users', __('Users', $dom), '#',
                     array(
@@ -159,7 +157,13 @@ function smarty_function_bt_adminlinks($params, Zikula_View_Theme &$view)
                         array(null, __('Manage users', $dom), ModUtil::url('Users', 'admin', 'main'),
                             $subusr
                         ),
-                        array(null, __('Create user', $dom), ModUtil::url('Users', 'admin', 'newUser')),
+                        array(null, __('Create user', $dom), ModUtil::url('Users', 'admin', 'newUser'),
+                            array(
+                                array(null, __('Import users', $dom), ModUtil::url('Users', 'admin', 'import')),
+                                array(null, __('Export users', $dom), ModUtil::url('Users', 'admin', 'exporter'))
+                            )
+                        ),
+                        array(null, __('Pending users', $dom), ModUtil::url('Users', 'admin', 'viewRegistrations')),
                         array(null, __('Find users', $dom), ModUtil::url('Users', 'admin', 'search')),
                         array(null, __('Find and e-mail users', $dom), ModUtil::url('Users', 'admin', 'mailUsers'))
                     )
@@ -168,7 +172,7 @@ function smarty_function_bt_adminlinks($params, Zikula_View_Theme &$view)
 
         /* Common Utils */
         $linkoptions = array(
-                           array(null, __("Edit default theme", $dom), ModUtil::url('Theme', 'admin', 'modify', array('themename' => $theme)))
+                           array(null, __("Edit theme config", $dom), ModUtil::url('Theme', 'admin', 'variables', array('themename' => $theme)))
                        );
 
         // File handling
@@ -206,7 +210,7 @@ function smarty_function_bt_adminlinks($params, Zikula_View_Theme &$view)
                                    array(null, __('Delete cached render templates', $dom),   ModUtil::url('Theme', 'admin', 'render_clear_cache', array('csrftoken' => $token)))
                                )
                            ),
-                           array(null, __('Theme engine', $dom), ModUtil::url('Theme', 'admin', 'modifyconfig'),
+                           array(null, __('Theme engine', $dom), ModUtil::url('Theme', 'admin', 'modifyconfig', array(), null, 'theme_compile_check'),
                                 array(
                                    array(null, __('Delete compiled theme templates', $dom), ModUtil::url('Theme', 'admin', 'clear_compiled', array('csrftoken' => $token))),
                                    array(null, __('Delete cached theme templates', $dom),   ModUtil::url('Theme', 'admin', 'clear_cache', array('csrftoken' => $token)))
@@ -258,13 +262,6 @@ function smarty_function_bt_adminlinks($params, Zikula_View_Theme &$view)
     }
 
     // Downloads modules
-    if (ModUtil::available('MediaAttach') && SecurityUtil::checkPermission('MediaAttach::', '::', ACCESS_EDIT)) {
-        $suboptions = array(
-                         array(null, __('View list', $dom), ModUtil::url('MediaAttach', 'admin', 'view')),
-                         array(null, __('Settings', $dom),  ModUtil::url('MediaAttach', 'admin', 'main'))
-                      );
-        $linkoptions[] = array(null, __('Add a download', $dom), ModUtil::url('MediaAttach', 'admin', 'view', array(), null, 'myuploadform_switch'), $suboptions);
-    }
     if (ModUtil::available('Downloads') && SecurityUtil::checkPermission('Downloads::', '::', ACCESS_EDIT)) {
         $suboptions = array(
                          array(null, __('Add category', $dom), ModUtil::url('Downloads', 'admin', 'category_menu')),
@@ -307,27 +304,12 @@ function smarty_function_bt_adminlinks($params, Zikula_View_Theme &$view)
     }
 
     // Calendar modules
-    if (ModUtil::available('TimeIt') && SecurityUtil::checkPermission('TimeIt::', '::', ACCESS_EDIT)) {
+    if (ModUtil::available('PostCalendar') && SecurityUtil::checkPermission('PostCalendar::', '::', ACCESS_ADMIN)) {
         $suboptions = array(
-                         array(null, __('Settings', $dom), ModUtil::url('TimeIt', 'admin', 'modifyconfig'))
+                         array(null, __('View list', $dom), ModUtil::url('PostCalendar', 'admin', 'listevents')),
+                         array(null, __('Settings', $dom),  ModUtil::url('PostCalendar', 'admin', 'modifyconfig'))
                       );
-        $linkoptions[] = array(null, __('Add a calendar event', $dom), ModUtil::url('TimeIt', 'admin', 'new'), $suboptions);
-    }
-    if (ModUtil::available('crpCalendar') && SecurityUtil::checkPermission('crpCalendar::', '::', ACCESS_EDIT)) {
-        $suboptions = array(
-                         array(null, __('View list', $dom), ModUtil::url('crpCalendar', 'admin', 'view')),
-                         array(null, __('Settings', $dom),  ModUtil::url('crpCalendar', 'admin', 'modifyconfig'))
-                      );
-        $linkoptions[] = array(null, __('Add a calendar event', $dom), ModUtil::url('crpCalendar', 'admin', 'new'), $suboptions);
-    }
-
-    // Legacy modules
-    if (ModUtil::available('AdminMessages') && SecurityUtil::checkPermission('AdminMessages::', '::', ACCESS_EDIT)) {
-        $suboptions = array(
-                         array(null, __('View list', $dom), ModUtil::url('AdminMessages', 'admin', 'view')),
-                         array(null, __('Settings', $dom),  ModUtil::url('AdminMessages', 'admin', 'modifyconfig'))
-                      );
-        $linkoptions[] = array(null, __('Add an admin message', $dom), ModUtil::url('AdminMessages', 'admin', 'new'), $suboptions);
+        $linkoptions[] = array(null, __('Add a calendar event', $dom), ModUtil::url('PostCalendar', 'event', 'create'), $suboptions);
     }
 
     if (!$linkoptions) {
