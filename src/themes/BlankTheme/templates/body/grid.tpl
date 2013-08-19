@@ -90,7 +90,7 @@
                         {/if}
                     </div>
                     {/if}
-                </div>
+                </aside>
             </div>
 
             {if $layout|checkzone:3b}

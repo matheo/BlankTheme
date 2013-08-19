@@ -39,7 +39,7 @@
 <!-- end: nav -->
 
 <!-- begin: main -->
-<main class="bt-2col">
+<main class="bt-3col">
     <div class="ym-wrapper {bt_htmloutput section='classespage'}">
         <div class="ym-wbox {bt_htmloutput section='classesinnerpage'}">
             <div class="ym-column linearize-level-1">

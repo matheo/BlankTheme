@@ -60,7 +60,7 @@
                                 {blockposition name='centerbr'}
                             </div>
                         </div>
-                    </div>
+                    </section>
                     {/if}
                 </div>
 
