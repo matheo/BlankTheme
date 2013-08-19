@@ -1,14 +1,13 @@
 
 # Welcome to BlankTheme
 
-**BlankTheme is using YAML CSS-Framework 3.3.**  
-Please check [YAML's changelog](http://www.yaml.de/en/documentation/changelog/version-3x.html) and see the latest changes and cool features to use with your BlankTheme-based Theme.  
-A version of BlankTheme for Zikula 1.3 is in the making.  
-There is now also a new [YAML Debug](http://debug.yaml.de/), you can use it to validate your themes.
+**BlankTheme is using YAML CSS-Framework 4.1.2 on Zikula 1.3.x**
+Please check [YAML's documentation](http://www.yaml.de/docs/index.html) to learn the cool features that you can use with your BlankTheme-based Theme.
+There is now also a [YAML Debug Tool](http://debug.yaml.de/), you can use it to validate your themes.
 
 ---
 
-BlankTheme aims to become a comprehensive Theme Development Framework for the Zikula Application Framework. Its objective is to ease the development of new Xanthia themes as well as the porting of open source themes. The BlankTheme team has partnered with the [YAML CSS-Framework](http://www.yaml.de/en/) to advance theme development and to create usable, flexible, valid, and standards compliant themes.
+BlankTheme aims to become a comprehensive Theme Development Framework for the Zikula Application Framework. Its objective is to ease the development of new Themes as well as the porting of open source themes. The BlankTheme team has partnered with the [YAML CSS-Framework](http://www.yaml.de/) to advance theme development and to create usable, flexible, valid, and standards compliant themes.
 
 Enjoy! We wait for your feedback ;-)
 
