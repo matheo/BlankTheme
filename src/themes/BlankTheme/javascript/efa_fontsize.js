@@ -18,7 +18,7 @@
  *		 'after HTML'
  *		 ]
  */
-var efa_default = 75.00; //%
+var efa_default = 87.5; //%
 var efa_increment = 10;  //%
 /* Default multi-language vars and themedir name */
 var efalang_zoomIn = 'Decrease font size';
@@ -100,7 +100,7 @@ Efa_Fontsize.prototype.efaInit = function() {
 	this.efaTest = (this.w3c)?document.getElementById('topnav'):document.all['topnav'];
 	var h = (this.efaTest.clientHeight)?parseInt(this.efaTest.clientHeight):(this.efaTest.offsetHeight)?parseInt(this.efaTest.offsetHeight):999;
 	if (h < this.defPx) this.base = this.defPx/h;
-	this.body.fontSize = Math.round(this.pref*this.base) + '%';
+	this.body.fontSize = this.pref*this.base + '%';
 }
 // construct the HTML for the links; we expect -1, 1 or 0 for the direction, an array
 // of properties to add to the <a> tag and HTML to go before, after and inside the tag

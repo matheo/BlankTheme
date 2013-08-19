@@ -26,6 +26,10 @@
  *  Customized styles (layout-custom)
  */
 
+/* Google Font API */
+@import url("http://fonts.googleapis.com/css?family=Droid+Serif");
+@import url("http://fonts.googleapis.com/css?family=Droid+Sans:700");
+
 @media screen
 {
   /* force vertical scrollbar */
@@ -213,7 +217,6 @@
   }
   .bt-2col .bt-12 .ym-col2,
   .bt-2col .bt-13 .ym-col3 {
-    border-left: 1px solid #ddd; /* to-remove */
     margin-left: 75%;
     margin-right: 0;
   }
@@ -226,7 +229,6 @@
   }
   .bt-2col .bt-21 .ym-col2,
   .bt-2col .bt-31 .ym-col3 {
-    border-right: 1px solid #ddd; /* to-remove */
     margin-left: 0;
     margin-right: 75%;
   }
@@ -269,6 +271,11 @@
    * 123 is the default layout
    * @subsection layout-template-3col
    */
+
+  /* fixed width container for fixed with columns */
+  .bt-3col .ym-wrapper {
+    width: 964px; /* cols widths + 4px .bordered .ym-box */
+  }
 
   /* .ym-col1 is the main column */
   .bt-3col .ym-col1 {
@@ -422,44 +429,6 @@
   }
   .bt-3col231 .bt-312 .ym-col3 .ym-cbox {
     padding: 0 5px 0 10px;
-  }
-
-
-
-  /**
-   * Customized styles
-   * Special layout elements of this website
-   *
-   * @section layout-custom
-   */
-
-  /* Zikula Blocks */
-  .z-block {
-    margin-bottom: 15px;
-  }
-  .z-block .z-block-title {
-    margin: 0;
-    padding: 3px 4px;
-  }
-  .z-block .z-block-content {
-    padding: 5px;
-  }
-  .z-block ul,
-  .z-block ol,
-  .z-block dl {
-    margin: 0px;
-  }
-
-  /* Top and bottom navigation blocks */
-  .z-blockposition-topnav,
-  .z-blockposition-bottomnav {
-    margin: 0px;
-  }
-
-  /* Header and footer blocks default styles */
-  .z-blockposition-header,
-  .z-blockposition-footer {
-    float: right;
   }
 }
 

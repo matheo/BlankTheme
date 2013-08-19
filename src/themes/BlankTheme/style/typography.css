@@ -17,15 +17,19 @@
 /**
  * CSS Table of Contents
  *
- *  Global typography settings (content-global)
+ *  Global typography settings (content-typography)
+ *      Headings
+ *      Links
+ *      General text formatting
+ *      Miscellaneous
+ *  Generic content classes (content-generic-classes)
+ *  Tables (content-tables)
  *  General layout elements (content-layout)
  *  Links (content-links)
- *  Tables (content-tables)
- *  Generic content classes (content-generic-classes)
- *  Theme specific styles (content-theme-specific)
- *  Zikula Specific styles (content-zikula-specific)
- *     Fixes (content-zikula-fixes)
- *     Core styles (content-zikula-core)
+ *  Theme specific styles (content-theme)
+ *  Zikula specific styles (content-zikula)
+ *      Fixes
+ *      Core overrides
  *  Customized styles (content-custom)
  */
 
@@ -34,11 +38,22 @@
   /**
    * Global typography settings
    *
-   * @section content-global
+   * @section content-typography
+   *
+   * vertical rhythm settings (based on em-unit)
+   * -------------------------------------------
+   * basefont-size:  14px (87.5%)
+   * line-height  :  21px (factor: 1.5)
    */
 
-  /* reset font size for all elements to standard (16 Pixel) */
-  html * { font-size: 100.01%; }
+  /**
+   * reset font size for all elements to standard (16 Pixel)
+   *
+   * @see: http://webkit.org/blog/67/strange-medium/
+   */
+  html * {
+    font-size: 100%;
+  }
 
   /* reset monospaced elements to font size 16px in all browsers */
   textarea, pre, code, kbd, samp, var, tt {
@@ -48,58 +63,63 @@
   /* base layout gets standard font size 14px */
   body {
     color: #444;
-    font-family: Verdana, Arial, sans-serif;
+    font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
     font-size: 87.50%; /* base: 14px */
-    /* prevent auto-scaling of text in mobile webkit browsers */
-    -webkit-text-size-adjust:100%;
   }
+
+  /******* Headings *******/
 
   h1, h2, h3, h4, h5, h6 {
     color: #161e21;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
     font-weight: 400;
     margin: 0;
   }
 
   h1 {
-    font-size: 350%;
-    line-height: 0.8571em;
-    margin: 0 0 0.4286em;
+    /* font-size: 48px; */
+    font-size: 342.85714%;
+    line-height: 0.875;
+    margin: 0 0 0.4375em 0;
   }
   h2 {
-    font-size: 250%;
-    line-height: 1.2em;
-    margin: 0 0 0.6em;
+    /* font-size: 32px; */
+    font-size: 228.57143%;
+    line-height: 1.3125;
+    margin: 0 0 0.65625em 0;
   }
   h3 {
-    font-size: 175%;
-    line-height: 0.8571em;
-    margin: 0 0 0.8571em;
+    /* font-size: 24px; */
+    font-size: 171.42857%;
+    line-height: 0.875;
+    margin: 0 0 0.875em 0;
   }
   h4 {
-    font-size: 133.33%;
-    line-height: 1.125em;
-    margin: 0 0 1.125em;
+    /* font-size: 21px; */
+    font-size: 150%;
+    line-height: 1;
+    margin: 0 0 1em 0;
   }
   h5 {
-    font-size: 116.67%;
-    line-height: 1.2857em;
-    margin: 0 0 1.2857em;
+    /* font-size: 18px; */
+    font-size: 128.57143%;
+    line-height: 1.16667;
+    margin: 0 0 1.16667em 0;
   }
   h6 {
-    font-weight: bold;
+    /* font-size: 14px; */
     font-size: 100%;
-    line-height: 1.5em;
-    margin: 0 0 1.5em;
-    font-style: italic;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0 0 1.5em 0;
   }
 
-  /* lists */
+  /******* Lists *******/
 
   ul, ol, dl {
-    font-size: 1em;
-    line-height: 1.5em;
-    margin: 0 0 1.5em 1em;
+    font-size: 100%;
+    line-height: 1.5;
+    margin: 0 0 1.5em 0;
   }
 
   ul {
@@ -107,7 +127,7 @@
   }
   ul ul {
     list-style-type: circle;
-    margin-bottom: 0;
+    margin-top: 0;
   }
 
   ol {
@@ -115,13 +135,18 @@
   }
   ol ol {
     list-style-type: lower-latin;
-    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  ol ul {
+    list-style-type: circle;
+    margin-top: 0;
   }
 
   li {
-    font-size: 1em;
-    line-height: 1.5em;
-    margin-left: 0.8em;
+    font-size: 100%;
+    line-height: 1.5;
+    margin-left: 1.2em;
   }
 
   dt {
@@ -131,19 +156,20 @@
     margin: 0 0 1.5em 0.8em;
   }
 
-  /* text formatting */
+  /******* General text formatting *******/
 
   p {
-    font-size: 1em;
-    line-height: 1.5em;
+    font-size: 100%;
+    line-height: 1.5;
     margin: 0 0 1.5em 0;
   }
 
   cite, blockquote, q {
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
     font-style: italic
   }
   blockquote {
+    background: transparent;
     color: #666;
     margin: 0 0 1em 1.6em;
   }
@@ -156,21 +182,26 @@
   }
 
   big {
-    font-size: 116.667%;
+    /* font-size: 16px; */
+    font-size: 114.28571%;
+    line-height: 1.3125;
   }
   small {
-    font-size: 85.71%;
+    /* font-size: 12px; */
+    font-size: 85.71429%;
+    line-height: 1.75;
   }
 
+  pre, code, kbd, tt, samp, var {
+    font-size: 100%;
+  }
   pre {
-    line-height: 1.5em;
+    font-size: 100%;
+    line-height: 1.5;
     margin: 0 0 1.5em 0;
     white-space: pre;
     white-space: pre-wrap;
     word-wrap: break-word;
-  }
-  pre, code, kbd, tt, samp, var {
-    font-size: 100%;
   }
   pre, code {
     color: #800;
@@ -204,23 +235,34 @@
   }
 
   mark {
-    background: #ff0;
-    color: #000;
+    background: yellow;
+    color: black;
   }
+
   hr {
     color: #fff;
     background: transparent;
     border: 0;
     border-bottom: 1px solid #eee;
     margin: 0 0 0.75em 0;
-    padding: 0 0 0.75em 0;
+    padding: 0 0 0.67857em 0;
   }
+
+  /******* Miscellaneous *******/
 
   img, figure {
     margin: 0;
   }
 
-  /* miscellaneous */
+  .flexible {
+    height: auto;
+    margin-top: 1.5em;
+    max-width: 100%;
+  }
+
+  * html .flexible { /* IE6 support */
+    width: 98%; /* 2% space for borders */
+  }
 
   a img,
   button img {
@@ -237,16 +279,6 @@
     padding: 5px 10px 10px;
   }
 
-  .flexible {
-    height: auto;
-    margin-top: 1.5em;
-    max-width: 100%;
-  }
-
-  * html .flexible { /* IE6 support */
-    width: 98%; /* 2% space for borders */
-  }
-
   .bordered {
     border: 2px #eee solid;
     border: 2px rgba(255,255,255,1) solid;
@@ -255,6 +287,206 @@
     box-shadow: 0 0 3px rgba(0,0,0,.25);
     margin-top: 1.5em;
   }
+
+  .box {
+    border-radius: 0.3em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #888;
+    border-color: rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
+    color: #444;
+    color: rgba(0, 0, 0, 0.8);
+    margin: 0 0 1.5em 0;
+    padding: 1.42857em;
+  }
+
+  .box > *:last-child {
+    margin-bottom: 0;
+  }
+
+  .label {
+    background: #06C;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 10px;
+    letter-spacing: normal;
+    line-height: 12px;
+    padding: 1px 6px 2px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+
+
+  /**
+   * Generic content classes
+   * standard classes for positioning and highlighting
+   *
+   * @section content-generic-classes
+   */
+
+  .highlight {
+    color: #c30;
+  }
+  .dimmed,
+  .dimmed a {
+    color: #888;
+  }
+
+  .small-text {
+    font-size: 0.9em;
+  }
+  .smallerl-text {
+    font-size: 0.8em;
+  }
+  .smallestl-text {
+    font-size: 0.7em;
+  }
+
+  .largel-text {
+    font-size: 1.15em;
+  }
+  .largerl-text {
+    font-size: 1.25em;
+  }
+  .largestl-text {
+    font-size: 1.35em;
+  }
+
+  .text-left {
+    text-align: left;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .center {
+    display: block;
+    margin: 0 auto 1.5em auto;
+    text-align: center;
+  }
+
+  .float-left {
+    display: inline;
+    float: left;
+    margin: 0 1em 1.5em 0;
+  }
+  .float-right {
+    display: inline;
+    float: right;
+    margin: 0 0 1.5em 1em;
+  }
+
+  .content-separator {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    margin: 22px 0 18px;
+  }
+
+  .text-separator {
+    color: #bbb;
+    padding: 0 2px;
+  }
+
+
+
+  /**
+   * Tables
+   * Generic classes for table-width and design definition
+   *
+   * @section content-tables
+   */
+
+  table {
+    border-collapse: collapse;
+    color: #444444;
+    border-top: 1px #ccc solid;
+    border-bottom: 1px #ccc solid;
+    margin: 0 0 1.35714em 0;
+  }
+  table.full,
+  table.z-datatable {
+    width: 100%;
+  }
+  table.narrow {
+    margin: 0 0 1.42857em 0;
+  }
+  table.narrow th,
+  table.narrow td {
+    padding: 0 0.5em;
+    line-height: 1.42857;
+  }
+  table.fixed {
+    table-layout: fixed;
+  }
+  table.bordertable {
+    border: 1px #ccc solid;
+  }
+  table.bordertable thead th {
+    background: #e0e0e0;
+    border-bottom: 1px #ccc solid;
+    border-right: 1px #ccc solid;
+  }
+  table.bordertable tbody th[scope="row"] {
+    background: #f0f0f0;
+  }
+  table.bordertable tbody th {
+    border-right: 1px solid #ccc;
+  }
+  table.bordertable tbody td {
+    border-right: 1px solid #ccc;
+  }
+
+  caption {
+    font-variant: small-caps;
+  }
+
+  th,
+  td {
+    line-height: 1.5em;
+    vertical-align: top;
+    padding: 0.71429em 0.5em;
+  }
+
+  th *:first-child,
+  td *:first-child {
+    margin-top: 0;
+  }
+
+  th.nowrap,
+  td.nowrap {
+    white-space: nowrap;
+  }
+
+  table.z-datatable thead th a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  table.z-datatable thead th {
+    text-align: left;
+    color: #000;
+    border-bottom: 2px #000 solid;
+  }
+
+  table.z-datatable tbody th,
+  table.z-datatable tbody td {
+    border-top: 1px solid #ccc;
+    text-align: left;
+  }
+  table.z-datatable tbody tr:hover th,
+  table.z-datatable tbody tr:hover td {
+    background: #f8f8f8;
+  }
+
+  table.z-datatable th,
+  table.z-datatable td {
+    padding: 0.5em;
+  }
+
 
 
   /**
@@ -283,26 +515,26 @@
 
     #topnav {
       color: #aaa;
-      font-size: 12px;
-      line-height: 15px;
+      font-size: 100%;
+      line-height: 1.5;
       text-align: right; /* LTR */
     }
 
   footer { /* affects #footer_wrapper too */
     color: #444;
-    font-size: 12px;
-    line-height: 150%;
+    font-size: 100%;
+    line-height: 1.5;
     text-align: left;
   }
     #footer-sublinks {
-      font-size: 0.8em;
+      font-size: 90%;
     }
 
 
 
   /**
    * Links
-   * Formatting of hyperlinks
+   * formatting of hyperlinks
    *
    * @section content-links
    */
@@ -331,6 +563,7 @@
   #topnav a {
     background: transparent;
     color: #4d87c7;
+    font-size: 100%;
     font-weight: normal;
     text-decoration: none;
   }
@@ -350,10 +583,11 @@
   }
 
   /* footer links */
-  footer a {
+  footer a,
+  footer a:visited {
     background: transparent;
     color: #555;
-    font-weight: bold;
+    /*font-weight: bold;*/
   }
   footer a:focus,
   footer a:hover,
@@ -362,100 +596,10 @@
     color: #4d87c7;
     text-decoration: underline;
   }
-  footer a:visited {
-    color: #999;
-  }
     #footer-sublinks a {
+      font-size: 100%;
       font-weight: normal;
     }
-
-
-
-  /**
-   * Tables
-   * Generic classes for table-width and design definition
-   *
-   * @section content-tables
-   */
-
-  table {
-    margin: 0 0 0 1.3571em;
-    /*width: auto;*/
-  }
-  table.narrow {
-    margin: 0 0 0 1.4286em;
-  }
-  table.narrow th,
-  table.narrow td {
-    padding: 0 0.5em;
-    line-height: 1.4286em;
-  }
-  table.bordertable {
-    border: 1px #ccc solid;
-  }
-  table caption {
-    font-variant: small-caps;
-  }
-  table.full,
-  table.z-datatable {
-    width: 100%;
-  }
-  table.fixed {
-    table-layout: fixed;
-  }
-
-  thead th {
-    color: #000;
-  }
-  tbody th {
-    background: #e0e0e0;
-    color: #333;
-  }
-  tbody th[scope="row"],
-  tbody th.sub {
-    background: #f0f0f0;
-  }
-
-  tbody th {
-    /*border-bottom: 1px solid #fff;*/
-    text-align: left;
-  }
-  tbody td {
-    /*border-bottom: 1px solid #eee;*/
-  }
-  th.nowrap,
-  td.nowrap {
-    white-space: nowrap;
-  }
-
-  .bordertable thead th {
-    background: #e0e0e0;
-    border-bottom: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-  }
-  tbody tr:hover th,
-  tbody tr:hover td {
-    background: #f0f0f0;
-  }
-
-  table.z-datatable th,
-  table.z-datatable td {
-    padding: 0.5em;
-  }
-  /*
-  table.z-datatable tbody tr:hover th[scope="row"],
-  table.z-datatable tbody tr:hover tbody th.sub {
-    background: #d9e9d9;
-  }
-  table.z-datatable tbody tr:hover td {
-    background: #e9f9e9;
-  }
-  */
-
-  thead th a {
-    color: #000;
-    text-decoration: none;
-  }
 
 
 
@@ -463,106 +607,8 @@
    * Theme specific styles
    * general styles defined by the theme
    *
-   * @section content-theme-specific
+   * @section content-theme
    */
-
-  /* generic content classes */
-  .highlight {
-    color: #c30;
-  }
-  .dimmed,
-  .dimmed a {
-    color: #888;
-  }
-
-  .small {
-    font-size: 0.9em;
-  }
-  .smaller {
-    font-size: 0.8em;
-  }
-  .smallest {
-    font-size: 0.7em;
-  }
-
-  .large {
-    font-size: 1.15em;
-  }
-  .larger {
-    font-size: 1.25em;
-  }
-  .largest {
-    font-size: 1.35em;
-  }
-
-  .text-left {
-    text-align: left;
-  }
-  .text-right {
-    text-align: right;
-  }
-
-  .float-left {
-    display: inline;
-    float: left;
-    margin: 0 1em 1.5em 0;
-  }
-  .float-right {
-    display: inline;
-    float: right;
-    margin: 0 0 1.5em 1em;
-  }
-  .center {
-    display: block;
-    margin: 0 auto 1.5em auto;
-    text-align: center;
-  }
-
-  .content-separator {
-    border-bottom: 1px solid #ddd;
-    display: block;
-    margin: 22px 0 18px;
-  }
-  .text-separator {
-    color: #bbb;
-    padding: 0 2px;
-  }
-
-  /* messages containers */
-  div.note,
-  div.info,
-  div.notice,
-  div.success,
-  div.error {
-    border: 1px solid #ddd;
-    margin-bottom: 10px !important;
-    padding: 5px 8px !important;
-  }
-
-  div.note {
-    background: #f8f8f8;
-    color: #666;
-  }
-  div.info {
-    background: #e6e6ff;
-    border-color: #9bb8d9;
-    color: #27427d;
-  }
-  div.notice {
-    background: #fff6bf;
-    border-color: #ffd324;
-    color: #514721;
-  }
-  div.success {
-    background: #e6efc2;
-    border-color: #c6d880;
-    color: #264409;
-  }
-  div.error {
-    background: #fbe3e4;
-    border-color: #fbc2c4;
-    color: #8a1f11;
-  }
 
   /* efa font resize styles */
   .fontresize-large,
@@ -582,43 +628,8 @@
     background: url(../images/icons/font_resize.gif) no-repeat -40px 50%;
   }
 
-  /* utilities */
-  .box {
-    border-radius: 0.3em;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #888;
-    border-color: rgba(0,0,0,.3);
-    -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-    -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-    color: #444;
-    color: rgba(0,0,0,.8);
-    margin: 1.5em 0 0 0;
-    padding: 1.4286em;
-  }
-
-  .box > *:first-child {
-    margin-top: 0;
-  }
-
-  .label {
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    background: #06C;
-    color: #fff;
-    display: inline-block;
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 10px;
-    letter-spacing: normal;
-    line-height: 12px;
-    padding: 1px 6px 2px;
-    vertical-align: middle;
-    white-space: nowrap;
-  }
-
   /* .bt-menublock styles */
+
   /* defaults for menu and menutree blocks inside #main : to-customize */
   #main ul.navlist,
   #main ul.navlist li,
@@ -648,10 +659,8 @@
     color: #999;
   }
 
-  /* special styles for entries or menus ... */
+  /* special styles for posts entries */
   .post {
-  }
-  .menu {
   }
 
 
@@ -660,17 +669,13 @@
    * Zikula specific styles
    * styles to be used in the Zikula templates
    *
-   * @section content-zikula-specific
+   * @section content-zikula
    */
 
-
-  /**
-   * Fixes
-   * @subsection content-zikula-fixes
-   */
+  /******* Fixes *******/
 
   /* js context menus */
-  #bt-wikula .bt-func-edit .ym-col1 .ym-cbox,
+  /*#bt-wikula .bt-func-edit .ym-col1 .ym-cbox,
   #bt-wikula .bt-func-edit #z-maincontent,
   #bt-content.bt-admin .ym-col1 .ym-cbox,
   #bt-content.bt-type-edit .ym-col1 .ym-cbox,
@@ -680,7 +685,7 @@
   }
   div.contextMenu ul li {
     margin-left: 0px;
-  }
+  }*/
 
   /* jsCalendar */
   .calendar {
@@ -691,31 +696,16 @@
     }
 
   /* Scribite */
-  #main .htmlarea {
-    border: 1px solid #ddd;
-  }
-  /* openwysiwyg fix */
-  .tableTextareaEditor th,
-  .tableTextareaEditor td {
-    padding: 0;
-  }
-  .tableTextareaEditor span {
-    margin: 0;
+  .htmlarea {
+    border: 1px solid #ccc !important;
   }
 
+  /******* Core overrides *******/
 
-  /**
-   * Core styles overrides
-   * @subsection content-zikula-core
-   */
-
-  /* z-pager */
-  .z-pager {
-    color: #999;
+  .z-form div.z-formrow span label,
+  .z-form div.z-formrow div label {
+    padding: 0 1em 0 0.5em;
   }
-    .z-pager a:hover {
-      text-decoration: none;
-    }
 
   /* main content */
   #z-maincontent {
@@ -723,19 +713,54 @@
     position: relative;
   }
 
+  /* z-pager */
+  .z-pager {
+    color: #999;
+  }
+  .z-pager a:hover {
+    text-decoration: none;
+  }
+
 
 
   /**
    * Customized styles
-   * Special look'n feel for this website
+   * special look'n feel for this website
    *
    * @section content-custom
    */
 
   /* Zikula Blocks */
+  .z-block {
+    margin-bottom: 15px;
+  }
   .z-block .z-block-title {
     line-height: 22px;
+    margin: 0;
+    padding: 3px 4px;
+  }
+  .z-block .z-block-content {
+    padding: 5px;
+  }
+  .z-block ul,
+  .z-block ol,
+  .z-block dl {
+    margin: 0px;
   }
 
+  /* Top and bottom navigation blocks */
+  .z-blockposition-topnav,
+  .z-blockposition-bottomnav {
+    margin: 0px;
+  }
+
+  /* Header and footer blocks default styles */
+  .z-blockposition-header,
+  .z-blockposition-footer {
+    float: right;
+  }
+
+
   /* Third party styles */
+
 }

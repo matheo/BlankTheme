@@ -6,9 +6,6 @@
  * @license   GNU/GPL - http://www.gnu.org/copyleft/gpl.html
  */
 
-body.bt-admin {
-  font-size: 75%;
-}
 .bt-admin .ym-wrapper {
   max-width: none;
   width: auto;
@@ -69,6 +66,7 @@ body.bt-admin {
   border: none;
   border-bottom: 1px solid #ccc;
   float: none;
+  font-size: 0.95em;
   margin: 0;
 }
 .bt-admin ul#admintabs li > a {
@@ -125,7 +123,7 @@ ul#admintabs #ajaxNewCatForm {
 }
 ul#admintabs #ajaxNewCatForm input.ajaxNewCat {
   border: 1px solid #eee;
-  max-width: 7em;
+  max-width: 6em;
 }
 ul#admintabs #ajaxNewCatForm a.ajaxCatImage img {
   margin: -4px 2px 0 0;
@@ -146,6 +144,23 @@ ul#admintabs #ajaxNewCatForm a.ajaxCatImage img {
   margin: 3px 10px 1.25em;
 }
 
+#z-maincontent div.z-admincontainer h2,
+#z-maincontent div.z-admincontainer h3,
+#z-maincontent div.z-admin-content h2,
+#z-maincontent div.z-admin-content h3 {
+  margin-bottom: 0.15em;
+  padding-top: 0.25em;
+}
+#z-maincontent div.z-admin-content-modtitle img {
+  padding-top: 0.3em;
+}
+#z-maincontent div.z-admin-content-pagetitle img {
+  padding-top: 0.3em;
+}
+
+p.z-formnote {
+  margin-bottom: 0;
+}
 
 /* Theme-navigation */
 /* Admin menu based upon prodrop8 menu from cssplay.co.uk, default without tabimages */
@@ -187,7 +202,6 @@ way to fit your requirements.
 #nav #nav_admin .cssplay_prodrop {
   background: #ccc url(../images/design/bg-nav.png);
   border: 0;
-  font: bold 12px 'Lucida Grande', Verdana, Arial, Sans-Serif;
   height: 28px;
   list-style: none;
   padding: 0;

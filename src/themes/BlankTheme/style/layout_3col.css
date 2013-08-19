@@ -7,20 +7,14 @@
  * @link      http://www.yaml.de
  */
 
-/* Google Font API */
-/*
-@import url("http://fonts.googleapis.com/css?family=Droid+Serif");
-@import url("http://fonts.googleapis.com/css?family=Droid+Sans:700");
-*/
-
 /* import core styles */
 @import url(../yaml/core/base.min.css);
 
 /* import screen layout */
-@import url(navigation.css);
-
 @import url(screen.css);
 @import url(typography.css);
+
+@import url(navigation.css);
 
 /* import print layout */
 /*@import url(../yaml/print/print.css);*/

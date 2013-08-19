@@ -12,5 +12,5 @@
   but load the core stylesheets directly without it and save one request to the server.
   You can also customize the PHP code of the `bt_htmloutput` plugin if you have PHP knowledge.
 
-  You might also consider to minify you stylesheets with YUI compressor or enable the Zikula minifier.
+  You might also consider to minify your stylesheets with YUI compressor or enable the Zikula minifier.
   This reduces the bandwidth of your website.
