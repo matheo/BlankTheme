@@ -21,10 +21,10 @@ $themeversion['contact']        = 'http://www.blanktheme.org';
 $themeversion['admin']          = 1;
 $themeversion['user']           = 1;
 $themeversion['system']         = 0;
-$themeversion['changelog']      = 'docs/changelog.txt';
-$themeversion['credits']        = 'docs/credits.txt';
-$themeversion['help']           = 'docs/help.txt';
-$themeversion['license']        = 'docs/license.txt';
+$themeversion['changelog']      = 'docs/CHANGELOG.markdown';
+$themeversion['credits']        = 'docs/CREDITS.markdown';
+$themeversion['help']           = 'docs/HELP.markdown';
+$themeversion['license']        = 'docs/license_blanktheme.txt';
 $themeversion['xhtml']          = true;
 
 $themeversion['extra']          = array("BlankTheme" => '1.3.5',
