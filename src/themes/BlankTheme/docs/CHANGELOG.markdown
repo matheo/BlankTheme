@@ -1,10 +1,11 @@
 
 # CHANGELOG
 
-## Version 1.3.3
-* YAML updated to 4.1.0
+## Version 1.3.5
+* YAML updated to 4.1.2
 * Removed fullheight body template
 * Reworked fullwidth template to full2col and full3col
+* Moved all the site specific styles to the end of typography.css
 
 ## Version 1.3
 
