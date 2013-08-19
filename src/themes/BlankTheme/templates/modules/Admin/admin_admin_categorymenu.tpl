@@ -1,15 +1,5 @@
 {ajaxheader modname='Admin' filename='admin_admin_ajax.js' ui=true}
 
-<script type="text/javascript">
-    /* <![CDATA[ */
-    var lblclickToEdit = "{{gt text='Right-click down arrows to edit tab name'}}";
-    var lblEdit = "{{gt text='Edit category'}}";
-    var lblDelete = "{{gt text='Delete category'}}";
-    var lblMakeDefault = "{{gt text='Make default category'}}";
-    var lblSaving = "{{gt text='Saving'}}";
-    /* ]]> */
-</script>
-
 <div class="z-admin-breadcrumbs">
     <span class="z-sub">{gt text='You are in:'}</span>
     <span class="z-breadcrumb"><a href="{modurl modname='Admin' type='admin' func='adminpanel'}">{gt text='Administration'}</a></span>
@@ -32,7 +22,7 @@
 
         {if $func neq 'main'}
             <span class="z-sub">&raquo;</span>
-            <span class="z-breadcrumb" class="z-admin-pagefunc">{$func|safetext}</span>
+            <span class="z-breadcrumb z-admin-pagefunc">{$func|safetext}</span>
         {/if}
     {/if}
 </div>
@@ -48,39 +38,22 @@
 <div class="ym-column linearize-level-1"> {* closed by admin.tpl *}
     <div class="ym-col1">
 
+<input type="hidden" name="admintabs-menuoptions" id="admintabs-menuoptions" value="{$menuoptions|@json_encode|escape}" />
 <div class="admintabs-container" id="admintabs-container">
     <ul class="clearfix" id="admintabs">
         {foreach from=$menuoptions name='menuoption' item='menuoption'}
-        <li id="admintab_{$menuoption.cid}" class="floatbox admintab {if $currentcat eq $menuoption.cid} active{/if}" style="z-index:{if $currentcat eq $menuoption.cid}1{else}0{/if};">
-            <span id="catcontext{$menuoption.cid}" class="z-admindrop">&nbsp;</span>
-            <a id="C{$menuoption.cid}" href="{$menuoption.url|safetext}" title="{$menuoption.description|safetext}">{$menuoption.title|safetext}</a>
-
-            <script type="text/javascript">
-            /* <![CDATA[ */
-                var context_catcontext{{$menuoption.cid}} = new Control.ContextMenu('catcontext{{$menuoption.cid}}',{
-                    leftClick: true,
-                    animation: false
-                });
-
-                {{foreach from=$menuoption.items item=item}}
-                    context_catcontext{{$menuoption.cid}}.addItem({
-                        label: '{{$item.menutext|safetext}}',
-                        callback: function(){window.location = '{{$item.menutexturl}}';}
-                    });
-                {{/foreach}}
-
-            /* ]]> */
-            </script>
-
+        <li id="admintab_{$menuoption.cid}" class="ym-contain-fl admintab {if $currentcat eq $menuoption.cid} active{/if}" style="z-index:{if $currentcat eq $menuoption.cid}1{else}0{/if};">
+            <span class="z-admindrop">&nbsp;</span>
+            <a href="{$menuoption.url|safetext}" title="{$menuoption.description|safetext}">{$menuoption.title|safetext}</a>
         </li>
         {/foreach}
-        <li id="addcat" class="floatbox">
-            <a id="addcatlink" href="{modurl modname=Admin type=admin func=new}" title="{gt text='New module category'}" onclick='return Admin.Category.New(this);'>&nbsp;</a>
+        <li id="addcat">
+            <a id="addcatlink" href="{modurl modname='Admin' type='admin' func='new'}" title="{gt text='New module category'}">&nbsp;</a>
+            {strip}{include file='admin_admin_ajaxAddCategory.tpl'}{/strip}
         </li>
     </ul>
 
     {helplink}
-    {include file='admin_admin_ajaxAddCategory.tpl'}
 </div>
 
 <div class="z-hide" id="admintabs-none"></div>
