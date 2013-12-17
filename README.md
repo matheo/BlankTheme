@@ -1,7 +1,7 @@
 
 # Welcome to BlankTheme
 
-**BlankTheme is using YAML CSS-Framework 4.1.2 on Zikula 1.3.x**
+**BlankTheme is using YAML CSS-Framework 4.1.2 on Zikula 1.3.6-**
 Please check [YAML's documentation](http://www.yaml.de/docs/index.html) to learn the cool features that you can use with your BlankTheme-based Theme.
 There is now also a [YAML Debug Tool](http://debug.yaml.de/), you can use it to validate your themes.
 
