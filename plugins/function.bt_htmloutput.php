@@ -68,8 +68,8 @@ function smarty_function_bt_htmloutput($params, Zikula_View_Theme &$view)
                 }
                 $menu[] = array('logout', __('Log out', $dom), ModUtil::url('Users', 'user', 'logout'));
             } else {
-                $menu[] = array('register', __('Register', $dom), ModUtil::url('Users', 'user', 'register'));
                 $menu[] = array('login', __('Login', $dom), ModUtil::url('Users', 'user', 'login'));
+                $menu[] = array('register', __('Register', $dom), ModUtil::url('Users', 'user', 'register'));
             }
             // render the menu
             $count   = count($menu) - 1;

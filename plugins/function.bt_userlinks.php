@@ -145,8 +145,10 @@ function bt_userlinks_drawmenu($option, $current, $currentclass, $span=false, $d
 
     if (is_array($option)) {
         $option[3] = !empty($option[3]) ? $option[3] : '#';
+        $currentUrl = System::getCurrentUrl();
+        $pos = strlen($currentUrl) - strlen($option[3]);
 
-        $return .= "\n".'<li'. ($option[0] == $current ? " class=\"$currentclass\"" : '' ) .'>';
+        $return .= "\n".'<li'. ($option[0] == $current || strpos($currentUrl, $option[3]) == $pos ? " class=\"$currentclass\"" : '' ) .'>';
 
         $linkclass = (isset($option[4]) && is_array($option[4]))?' class="navparent"' : '';
         $return .= "\n".'<a'.$linkclass;

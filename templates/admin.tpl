@@ -19,9 +19,6 @@
 
         <!-- begin: header -->
         <header>
-            <div id="topnav">
-                {bt_htmloutput section='topnavlinks'}
-            </div>
             {img src='logo.gif' modname='core' set='' class='logo' __alt='logo' height='25'}
             <h1><a href="{$baseurl}" title="{gt text='Go to the homepage'}">{$modvars.ZConfig.sitename}</a></h1>
             <span class="slogan">{$modvars.ZConfig.slogan}</span>

@@ -27,7 +27,7 @@
 {/if}
 
 <p id="footer-sublinks">
-    &copy; {'Y'|date} <a href="{$baseurl}">{$modvars.ZConfig.sitename}</a>.
+    &copy; {'Y'|date} {$modvars.ZConfig.sitename}.
     &nbsp;&nbsp;&nbsp;
     <a href="http://community.zikula.org/" title="{gt text='Powered by Zikula'}">Zikula</a>
     <span class="text-separator">|</span>

@@ -91,6 +91,7 @@
     text-decoration: none;
   }
 
+
   /* search form */
   .ym-searchform {
     float: right;
@@ -164,5 +165,37 @@
     padding: 0 0.5em;
     text-align: center;
     text-decoration: none;
+  }
+
+
+  /* .bt-menublock styles */
+
+  /* defaults for menu and menutree blocks inside #main : to-customize */
+  #main ul.navlist,
+  #main ul.navlist li,
+  #main ul.menutree,
+  #main ul.menutree li,
+  .bt-menublock ul,
+  .bt-menublock ul li {
+    list-style: none;
+    margin: 0;
+  }
+
+  #main ul.navlist li,
+  #main ul.menutree li,
+  .bt-menublock ul li {
+    border-top: 1px solid #eee;
+    list-style: none;
+    padding: 3px 0;
+  }
+  #main ul.navlist li:first-child,
+  #main ul.menutree li:first-child,
+  .bt-menublock ul li:first-child {
+    border-top: none;
+  }
+  #main ul.navlist li .z-floatright,
+  #main ul.menutree li .z-floatright,
+  .bt-menublock ul li .z-floatright {
+    color: #999;
   }
 }
