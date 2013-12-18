@@ -7,7 +7,7 @@
  * @license   MIT - http://www.opensource.org/licenses/mit-license.html
  */
 
-namespace Matheo\Theme\BlankTheme;
+namespace Matheo\BlankTheme;
 
 class BlankThemeVersion extends \Zikula_AbstractThemeVersion
 {

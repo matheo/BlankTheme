@@ -8,7 +8,7 @@
  * @abstract  BlankTheme bundle definition with the strings to translate
  */
 
-namespace Matheo\Theme\BlankTheme;
+namespace Matheo\BlankTheme;
 
 use Zikula\Bundle\CoreBundle\Bundle\AbstractCoreTheme;
 

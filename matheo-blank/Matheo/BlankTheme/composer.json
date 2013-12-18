@@ -11,7 +11,7 @@
         }
     ],
     "autoload": {
-        "psr-0": { "Matheo\\Theme\\BlankTheme": "" }
+        "psr-0": { "Matheo\\BlankTheme\\": "" }
     },
     "require": {
         "php": ">5.3.3"
