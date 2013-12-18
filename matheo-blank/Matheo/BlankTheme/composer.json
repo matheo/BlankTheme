@@ -5,7 +5,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Mateo Tibaquirá",
+            "name": "Mateo Tibaquirï¿½",
             "homepage": "http://blanktheme.org/",
             "email": "mateo@zikula.org"
         }
@@ -14,7 +14,7 @@
         "psr-0": { "Matheo\\BlankTheme\\": "" }
     },
     "require": {
-        "php": ">5.3.3"
+        "php": ">=5.3.3"
     },
     "extra": {
         "zikula": {
