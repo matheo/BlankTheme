@@ -1,0 +1,24 @@
+{
+    "name": "matheo/blank-theme",
+    "description": "Theme development framework for Zikula.",
+    "type": "zikula-theme",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mateo Tibaquirá",
+            "homepage": "http://blanktheme.org/",
+            "email": "mateo@zikula.org"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Matheo\\Theme\\BlankTheme": "" }
+    },
+    "require": {
+        "php": ">5.3.3"
+    },
+    "extra": {
+        "zikula": {
+            "class": "Matheo\\Theme\\BlankTheme\\MatheoBlankTheme"
+        }
+    }
+}
