@@ -10,9 +10,9 @@
 
 namespace Matheo\BlankTheme;
 
-use Zikula\Bundle\CoreBundle\Bundle\AbstractCoreTheme;
+use Zikula\Bundle\CoreBundle\Bundle\AbstractTheme;
 
-class MatheoBlankTheme extends AbstractCoreTheme
+class MatheoBlankTheme extends AbstractTheme
 {
     public function translationStrings()
     {
