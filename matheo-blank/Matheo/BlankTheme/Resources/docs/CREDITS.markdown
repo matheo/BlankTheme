@@ -15,17 +15,6 @@ http://www.erikspaan.nl/
 
 # Special thanks to:
 
-* **Dirk Jesse**  
-  YAML Author  
-  http://www.yaml.de/
-
-* **Zikula Communities**  
+* **Zikula Community**
   Developers, Testers & Users  
   http://community.zikula.org/  
-  http://zikula.es/
-
-* EFA fontsize script  
-  http://www.einfach-fuer-alle.de/artikel/fontsize/
-
-* html5shiv
-  http://code.google.com/p/html5shiv/

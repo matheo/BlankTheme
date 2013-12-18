@@ -18,7 +18,7 @@
     },
     "extra": {
         "zikula": {
-            "class": "Matheo\\Theme\\BlankTheme\\MatheoBlankTheme"
+            "class": "Matheo\\BlankTheme\\MatheoBlankTheme"
         }
     }
 }
