@@ -1,9 +1,3 @@
-{**
- * Note:
- * If you want to remove the YAML backlink,
- * please check the YAML license conditions:
- * http://www.yaml.de/en/license/license-conditions.html
- *}
 
 {* default styles of footer block is float: right *}
 {if $btconfig.footer eq 1}
@@ -31,7 +25,7 @@
     &nbsp;&nbsp;&nbsp;
     <a href="http://community.zikula.org/" title="{gt text='Powered by Zikula'}">Zikula</a>
     <span class="text-separator">|</span>
-    <a href="http://www.yaml.de/" title="{gt text='Layout supported by YAML'}">YAML</a>
+    <a href="http://getbootstrap.com/" title="{gt text='Layout supported by Bootstrap'}">Bootstrap</a>
     {if $serviceManager.development}
         {* displays validators links only on development mode *}
         <span class="text-separator">|</span>

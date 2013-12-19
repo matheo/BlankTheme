@@ -17,7 +17,7 @@ Supports the classic three column distributions, with the main column at the mid
 
 ## Subtemplates (grid)
 
-As an example of [YAML subtemplates](http://www.yaml.de/en/documentation/practice/subtemplates.html) there is a example of its use, with the main column at the left, taking the 60% of the total width, and the side columns the other 40%.
+As an example of [Bootstrap grid system](http://getbootstrap.com/css/#grid) there is a example of its use, with the main column at the left, taking the 60% of the total width, and the side columns the other 40%.
 
 ## Full width (full2col and full3col)
 
@@ -25,5 +25,4 @@ Is the same 2col and 3col templates except for the page structure to fill all th
 
 ---
 
-BlankTheme also supports zones, which are in charge to handle custom blockpositions, and complete complex layouts. See more details here:  
-**http://blanktheme.org/wiki/main/tag/DocsLayouts**
+BlankTheme also supports zones, which are in charge to handle custom blockpositions, and complete complex layouts.

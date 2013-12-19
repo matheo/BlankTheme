@@ -36,7 +36,7 @@ all the columns are floating
 
 ## grid
 
-Uses the YAML subtemplates like the flexible grids example to build the layout
+Uses the Bootstrap grid system like the flexible grids example to build the layout
 
 * Is able to switch the side columns with the distributions: '123', '132', '12', '13'
 * Also supports the '3b' zone (3subcolumnsat-bottom)

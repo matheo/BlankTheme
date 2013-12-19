@@ -145,9 +145,6 @@ function smarty_function_bt_htmloutput($params, Zikula_View_Theme &$view)
                 PageUtil::addVar('stylesheet', $view->getStylepath().'/typography.css');
                 // TODO rtl-support load yaml/add-ons/rtl-support/core/base-rtl.css with the respective typography-rtl.css
             }
-
-            // full skip link functionality in webkit browsers
-            PageUtil::addVar('footer', '<script src="'.$view->getThemepath().'/yaml/core/js/yaml-focusfix.js"></script>');
             break;
 
         /* Body ID */
