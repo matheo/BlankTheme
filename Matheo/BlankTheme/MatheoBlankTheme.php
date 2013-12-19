@@ -10,7 +10,7 @@
 
 namespace Matheo\BlankTheme;
 
-use Zikula\Bundle\CoreBundle\Bundle\AbstractTheme;
+use Zikula\Core\AbstractTheme;
 
 class MatheoBlankTheme extends AbstractTheme
 {
