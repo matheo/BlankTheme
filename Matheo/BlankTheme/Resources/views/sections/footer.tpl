@@ -35,4 +35,4 @@
     {/if}
 </p>
 
-{bt_htmloutput section='footer'}
+{blankutil section='footer'}

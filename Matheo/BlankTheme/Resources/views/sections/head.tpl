@@ -19,7 +19,7 @@
 
 <!-- pagevars -->
 
-{bt_htmloutput section='head'}
+{blankutil section='head'}
 
 {browserhack condition='if lt IE 9'}<script src="{$themepath}/javascript/html5shiv/html5shiv.js"></script>{/browserhack}
 </head>

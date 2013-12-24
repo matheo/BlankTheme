@@ -15,7 +15,7 @@
 
 {* for the backend we do not use a body template *}
 <div class="ym-wrapper bt-12 bt-func-{$func}">
-    <div class="ym-wbox {bt_htmloutput section='classesinnerpage'}">
+    <div class="ym-wbox {blankutil section='classesinnerpage'}">
 
         <!-- begin: header -->
         <header>
@@ -27,7 +27,7 @@
 
         <!-- begin: nav -->
         <nav id="nav">
-            {bt_adminlinks current=$module}
+            {blankmenuadmin current=$module}
         </nav>
         <!-- end: nav -->
 
@@ -44,7 +44,7 @@
         <!-- begin: footer -->
         <footer>
             <a href="{gt text='http://community.zikula.org/'}" title="{gt text='Powered by Zikula'}">{gt text='Powered by Zikula'} {$coredata.version_num}</a>
-            {bt_htmloutput section='footer'}
+            {blankutil section='footer'}
         </footer>
         <!-- end: footer -->
     </div>

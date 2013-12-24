@@ -4,7 +4,7 @@
  *
  * @copyright (c) BlankTheme Team
  * @link      http://www.blanktheme.org
- * @license   GNU/GPL - http://www.gnu.org/copyleft/gpl.html
+ * @license   MIT - http://www.opensource.org/licenses/mit-license.html
  */
 
 /**
@@ -18,7 +18,7 @@
  *  - desc         (bool)   Flag to put the parent links descriptions inside SPAN.bt-desc instead the link title (default: false)
  *
  * Example:
- *  {bt_userlinks id='myId' current='home' currentclass='myActiveClass'}
+ *  {blankmenu id='myId' current='home' currentclass='myActiveClass'}
  *
  * @author Mateo Tibaquirá
  * @since  08/11/07
@@ -28,7 +28,7 @@
  *
  * @return string User menu output.
  */
-function smarty_function_bt_userlinks($params, Zikula_View_Theme &$view)
+function smarty_function_blankmenu($params, Zikula_View_Theme &$view)
 {
     $dom = ZLanguage::getThemeDomain('BlankTheme');
 

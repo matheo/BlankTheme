@@ -5,14 +5,14 @@
     <li><a class="ym-skip" href="#main">{gt text='Skip to main content'} {gt text='(Press Enter)'}.</a></li>
 </ul>
 
-<div class="ym-wrapper {bt_htmloutput section='classespage'}">
-    <div class="ym-wbox bordered {bt_htmloutput section='classesinnerpage'}">
+<div class="ym-wrapper {blankutil section='classespage'}">
+    <div class="ym-wbox bordered {blankutil section='classesinnerpage'}">
 
         <!-- begin: header -->
         <header>
             <div id="topnav">
-                {bt_htmloutput section='topnavlinks'}
-                {bt_htmloutput section='fontresize'}
+                {blankutil section='topnavlinks'}
+                {blankutil section='fontresize'}
             </div>
             {if $btconfig.header eq 1}
                 {blockposition name='header'}
@@ -29,7 +29,7 @@
                 {if $btconfig.topnav eq 1}
                     {blockposition name='topnav'}
                 {else}
-                    {bt_userlinks}
+                    {blankmenu}
                 {/if}
                 {*<form class="ym-searchform">
                     <input class="ym-searchfield" type="search" placeholder="Search..." />

@@ -32,7 +32,7 @@ class MatheoBlankTheme extends AbstractCoreTheme
         no__("Enable 'header' block position?");
 
         no__('User menu to use');
-        no__('bt_userlinks plugin');
+        no__('blankmenu plugin');
         no__("'topnav' block position");
 
         no__('Bottom navigation to use');

@@ -10,8 +10,8 @@
     <div class="ym-wrapper">
         <div class="ym-wbox">
             <div id="topnav">
-                {bt_htmloutput section='topnavlinks'}
-                {bt_htmloutput section='fontresize'}
+                {blankutil section='topnavlinks'}
+                {blankutil section='fontresize'}
             </div>
             {if $btconfig.header eq 1}
                 {blockposition name='header'}
@@ -31,7 +31,7 @@
             {if $btconfig.topnav eq 1}
                 {blockposition name='topnav'}
             {else}
-                {bt_userlinks}
+                {blankmenu}
             {/if}
         </div>
     </div>
@@ -40,8 +40,8 @@
 
 <!-- begin: main -->
 <main class="bt-3col">
-    <div class="ym-wrapper {bt_htmloutput section='classespage'}">
-        <div class="ym-wbox {bt_htmloutput section='classesinnerpage'}">
+    <div class="ym-wrapper {blankutil section='classespage'}">
+        <div class="ym-wbox {blankutil section='classesinnerpage'}">
             <div class="ym-column linearize-level-1">
 
             <!-- begin: col1 main column -->

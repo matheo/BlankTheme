@@ -10,7 +10,7 @@
 
   You can also configure the theme to not use the `layout_*` stylesheets (`themevariables.ini`)
   but load the core stylesheets directly without it and save one request to the server.
-  You can also customize the PHP code of the `bt_htmloutput` plugin if you have PHP knowledge.
+  You can also customize the PHP code of the `blankutil` plugin if you have PHP knowledge.
 
   You might also consider to minify your stylesheets with YUI compressor or enable the Zikula minifier.
   This reduces the bandwidth of your website.

@@ -4,7 +4,7 @@
  *
  * @copyright (c) BlankTheme Team
  * @link      http://www.blanktheme.org
- * @license   GNU/GPL - http://www.gnu.org/copyleft/gpl.html
+ * @license   MIT - http://www.opensource.org/licenses/mit-license.html
  */
 
 /**
@@ -17,7 +17,7 @@
  *  - currentclass (string) CSS class name of the current tab, list item (default: 'selected')
  *
  * Example:
- *  {bt_adminlinks id='myId' ulclass='myUlClass' current='config' currentclass='myActiveClass'}
+ *  {blankmenuadmin id='myId' ulclass='myUlClass' current='config' currentclass='myActiveClass'}
  *
  * @author Mateo Tibaquirá [mateo]
  * @author Erik Spaan [espaan]
@@ -28,7 +28,7 @@
  *
  * @return string Admin menu output.
  */
-function smarty_function_bt_adminlinks($params, Zikula_View_Theme &$view)
+function smarty_function_blankmenuadmin($params, Zikula_View_Theme &$view)
 {
     $dom = ZLanguage::getThemeDomain('BlankTheme');
 

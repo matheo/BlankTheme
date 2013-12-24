@@ -4,19 +4,19 @@
  *
  * @copyright (c) BlankTheme Team
  * @link      http://www.blanktheme.org
- * @license   GNU/GPL - http://www.gnu.org/copyleft/gpl.html
+ * @license   MIT - http://www.opensource.org/licenses/mit-license.html
  */
 
 /**
- * BlankTheme plugin to centralize important outputs.
+ * BlankTheme plugin to centralize utility outputs.
  *
  * Available parameters:
  *  - section (string) Name of the output section to return.
  *  - noempty (bool)   Flag to disable the "bt-empty" CSS class for the classesinnerpage section.
  *
  * Example:
- *  {bt_htmloutput section='head'}
- *  {bt_htmloutput section='topnavlinks'}
+ *  {blankutil section='head'}
+ *  {blankutil section='topnavlinks'}
  *
  * @author Mateo Tibaquirá
  * @since  05/07/08
@@ -26,7 +26,7 @@
  *
  * @return string Output of the requested section.
  */
-function smarty_function_bt_htmloutput($params, Zikula_View_Theme &$view)
+function smarty_function_blankutil($params, Zikula_View_Theme &$view)
 {
     $dom = ZLanguage::getThemeDomain('BlankTheme');
 
