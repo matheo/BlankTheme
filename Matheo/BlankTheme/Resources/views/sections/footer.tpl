@@ -26,13 +26,13 @@
     <a href="http://community.zikula.org/" title="{gt text='Powered by Zikula'}">Zikula</a>
     <span class="text-separator">|</span>
     <a href="http://getbootstrap.com/" title="{gt text='Layout supported by Bootstrap'}">Bootstrap</a>
-    {if $serviceManager.development}
+    {*if $serviceManager.development*}
         {* displays validators links only on development mode *}
         <span class="text-separator">|</span>
         <a href="http://jigsaw.w3.org/css-validator/check/referer" title="{gt text='Valid CSS'}">CSS</a>
         <span class="text-separator">|</span>
         <a href="http://validator.w3.org/check?uri=referer" title="{gt text='Valid XHTML'}">XHTML</a>
-    {/if}
+    {*/if*}
 </p>
 
 {blankutil section='footer'}

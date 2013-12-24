@@ -8,14 +8,17 @@
 <body id="bt-{$module}" class="bt-2col bt-admin">
 
 <!-- skip link navigation -->
-<ul class="ym-skiplinks">
-    <li><a class="ym-skip" href="#nav">{gt text='Skip to navigation'} {gt text='(Press Enter)'}.</a></li>
+<ul class="sr-only">
     <li><a class="ym-skip" href="#main">{gt text='Skip to main content'} {gt text='(Press Enter)'}.</a></li>
 </ul>
 
 {* for the backend we do not use a body template *}
 <div class="ym-wrapper bt-12 bt-func-{$func}">
     <div class="ym-wbox {blankutil section='classesinnerpage'}">
+
+        <!-- begin: nav -->
+        {blankmenuadmin current=$module}
+        <!-- end: nav -->
 
         <!-- begin: header -->
         <header>
@@ -24,12 +27,6 @@
             <span class="slogan">{$modvars.ZConfig.slogan}</span>
         </header>
         <!-- end: header -->
-
-        <!-- begin: nav -->
-        <nav id="nav">
-            {blankmenuadmin current=$module}
-        </nav>
-        <!-- end: nav -->
 
         <!-- begin: #main -->
         <div id="main">

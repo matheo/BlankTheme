@@ -1,6 +1,6 @@
 
 <!-- skip link navigation -->
-<ul class="ym-skiplinks">
+<ul class="sr-only">
     <li><a class="ym-skip" href="#nav">{gt text='Skip to navigation'} {gt text='(Press Enter)'}.</a></li>
     <li><a class="ym-skip" href="#main">{gt text='Skip to main content'} {gt text='(Press Enter)'}.</a></li>
 </ul>
