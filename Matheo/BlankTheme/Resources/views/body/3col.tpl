@@ -107,7 +107,9 @@
 
         <!-- begin: footer -->
         <footer>
-            {include file='sections/footer.tpl'}
+            <div class="container">
+                {include file='sections/footer.tpl'}
+            </div>
         </footer>
         <!-- end: footer -->
     </div>

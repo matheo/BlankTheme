@@ -112,10 +112,8 @@
 
 <!-- begin: footer -->
 <footer>
-    <div class="bt-wrapper">
-        <div class="bt-wbox">
-            {include file='sections/footer.tpl'}
-        </div>
+    <div class="container">
+        {include file='sections/footer.tpl'}
     </div>
 </footer>
 <!-- end: footer -->
