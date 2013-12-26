@@ -33,16 +33,18 @@
         <!-- end: nav -->
 
         <!-- begin: header -->
-        <header>
+        <header class="container">
             <div id="topnav">
                 {blankutil section='topnavlinks'}
                 {blankutil section='fontresize'}
             </div>
+
             {if $btconfig.header eq 1}
                 {blockposition name='header'}
             {/if}
-            <a href="{$baseurl}">{img src='logo.png' class='logo' __alt='logo'}</a>
-            <h1><a href="{$baseurl}" title="{gt text='Go to the homepage'}">{$modvars.ZConfig.sitename}</a></h1>
+
+            {img src='logo.png' class='logo' __alt='logo'}
+            <h1>{$modvars.ZConfig.sitename}</h1>
             <span class="slogan">{$modvars.ZConfig.slogan}</span>
         </header>
         <!-- end: header -->

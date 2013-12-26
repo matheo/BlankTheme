@@ -560,6 +560,9 @@
    */
 
   header {
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
     background: #eee;
     color: #ccc;
     height: 110px;
@@ -572,13 +575,13 @@
     header h1 {
       background: transparent;
       margin: 0;
-      padding: 37px 0 0 0;
+      padding: 35px 0 0 0;
     }
     header .slogan {
       color: #777;
       float: left;
-      font-size: 16px;
-      padding: 0.5em;
+      font-size: 20px;
+      padding: 0.4em;
     }
 
     header h1,

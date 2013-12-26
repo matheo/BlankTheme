@@ -16,10 +16,10 @@
  */
 
 /* Google Font API */
-/*
+
 @import url("http://fonts.googleapis.com/css?family=Droid+Serif");
 @import url("http://fonts.googleapis.com/css?family=Droid+Sans:700");
-*/
+
 @media screen
 {
   /**
@@ -159,7 +159,6 @@
 
   /* fixed width container for fixed with columns */
   .bt-3col .bt-wrapper {
-    width: 964px; /* cols widths + 4px .bordered .ym-box */
   }
 
   /* .ym-col1 is the main column */
