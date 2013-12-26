@@ -11,7 +11,7 @@
  * BlankTheme plugin to display the user navigation menu.
  *
  * Available parameters:
- *  - id           (string) ID of the wrapper div (default: null)
+ *  - css          (string) CSS class name(s) to add to the menu list (default: 'navbar-right')
  *  - current      (string) Current screen ID (.ini current value or module name) (optional)
  *  - currentclass (string) CSS class name of the current tab, list item (default: 'active')
  *  - span         (bool)   Flag to enable SPAN wrappers on the links text, useful for sliding doors (default: false)
@@ -32,7 +32,7 @@ function smarty_function_blankmenu($params, Zikula_View_Theme &$view)
 {
     $dom = ZLanguage::getThemeDomain('BlankTheme');
 
-    $id = isset($params['id']) ? $params['id'] : null;
+    $css = isset($params['css']) ? $params['css'] : 'navbar-right';
     if (!isset($params['current'])) {
         $current = $view->getTplVar('current') ? $view->getTplVar('current') : $view->getToplevelmodule();
     } else {
@@ -125,13 +125,11 @@ function smarty_function_blankmenu($params, Zikula_View_Theme &$view)
     }
 
     // render the menu
-    $output  = $id ? '<div id="'.$id.'">' : '';
-    $output .= '<ul>';
+    $output  = '<ul class="nav navbar-nav '.$css.'">';
     foreach ($menu as $option) {
-        $output .= bt_userlinks_drawmenu($option, $current, $currentclass, $span, $desc);
+        $output .= blankmenu_drawmenu($option, $current, $currentclass, $span, $desc);
     }
     $output .= '</ul>';
-    $output .= $id ? '</div>' : '';
 
     return $output;
 }
@@ -139,19 +137,28 @@ function smarty_function_blankmenu($params, Zikula_View_Theme &$view)
 /**
  * Draw the array-menu recursively.
  */
-function bt_userlinks_drawmenu($option, $current, $currentclass, $span=false, $desc=false)
+function blankmenu_drawmenu($option, $current, $currentclass, $span = false, $desc = false)
 {
     $return = '';
 
     if (is_array($option)) {
         $option[3] = !empty($option[3]) ? $option[3] : '#';
+        $drop = isset($option[4]) && is_array($option[4]);
+
         $currentUrl = System::getCurrentUrl();
         $pos = strlen($currentUrl) - strlen($option[3]);
 
-        $return .= "\n".'<li'. ($option[0] == $current || strpos($currentUrl, $option[3]) == $pos ? " class=\"$currentclass\"" : '' ) .'>';
+        $css = array();
+        if ($option[0] == $current || strpos($currentUrl, $option[3]) == $pos) {
+            $css[] = $currentclass;
+        }
+        if ($drop) {
+            $css[] = 'dropdown';
+        }
 
-        $linkclass = (isset($option[4]) && is_array($option[4]))?' class="navparent"' : '';
-        $return .= "\n".'<a'.$linkclass;
+        $return .= '<li'. ($css ? ' class="'.implode(' ', $css).'"' : '' ) .'>';
+
+        $return .= '<a';
         $return .= $desc ? '' : ' title="'.DataUtil::formatForDisplay($option[2]).'"';
         $return .= ' href="'.DataUtil::formatForDisplay($option[3]).'">';
         if ($desc) {
@@ -162,14 +169,15 @@ function bt_userlinks_drawmenu($option, $current, $currentclass, $span=false, $d
         $return .= '</a>';
 
         // render the suboptions recursively
-        if (isset($option[4]) && is_array($option[4])) {
-            $return .= "\n".'<ul>';
+        if ($drop) {
+            $return .= '<ul class="dropdown-menu">';
             foreach ($option[4] as $suboption) {
-                $return .= bt_userlinks_drawmenu($suboption, $current, $currentclass, $span, false);
+                $return .= blankmenu_drawmenu($suboption, $current, $currentclass, $span, false);
             }
-            $return .= "\n".'</ul>';
+            $return .= '</ul>';
         }
-        $return .= "\n".'</li>';
+
+        $return .= '</li>';
     }
 
     return $return;

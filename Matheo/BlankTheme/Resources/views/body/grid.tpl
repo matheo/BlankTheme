@@ -6,6 +6,32 @@
 <div class="bt-wrapper {blankutil section='classespage'}">
     <div class="bt-wbox {blankutil section='classesinnerpage'}">
 
+        <!-- begin: nav -->
+        <nav id="nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button data-target=".navbar-ex1-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a href="{$baseurl}" title="{gt text='Go to the homepage'}" class="navbar-brand">{$modvars.ZConfig.sitename}</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    {if $btconfig.topnav eq 1}
+                        {blockposition name='topnav'}
+                    {else}
+                        {blankmenu}
+                    {/if}
+                </div>
+            </div>
+        </nav>
+        <!-- end: nav -->
+
         <!-- begin: header -->
         <header>
             <div id="topnav">
@@ -20,22 +46,6 @@
             <span class="slogan">{$modvars.ZConfig.slogan}</span>
         </header>
         <!-- end: header -->
-
-        <!-- begin: nav -->
-        <nav id="nav">
-            <div class="ym-hlist">
-                {if $btconfig.topnav eq 1}
-                    {blockposition name='topnav'}
-                {else}
-                    {blankmenu}
-                {/if}
-                {*<form class="ym-searchform">
-                    <input class="ym-searchfield" type="search" placeholder="Search..." />
-                    <input class="ym-searchbutton" type="submit" value="Search" />
-                </form>*}
-            </div>
-        </nav>
-        <!-- end: nav -->
 
         <!-- begin: main -->
         <main>

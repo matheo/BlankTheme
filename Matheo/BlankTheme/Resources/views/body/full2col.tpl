@@ -3,6 +3,32 @@
 <a href="#nav" class="sr-only">{gt text='Skip to navigation'}.</a>
 <a href="#main" class="sr-only">{gt text='Skip to main content'}.</a>
 
+<!-- begin: nav -->
+<nav id="nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button data-target=".navbar-ex1-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a href="{$baseurl}" title="{gt text='Go to the homepage'}" class="navbar-brand">{$modvars.ZConfig.sitename}</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            {if $btconfig.topnav eq 1}
+                {blockposition name='topnav'}
+            {else}
+                {blankmenu}
+            {/if}
+        </div>
+    </div>
+</nav>
+<!-- end: nav -->
+
 <!-- begin: header -->
 <header>
     <div class="bt-wrapper">
@@ -21,20 +47,6 @@
     </div>
 </header>
 <!-- end: header -->
-
-<!-- begin: nav -->
-<nav id="nav">
-    <div class="bt-wrapper">
-        <div class="ym-hlist">
-            {if $btconfig.topnav eq 1}
-                {blockposition name='topnav'}
-            {else}
-                {blankmenu}
-            {/if}
-        </div>
-    </div>
-</nav>
-<!-- end: nav -->
 
 <!-- begin: main -->
 <main class="bt-2col">
