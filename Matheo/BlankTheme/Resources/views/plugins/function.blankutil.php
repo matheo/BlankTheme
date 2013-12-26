@@ -100,10 +100,10 @@ function smarty_function_blankutil($params, Zikula_View_Theme &$view)
             }
             // font resize based in the efa script
             PageUtil::addVar('javascript', $view->getScriptpath().'/efa_fontsize.min.js');
-            //PageUtil::addVar('javascript', $view->getScriptpath().'/efa_fontsize.js');
+
             $output = '<script type="text/javascript">
                          // <![CDATA[
-                         if (efa_fontSize) {
+                         if (Efa_Fontsize) {
                            var efalang_zoomIn = "'.__('Increase font size', $dom).'";
                            var efalang_zoomReset = "'.__('Reset font size', $dom).'";
                            var efalang_zoomOut = "'.__('Decrease font size', $dom).'";
@@ -118,18 +118,19 @@ function smarty_function_blankutil($params, Zikula_View_Theme &$view)
 
         case 'head':
             // head stylesheets
-            $output .= '<!--[if lte IE 7]>'
-                      .'<link rel="stylesheet" href="'.$view->getThemepath().'/yaml/core/iehacks.min.css" type="text/css" />'
-                      .'<![endif]-->';
-/*                    .'<!--[if lte IE 6]>'
-//                    .'<script type="text/javascript" src="'.$view->getScriptpath().'/ie_minmax.js"></script>'
-                      .'<style type="text/css">
-                            img, div, a, input { behavior: url('.$view->getStylepath().'/iepngfix.htc) }
-                        </style>'
-//                    .'<script type="text/javascript" src="'.$view->getScriptpath().'/ie_pngfix_tilebg.js"></script>'
-                      .'<![endif]-->
+            if ($btconfig['fontresize'] == '1') {
+                $output = '<script type="text/javascript">
+                         // <![CDATA[
+                           var efa_default = 140; //%
+                           var efa_increment = 10;  //%
+                           var efalang_zoomIn = "'.__('Increase font size', $dom).'";
+                           var efalang_zoomReset = "'.__('Reset font size', $dom).'";
+                           var efalang_zoomOut = "'.__('Decrease font size', $dom).'";
+                           var efathemedir = "'.$view->getDirectory().'";
+                         // ]]>
+                       </script>
                        ';
-*/
+            }
             break;
 
         case 'footer':

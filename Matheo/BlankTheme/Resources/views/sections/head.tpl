@@ -17,9 +17,9 @@
 <link rel="icon" type="image/x-icon" href="{$imagepath}/favicon.ico" /> {* W3C *}
 <link rel="shortcut icon" type="image/ico" href="{$imagepath}/favicon.ico" /> {* IE *}
 
-<!-- pagevars -->
-
 {blankutil section='head'}
+
+<!-- pagevars -->
 
 {browserhack condition='if lt IE 9'}<script src="{$themepath}/javascript/html5shiv/html5shiv.js"></script>{/browserhack}
 </head>
