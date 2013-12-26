@@ -30,22 +30,24 @@
 <!-- end: nav -->
 
 <!-- begin: header -->
-<div class="container">
-    <header class="jumbotron">
-        <div id="topnav">
-            {blankutil section='topnavlinks'}
-            {blankutil section='fontresize'}
+<header>
+    <div class="container">
+        <div class="jumbotron">
+            <div id="topnav">
+                {blankutil section='topnavlinks'}
+                {blankutil section='fontresize'}
+            </div>
+
+            {if $btconfig.header eq 1}
+                {blockposition name='header'}
+            {/if}
+
+            {img src='logo.png' class='logo' __alt='logo'}
+            <h1>{$modvars.ZConfig.sitename}</h1>
+            <p class="slogan">{$modvars.ZConfig.slogan}</p>
         </div>
-
-        {if $btconfig.header eq 1}
-            {blockposition name='header'}
-        {/if}
-
-        {img src='logo.png' class='logo' __alt='logo'}
-        <h1>{$modvars.ZConfig.sitename}</h1>
-        <p class="slogan">{$modvars.ZConfig.slogan}</p>
-    </header>
-</div>
+    </div>
+</header>
 <!-- end: header -->
 
 <!-- begin: main -->
