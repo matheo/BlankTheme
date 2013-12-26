@@ -1,12 +1,10 @@
 
-<!-- skip link navigation -->
-<ul class="sr-only">
-    <li><a class="ym-skip" href="#nav">{gt text='Skip to navigation'} {gt text='(Press Enter)'}.</a></li>
-    <li><a class="ym-skip" href="#main">{gt text='Skip to main content'} {gt text='(Press Enter)'}.</a></li>
-</ul>
+<!-- skip navigation -->
+<a href="#nav" class="sr-only">{gt text='Skip to navigation'}.</a>
+<a href="#main" class="sr-only">{gt text='Skip to main content'}.</a>
 
-<div class="ym-wrapper {blankutil section='classespage'}">
-    <div class="ym-wbox bordered {blankutil section='classesinnerpage'}">
+<div class="bt-wrapper {blankutil section='classespage'}">
+    <div class="bt-wbox {blankutil section='classesinnerpage'}">
 
         <!-- begin: header -->
         <header>
@@ -63,8 +61,6 @@
                     </section>
                     {/if}
                 </div>
-
-                <div class="ym-ie-clearing">&nbsp;</div>
             </div>
             <!-- end: col1 -->
 

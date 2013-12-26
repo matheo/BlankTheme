@@ -1,17 +1,10 @@
 /**
- * Default screen stylesheets
+ * Zikula Application Framework
+ * Default screen stylesheets.
  *
- * @copyright Copyright 2005-2012, Dirk Jesse
- * @license   CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
- *            YAML-CDL (http://www.yaml.de/license.html)
- * @link      http://www.yaml.de
- */
-
-/**
- * Zikula BlankTheme Adaptation
- *
- * @author    Mateo Tibaquirá
+ * @copyright (c) BlankTheme Team
  * @link      http://www.blanktheme.org
+ * @license   MIT - http://www.opensource.org/licenses/mit-license.html
  */
 
 /**
@@ -19,15 +12,14 @@
  *
  *  Global fixes (layout-global)
  *  Design of the layout (layout-basics)
- *     Skiplinks styles
- *     Miscelaneous
  *  Specific templates and zones (layout-templates)
  */
 
 /* Google Font API */
+/*
 @import url("http://fonts.googleapis.com/css?family=Droid+Serif");
 @import url("http://fonts.googleapis.com/css?family=Droid+Sans:700");
-
+*/
 @media screen
 {
   /**
@@ -42,20 +34,20 @@
   }
 
   /* layout Module Configuration & fallback for unsupported media queries */
-  .ym-wrapper {
+  .bt-wrapper {
     min-width: 760px;
     max-width: 80em;
     margin: 0 auto;
   }
 
-  .ym-wbox {
+  .bt-wbox {
     margin: 1em 0;
     position: relative;
   }
 
   /* fullwidth layouts adjustments*/
-  body[class~="bt-full2col"] .ym-wrapper,
-  body[class~="bt-full3col"] .ym-wrapper {
+  body[class~="bt-full2col"] .bt-wrapper,
+  body[class~="bt-full3col"] .bt-wrapper {
     min-width: 0
   }
   /* fallback for missing media queries support*/
@@ -69,8 +61,8 @@
   body[class~="bt-full3col"] > footer {
     min-width: 760px;
   }
-  body[class~="bt-full2col"] .ym-wbox,
-  body[class~="bt-full3col"] .ym-wbox {
+  body[class~="bt-full2col"] .bt-wbox,
+  body[class~="bt-full3col"] .bt-wbox {
     margin: 0;
     overflow: hidden;
   }
@@ -83,20 +75,6 @@
    *
    * @section layout-basics
    */
-
-  /******* Skiplinks styles *******/
-
-  .ym-skiplinks a.ym-skip:focus,
-  .ym-skiplinks a.ym-skip:active {
-    background: #333;
-    border-bottom: 1px solid #000;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    text-decoration: none;
-  }
-
-  /******* Miscellaneous *******/
 
   /* default content paddings */
   .ym-col1 .ym-cbox,
@@ -204,7 +182,7 @@
    */
 
   /* fixed width container for fixed with columns */
-  .bt-3col .ym-wrapper {
+  .bt-3col .bt-wrapper {
     width: 964px; /* cols widths + 4px .bordered .ym-box */
   }
 
@@ -373,7 +351,7 @@
 /* reset fallback values in modern browsers */
 @media screen and ( min-width: 0px )
 {
-  .ym-wrapper {
+  .bt-wrapper {
     min-width: 0px;
   }
 }
@@ -399,7 +377,7 @@
 
 @media screen and ( max-width: 480px)
 {
-  .ym-wbox {
+  .bt-wbox {
     padding: 0;
   }
 
@@ -446,7 +424,7 @@
   body[class~="bt-full3col"] > main,
   body[class~="bt-full2col"] > footer,
   body[class~="bt-full3col"] > footer,
-  .ym-wrapper {
+  .bt-wrapper {
     min-width: 0px;
   }
 }
@@ -506,7 +484,7 @@
     overflow: hidden;
   }
 
-  .ym-wbox {
+  .bt-wbox {
     margin: 0;
   }
 
@@ -520,10 +498,10 @@
   main,
   .ym-searchform,
   nav .ym-hlist ul,
-  body[class~="bt-full2col"] footer .ym-wbox,
-  body[class~="bt-full3col"] footer .ym-wbox,
-  body[class~="bt-full2col"] .ym-wbox,
-  body[class~="bt-full3col"] .ym-wbox {
+  body[class~="bt-full2col"] footer .bt-wbox,
+  body[class~="bt-full3col"] footer .bt-wbox,
+  body[class~="bt-full2col"] .bt-wbox,
+  body[class~="bt-full3col"] .bt-wbox {
     padding-left: 10px;
     padding-right: 10px;
   }

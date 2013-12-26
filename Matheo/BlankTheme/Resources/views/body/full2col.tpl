@@ -1,14 +1,12 @@
 
-<!-- skip link navigation -->
-<ul class="sr-only">
-    <li><a class="ym-skip" href="#nav">{gt text='Skip to navigation'} {gt text='(Press Enter)'}.</a></li>
-    <li><a class="ym-skip" href="#main">{gt text='Skip to main content'} {gt text='(Press Enter)'}.</a></li>
-</ul>
+<!-- skip navigation -->
+<a href="#nav" class="sr-only">{gt text='Skip to navigation'}.</a>
+<a href="#main" class="sr-only">{gt text='Skip to main content'}.</a>
 
 <!-- begin: header -->
 <header>
-    <div class="ym-wrapper">
-        <div class="ym-wbox">
+    <div class="bt-wrapper">
+        <div class="bt-wbox">
             <div id="topnav">
                 {blankutil section='topnavlinks'}
                 {blankutil section='fontresize'}
@@ -26,7 +24,7 @@
 
 <!-- begin: nav -->
 <nav id="nav">
-    <div class="ym-wrapper">
+    <div class="bt-wrapper">
         <div class="ym-hlist">
             {if $btconfig.topnav eq 1}
                 {blockposition name='topnav'}
@@ -40,8 +38,8 @@
 
 <!-- begin: main -->
 <main class="bt-2col">
-    <div class="ym-wrapper {blankutil section='classespage'}">
-        <div class="ym-wbox {blankutil section='classesinnerpage'}">
+    <div class="bt-wrapper {blankutil section='classespage'}">
+        <div class="bt-wbox {blankutil section='classesinnerpage'}">
             <div class="ym-column linearize-level-1">
 
             <!-- begin: col1 main column -->
@@ -68,8 +66,6 @@
                     </section>
                     {/if}
                 </div>
-
-                <div class="ym-ie-clearing">&nbsp;</div>
             </div>
             <!-- end: col1 -->
 
@@ -102,8 +98,8 @@
 
 <!-- begin: footer -->
 <footer>
-    <div class="ym-wrapper">
-        <div class="ym-wbox">
+    <div class="bt-wrapper">
+        <div class="bt-wbox">
             {include file='sections/footer.tpl'}
         </div>
     </div>
