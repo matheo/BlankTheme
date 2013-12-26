@@ -31,7 +31,7 @@
   /* force vertical scrollbar */
   body {
     overflow-y: scroll;
-    padding-top: 60px; /* navbar-fixed.top */
+    padding-top: 70px; /* navbar-fixed.top */
   }
 
   /* layout */

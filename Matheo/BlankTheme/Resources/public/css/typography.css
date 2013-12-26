@@ -145,12 +145,6 @@
 
   /******* General text formatting *******/
 
-  p {
-    font-size: 100%;
-    line-height: 1.5;
-    margin: 0 0 1.5em 0;
-  }
-
   cite, blockquote, q {
     font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
     font-style: italic
@@ -559,80 +553,79 @@
    * @section content-layout
    */
 
-  header {
+  header div {
     position: relative;
   }
 
-    /* title and slogan */
-    header h1 {
-      background: transparent;
-      color: #349 !important;
-      letter-spacing: -1px;
-      margin: -16px 0 0;
-    }
-    header .slogan {
-      color: #777;
+  /* title and slogan */
+  header h1 {
+    background: transparent;
+    color: #349 !important;
+    letter-spacing: -1px;
+    margin: -5px 0 0;
+  }
+  header .slogan {
+    color: #777;
+    float: left;
+    font-size: 20px;
+    padding-left: 14px;
+  }
+
+  /* logo */
+  header .logo {
+    float: left;
+    margin: 0 1em 1em 0;
+  }
+
+  /* top navigation container */
+  #topnav {
+    background: transparent;
+    color: #aaa;
+    line-height: 1.5;
+    text-align: right; /* LTR */
+    position: absolute;
+    right: 15px; /* LTR */
+    top: 15px;
+  }
+  .jumbotron #topnav {
+    font-size: 70%;
+  }
+
+    /* topnav navigation */
+    #bt-topnavlinks {
       float: left;
-      font-size: 20px;
-      padding-left: 14px;
     }
 
-    /* logo */
-    header .logo {
+    #bt-topnavlinks ul {
       float: left;
-      margin-right: 1em;
+      list-style: none;
+      margin: 0 0.5em 0 0;
+      padding: 0;
     }
 
-    /* top navigation container */
-    #topnav {
-      background: transparent;
-      color: #aaa;
-      line-height: 1.5;
-      text-align: right; /* LTR */
-      position: absolute;
-      right: 20px; /* LTR */
-      top: 20px;
-    }
-    .jumbotron #topnav {
-      font-size: 70%;
+    #bt-topnavlinks li {
+      border-right: 1px solid #ccc;
+      float: left;
+      margin: 0;
+      padding: 0;
     }
 
-      /* topnav navigation */
-      #bt-topnavlinks {
-        float: left;
-      }
+    #bt-topnavlinks li.bt-unique,
+    #bt-topnavlinks li.bt-last {
+      border-right: none;
+    }
 
-      #bt-topnavlinks ul {
-        float: left;
-        list-style: none;
-        margin: 0 0.5em 0 0;
-        padding: 0;
-      }
-
-      #bt-topnavlinks li {
-        border-right: 1px solid #ccc;
-        float: left;
-        margin: 0;
-        padding: 0;
-      }
-
-      #bt-topnavlinks li.bt-unique,
-      #bt-topnavlinks li.bt-last {
-        border-right: none;
-      }
-
-      #bt-topnavlinks li a {
-        display: block;
-        float: left;
-        height: 1.4em;
-        line-height: 1.4em;
-        padding: 0 0.5em;
-        text-align: center;
-        text-decoration: none;
-      }
+    #bt-topnavlinks li a {
+      display: block;
+      float: left;
+      height: 1.4em;
+      line-height: 1.4em;
+      padding: 0 0.5em;
+      text-align: center;
+      text-decoration: none;
+    }
 
   main {
-    padding: 1em 0;
   }
 
   footer {
@@ -640,7 +633,7 @@
     color: #444;
     font-size: 100%;
     line-height: 1.5;
-    padding: 1.5em;
+    padding: 1.5em 0;
     text-align: left;
   }
     footer p {

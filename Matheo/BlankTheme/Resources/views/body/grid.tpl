@@ -33,103 +33,109 @@
         <!-- end: nav -->
 
         <!-- begin: header -->
-        <div class="container">
-            <header class="jumbotron">
-                <div id="topnav">
-                    {blankutil section='topnavlinks'}
-                    {blankutil section='fontresize'}
+        <header>
+            <div class="container">
+                <div class="jumbotron">
+                    <div id="topnav">
+                        {blankutil section='topnavlinks'}
+                        {blankutil section='fontresize'}
+                    </div>
+
+                    {if $btconfig.header eq 1}
+                        {blockposition name='header'}
+                    {/if}
+
+                    {img src='logo.png' class='logo' __alt='logo'}
+                    <h1>{$modvars.ZConfig.sitename}</h1>
+                    <p class="slogan">{$modvars.ZConfig.slogan}</p>
                 </div>
-
-                {if $btconfig.header eq 1}
-                    {blockposition name='header'}
-                {/if}
-
-                {img src='logo.png' class='logo' __alt='logo'}
-                <h1>{$modvars.ZConfig.sitename}</h1>
-                <p class="slogan">{$modvars.ZConfig.slogan}</p>
-            </header>
-        </div>
+            </div>
+        </header>
         <!-- end: header -->
 
         <!-- begin: main -->
         <main>
-            <div class="ym-grid linearize-level-1">
-                <!-- begin: col1 main column -->
-                <div class="ym-g62 ym-gl">
-                    <div class="ym-gbox">
-                        {if $layout|checkzone:nc ne true}
-                            {blockposition name='center'}
-                        {/if}
+            <div class="container">
+                <div class="row">
+                    <!-- begin: col1 main column -->
+                    <div class="col-md-6">
+                        <div class="bt-box">
+                            {if $layout|checkzone:nc ne true}
+                                {blockposition name='center'}
+                            {/if}
 
-                        {$maincontent}
+                            {$maincontent}
+                        </div>
                     </div>
+                    <!-- end: col1 -->
+                    <aside class="col-md-6">
+                        {*blockposition name='search'*}
+
+                        {if $layout|checklayout:123 OR $layout|checklayout:132}
+                        <div class="row">
+                            <!-- begin: #col2 column -->
+                            <div class="col-md-6">
+                                <div class="bt-box">
+                                {if $layout|checklayout:123}
+                                    {blockposition name='left'}
+                                {else}
+                                    {blockposition name='right'}
+                                {/if}
+                                </div>
+                            </div>
+                            <!-- end: #col2 -->
+                            <!-- begin: #col3 column -->
+                            <div class="col-md-6">
+                                <div class="bt-box">
+                                {if $layout|checklayout:123}
+                                    {blockposition name='right'}
+                                {else}
+                                    {blockposition name='left'}
+                                {/if}
+                                </div>
+                            </div>
+                            <!-- end: #col3 -->
+                        </div>
+                        {else}
+                        <div class="bt-box">
+                            {if $layout|checklayout:12}
+                                {blockposition name='right'}
+                            {elseif $layout|checklayout:13}
+                                {blockposition name='left'}
+                            {/if}
+                        </div>
+                        {/if}
+                    </aside>
                 </div>
-                <!-- end: col1 -->
-                <aside class="ym-g38 ym-gr">
-                    {*blockposition name='search'*}
 
-                    {if $layout|checklayout:123 OR $layout|checklayout:132}
-                    <div class="ym-grid linearize-level-2">
-                        <!-- begin: #col2 column -->
-                        <div class="ym-g50 ym-gl">
-                            <div class="ym-gbox">
-                            {if $layout|checklayout:123}
-                                {blockposition name='left'}
-                            {else}
-                                {blockposition name='right'}
-                            {/if}
-                            </div>
+                {if $layout|checkzone:3b}
+                <section id="bt-3b" class="row bt-zone coolsubcol">
+                    <div class="col-md-4">
+                        <div class="bt-box">
+                            {blockposition name='bottoml'}
                         </div>
-                        <!-- end: #col2 -->
-                        <!-- begin: #col3 column -->
-                        <div class="ym-g50 ym-gr">
-                            <div class="ym-gbox">
-                            {if $layout|checklayout:123}
-                                {blockposition name='right'}
-                            {else}
-                                {blockposition name='left'}
-                            {/if}
-                            </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bt-box">
+                            {blockposition name='bottomc'}
                         </div>
-                        <!-- end: #col3 -->
                     </div>
-                    {else}
-                    <div class="ym-gbox">
-                        {if $layout|checklayout:12}
-                            {blockposition name='right'}
-                        {elseif $layout|checklayout:13}
-                            {blockposition name='left'}
-                        {/if}
+                    <div class="col-md-4">
+                        <div class="bt-box">
+                            {blockposition name='bottomr'}
+                        </div>
                     </div>
-                    {/if}
-                </aside>
+                </section>
+                {/if}
             </div>
-
-            {if $layout|checkzone:3b}
-            <section id="bt-3b" class="bt-zone ym-grid linearize-level-1 coolsubcol">
-                <div class="ym-g33 ym-gl">
-                    <div class="ym-gbox">
-                        {blockposition name='bottoml'}
-                    </div>
-                </div>
-                <div class="ym-g33 ym-gl">
-                    <div class="ym-gbox">
-                        {blockposition name='bottomc'}
-                    </div>
-                </div>
-                <div class="ym-g33 ym-gr">
-                    <div class="ym-gbox">
-                        {blockposition name='bottomr'}
-                    </div>
-                </div>
-            </section>
-            {/if}
         </main>
         <!-- end: main -->
 
         <!-- begin: footer -->
         <footer>
-            {include file='sections/footer.tpl'}
+            <div class="container">
+                {include file='sections/footer.tpl'}
+            </div>
         </footer>
         <!-- end: footer -->
     </div>
