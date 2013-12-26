@@ -1,40 +1,51 @@
 <!DOCTYPE html>
 <html lang="{lang}">
 
-{pageaddvar name='stylesheet' value="`$themepath`/style/admin.css"}
+{pageaddvar name='stylesheet' value="`$stylepath`/admin.css"}
 {include file='sections/head.tpl'}
 
 <!-- Admin template -->
 <body id="bt-{$module}" class="bt-2col bt-admin">
 
-<!-- skip link navigation -->
-<ul class="sr-only">
-    <li><a class="ym-skip" href="#main">{gt text='Skip to main content'} {gt text='(Press Enter)'}.</a></li>
-</ul>
+<!-- skip navigation -->
+<a href="#main" class="sr-only">{gt text='Skip to main content'}.</a>
 
 {* for the backend we do not use a body template *}
-<div class="ym-wrapper bt-12 bt-func-{$func}">
-    <div class="ym-wbox {blankutil section='classesinnerpage'}">
+<div class="bt-wrapper bt-12 bt-func-{$func}">
+    <div class="bt-wbox {blankutil section='classesinnerpage'}">
 
         <!-- begin: nav -->
-        {blankmenuadmin current=$module}
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <h1 class="navbar-brand">
+                        {img src='logo.gif' modname='core' set='' class='logo' __alt='logo' height='18'}
+                        <a href="{$baseurl}" title="{gt text='Go to the homepage'}">{$modvars.ZConfig.sitename}</a>
+                    </h1>
+                </div>
+                <div class="navbar-collapse">
+                    {blankmenuadmin current=$module}
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="{modurl modname='Users' type='user' func='logout'}">
+                                <span class="sr-only">{gt text='Logout'}</span>
+                                <i class="glyphicon glyphicon-log-out"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <!-- end: nav -->
 
-        <!-- begin: header -->
-        <header>
-            {img src='logo.gif' modname='core' set='' class='logo' __alt='logo' height='25'}
-            <h1><a href="{$baseurl}" title="{gt text='Go to the homepage'}">{$modvars.ZConfig.sitename}</a></h1>
-            <span class="slogan">{$modvars.ZConfig.slogan}</span>
-        </header>
-        <!-- end: header -->
-
         <!-- begin: #main -->
-        <div id="main">
+        <div id="main" class="container">
             {$maincontent}
-            </div> {* end: .ym-cbox *}
-            <div class="ym-ie-clearing">&nbsp;</div>
-            </div> {* end: .ym-col1 *}
-            </div> {* close .ym-column wrapper *}
         </div>
         <!-- end: #main -->
 

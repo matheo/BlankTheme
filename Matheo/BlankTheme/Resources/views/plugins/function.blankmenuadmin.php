@@ -11,13 +11,11 @@
  * BlankTheme plugin to display the admin navigation menu.
  *
  * Available parameters:
- *  - id           (string) ID of wrapper div (default: 'nav_admin')
- *  - ulclass      (string) CSS class name of the UL (default: 'cssplay_prodrop')
  *  - current      (string) Current screen ID (optional)
  *  - currentclass (string) CSS class name of the current tab, list item (default: 'selected')
  *
  * Example:
- *  {blankmenuadmin id='myId' ulclass='myUlClass' current='config' currentclass='myActiveClass'}
+ *  {blankmenuadmin id='myId' current='config' currentclass='myActiveClass'}
  *
  * @author Mateo Tibaquirá [mateo]
  * @author Erik Spaan [espaan]
@@ -32,8 +30,6 @@ function smarty_function_blankmenuadmin($params, Zikula_View_Theme &$view)
 {
     $dom = ZLanguage::getThemeDomain('BlankTheme');
 
-    $id      = isset($params['id']) ? $params['id'] : 'nav_admin';
-    $ulclass = isset($params['ulclass']) ? $params['ulclass'] : 'cssplay_prodrop';
     $current = isset($params['current']) ? $params['current'] : '';
     $cclass  = isset($params['currentclass']) ? $params['currentclass'] : 'selected';
 
@@ -41,12 +37,9 @@ function smarty_function_blankmenuadmin($params, Zikula_View_Theme &$view)
     /* menu option: {id, translatable link text, link, array of sublinks} */
     $menu = array();
 
-    /* Homepage link */
-    $menu[] = array('home', __('Home', $dom), System::getHomepageURL());
-
+    /* Config menu */
     if (SecurityUtil::checkPermission('Admin::', '::', ACCESS_EDIT))
     {
-        /* Config menu */
         // System basis
         $linkoptions = array(
                              array(null, __('Site settings', $dom),  ModUtil::url('Settings', 'admin', 'main'),
@@ -318,17 +311,14 @@ function smarty_function_blankmenuadmin($params, Zikula_View_Theme &$view)
 
     $menu[] = array('content', __('Create content', $dom), '#', $linkoptions);
 
-    /* Logout link */
-    $menu[] = array('logout', __('Log out', $dom), ModUtil::url('Users', 'user', 'logout'));
-
 
 
     /* Create the menu based on the array above */
-    $output  = '<div id="'.$id.'"><ul' . ((!empty($ulclass))?' class="'.$ulclass.'"':'') . '>';
+    $output  = '<ul class="nav navbar-nav">';
     foreach ($menu as $option) {
-        $output .= bt_adminlinks_drawmenu($option, $current, $cclass);
+        $output .= blankmenuadmin_drawmenu($option, $current, $cclass);
     }
-    $output .= '</ul></div>';
+    $output .= '</ul>';
 
     return $output;
 }
@@ -336,38 +326,32 @@ function smarty_function_blankmenuadmin($params, Zikula_View_Theme &$view)
 /**
  * Draw the array-menu recursively.
  */
-function bt_adminlinks_drawmenu($option, $current, $currentclass, $level=0)
+function blankmenuadmin_drawmenu($option, $current, $currentclass, $level=0)
 {
     $return = '';
 
     if (is_array($option)) {
-        $return .= '<li class="'.($level == 0 ? 'top' : '').($option[0] == $current ? ' '.$currentclass : '').'">';
-        $return .= '<a';
-        if ($level == 0) {
-            $return .= ' class="top_link"';
-        } elseif (isset($option[3]) && is_array($option[3])) {
-            $return .= ' class="fly"';
-        }
-        $return .= ' title="'.DataUtil::formatForDisplay($option[1]).'" href="'.DataUtil::formatForDisplay($option[2]).'">';
-        $return .= ($level == 0 ? '<span>' : '') . DataUtil::formatForDisplay($option[1]). ($level == 0 ? '</span>' : '');
+        $drop = isset($option[3]) && is_array($option[3]);
+
+        $return .= '<li class="'.($drop ? 'dropdown'.($level > 0 ? '-submenu' : '') : '').($option[0] == $current ? ' '.$currentclass : '').'">';
+
+        $return .= '<a'
+                  //.' title="'.DataUtil::formatForDisplay($option[1]).'"'
+                  .' href="'.DataUtil::formatForDisplay($option[2]).'"'
+                  .($drop ? ' tabindex="-1" class="dropdown-toggle" data-toggle="dropdown"' : '').'>';
+        $return .= ($level == 0 ? '<span>' : '') . DataUtil::formatForDisplay($option[1]). ($level == 0 ? ' </span>' : ' ');
+        $return .= ($drop && $level == 0 ? '<b class="caret"></b>' : '');
+        $return .= '</a>';
+
         // Recursively render the suboptions
-        if (isset($option[3]) && is_array($option[3])) {
-            if ($level == 0) {
-                /* at 1st level add iframe for IE6 menu over form display */
-                $return .= '<!--[if gte IE 7]><!--></a><!--<![endif]--><!--[if lte IE 6]><table><tr><td><iframe frameborder="0"></iframe><![endif]-->';
-                $return .= '<ul class="drop">';
-            } else {
-                $return .= '<!--[if gte IE 7]><!--></a><!--<![endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->';
-                $return .= '<ul>';
-            }
+        if ($drop) {
+            $return .= '<ul class="dropdown-menu">';
             foreach ($option[3] as $suboption) {
-                $return .= bt_adminlinks_drawmenu($suboption, $current, $currentclass, $level+1);
+                $return .= blankmenuadmin_drawmenu($suboption, $current, $currentclass, $level+1);
             }
             $return .= '</ul>';
-            $return .= '<!--[if lte IE 6]></td></tr></table></a><![endif]-->'; /* IE extras */
-        } else {
-            $return .= '</a>';
         }
+
         $return .= '</li>';
     }
 

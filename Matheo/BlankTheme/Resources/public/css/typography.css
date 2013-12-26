@@ -51,9 +51,6 @@
    *
    * @see: http://webkit.org/blog/67/strange-medium/
    */
-  html * {
-    font-size: 100%;
-  }
 
   /* reset monospaced elements to font size 16px in all browsers */
   textarea, pre, code, kbd, samp, var, tt {
@@ -64,7 +61,6 @@
   body {
     color: #444;
     font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
-    font-size: 87.50%; /* base: 14px */
   }
 
   /******* Headings *******/
@@ -145,8 +141,6 @@
 
   li {
     font-size: 100%;
-    line-height: 1.5;
-    margin-left: 1.2em;
   }
 
   dt {
@@ -660,9 +654,6 @@
   }
   a:active {
     outline: none;
-  }
-  a:visited {
-    color: #036;
   }
   a:hover,
   a:focus {
