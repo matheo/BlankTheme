@@ -153,7 +153,7 @@ function smarty_function_blankutil($params, Zikula_View_Theme &$view)
                 $output = 'bt-'.$view->getToplevelmodule();
 
             } elseif (!empty($current)) {
-                $output = 'bt-'.$current;
+                $output = "bt-{$current}";
 
             } else {
                 $output = 'bt-staticpage';
@@ -164,12 +164,12 @@ function smarty_function_blankutil($params, Zikula_View_Theme &$view)
         case 'classesbody':
             // add a first level of CSS classes like current language, type parameter and body template in use with a 'bt-' prefix
             if (!empty($current)) {
-                $output .= 'bt-'.$current.' ';
+                $output .= "bt-{$current} ";
             }
             if ($btcssbody && isset($btcssbody[$body]) && $btcssbody[$body]) {
                 $output .= $btcssbody[$body].' ';
             }
-            $output .= 'bt-'.$body.' bt-type-'.$view->getType().' bt-lang-'.$view->getLanguage();
+            $output .= "bt-{$body} bt-lang-{$view->getLanguage()}" . ($view->getType() ? ' bt-type-'.$view->getType() : '');
             break;
 
         /* Second CSS level */
@@ -178,7 +178,7 @@ function smarty_function_blankutil($params, Zikula_View_Theme &$view)
             // add the current layout and enabled zones
             $output .= 'bt-'.str_replace('_', ' bt-', $layout);
             // add the current function name
-            $output .= ' bt-func-'.$view->getFunc();
+            $output .= $view->getFunc() ? ' bt-func-'.$view->getFunc() : '';
             break;
 
         /* Third CSS level */

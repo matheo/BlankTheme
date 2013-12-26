@@ -58,11 +58,11 @@ p.z-formnote {
   margin-top: -6px;
   top: 0;
 }
-/*
+
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
 }
-*/
+
 .dropdown-submenu > a:after {
   border-color: transparent;
   border-left-color: #ccc;
@@ -91,4 +91,13 @@ p.z-formnote {
   border-radius:6px 0 6px 6px;
   left:-100%;
   margin-left:10px;
+}
+
+@media (max-width: 756px){
+  .dropdown-submenu > a:after {
+    border: none;
+  }
+  .dropdown-submenu:hover > .dropdown-menu {
+    display: none;
+  }
 }

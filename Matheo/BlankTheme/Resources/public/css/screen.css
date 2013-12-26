@@ -33,38 +33,13 @@
     overflow-y: scroll;
   }
 
-  /* layout Module Configuration & fallback for unsupported media queries */
+  /* layout */
   .bt-wrapper {
-    min-width: 760px;
-    max-width: 80em;
     margin: 0 auto;
   }
 
   .bt-wbox {
-    margin: 1em 0;
     position: relative;
-  }
-
-  /* fullwidth layouts adjustments*/
-  body[class~="bt-full2col"] .bt-wrapper,
-  body[class~="bt-full3col"] .bt-wrapper {
-    min-width: 0
-  }
-  /* fallback for missing media queries support*/
-  body[class~="bt-full2col"] > header,
-  body[class~="bt-full3col"] > header,
-  body[class~="bt-full2col"] > nav,
-  body[class~="bt-full3col"] > nav,
-  body[class~="bt-full2col"] > main,
-  body[class~="bt-full3col"] > main,
-  body[class~="bt-full2col"] > footer,
-  body[class~="bt-full3col"] > footer {
-    min-width: 760px;
-  }
-  body[class~="bt-full2col"] .bt-wbox,
-  body[class~="bt-full3col"] .bt-wbox {
-    margin: 0;
-    overflow: hidden;
   }
 
 
