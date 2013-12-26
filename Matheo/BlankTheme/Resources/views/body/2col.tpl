@@ -33,20 +33,22 @@
         <!-- end: nav -->
 
         <!-- begin: header -->
-        <header class="container">
-            <div id="topnav">
-                {blankutil section='topnavlinks'}
-                {blankutil section='fontresize'}
-            </div>
+        <div class="container">
+            <header class="jumbotron">
+                <div id="topnav">
+                    {blankutil section='topnavlinks'}
+                    {blankutil section='fontresize'}
+                </div>
 
-            {if $btconfig.header eq 1}
-                {blockposition name='header'}
-            {/if}
+                {if $btconfig.header eq 1}
+                    {blockposition name='header'}
+                {/if}
 
-            {img src='logo.png' class='logo' __alt='logo'}
-            <h1>{$modvars.ZConfig.sitename}</h1>
-            <span class="slogan">{$modvars.ZConfig.slogan}</span>
-        </header>
+                {img src='logo.png' class='logo' __alt='logo'}
+                <h1>{$modvars.ZConfig.sitename}</h1>
+                <p class="slogan">{$modvars.ZConfig.slogan}</p>
+            </header>
+        </div>
         <!-- end: header -->
 
         <!-- begin: main -->

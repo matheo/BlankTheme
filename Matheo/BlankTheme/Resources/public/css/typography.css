@@ -560,54 +560,41 @@
    */
 
   header {
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    border-radius: 7px;
-    background: #eee;
-    color: #ccc;
-    height: 110px;
-    padding: 0 1.5em; /* do not use top/bottom paddings with fixed height */
     position: relative;
-    /*z-index: 100;*/ /* when the navigation is placed inside the header and a multi level menu is used this is needed for ie */
   }
 
     /* title and slogan */
     header h1 {
       background: transparent;
-      margin: 0;
-      padding: 35px 0 0 0;
+      color: #349 !important;
+      letter-spacing: -1px;
+      margin: -16px 0 0;
     }
     header .slogan {
       color: #777;
       float: left;
       font-size: 20px;
-      padding: 0.4em;
-    }
-
-    header h1,
-    header h1 a {
-      color: #349 !important;
-      font-size: 36px;
-      letter-spacing: -1px;
-      line-height: 65%;
+      padding-left: 14px;
     }
 
     /* logo */
     header .logo {
       float: left;
-      margin: 30px 12px 0 0;
+      margin-right: 1em;
     }
 
     /* top navigation container */
     #topnav {
       background: transparent;
       color: #aaa;
-      font-size: 100%;
       line-height: 1.5;
       text-align: right; /* LTR */
       position: absolute;
-      right: 10px; /* LTR */
-      top: 10px;
+      right: 20px; /* LTR */
+      top: 20px;
+    }
+    .jumbotron #topnav {
+      font-size: 70%;
     }
 
   nav {

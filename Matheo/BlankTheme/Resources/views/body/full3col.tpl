@@ -30,8 +30,8 @@
 <!-- end: nav -->
 
 <!-- begin: header -->
-<header>
-    <div class="container">
+<div class="container">
+    <header class="jumbotron">
         <div id="topnav">
             {blankutil section='topnavlinks'}
             {blankutil section='fontresize'}
@@ -43,9 +43,9 @@
 
         {img src='logo.png' class='logo' __alt='logo'}
         <h1>{$modvars.ZConfig.sitename}</h1>
-        <span class="slogan">{$modvars.ZConfig.slogan}</span>
-    </div>
-</header>
+        <p class="slogan">{$modvars.ZConfig.slogan}</p>
+    </header>
+</div>
 <!-- end: header -->
 
 <!-- begin: main -->
