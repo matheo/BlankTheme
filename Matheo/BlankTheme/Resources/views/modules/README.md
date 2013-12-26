@@ -8,3 +8,5 @@ In this folder you store the customized templates of your modules. Zikula's Them
 You can customize them and use your theme styles inside them. Also, to use translations inside the Theme domain like:
 
     {gt text='My Link' domain='theme_blanktheme'}
+
+Don't forget to list your customized templates on the config/overrides.yml file.

@@ -9,7 +9,7 @@ http://www.blanktheme.org/
 **Erik Spaan [espaan]**  
 http://www.erikspaan.nl/
 
-## BlankTheme Documentation:
+## Inspiration:
 **Dave Pahl [ammodump]**  
 
 

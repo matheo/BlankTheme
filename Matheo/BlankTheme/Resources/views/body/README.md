@@ -1,5 +1,5 @@
 
-# /templates/body
+# views/templates/body
 
 This folder stores the templates responsible of the different body possibilities.
 

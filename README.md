@@ -7,7 +7,7 @@ Please check [it's documentation](http://getbootstrap.com/getting-started/) to l
 ---
 
 BlankTheme aims to become a comprehensive Theme Development Framework for the Zikula Application Framework. Its objective is to ease the development of new Themes as well as the porting of open source themes.
-We use the [Bootstrap front-end framework](http://getbootstrap.com/) to advance theme development and to create usable, flexible, valid, and standards compliant themes.
+We use the [Bootstrap front-end framework](http://getbootstrap.com/) to advance theme development and to create responsive, flexible, usable, valid and standards compliant themes.
 
 Enjoy! We wait for your feedback ;-)
 
@@ -15,6 +15,11 @@ Enjoy! We wait for your feedback ;-)
  Mateo Tibaquirá  
  Erik Spaan  
  Dave Pahl
+
+## Installation
+
+1. Clone the repository to src/themes/matheo-blank or copy the theme files to src/themes/Matheo/BlankTheme
+2. Activate the Theme in the theme settings
 
 ## Support and Feedback
 
