@@ -58,7 +58,7 @@
             <div class="container">
                 <div class="row">
                     <!-- begin: col1 main column -->
-                    <div class="col-md-6">
+                    <div class="col-md-7">
                         <div class="bt-box">
                             {if $layout|checkzone:nc ne true}
                                 {blockposition name='center'}
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                     <!-- end: col1 -->
-                    <aside class="col-md-6">
+                    <aside class="col-md-5">
                         {*blockposition name='search'*}
 
                         {if $layout|checklayout:123 OR $layout|checklayout:132}
