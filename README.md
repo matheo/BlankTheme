@@ -1,8 +1,8 @@
 
 # Welcome to BlankTheme
 
-**BlankTheme is using Bootstrap for Zikula 1.3.7+**
-Please check [it's documentation](http://getbootstrap.com/getting-started/) to learn the cool features that you can use with your BlankTheme-based Theme.
+**BlankTheme is using Bootstrap and Zikula 1.3.7+**
+Please check [its documentation](http://getbootstrap.com/getting-started/) to learn the cool features that you can use with your BlankTheme-based Theme.
 
 ---
 
@@ -18,8 +18,8 @@ Enjoy! We wait for your feedback ;-)
 
 ## Installation
 
-1. Clone the repository to src/themes/matheo-blank or copy the theme files to src/themes/Matheo/BlankTheme
-2. Activate the Theme in the theme settings
+1. Clone the repository to `src/themes/matheo-blank` or copy the theme files to `src/themes/Matheo/BlankTheme`.
+2. Activate the Theme in the theme settings.
 
 ## Support and Feedback
 
