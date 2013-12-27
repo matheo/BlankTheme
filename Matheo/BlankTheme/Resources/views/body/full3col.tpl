@@ -52,55 +52,53 @@
 
 <!-- begin: main -->
 <main class="bt-3col">
-    <div class="bt-wrapper {blankutil section='classespage'}">
-        <div class="bt-wbox {blankutil section='classesinnerpage'}">
-            <div class="ym-column linearize-level-1">
+    <div class="container {blankutil section='classespage'}">
+        <div class="row {blankutil section='classesinnerpage'}">
 
-            <!-- begin: col1 main column -->
-            <div class="ym-col1">
-                <div class="ym-cbox">
-                    {if $layout|checkzone:nc ne true}
-                        {blockposition name='center'}
-                    {/if}
+        <!-- begin: col1 main column -->
+        <div class="col-md-6 bt-col1">
+            <div class="bt-box">
+                {if $layout|checkzone:nc ne true}
+                    {blockposition name='center'}
+                {/if}
 
-                    {$maincontent}
+                {$maincontent}
 
-                    {if $layout|checkzone:2cb}
-                    <section id="bt-2cb" class="bt-zone ym-grid linearize-level-2">
-                        <div class="ym-g50 ym-gl">
-                            <div class="ym-gbox">
-                                {blockposition name='centerbl'}
-                            </div>
+                {if $layout|checkzone:2cb}
+                <section id="bt-2cb" class="row bt-zone">
+                    <div class="col-md-6">
+                        <div class="bt-box">
+                            {blockposition name='centerbl'}
                         </div>
-                        <div class="ym-g50 ym-gr">
-                            <div class="ym-gbox">
-                                {blockposition name='centerbr'}
-                            </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="bt-box">
+                            {blockposition name='centerbr'}
                         </div>
-                    </section>
-                    {/if}
-                </div>
+                    </div>
+                </section>
+                {/if}
             </div>
-            <!-- end: col1 -->
+        </div>
+        <!-- end: col1 -->
 
-            <!-- begin: col2 column -->
-            <aside class="ym-col2">
-                <div class="ym-cbox">
-                    {blockposition name='left'}
-                </div>
-            </aside>
-            <!-- end: col2 -->
-
-            <!-- begin: col3 column -->
-            <aside class="ym-col3">
-                <div class="ym-cbox">
-                    {*blockposition name='search'*}
-                    {blockposition name='right'}
-                </div>
-            </aside>
-            <!-- end: col3 -->
-
+        <!-- begin: col2 column -->
+        <aside class="col-md-3 bt-col2">
+            <div class="bt-box">
+                {blockposition name='left'}
             </div>
+        </aside>
+        <!-- end: col2 -->
+
+        <!-- begin: col3 column -->
+        <aside class="col-md-3 bt-col3">
+            <div class="bt-box">
+                {*blockposition name='search'*}
+                {blockposition name='right'}
+            </div>
+        </aside>
+        <!-- end: col3 -->
+
         </div>
     </div>
 </main>

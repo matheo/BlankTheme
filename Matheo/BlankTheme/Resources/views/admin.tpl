@@ -44,9 +44,9 @@
         <!-- end: nav -->
 
         <!-- begin: #main -->
-        <div id="main" class="container">
+        <main class="container">
             {$maincontent}
-        </div>
+        </main>
         <!-- end: #main -->
 
         <!-- begin: footer -->

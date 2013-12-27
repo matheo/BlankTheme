@@ -32,17 +32,6 @@
    * Global typography settings
    *
    * @section content-typography
-   *
-   * vertical rhythm settings (based on em-unit)
-   * -------------------------------------------
-   * basefont-size:  14px (87.5%)
-   * line-height  :  21px (factor: 1.5)
-   */
-
-  /**
-   * reset font size for all elements to standard (16 Pixel)
-   *
-   * @see: http://webkit.org/blog/67/strange-medium/
    */
 
   /* reset monospaced elements to font size 16px in all browsers */
@@ -498,10 +487,10 @@
   /******* Fixes *******/
 
   /* js context menus */
-  #bt-wikula .bt-func-edit .ym-col1 .ym-cbox,
+  #bt-wikula .bt-func-edit .bt-col1 .bt-box,
   #bt-wikula .bt-func-edit #z-maincontent,
-  #bt-content.bt-admin .ym-col1 .ym-cbox,
-  #bt-content.bt-type-edit .ym-col1 .ym-cbox,
+  #bt-content.bt-admin .bt-col1 .bt-box,
+  #bt-content.bt-type-edit .bt-col1 .bt-box,
   #bt-content.bt-admin #z-maincontent,
   #bt-content.bt-type-edit #z-maincontent {
     position: inherit;
@@ -753,33 +742,40 @@
 
   /* .bt-menublock styles */
 
-  /* defaults for menu and menutree blocks inside #main : to-customize */
-  #main ul.navlist,
-  #main ul.navlist li,
-  #main ul.menutree,
-  #main ul.menutree li,
+  /* defaults for menu and menutree blocks inside main : to-customize */
+  main ul.navlist,
+  main ul.navlist li,
+  main ul.menutree,
+  main ul.menutree li,
   .bt-menublock ul,
   .bt-menublock ul li {
     list-style: none;
     margin: 0;
+    padding: 0;
   }
 
-  #main ul.navlist li,
-  #main ul.menutree li,
+  main ul.navlist li,
+  main ul.menutree li,
   .bt-menublock ul li {
     border-top: 1px solid #eee;
     list-style: none;
     padding: 3px 0;
   }
-  #main ul.navlist li:first-child,
-  #main ul.menutree li:first-child,
+  main ul.navlist li:first-child,
+  main ul.menutree li:first-child,
   .bt-menublock ul li:first-child {
     border-top: none;
   }
-  #main ul.navlist li .z-floatright,
-  #main ul.menutree li .z-floatright,
+  main ul.navlist li .z-floatright,
+  main ul.menutree li .z-floatright,
   .bt-menublock ul li .z-floatright {
     color: #999;
+  }
+  main ul.navlist li a,
+  main ul.menutree li a,
+  .bt-menublock ul li a {
+    display: block;
+    padding: 0.25em 0.5em;
   }
 
 

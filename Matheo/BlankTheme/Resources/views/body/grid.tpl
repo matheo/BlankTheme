@@ -58,7 +58,7 @@
             <div class="container">
                 <div class="row">
                     <!-- begin: col1 main column -->
-                    <div class="col-md-7">
+                    <div class="col-md-7 bt-col1">
                         <div class="bt-box">
                             {if $layout|checkzone:nc ne true}
                                 {blockposition name='center'}
@@ -74,7 +74,7 @@
                         {if $layout|checklayout:123 OR $layout|checklayout:132}
                         <div class="row">
                             <!-- begin: #col2 column -->
-                            <div class="col-md-6">
+                            <div class="col-md-6 bt-col2">
                                 <div class="bt-box">
                                 {if $layout|checklayout:123}
                                     {blockposition name='left'}
@@ -85,7 +85,7 @@
                             </div>
                             <!-- end: #col2 -->
                             <!-- begin: #col3 column -->
-                            <div class="col-md-6">
+                            <div class="col-md-6 bt-col3">
                                 <div class="bt-box">
                                 {if $layout|checklayout:123}
                                     {blockposition name='right'}
@@ -97,7 +97,7 @@
                             <!-- end: #col3 -->
                         </div>
                         {else}
-                        <div class="bt-box">
+                        <div class="bt-box bt-col2">
                             {if $layout|checklayout:12}
                                 {blockposition name='right'}
                             {elseif $layout|checklayout:13}
