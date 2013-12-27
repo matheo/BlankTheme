@@ -338,7 +338,7 @@ function blankmenuadmin_drawmenu($option, $current, $currentclass, $level=0)
         $return .= '<a'
                   //.' title="'.DataUtil::formatForDisplay($option[1]).'"'
                   .' href="'.DataUtil::formatForDisplay($option[2]).'"'
-                  .($drop ? ' tabindex="-1" class="dropdown-toggle" data-toggle="dropdown"' : '').'>';
+                  .($drop ? ' tabindex="-1" class="dropdown-toggle'.($level > 0 ? ' disabled' : '').'" data-toggle="dropdown"' : '').'>';
         $return .= ($level == 0 ? '<span>' : '') . DataUtil::formatForDisplay($option[1]). ($level == 0 ? ' </span>' : ' ');
         $return .= ($drop && $level == 0 ? '<b class="caret"></b>' : '');
         $return .= '</a>';
