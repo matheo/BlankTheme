@@ -257,64 +257,6 @@
 
 
 
-  /**
-   * 3col231 template
-   * 213 is the default layout
-   * @subsection layout-template-3col231
-   */
-
-  /* .bt-col1 is the main column (static) */
-  .bt-3col231 .bt-col1 {
-    border-left: 1px solid #ddd; /* to-customize */
-    border-right: 1px solid #ddd; /* to-customize */
-    float: none;
-    margin-left: 23%; /* leftcol width*/
-    margin-right: 23%; /* rightcol width*/
-    width: auto;
-  }
-
-  /* .bt-col2 contains the left blocks */
-  .bt-3col231 .bt-col2 {
-    float: left;
-    margin: 0;
-    width: 23%;
-  }
-
-  /* .bt-col3 contains the right blocks */
-  .bt-3col231 .bt-col3 {
-    float: right;
-    margin: 0;
-    width: 23%;
-  }
-
-
-  /* 312 layout */
-  .bt-3col231 .bt-312 .bt-col2 {
-    float: right;
-    margin-left: -5px;
-  }
-  .bt-3col231 .bt-312 .bt-col3 {
-    float: left;
-  }
-
-
-  /* column boxes paddings */
-  .bt-3col231 .bt-col1 .bt-box {
-    padding: 0 10px;
-  }
-  .bt-3col231 .bt-col2 .bt-box {
-    padding: 0 5px 0 10px;
-  }
-  .bt-3col231 .bt-col3 .bt-box {
-    padding: 0 10px 0 5px;
-  }
-  .bt-3col231 .bt-312 .bt-col2 .bt-box {
-    padding: 0 10px 0 5px;
-  }
-  .bt-3col231 .bt-312 .bt-col3 .bt-box {
-    padding: 0 5px 0 10px;
-  }
-
   /******* Zones *******/
 
   .bt-zone {

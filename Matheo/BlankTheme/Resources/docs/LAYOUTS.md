@@ -11,10 +11,6 @@ Supports all the available two column distributions, the main column at the left
 
 Supports all the available two column distributions, the main column at the left or right, with one of the side columns with the left/right blockpositions (by default).
 
-## 3 columns (3col231)
-
-Supports the classic three column distributions, with the main column at the middle, switching the side columns, allowing to use borders on the main column `#col1_content`.
-
 ## Grid (grid)
 
 As an example of [Bootstrap grid system](http://getbootstrap.com/css/#grid) there is a example of its use, with the main column at the left, taking the 60% of the total width, and the side columns the other 40%.

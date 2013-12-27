@@ -27,13 +27,6 @@ all the columns are floating
   The 'cb' zone uses the [bottom] block position.
 * Supported distributions: '213', '312', '123', '132', '231', '321'.
 
-## 3col231
-
-3col derivation with the #col1 at the end of the #main container to use #col1 static
-
-* Static main column to have fixed side columns but fluid main content
-* Same features that 3 col, but only supports the distributions '213' and '312'
-
 ## grid
 
 Uses the Bootstrap grid system like the flexible grids example to build the layout
