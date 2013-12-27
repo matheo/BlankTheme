@@ -23,7 +23,6 @@ class MatheoBlankTheme extends AbstractCoreTheme
         no__('Master body template');
         no__('2 columns');
         no__('3 columns');
-        no__('3 columns static');
         no__('grid');
         no__('full width');
 
@@ -42,7 +41,5 @@ class MatheoBlankTheme extends AbstractCoreTheme
         no__("Enable 'footer' block position?");
 
         no__('Enable font resize buttons');
-
-        no__('Use the layout_X.css');
     }
 }

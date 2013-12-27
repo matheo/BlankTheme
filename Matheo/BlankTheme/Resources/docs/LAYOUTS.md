@@ -1,7 +1,7 @@
 
 # Available Layouts
 
-The available layouts are supported by the body templates, located at the _/templates/body_ subfolder, and are as follows:
+The available layouts are supported by the body templates, located at the `Resources/views/body' subfolder, and are as follows:
 
 ## 2 colums (2col)
 
