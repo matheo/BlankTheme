@@ -3,7 +3,10 @@
 
 ## Version 1.3.7
 
-* BlankTheme moved to Bootstrap
+* BlankTheme moved to Bootstrap and restructured for Zikula 1.3.7
+* Removed the deprecated stuff by the Bootstrap grid
+* Added the blankmobile plugin to add a CSS class according the device
+* Relicensed to MIT
 
 ## Version 1.3.5
 

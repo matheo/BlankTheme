@@ -71,6 +71,7 @@ function smarty_function_blankutil($params, Zikula_View_Theme &$view)
                 $menu[] = array('login', __('Login', $dom), ModUtil::url('Users', 'user', 'login'));
                 $menu[] = array('register', __('Register', $dom), ModUtil::url('Users', 'user', 'register'));
             }
+
             // render the menu
             $count   = count($menu) - 1;
             $output  = '<div id="bt-topnavlinks"><ul>';
@@ -136,8 +137,7 @@ function smarty_function_blankutil($params, Zikula_View_Theme &$view)
         case 'footer':
             // load the Theme styles in the very end of the page rendering
             // TODO pending review with PageUtil weight assignment (when implemented)
-            PageUtil::addVar('stylesheet', $view->getStylepath().'/screen.css');
-            PageUtil::addVar('stylesheet', $view->getStylepath().'/typography.css');
+            PageUtil::addVar('stylesheet', $view->getStylepath().'/style.css');
             break;
 
         /* Body ID */

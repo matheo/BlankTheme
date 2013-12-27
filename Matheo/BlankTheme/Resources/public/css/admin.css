@@ -6,14 +6,17 @@
  * @license   MIT - http://www.opensource.org/licenses/mit-license.html
  */
 
+.bt-admin {
+  padding: 52px 0 0;
+}
 .bt-admin h1 {
   margin: 0;
 }
 .bt-admin h1 a {
   color: inherit;
 }
-.bt-admin main {
-  padding: 52px 0 0;
+.bt-admin li.dropdown:hover > ul.dropdown-menu {
+  display: block;
 }
 .bt-admin footer {
   display: none;

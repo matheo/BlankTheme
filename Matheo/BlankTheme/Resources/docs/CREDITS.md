@@ -3,7 +3,7 @@
 
 ## Developer:
 **Mateo Tibaquirá [matheo]**  
-http://www.blanktheme.org/
+http://www.matheo.co/
 
 ## Menu management:
 **Erik Spaan [espaan]**  

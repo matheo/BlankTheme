@@ -10,24 +10,150 @@
 /**
  * CSS Table of Contents
  *
+ *  Global fixes (layout-global)
+ *  Design of the layout (layout-basics)
  *  Global typography settings (content-typography)
  *      Headings
- *      Links
+ *      Lists
  *      General text formatting
  *      Miscellaneous
  *  Generic content classes (content-generic-classes)
  *  Tables (content-tables)
- *  General layout elements (content-layout)
- *  Links (content-links)
- *  Theme specific styles (content-theme)
  *  Zikula specific styles (content-zikula)
  *      Fixes
  *      Core overrides
- *  Customized styles (content-custom)
+ *  Links (content-links)
+ *  Theme specific styles (content-theme)
  */
 
 @media all
 {
+  /**
+   * Global fixes
+   *
+   * @section layout-global
+   */
+
+  /* force vertical scrollbar */
+  body {
+    overflow-y: scroll;
+    padding-top: 70px; /* navbar-fixed.top */
+  }
+
+  /* layout */
+  .bt-wrapper {
+    margin: 0 auto;
+  }
+
+  .bt-wbox {
+    position: relative;
+  }
+
+
+
+  /**
+   * General layout elements
+   * styles for the main containers and some of its specific contents
+   *
+   * @section layout-basics
+   */
+
+  #nav {
+    background: #f6f6f6 url('../images/design/bg-nav.png') repeat-x 0 0;
+  }
+
+  header div {
+    position: relative;
+  }
+
+  /* title and slogan */
+  header h1 {
+    background: transparent;
+    color: #349 !important;
+    letter-spacing: -1px;
+    margin: -5px 0 0;
+  }
+  header .slogan {
+    color: #777;
+    float: left;
+    font-size: 20px;
+    padding-left: 14px;
+  }
+
+  /* logo */
+  header .logo {
+    float: left;
+    margin-right: 1em;
+  }
+
+  /* top navigation container */
+  #topnav {
+    background: transparent;
+    color: #aaa;
+    line-height: 1.5;
+    text-align: right; /* LTR */
+    position: absolute;
+    right: 15px; /* LTR */
+    top: 15px;
+  }
+  .jumbotron #topnav {
+    font-size: 70%;
+  }
+
+  /* topnav navigation */
+  #bt-topnavlinks {
+    float: left;
+  }
+
+  #bt-topnavlinks ul {
+    float: left;
+    list-style: none;
+    margin: 0 0.5em 0 0;
+    padding: 0;
+  }
+
+  #bt-topnavlinks li {
+    border-right: 1px solid #ccc;
+    float: left;
+    margin: 0;
+    padding: 0;
+  }
+
+  #bt-topnavlinks li.bt-unique,
+  #bt-topnavlinks li.bt-last {
+    border-right: none;
+  }
+
+  #bt-topnavlinks li a {
+    display: block;
+    float: left;
+    height: 1.4em;
+    line-height: 1.4em;
+    padding: 0 0.5em;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  main {
+  }
+
+  footer {
+    background: #eee;
+    color: #444;
+    font-size: 100%;
+    line-height: 1.5;
+    padding: 1.5em 0;
+    text-align: left;
+  }
+  footer p {
+    margin: 0;
+  }
+  #footer-sublinks {
+    font-size: 90%;
+  }
+
+
+
   /**
    * Global typography settings
    *
@@ -536,109 +662,6 @@
 
 
   /**
-   * General layout elements
-   * styles for the main containers and some of its specific contents
-   *
-   * @section content-layout
-   */
-
-  #nav {
-    background: #f6f6f6 url('../images/design/bg-nav.png') repeat-x 0 0;
-  }
-
-  header div {
-    position: relative;
-  }
-
-  /* title and slogan */
-  header h1 {
-    background: transparent;
-    color: #349 !important;
-    letter-spacing: -1px;
-    margin: -5px 0 0;
-  }
-  header .slogan {
-    color: #777;
-    float: left;
-    font-size: 20px;
-    padding-left: 14px;
-  }
-
-  /* logo */
-  header .logo {
-    float: left;
-    margin-right: 1em;
-  }
-
-  /* top navigation container */
-  #topnav {
-    background: transparent;
-    color: #aaa;
-    line-height: 1.5;
-    text-align: right; /* LTR */
-    position: absolute;
-    right: 15px; /* LTR */
-    top: 15px;
-  }
-  .jumbotron #topnav {
-    font-size: 70%;
-  }
-
-    /* topnav navigation */
-    #bt-topnavlinks {
-      float: left;
-    }
-
-    #bt-topnavlinks ul {
-      float: left;
-      list-style: none;
-      margin: 0 0.5em 0 0;
-      padding: 0;
-    }
-
-    #bt-topnavlinks li {
-      border-right: 1px solid #ccc;
-      float: left;
-      margin: 0;
-      padding: 0;
-    }
-
-    #bt-topnavlinks li.bt-unique,
-    #bt-topnavlinks li.bt-last {
-      border-right: none;
-    }
-
-    #bt-topnavlinks li a {
-      display: block;
-      float: left;
-      height: 1.4em;
-      line-height: 1.4em;
-      padding: 0 0.5em;
-      text-align: center;
-      text-decoration: none;
-    }
-
-  main {
-  }
-
-  footer {
-    background: #eee;
-    color: #444;
-    font-size: 100%;
-    line-height: 1.5;
-    padding: 1.5em 0;
-    text-align: left;
-  }
-    footer p {
-      margin: 0;
-    }
-    #footer-sublinks {
-      font-size: 90%;
-    }
-
-
-
-  /**
    * Links
    * formatting of hyperlinks
    *
@@ -783,8 +806,18 @@
   }
 
 
-  /* special styles for posts entries */
-  .post {
-    /* your stuff */
+  /* miscelaneous */
+
+  /* cool subcolumns style */
+  .coolsubcol {
+    background: #f9f9f9;
+    border-top: 2px solid #efefef;
+    color: #666;
+    padding-top: 15px;
+  }
+
+  /* zones */
+  .bt-zone {
+    margin-bottom: 1em;
   }
 }

@@ -1,9 +1,10 @@
 
 This directory contains the main stylesheets that can be adapted for your site.
 
-- screen.css deals with positioning and geometry of the various layout elements.
-- typography.css deals with the visual styling (coloring, fonts, etc) and contains the Zikula specific styles.
+- admin.css deals with the customizations for the admin panel.
+- style.css deals with the theme visual styling, core overrides and specific stuff.
+
+You can also customize the PHP code of the `blankutil` plugin if you have PHP knowledge,
+to add customized CSS classes according your needs.
 
 Once the development is ready you can enable the CSS combination for faster websites.
-
-You can also customize the PHP code of the `blankutil` plugin if you have PHP knowledge.
