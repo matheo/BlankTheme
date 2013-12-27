@@ -4,7 +4,7 @@
 <a href="#main" class="sr-only">{gt text='Skip to main content'}.</a>
 
 <!-- begin: nav -->
-<nav id="nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav id="nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button data-target=".navbar-ex1-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
