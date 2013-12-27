@@ -49,6 +49,12 @@
     position: relative;
   }
 
+  /* full width layouts */
+  .bt-full2col .container,
+  .bt-full3col .container {
+    width: auto;
+  }
+
 
 
   /**

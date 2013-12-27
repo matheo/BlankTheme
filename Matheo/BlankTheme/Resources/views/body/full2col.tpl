@@ -56,7 +56,7 @@
         <div class="row {blankutil section='classesinnerpage'}">
 
         <!-- begin: col1 main column -->
-        <div class="bt-col1">
+        <div class="col-md-9 bt-col1">
             <div class="bt-box">
                 {if $layout|checkzone:nc ne true}
                     {blockposition name='center'}
@@ -84,7 +84,7 @@
 
         {if $layout|checklayout:2}
         <!-- begin: col2 column -->
-        <aside class="bt-col2">
+        <aside class="col-md-3 bt-col2">
             <div class="bt-box">
                 {blockposition name='left'}
             </div>
@@ -94,7 +94,7 @@
 
         {if $layout|checklayout:3}
         <!-- begin: col3 column -->
-        <aside class="bt-col3">
+        <aside class="col-md-4 bt-col3">
             <div class="bt-box">
                 {*blockposition name='search'*}
                 {blockposition name='right'}
