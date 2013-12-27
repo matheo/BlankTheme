@@ -11,7 +11,7 @@
  * CSS Table of Contents
  *
  *  Global fixes (layout-global)
- *  Design of the layout (layout-basics)
+ *  General layout elements (layout-basics)
  *  Global typography settings (content-typography)
  *      Headings
  *      Lists
@@ -59,7 +59,6 @@
 
   /**
    * General layout elements
-   * styles for the main containers and some of its specific contents
    *
    * @section layout-basics
    */
