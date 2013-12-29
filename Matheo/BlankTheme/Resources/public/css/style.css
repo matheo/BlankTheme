@@ -12,6 +12,7 @@
  *
  *  Global fixes (layout-global)
  *  General layout elements (layout-basics)
+ *  Links (content-links)
  *  Global typography settings (content-typography)
  *      Headings
  *      Lists
@@ -22,7 +23,6 @@
  *  Zikula specific styles (content-zikula)
  *      Fixes
  *      Core overrides
- *  Links (content-links)
  *  Theme specific styles (content-theme)
  */
 
@@ -33,6 +33,11 @@
    *
    * @section layout-global
    */
+
+  html,
+  body {
+    height: 100%;
+  }
 
   /* force vertical scrollbar */
   body {
@@ -78,6 +83,7 @@
     letter-spacing: -1px;
     margin: -5px 0 0;
   }
+
   header .slogan {
     color: #777;
     float: left;
@@ -110,34 +116,34 @@
     float: left;
   }
 
-  #bt-topnavlinks ul {
-    float: left;
-    list-style: none;
-    margin: 0 0.5em 0 0;
-    padding: 0;
-  }
+    #bt-topnavlinks ul {
+      float: left;
+      list-style: none;
+      margin: 0 0.5em 0 0;
+      padding: 0;
+    }
 
-  #bt-topnavlinks li {
-    border-right: 1px solid #ccc;
-    float: left;
-    margin: 0;
-    padding: 0;
-  }
+    #bt-topnavlinks li {
+      border-right: 1px solid #ccc;
+      float: left;
+      margin: 0;
+      padding: 0;
+    }
 
-  #bt-topnavlinks li.bt-unique,
-  #bt-topnavlinks li.bt-last {
-    border-right: none;
-  }
+    #bt-topnavlinks li.bt-unique,
+    #bt-topnavlinks li.bt-last {
+      border-right: none;
+    }
 
-  #bt-topnavlinks li a {
-    display: block;
-    float: left;
-    height: 1.4em;
-    line-height: 1.4em;
-    padding: 0 0.5em;
-    text-align: center;
-    text-decoration: none;
-  }
+    #bt-topnavlinks li a {
+      display: block;
+      float: left;
+      height: 1.4em;
+      line-height: 1.4em;
+      padding: 0 0.5em;
+      text-align: center;
+      text-decoration: none;
+    }
 
   main {
   }
@@ -150,11 +156,79 @@
     padding: 1.5em 0;
     text-align: left;
   }
-  footer p {
-    margin: 0;
+    footer p {
+      margin: 0;
+    }
+    #footer-sublinks {
+      font-size: 90%;
+    }
+
+
+
+  /**
+   * Links
+   * formatting of hyperlinks
+   *
+   * @section content-links
+   */
+
+  /* general links */
+  a {
+    background: transparent;
+    color: #4d87c7;
+    text-decoration: none;
   }
-  #footer-sublinks {
-    font-size: 90%;
+  a:active {
+    outline: none;
+  }
+  a:hover,
+  a:focus {
+    /* if you use backgrounds or borders here
+       you will interfere zikula core styles */
+    color: #182e7a;
+    text-decoration: underline;
+  }
+
+  /* top navigation links */
+  #topnav a {
+    background: transparent;
+    color: #4d87c7;
+    font-size: 100%;
+    font-weight: normal;
+    text-decoration: none;
+  }
+  #topnav a:focus,
+  #topnav a:hover,
+  #topnav a:active {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  /* title link */
+  header h1 a:focus,
+  header h1 a:hover,
+  header h1 a:active {
+    background: transparent;
+    text-decoration: none;
+  }
+
+  /* footer links */
+  footer a,
+  footer a:visited {
+    background: transparent;
+    color: #555;
+    /*font-weight: bold;*/
+  }
+  footer a:focus,
+  footer a:hover,
+  footer a:active {
+    background: transparent;
+    color: #4d87c7;
+    text-decoration: underline;
+  }
+  #footer-sublinks a {
+    font-size: 100%;
+    font-weight: normal;
   }
 
 
@@ -656,81 +730,15 @@
 
 
   /**
-   * Links
-   * formatting of hyperlinks
-   *
-   * @section content-links
-   */
-
-  /* general links */
-  a {
-    background: transparent;
-    color: #4d87c7;
-    text-decoration: none;
-  }
-  a:active {
-    outline: none;
-  }
-  a:hover,
-  a:focus {
-    /* if you use backgrounds or borders here
-       you will interfere zikula core styles */
-    color: #182e7a;
-    text-decoration: underline;
-  }
-
-  /* top navigation links */
-  #topnav a {
-    background: transparent;
-    color: #4d87c7;
-    font-size: 100%;
-    font-weight: normal;
-    text-decoration: none;
-  }
-  #topnav a:focus,
-  #topnav a:hover,
-  #topnav a:active {
-    background-color: transparent;
-    text-decoration: underline;
-  }
-
-  /* title link */
-  header h1 a:focus,
-  header h1 a:hover,
-  header h1 a:active {
-    background: transparent;
-    text-decoration: none;
-  }
-
-  /* footer links */
-  footer a,
-  footer a:visited {
-    background: transparent;
-    color: #555;
-    /*font-weight: bold;*/
-  }
-  footer a:focus,
-  footer a:hover,
-  footer a:active {
-    background: transparent;
-    color: #4d87c7;
-    text-decoration: underline;
-  }
-    #footer-sublinks a {
-      font-size: 100%;
-      font-weight: normal;
-    }
-
-
-
-  /**
    * Theme custom styles
    * customized styles for the theme
    *
    * @section content-theme
    */
 
-  /* blocks styles */
+
+  /** blocks styles **/
+
   .z-block {
     margin-bottom: 15px;
   }
@@ -761,7 +769,7 @@
   }
 
 
-  /* .bt-menublock styles */
+  /** .bt-menublock styles **/
 
   /* defaults for menu and menutree blocks inside main : to-customize */
   main ul.navlist,
@@ -800,7 +808,7 @@
   }
 
 
-  /* miscelaneous */
+  /** miscelaneous **/
 
   /* cool subcolumns style */
   .coolsubcol {
@@ -813,5 +821,86 @@
   /* zones */
   .bt-zone {
     margin-bottom: 1em;
+  }
+
+
+  /** example layouts: to-remove **/
+
+  /* home example */
+  .bt-examplehome {
+    box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+    padding: 0;
+    text-align: center;
+  }
+
+  /* extra markup and styles for table-esque vertical and horizontal centering */
+  .bt-examplehome .bt-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%; /* For at least Firefox */
+    min-height: 100%;
+  }
+  .bt-examplehome .bt-wbox {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .bt-examplehome #nav {
+    background: transparent;
+    border: none;
+    padding-top: 30px;
+  }
+  .bt-examplehome #nav .navbar-nav > li + li {
+    margin-left: 10px;
+  }
+  .bt-examplehome #nav .navbar-nav > li > a {
+    font-size: 16px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .bt-examplehome #nav .navbar-nav > li > a:hover {
+    border-bottom: 3px solid #ccc;
+  }
+  .bt-examplehome #nav .navbar-nav > .active > a,
+  .bt-examplehome #nav .navbar-nav > .active > a:hover,
+  .bt-examplehome #nav .navbar-nav > .active > a:focus {
+    background: transparent;
+    border-bottom: 3px solid #777;
+    color: #333;
+  }
+  .bt-examplehome main {
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  }
+  .bt-examplehome main,
+  .bt-examplehome .container {
+    max-width: 700px;
+  }
+  .bt-examplehome main p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .bt-examplehome footer {
+    background: none;
+    bottom: 0;
+    padding-bottom: 30px;
+    position: fixed;
+    width: 100%;
+  }
+
+  /* sticky footer technique */
+  body.bt-example {
+    padding: 0;
+  }
+  .bt-example .bt-wrapper {
+    min-height: 100%;
+    height: auto;
+    /* Negative indent footer by its height */
+    margin: 0 auto -70px;
+    /* Pad bottom by footer height */
+    padding: 70px 0;
+  }
+  .bt-example footer {
+    height: 70px;
   }
 }

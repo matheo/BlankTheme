@@ -12,6 +12,12 @@ through different $body and $layout combinations. The naming convention used for
 
 Let's see which advantages offers the default bodies:
 
+## home
+
+Example homepage template based in the `cover` example of Bootstrap.
+Use it setting up the home.ini with `current = examplehome` and `body = home`.
+Related styles can be removed fro custom themes if they're not used.
+
 ## 2col
 
 body template to support 1 and 2 column layouts
