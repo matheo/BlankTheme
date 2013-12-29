@@ -18,6 +18,12 @@ Example homepage template based in the `cover` example of Bootstrap.
 Use it setting up the home.ini with `current = examplehome` and `body = home`.
 Related styles can be removed fro custom themes if they're not used.
 
+## example
+
+Body template with a showcase of the theme features.
+Use it setting up `body = example` on the home.ini to check it temporary.
+`.bt-example*` styles can be removed at the final of `style.css`.
+
 ## 2col
 
 body template to support 1 and 2 column layouts

@@ -146,6 +146,7 @@
     }
 
   main {
+    margin-bottom: 20px;
   }
 
   footer {
@@ -825,6 +826,16 @@
 
 
   /** example layouts: to-remove **/
+
+  .bt-example .page-header p,
+  .bt-example .page-header h2,
+  .bt-example .page-header h3 {
+    margin: 0;
+  }
+
+  .bt-example .bt-col1 img {
+    margin: 5px auto;
+  }
 
   /* home example */
   .bt-examplehome {
