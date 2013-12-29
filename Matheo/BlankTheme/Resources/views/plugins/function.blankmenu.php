@@ -52,22 +52,6 @@ function smarty_function_blankmenu($params, Zikula_View_Theme &$view)
                   null                         // array of sublinks (optional)
               );
 
-    $menu[] = array(
-        'home',                      // page id / module name
-        __('Home2', $dom),            // translatable title
-        __('Go to home page', $dom), // translatable description
-        '/',    // link
-        null                         // array of sublinks (optional)
-    );
-
-    $menu[] = array(
-        'home',                      // page id / module name
-        __('Home3', $dom),            // translatable title
-        __('Go to home page', $dom), // translatable description
-        '/',    // link
-        null                         // array of sublinks (optional)
-    );
-
     if (ModUtil::available('News')) {
         $menu[] = array(
                       'News',
