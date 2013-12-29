@@ -5,30 +5,15 @@
 
 <div class="bt-wrapper {blankutil section='classespage'}">
     <div class="bt-wbox {blankutil section='classesinnerpage'}">
+        <div class="bt-cover-container">
 
         <!-- begin: nav -->
-        <nav id="nav" class="navbar navbar-default navbar-fixed-top clearfix" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button data-target=".navbar-ex1-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <a href="{$baseurl}" title="{gt text='Go to the homepage'}" class="navbar-brand">{$modvars.ZConfig.sitename}</a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    {if $btconfig.topnav eq 1}
-                        {blockposition name='topnav'}
-                    {else}
-                        {blankmenu}
-                    {/if}
-                </div>
+        <nav id="nav" class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <span class="navbar-brand">{$modvars.ZConfig.sitename}</span>
             </div>
+
+            {blankmenu css='navbar-right examplehome-nav'}
         </nav>
         <!-- end: nav -->
 
@@ -44,13 +29,13 @@
             </p>
         </main>
         <!-- end: main -->
+
+        <!-- begin: footer -->
+        <footer>
+            {include file='sections/footer.tpl'}
+        </footer>
+        <!-- end: footer -->
+
+        </div>
     </div>
 </div>
-
-<!-- begin: footer -->
-<footer>
-    <div class="container">
-        {include file='sections/footer.tpl'}
-    </div>
-</footer>
-<!-- end: footer -->

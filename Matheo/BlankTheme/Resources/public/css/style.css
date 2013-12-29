@@ -153,7 +153,7 @@
     color: #444;
     font-size: 100%;
     line-height: 1.5;
-    padding: 1.5em 0;
+    padding: 15px 0;
     text-align: left;
   }
     footer p {
@@ -828,9 +828,10 @@
 
   /* home example */
   .bt-examplehome {
-    box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+    background: #e5e5e5; /* background photo here */
     padding: 0;
     text-align: center;
+    /*text-shadow: 0 1px 3px rgba(0,0,0,.5); optional with a background image*/
   }
 
   /* extra markup and styles for table-esque vertical and horizontal centering */
@@ -842,12 +843,37 @@
   }
   .bt-examplehome .bt-wbox {
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: top;
   }
+  .bt-examplehome .bt-cover-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .bt-examplehome main {
+    padding: 0 20px;
+  }
+
+  /* overrides */
+  .bt-examplehome .navbar-brand {
+    color: #333;
+    float: none;
+    font-size: 24px;
+  }
+  .bt-examplehome footer {
+    background: none;
+    padding: 30px 20px;
+    width: 100%;
+  }
+
+  /* navigation customization */
   .bt-examplehome #nav {
     background: transparent;
     border: none;
-    padding-top: 30px;
+    margin: 0;
+    padding: 30px 20px;
+  }
+  .bt-examplehome #nav .navbar-nav > li {
+    display: inline-block;
   }
   .bt-examplehome #nav .navbar-nav > li + li {
     margin-left: 10px;
@@ -867,40 +893,29 @@
     border-bottom: 3px solid #777;
     color: #333;
   }
-  .bt-examplehome main {
-    margin-left: auto;
-    margin-right: auto;
-    text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+@media (min-width: 768px) {
+  .bt-examplehome .navbar-brand {
+    float: left;
   }
-  .bt-examplehome main,
-  .bt-examplehome .container {
-    max-width: 700px;
-  }
-  .bt-examplehome main p {
-    margin-left: auto;
-    margin-right: auto;
+  /* pull out the header and footer */
+  .bt-examplehome #nav {
+    position: fixed;
+    top: 0;
   }
   .bt-examplehome footer {
-    background: none;
-    bottom: 0;
-    padding-bottom: 30px;
     position: fixed;
-    width: 100%;
+    bottom: 0;
   }
-
-  /* sticky footer technique */
-  body.bt-example {
-    padding: 0;
+  /* start the vertical centering */
+  .bt-examplehome .bt-wbox {
+    vertical-align: middle;
   }
-  .bt-example .bt-wrapper {
-    min-height: 100%;
-    height: auto;
-    /* Negative indent footer by its height */
-    margin: 0 auto -70px;
-    /* Pad bottom by footer height */
-    padding: 70px 0;
-  }
-  .bt-example footer {
-    height: 70px;
+  /* handle the widths */
+  .bt-examplehome #nav,
+  .bt-examplehome footer,
+  .bt-examplehome .bt-cover-container {
+    width: 700px; /* must be percentage or pixels for horizontal alignment */
   }
 }
