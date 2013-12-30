@@ -837,8 +837,8 @@
     margin: 5px auto;
   }
 
-  /* home example */
-  .bt-examplehome {
+  /* cover example */
+  .bt-cover {
     background: #e5e5e5; /* background photo here */
     padding: 0;
     text-align: center;
@@ -846,60 +846,60 @@
   }
 
   /* extra markup and styles for table-esque vertical and horizontal centering */
-  .bt-examplehome .bt-wrapper {
+  .bt-cover .bt-wrapper {
     display: table;
     width: 100%;
-    height: 100%; /* For at least Firefox */
+    height: 100%; /* for at least Firefox */
     min-height: 100%;
   }
-  .bt-examplehome .bt-wbox {
+  .bt-cover .bt-wbox {
     display: table-cell;
     vertical-align: top;
   }
-  .bt-examplehome .bt-cover-container {
+  .bt-cover .bt-cover-container {
     margin-left: auto;
     margin-right: auto;
   }
-  .bt-examplehome main {
+  .bt-cover main {
     padding: 0 20px;
   }
 
   /* overrides */
-  .bt-examplehome .navbar-brand {
+  .bt-cover .navbar-brand {
     color: #333;
     float: none;
     font-size: 24px;
   }
-  .bt-examplehome footer {
+  .bt-cover footer {
     background: none;
     padding: 30px 20px;
     width: 100%;
   }
 
   /* navigation customization */
-  .bt-examplehome #nav {
+  .bt-cover #nav {
     background: transparent;
     border: none;
     margin: 0;
     padding: 30px 20px;
   }
-  .bt-examplehome #nav .navbar-nav > li {
+  .bt-cover #nav .navbar-nav > li {
     display: inline-block;
   }
-  .bt-examplehome #nav .navbar-nav > li + li {
+  .bt-cover #nav .navbar-nav > li + li {
     margin-left: 10px;
   }
-  .bt-examplehome #nav .navbar-nav > li > a {
+  .bt-cover #nav .navbar-nav > li > a {
     font-size: 16px;
     padding-left: 5px;
     padding-right: 5px;
   }
-  .bt-examplehome #nav .navbar-nav > li > a:hover {
+  .bt-cover #nav .navbar-nav > li > a:hover {
     border-bottom: 3px solid #ccc;
   }
-  .bt-examplehome #nav .navbar-nav > .active > a,
-  .bt-examplehome #nav .navbar-nav > .active > a:hover,
-  .bt-examplehome #nav .navbar-nav > .active > a:focus {
+  .bt-cover #nav .navbar-nav > .active > a,
+  .bt-cover #nav .navbar-nav > .active > a:hover,
+  .bt-cover #nav .navbar-nav > .active > a:focus {
     background: transparent;
     border-bottom: 3px solid #777;
     color: #333;
@@ -907,26 +907,26 @@
 }
 
 @media (min-width: 768px) {
-  .bt-examplehome .navbar-brand {
+  .bt-cover .navbar-brand {
     float: left;
   }
   /* pull out the header and footer */
-  .bt-examplehome #nav {
+  .bt-cover #nav {
     position: fixed;
     top: 0;
   }
-  .bt-examplehome footer {
+  .bt-cover footer {
     position: fixed;
     bottom: 0;
   }
   /* start the vertical centering */
-  .bt-examplehome .bt-wbox {
+  .bt-cover .bt-wbox {
     vertical-align: middle;
   }
   /* handle the widths */
-  .bt-examplehome #nav,
-  .bt-examplehome footer,
-  .bt-examplehome .bt-cover-container {
+  .bt-cover #nav,
+  .bt-cover footer,
+  .bt-cover .bt-cover-container {
     width: 700px; /* must be percentage or pixels for horizontal alignment */
   }
 }

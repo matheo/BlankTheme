@@ -1,4 +1,4 @@
-## YAML Override template
+## Template Override Definitions
 ## original/file.tpl: override/file.tpl
 ---
 modules/X/templates/y.tpl: themes/BlankTheme/templates/modules/X/y.tpl

@@ -12,17 +12,17 @@ through different $body and $layout combinations. The naming convention used for
 
 Let's see which advantages offers the default bodies:
 
-## home
+## cover
 
 Example homepage template based in the `cover` example of Bootstrap.
-Use it setting up the home.ini with `current = examplehome` and `body = home`.
-Related styles can be removed fro custom themes if they're not used.
+Use it setting up `body = cover` on any .ini, or check it with `index.php?btcover`.
+Related `.bt-cover` styles can be removed from custom themes if they're not used.
 
 ## example
 
 Body template with a showcase of the theme features.
-Use it setting up `body = example` on the home.ini to check it temporary.
-`.bt-example*` styles can be removed at the final of `style.css`.
+Use it setting up `body = example` on any .ini, or check it with `index.php?btexample`.
+`.bt-example` styles can be removed at the final of `style.css`.
 
 ## 2col
 

@@ -1,0 +1,7 @@
+## Services Container
+---
+services:
+    blanktheme.listener:
+        class: Matheo\BlankTheme\BlankListener
+        tags:
+            - { name: kernel.event_subscriber }

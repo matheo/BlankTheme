@@ -5,7 +5,7 @@
 
 * BlankTheme moved to Bootstrap and restructured for Zikula 1.3.7
 * Added the `example` body template to check the theme styles in one page
-* Added the `home` body template as example of bootstrap cover homepage
+* Added the `cover` body template as example of bootstrap cover homepage
 * Added the `blankmobile` plugin to add a CSS class according the device
 * Cleaned `admin.css` and unified all the styles on `style.css`
 * Removed the deprecated stuff by the Bootstrap grid
