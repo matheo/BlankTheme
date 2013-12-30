@@ -248,54 +248,12 @@
   /* base layout gets standard font size 14px */
   body {
     color: #444;
-    font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
   }
 
   /******* Headings *******/
 
   h1, h2, h3, h4, h5, h6 {
-    color: #161e21;
-    font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
-    font-weight: 400;
-    margin: 0;
-  }
-
-  h1 {
-    /* font-size: 48px; */
-    font-size: 342.85714%;
-    line-height: 0.875;
-    margin: 0 0 0.4375em 0;
-  }
-  h2 {
-    /* font-size: 32px; */
-    font-size: 228.57143%;
-    line-height: 1.3125;
-    margin: 0 0 0.65625em 0;
-  }
-  h3 {
-    /* font-size: 24px; */
-    font-size: 171.42857%;
-    line-height: 0.875;
-    margin: 0 0 0.875em 0;
-  }
-  h4 {
-    /* font-size: 21px; */
-    font-size: 150%;
-    line-height: 1;
-    margin: 0 0 1em 0;
-  }
-  h5 {
-    /* font-size: 18px; */
-    font-size: 128.57143%;
-    line-height: 1.16667;
-    margin: 0 0 1.16667em 0;
-  }
-  h6 {
-    /* font-size: 14px; */
-    font-size: 100%;
-    font-weight: bold;
-    line-height: 1.5;
-    margin: 0 0 1.5em 0;
+    font-weight: 500;
   }
 
   /******* Lists *******/

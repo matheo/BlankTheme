@@ -61,10 +61,15 @@
                                     </div>
 
                                     <h1>{gt text='%s heading and %s' tag1='h1' tag2='<code>.h1</code>'} <small>{gt text='on this theme'}</small></h1>
+                                    <hr />
                                     <h2>{gt text='%s heading and %s' tag1='h2' tag2='<code>.h2</code>'} <small>{gt text='on this theme'}</small></h2>
+                                    <hr />
                                     <h3>{gt text='%s heading and %s' tag1='h3' tag2='<code>.h3</code>'} <small>{gt text='on this theme'}</small></h3>
+                                    <hr />
                                     <h4>{gt text='%s heading and %s' tag1='h4' tag2='<code>.h4</code>'} <small>{gt text='on this theme'}</small></h4>
+                                    <hr />
                                     <h5>{gt text='%s heading and %s' tag1='h5' tag2='<code>.h5</code>'} <small>{gt text='on this theme'}</small></h5>
+                                    <hr />
                                     <h6>{gt text='%s heading and %s' tag1='h6' tag2='<code>.h6</code>'} <small>{gt text='on this theme'}</small></h6>
 
 
