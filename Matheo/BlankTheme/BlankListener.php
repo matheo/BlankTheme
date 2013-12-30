@@ -20,6 +20,10 @@ class BlankListener implements EventSubscriberInterface
     {
         $theme = Zikula_View_Theme::getInstance();
 
+        if ($theme->getName() != 'MatheoBlankTheme') {
+            return;
+        }
+
         // load the Theme styles in the very end of the page rendering
         // TODO pending review with PageUtil weight assignment (when implemented)
         PageUtil::addVar('stylesheet', $theme->getStylepath().'/style.css');
