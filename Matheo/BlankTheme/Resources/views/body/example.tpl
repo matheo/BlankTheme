@@ -37,7 +37,7 @@
             <div class="container">
                 <div class="row">
                     <!-- begin: col1 main column -->
-                    <div class="col-md-7 bt-col1">
+                    <div class="col-md-9">
                         <div class="bt-box">
 
                             <div class="jumbotron">
@@ -88,9 +88,9 @@
                                         <p>{gt text='Make use of HTML\'s default emphasis tags with lightweight styles.'}</p>
                                     </div>
 
-                                    <p><code>&lt;small&gt; .small</code> <small>{gt text='fine print'}</small></p>
-                                    <p><code>&lt;strong&gt; &lt;b&gt;</code> <strong>{gt text='bold text'}</strong></p>
-                                    <p><code>&lt;em&gt; &lt;i&gt;</code> <em>{gt text='italicized text'}</em></p>
+                                    <p><code>&lt;small&gt; .small</code> <small>Lorem ipsum dolor sit amet.</small></p>
+                                    <p><code>&lt;strong&gt; &lt;b&gt;</code> <strong>Integer molestie lorem at massa.</strong></p>
+                                    <p><code>&lt;em&gt; &lt;i&gt;</code> <em>Facilisis in pretium nisl aliquet.</em></p>
                                     <p class="text-left"><code>.text-left</code></p>
                                     <p class="text-center"><code>.text-center</code></p>
                                     <p class="text-right"><code>.text-right</code></p>
@@ -104,6 +104,7 @@
 
                                     <div class="page-header">
                                         <h2>{gt text='Abbreviations'}</h2>
+                                        <p>{gt text='Add %s to an abbreviation for a slightly smaller font-size.' tag1='<code>.initialism</code>'}</p>
                                     </div>
 
                                     <p><abbr title="attribute">attr</abbr> <code>&lt;abbr title="attribute"&gt;attr&lt;/abbr&gt;</code></p>
@@ -151,7 +152,6 @@
 
                                             <ul>
                                                 <li>Lorem ipsum dolor sit amet</li>
-                                                <li>Consectetur adipiscing elit</li>
                                                 <li>Integer molestie lorem at massa</li>
                                                 <ul>
                                                     <li>Phasellus iaculis neque</li>
@@ -160,7 +160,6 @@
                                                 </li>
                                                 <li>Faucibus porta lacus fringilla vel</li>
                                                 <li>Aenean sit amet erat nunc</li>
-                                                <li>Eget porttitor lorem</li>
                                             </ul>
                                         </div>
 
@@ -169,13 +168,11 @@
 
                                             <ol>
                                                 <li>Lorem ipsum dolor sit amet</li>
-                                                <li>Consectetur adipiscing elit</li>
                                                 <li>Integer molestie lorem at massa</li>
                                                 <li>Facilisis in pretium nisl aliquet</li>
                                                 <li>Nulla volutpat aliquam velit</li>
                                                 <li>Faucibus porta lacus fringilla vel</li>
                                                 <li>Aenean sit amet erat nunc</li>
-                                                <li>Eget porttitor lorem</li>
                                             </ol>
                                         </div>
                                     </div>
@@ -187,14 +184,12 @@
 
                                             <ul class="list-unstyled">
                                                 <li>Lorem ipsum dolor sit amet</li>
-                                                <li>Consectetur adipiscing elit</li>
                                                 <ul>
                                                     <li>Phasellus iaculis neque</li>
                                                     <li>Purus sodales ultricies</li>
                                                 </ul>
                                                 </li>
                                                 <li>Faucibus porta lacus fringilla vel</li>
-                                                <li>Aenean sit amet erat nunc</li>
                                             </ul>
                                         </div>
 
@@ -220,8 +215,6 @@
                                                 <dt>Euismod</dt>
                                                 <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
                                                 <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                                                <dt>Malesuada porta</dt>
-                                                <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
                                             </dl>
                                         </div>
 
@@ -298,7 +291,7 @@
                                     <div class="alert alert-warning pull-left"><code>alert alert-warning</code><br /> + <code>.pull-left</code></div>
                                     <div class="alert alert-danger pull-right"><code>alert alert-danger</code><br /> + <code>.pull-right</code></div>
                                     <div class="clearfix"><code>.clearfix</code></div>
-                                    <div class="alert alert-info"><code>alert alert-info</code></div>
+                                    <div class="alert alert-info clearfix"><code>alert alert-info</code> + <code>.clearfix</code></div>
 
 
                                     <div class="page-header">
@@ -377,10 +370,10 @@
                                         <div class="col-sm-4">
                                             <div class="panel panel-default">
                                                 <div class="panel-heading">
-                                                    <h3 class="panel-title">Panel title</h3>
+                                                    <h3 class="panel-title">{gt text='Panel title'}</h3>
                                                 </div>
                                                 <div class="panel-body">
-                                                    Panel content
+                                                    {gt text='Panel content'}
                                                 </div>
                                             </div>
                                             <div class="panel panel-primary">
@@ -388,7 +381,7 @@
                                                     <h3 class="panel-title">Panel title</h3>
                                                 </div>
                                                 <div class="panel-body">
-                                                    Panel content
+                                                    {gt text='Panel content'}
                                                 </div>
                                             </div>
                                         </div>
@@ -398,7 +391,7 @@
                                                     <h3 class="panel-title">Panel title</h3>
                                                 </div>
                                                 <div class="panel-body">
-                                                    Panel content
+                                                    {gt text='Panel content'}
                                                 </div>
                                             </div>
                                             <div class="panel panel-info">
@@ -406,7 +399,7 @@
                                                     <h3 class="panel-title">Panel title</h3>
                                                 </div>
                                                 <div class="panel-body">
-                                                    Panel content
+                                                    {gt text='Panel content'}
                                                 </div>
                                             </div>
                                         </div>
@@ -416,7 +409,7 @@
                                                     <h3 class="panel-title">Panel title</h3>
                                                 </div>
                                                 <div class="panel-body">
-                                                    Panel content
+                                                    {gt text='Panel content'}
                                                 </div>
                                             </div>
                                             <div class="panel panel-danger">
@@ -424,7 +417,7 @@
                                                     <h3 class="panel-title">Panel title</h3>
                                                 </div>
                                                 <div class="panel-body">
-                                                    Panel content
+                                                    {gt text='Panel content'}
                                                 </div>
                                             </div>
                                         </div>
@@ -464,9 +457,9 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
+                                            <th>{gt text='First Name'}</th>
+                                            <th>{gt text='Last Name'}</th>
+                                            <th>{gt text='Username'}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -500,9 +493,9 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
+                                            <th>{gt text='First Name'}</th>
+                                            <th>{gt text='Last Name'}</th>
+                                            <th>{gt text='Username'}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -536,9 +529,9 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
+                                            <th>{gt text='First Name'}</th>
+                                            <th>{gt text='Last Name'}</th>
+                                            <th>{gt text='Username'}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -561,7 +554,7 @@
                                         </tr>
                                         <tr>
                                             <td>3</td>
-                                            <td colspan="2">Larry the Bird</td>
+                                            <td colspan="2">{gt text='Larry the Bird'}</td>
                                             <td>@twitter</td>
                                         </tr>
                                         </tbody>
@@ -576,9 +569,9 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
+                                            <th>{gt text='First Name'}</th>
+                                            <th>{gt text='Last Name'}</th>
+                                            <th>{gt text='Username'}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -596,7 +589,7 @@
                                         </tr>
                                         <tr>
                                             <td>3</td>
-                                            <td colspan="2">Larry the Bird</td>
+                                            <td colspan="2">{gt text='Larry the Bird'}</td>
                                             <td>@twitter</td>
                                         </tr>
                                         </tbody>
@@ -611,9 +604,9 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
+                                            <th>{gt text='First Name'}</th>
+                                            <th>{gt text='Last Name'}</th>
+                                            <th>{gt text='Username'}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -631,7 +624,7 @@
                                         </tr>
                                         <tr>
                                             <td>3</td>
-                                            <td colspan="2">Larry the Bird</td>
+                                            <td colspan="2">{gt text='Larry the Bird'}</td>
                                             <td>@twitter</td>
                                         </tr>
                                         </tbody>
@@ -648,47 +641,47 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Column heading</th>
-                                            <th>Column heading</th>
-                                            <th>Column heading</th>
+                                            <th>{gt text='Column heading'}</th>
+                                            <th>{gt text='Column heading'}</th>
+                                            <th>{gt text='Column heading'}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
                                             <td>1</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
+                                            <td>{gt text='Column content'}</td>
+                                            <td>{gt text='Column content'}</td>
+                                            <td>{gt text='Column content'}</td>
                                         </tr>
                                         <tr class="active">
                                             <td>2</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
+                                            <td>{gt text='Column content'}</td>
+                                            <td>{gt text='Column content'}</td>
+                                            <td>{gt text='Column content'}</td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td class="success">Column content</td>
+                                            <td>{gt text='Column content'}</td>
+                                            <td>{gt text='Column content'}</td>
+                                            <td class="success">{gt text='Column content'}</td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
+                                            <td>{gt text='Column content'}</td>
+                                            <td>{gt text='Column content'}</td>
+                                            <td>{gt text='Column content'}</td>
                                         </tr>
                                         <tr class="warning">
                                             <td>5</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
+                                            <td>{gt text='Column content'}</td>
+                                            <td>{gt text='Column content'}</td>
+                                            <td>{gt text='Column content'}</td>
                                         </tr>
                                         <tr>
                                             <td>6</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td class="danger">Column content</td>
+                                            <td>{gt text='Column content'}</td>
+                                            <td>{gt text='Column content'}</td>
+                                            <td class="danger">{gt text='Column content'}</td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -703,41 +696,41 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Table heading</th>
-                                                <th>Table heading</th>
-                                                <th>Table heading</th>
-                                                <th>Table heading</th>
-                                                <th>Table heading</th>
-                                                <th>Table heading</th>
+                                                <th>{gt text='Table heading'}</th>
+                                                <th>{gt text='Table heading'}</th>
+                                                <th>{gt text='Table heading'}</th>
+                                                <th>{gt text='Table heading'}</th>
+                                                <th>{gt text='Table heading'}</th>
+                                                <th>{gt text='Table heading'}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
+                                                <td>{gt text='Table cell'}</td>
+                                                <td>{gt text='Table cell'}</td>
+                                                <td>{gt text='Table cell'}</td>
+                                                <td>{gt text='Table cell'}</td>
+                                                <td>{gt text='Table cell'}</td>
+                                                <td>{gt text='Table cell'}</td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
+                                                <td>{gt text='Table cell'}</td>
+                                                <td>{gt text='Table cell'}</td>
+                                                <td>{gt text='Table cell'}</td>
+                                                <td>{gt text='Table cell'}</td>
+                                                <td>{gt text='Table cell'}</td>
+                                                <td>{gt text='Table cell'}</td>
                                             </tr>
                                             <tr>
                                                 <td>3</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
-                                                <td>Table cell</td>
+                                                <td>{gt text='Table cell'}</td>
+                                                <td>{gt text='Table cell'}</td>
+                                                <td>{gt text='Table cell'}</td>
+                                                <td>{gt text='Table cell'}</td>
+                                                <td>{gt text='Table cell'}</td>
+                                                <td>{gt text='Table cell'}</td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -981,9 +974,9 @@
                                     </div>
 
                                     <p>
-                                        <button type="button" class="btn btn-primary btn-lg active">Primary button</button>
-                                        <button type="button" class="btn btn-default btn-lg active">Button</button>
-                                        <a href="#" class="btn btn-info btn-lg active" role="button">Link</a>
+                                        <button type="button" class="btn btn-primary btn-lg active">{gt text='Primary button'}</button>
+                                        <button type="button" class="btn btn-default btn-lg active">{gt text='Button'}</button>
+                                        <a href="#" class="btn btn-info btn-lg active" role="button">{gt text='Link'}</a>
                                     </p>
 
                                     <div class="page-header">
@@ -991,9 +984,9 @@
                                     </div>
 
                                     <p>
-                                        <button type="button" class="btn btn-lg btn-primary" disabled="disabled">Primary button</button>
-                                        <button type="button" class="btn btn-default btn-lg" disabled="disabled">Button</button>
-                                        <a href="#" class="btn btn-info btn-lg disabled" role="button">Disabled link</a>
+                                        <button type="button" class="btn btn-lg btn-primary" disabled="disabled">{gt text='Primary button'}</button>
+                                        <button type="button" class="btn btn-default btn-lg" disabled="disabled">{gt text='Button'}</button>
+                                        <a href="#" class="btn btn-info btn-lg disabled" role="button">{gt text='Disabled link'}</a>
                                     </p>
                                     <p>
                                         {gettext}This class will only change the <code>&lt;a&gt;</code>'s appearance, not its functionality. Use custom JavaScript to disable them.{/gettext}
@@ -1005,8 +998,8 @@
                                     </div>
 
                                     <p>
-                                        <a class="btn btn-default" href="#" role="button">Link</a>
-                                        <button class="btn btn-default" type="submit">Button</button>
+                                        <a class="btn btn-default" href="#" role="button">{gt text='Link'}</a>
+                                        <button class="btn btn-default" type="submit">{gt text='Button'}</button>
                                         <input class="btn btn-default" type="button" value="Input">
                                         <input class="btn btn-default" type="submit" value="Submit">
                                     </p>
@@ -1016,24 +1009,12 @@
                     </div>
                     <!-- end: col1 -->
 
-                    <aside class="col-md-5">
+                    <aside class="col-md-3">
                         {*blockposition name='search'*}
 
-                        <div class="row">
-                            <!-- begin: #col2 column -->
-                            <div class="col-md-6 bt-col2">
-                                <div class="bt-box">
-                                    {blockposition name='left'}
-                                </div>
-                            </div>
-                            <!-- end: #col2 -->
-                            <!-- begin: #col3 column -->
-                            <div class="col-md-6 bt-col3">
-                                <div class="bt-box">
-                                    {blockposition name='right'}
-                                </div>
-                            </div>
-                            <!-- end: #col3 -->
+                        <div class="bt-box">
+                            {blockposition name='left'}
+                            {blockposition name='right'}
                         </div>
                     </aside>
                 </div>
