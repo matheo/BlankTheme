@@ -259,70 +259,47 @@
   /******* Lists *******/
 
   ul, ol, dl {
-    font-size: 100%;
     line-height: 1.5;
-    margin: 0 0 1.5em 0;
   }
 
   ul {
     list-style-type: disc;
   }
+  ol {
+    list-style-type: decimal;
+  }
+
   ul ul {
     list-style-type: circle;
     margin-top: 0;
-  }
-
-  ol {
-    list-style-type: decimal;
   }
   ol ol {
     list-style-type: lower-latin;
     margin-top: 0;
   }
-
   ol ul {
     list-style-type: circle;
     margin-top: 0;
   }
 
-  li {
-    font-size: 100%;
-  }
-
-  dt {
-    font-weight: bold;
-  }
-  dd {
-    margin: 0 0 1.5em 0.8em;
-  }
-
   /******* General text formatting *******/
 
-  cite, blockquote, q {
-    font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+  cite, q {
     font-style: italic
   }
   blockquote {
     background: transparent;
-    color: #666;
-    margin: 0 0 1em 1.6em;
   }
 
-  strong, b {
-    font-weight: bold;
-  }
   em, i {
     font-style: italic;
   }
 
   big {
-    /* font-size: 16px; */
     font-size: 114.28571%;
     line-height: 1.3125;
   }
   small {
-    /* font-size: 12px; */
-    font-size: 85.71429%;
     line-height: 1.75;
   }
 
@@ -330,9 +307,6 @@
     font-size: 100%;
   }
   pre {
-    font-size: 100%;
-    line-height: 1.5;
-    margin: 0 0 1.5em 0;
     white-space: pre;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -349,9 +323,6 @@
   }
 
   acronym, abbr {
-    border-bottom: 1px dotted #aaa;
-    cursor: help;
-    font-variant: small-caps;
     letter-spacing: .07em;
   }
 
@@ -373,44 +344,15 @@
     color: black;
   }
 
-  hr {
-    color: #fff;
-    background: transparent;
-    border: 0;
-    border-bottom: 1px solid #eee;
-    margin: 0 0 0.75em 0;
-    padding: 0 0 0.67857em 0;
-  }
-
   /******* Miscellaneous *******/
 
   img, figure {
     margin: 0;
   }
 
-  .flexible {
-    height: auto;
-    margin-top: 1.5em;
-    max-width: 100%;
-  }
-
-  * html .flexible { /* IE6 support */
-    width: 98%; /* 2% space for borders */
-  }
-
   a img,
   button img {
     vertical-align: middle;
-  }
-
-  .z-buttons a img,
-  .z-buttons button img {
-    vertical-align: baseline;
-  }
-
-  fieldset {
-    border: 1px solid #d9dad5;
-    padding: 5px 10px 10px;
   }
 
   .bordered {
@@ -438,20 +380,6 @@
 
   .box > *:last-child {
     margin-bottom: 0;
-  }
-
-  .label {
-    background: #06C;
-    border-radius: 3px;
-    color: #fff;
-    display: inline-block;
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 10px;
-    letter-spacing: normal;
-    line-height: 12px;
-    padding: 1px 6px 2px;
-    vertical-align: middle;
-    white-space: nowrap;
   }
 
   /* efa font resize styles */
@@ -499,26 +427,14 @@
     font-size: 0.7em;
   }
 
-  .largel-text {
+  .large-text {
     font-size: 1.15em;
   }
-  .largerl-text {
+  .larger-text {
     font-size: 1.25em;
   }
-  .largestl-text {
+  .largest-text {
     font-size: 1.35em;
-  }
-
-  .text-left {
-    text-align: left;
-  }
-  .text-right {
-    text-align: right;
-  }
-  .center {
-    display: block;
-    margin: 0 auto 1.5em auto;
-    text-align: center;
   }
 
   .content-separator {
@@ -541,55 +457,16 @@
    * @section content-tables
    */
 
-  table {
-    border-collapse: collapse;
-    color: #444444;
-    border-top: 1px #ccc solid;
-    border-bottom: 1px #ccc solid;
-    margin: 0 0 1.35714em 0;
-  }
   table.full,
   table.z-datatable {
     width: 100%;
   }
-  table.narrow {
-    margin: 0 0 1.42857em 0;
-  }
-  table.narrow th,
-  table.narrow td {
-    padding: 0 0.5em;
-    line-height: 1.42857;
-  }
   table.fixed {
     table-layout: fixed;
-  }
-  table.bordertable {
-    border: 1px #ccc solid;
-  }
-  table.bordertable thead th {
-    background: #e0e0e0;
-    border-bottom: 1px #ccc solid;
-    border-right: 1px #ccc solid;
-  }
-  table.bordertable tbody th[scope="row"] {
-    background: #f0f0f0;
-  }
-  table.bordertable tbody th {
-    border-right: 1px solid #ccc;
-  }
-  table.bordertable tbody td {
-    border-right: 1px solid #ccc;
   }
 
   caption {
     font-variant: small-caps;
-  }
-
-  th,
-  td {
-    line-height: 1.5em;
-    vertical-align: top;
-    padding: 0.71429em 0.5em;
   }
 
   th *:first-child,
@@ -639,6 +516,11 @@
 
   /******* Fixes *******/
 
+  .z-buttons a img,
+  .z-buttons button img {
+    vertical-align: baseline;
+  }
+
   /* js context menus */
   #bt-wikula .bt-func-edit .bt-col1 .bt-box,
   #bt-wikula .bt-func-edit #z-maincontent,
@@ -666,6 +548,24 @@
   }
 
   /******* Core overrides *******/
+
+  .table > thead > tr > th,
+  .table > thead > tr > td {
+    background: transparent;
+  }
+
+  .nav-tabs > li {
+    margin-left: 5px;
+  }
+  .nav-tabs > li > a {
+    background-color: #f5f5f5;
+    color: #777;
+  }
+
+  .form-horizontal legend,
+  .form-inline legend {
+    font-size: 21px;
+  }
 
   .z-form div.z-formrow span label,
   .z-form div.z-formrow div label {

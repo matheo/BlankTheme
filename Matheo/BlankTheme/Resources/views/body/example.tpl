@@ -41,6 +41,9 @@
                         <div class="bt-box">
 
                             <div class="jumbotron">
+                                <div id="topnav">
+                                    {blankutil section='topnavlinks'}
+                                </div>
                                 <strong class="h1">BlankTheme</strong>
                                 <p>{gt text='This is the <code>example</code> body template to check the styles offered by this theme.'}</p>
                             </div>
