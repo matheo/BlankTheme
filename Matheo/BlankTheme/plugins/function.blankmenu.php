@@ -30,7 +30,7 @@
  */
 function smarty_function_blankmenu($params, Zikula_View_Theme &$view)
 {
-    $dom = ZLanguage::getThemeDomain('BlankTheme');
+    $dom = ZLanguage::getThemeDomain('MatheoBlankTheme');
 
     $css = isset($params['css']) ? $params['css'] : 'navbar-right';
     if (!isset($params['current'])) {

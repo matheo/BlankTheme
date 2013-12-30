@@ -28,7 +28,7 @@
  */
 function smarty_function_blankmenuadmin($params, Zikula_View_Theme &$view)
 {
-    $dom = ZLanguage::getThemeDomain('BlankTheme');
+    $dom = ZLanguage::getThemeDomain('MatheoBlankTheme');
 
     $current = isset($params['current']) ? $params['current'] : '';
     $cclass  = isset($params['currentclass']) ? $params['currentclass'] : 'selected';

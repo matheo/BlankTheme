@@ -28,7 +28,7 @@
  */
 function smarty_function_blankutil($params, Zikula_View_Theme &$view)
 {
-    $dom = ZLanguage::getThemeDomain('BlankTheme');
+    $dom = ZLanguage::getThemeDomain('MatheoBlankTheme');
 
     // section parameter check
     if (!isset($params['section']) || empty($params['section'])) {
