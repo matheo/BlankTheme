@@ -254,7 +254,7 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-sm-6 col-lg-3">
                                             <div class="thumbnail">
                                                 <img data-src="holder.js/140x140" class="img-rounded" />
                                                 <div class="caption">
@@ -262,7 +262,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-sm-6 col-lg-3">
                                             <div class="thumbnail">
                                                 <img data-src="holder.js/140x140" class="img-circle" />
                                                 <div class="caption">
@@ -270,7 +270,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="visible-sm clearfix"></div>
+                                        <div class="col-sm-6 col-lg-3">
                                             <div class="thumbnail">
                                                 <img data-src="holder.js/140x140" class="img-thumbnail" />
                                                 <div class="caption">
@@ -278,7 +279,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-sm-6 col-lg-3">
                                             <div class="thumbnail">
                                                 <img src="{$imagepath}/logo.png" class="img-responsive" />
                                                 <div class="caption">
@@ -294,8 +295,8 @@
                                     </div>
 
                                     <div class="alert alert-success center-block" style="width: 75%"><code>width: 75%</code> + <code>alert alert-success</code> + <code>.center-block</code></div>
-                                    <div class="alert alert-warning pull-left"><code>alert alert-warning</code> + <code>.pull-left</code></div>
-                                    <div class="alert alert-danger pull-right"><code>alert alert-danger</code> + <code>.pull-right</code></div>
+                                    <div class="alert alert-warning pull-left"><code>alert alert-warning</code><br /> + <code>.pull-left</code></div>
+                                    <div class="alert alert-danger pull-right"><code>alert alert-danger</code><br /> + <code>.pull-right</code></div>
                                     <div class="clearfix"><code>.clearfix</code></div>
                                     <div class="alert alert-info"><code>alert alert-info</code></div>
 

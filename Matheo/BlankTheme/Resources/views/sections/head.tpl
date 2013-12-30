@@ -4,14 +4,14 @@
 <title>{pagegetvar name='title'}</title>
 
 <!-- Mobile viewport optimisation -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 <meta name="description" content="{$metatags.description}" />
 <meta name="keywords" content="{$metatags.keywords}" />
 <meta name="author" content="{$modvars.ZConfig.sitename}" />
-<meta name="copyright" content="Copyright (c) {'Y'|date} by {$modvars.ZConfig.sitename}" />
+<meta name="copyright" content="Copyright &copy; {'Y'|date} by {$modvars.ZConfig.sitename}" />
 <meta name="robots" content="index,follow" />
 <meta name="generator" content="Zikula - www.zikula.org" />
 
