@@ -232,6 +232,11 @@
     font-weight: normal;
   }
 
+  /* tab links */
+  .nav-tabs > li > a {
+    color: #777;
+  }
+
 
 
   /**
@@ -556,10 +561,6 @@
 
   .nav-tabs > li {
     margin-left: 5px;
-  }
-  .nav-tabs > li > a {
-    background-color: #f5f5f5;
-    color: #777;
   }
 
   .form-horizontal legend,
