@@ -11,14 +11,14 @@
  * BlankTheme plugin to display the user navigation menu.
  *
  * Available parameters:
- *  - css          (string) CSS class name(s) to add to the menu list (default: 'navbar-right')
+ *  - css          (string) CSS class name(s) to add to the menu list (default: 'navbar-nav navbar-right')
  *  - current      (string) Current screen ID (.ini current value or module name) (optional)
  *  - currentclass (string) CSS class name of the current tab, list item (default: 'active')
  *  - span         (bool)   Flag to enable SPAN wrappers on the links text, useful for sliding doors (default: false)
  *  - desc         (bool)   Flag to put the parent links descriptions inside SPAN.bt-desc instead the link title (default: false)
  *
  * Example:
- *  {blankmenu id='myId' current='home' currentclass='myActiveClass'}
+ *  {blankmenu id='myId' css='nav-pills nav-stacked'}
  *
  * @author Mateo Tibaquirá
  * @since  08/11/07
@@ -32,7 +32,7 @@ function smarty_function_blankmenu($params, Zikula_View_Theme &$view)
 {
     $dom = ZLanguage::getThemeDomain('MatheoBlankTheme');
 
-    $css = isset($params['css']) ? $params['css'] : 'navbar-right';
+    $css = isset($params['css']) ? $params['css'] : 'navbar-nav navbar-right';
     if (!isset($params['current'])) {
         $current = $view->getTplVar('current') ? $view->getTplVar('current') : $view->getToplevelmodule();
     } else {
@@ -125,7 +125,7 @@ function smarty_function_blankmenu($params, Zikula_View_Theme &$view)
     }
 
     // render the menu
-    $output  = '<ul class="nav navbar-nav '.$css.'">';
+    $output  = '<ul class="nav '.$css.'">';
     foreach ($menu as $option) {
         $output .= blankmenu_drawmenu($option, $current, $currentclass, $span, $desc);
     }
