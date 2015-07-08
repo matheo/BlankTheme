@@ -4,39 +4,45 @@
 This folder stores the templates responsible of the different body possibilities.
 
 Each one supports one or more layouts, usable from each section template
-through different $body and $layout combinations.
-Let's see which advantages offers the default ones:
+through different $body and $layout combinations. The naming convention used for the columns is the following:
+
+- col1 (`.bt-col1`): the main column with $maincontent
+- col2 (`.bt-col2`): secondary column with left blocks
+- col3 (`.bt-col3`): tertiary column with right blocks
+
+Let's see which advantages offers the default bodies:
+
+## cover
+
+Example homepage template based in the `cover` example of Bootstrap.
+Use it setting up `body = cover` on any .ini.
+Related `.bt-cover` styles can be removed from custom themes if they're not used.
+
+## example
+
+Body template with a showcase of the theme features.
+Use it setting up `body = example` on any .ini.
+`.bt-example` styles can be removed at the final of `style.css`.
 
 ## 2col
 
-body template to support 2 and 1 column layouts
-`#col1` is static and `#col1` and `#col3` are floating columns
+body template to support 1 and 2 column layouts
 
-* Easy width change in the basemod from 25% to any fluid or fixed value.
-* Includes the '2cb' (2subcolumns-at-center-bottom) to subdivide the main column;  
+* Includes the '2cb' (2subcolumns-at-center-bottom) to subdivide the main column;
   using the [centerbl] and [centerbr] block positions.
 * Supported distributions: '21', '12', '31', '13' and also '1' to only have the main column
 
 ## 3col
 
 body template to support 3 column layouts
-all the columns are floating
 
-* Easy changeable from fixed width values to fluid ones.
 * Additionaly to '2cb' this template includes another zone 'cb' at the bottom of the previous one;
   The 'cb' zone uses the [bottom] block position.
 * Supported distributions: '213', '312', '123', '132', '231', '321'.
 
-## 3col231
-
-3col derivation with the #col1 at the end of the #main container to use #col1 static
-
-* Static main column to have fixed side columns but fluid main content
-* Same features that 3 col, but only supports the distributions '213' and '312'
-
 ## grid
 
-Uses the YAML subtemplates like the flexible grids example to build the layout
+Uses the Bootstrap grid system like the flexible grids example to build the layout
 
 * Is able to switch the side columns with the distributions: '123', '132', '12', '13'
 * Also supports the '3b' zone (3subcolumnsat-bottom)

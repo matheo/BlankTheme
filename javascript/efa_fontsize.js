@@ -18,14 +18,6 @@
  *		 'after HTML'
  *		 ]
  */
-var efa_default = 87.5; //%
-var efa_increment = 10;  //%
-/* Default multi-language vars and themedir name */
-var efalang_zoomIn = 'Decrease font size';
-var efalang_zoomReset = 'Reset font size';
-var efalang_zoomOut = 'Increase font size';
-var efathemedir = 'BlankTheme';
-
 function Efa_Fontsize(increment,def) {
 	this.w3c = (document.getElementById);
 	this.ms = (document.all);

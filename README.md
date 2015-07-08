@@ -1,7 +1,7 @@
 
 # Welcome to BlankTheme
 
-**BlankTheme is using Bootstrap for Zikula 1.3.7+**
+**BlankTheme is using Bootstrap for Zikula 1.3.6**
 Please check [it's documentation](http://getbootstrap.com/getting-started/) to learn the cool features that you can use with your BlankTheme-based Theme.
 
 ---

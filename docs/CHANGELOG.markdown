@@ -1,8 +1,18 @@
 
 # CHANGELOG
 
+## Version 1.3.6
+
+* BlankTheme moved to Bootstrap
+* Added the `example` body template to check the theme styles in one page
+* Added the `cover` body template as example of bootstrap cover homepage
+* Added the `blankmobile` plugin to add a CSS class according the device
+* Added `holder.js`, and updated `html5shiv` and `respond.js`
+* Cleaned `admin.css` and unified all the styles on `style.css`
+* Removed the deprecated stuff by the adoption of Bootstrap
+* Relicensed to MIT
+
 ## Version 1.3.5
-* YAML updated to 4.1.2
 * Removed fullheight body template
 * Reworked fullwidth template to full2col and full3col
 * Moved all the site specific styles to the end of typography.css
@@ -23,7 +33,7 @@
 
 * YAML upgraded to the 3.2.1 version
 * Removed deprecated stuff
-* `#bt_topnavlinks` now it's controlled from `bt_htmloutput`
+* `#bt_topnavlinks` now it's controlled from `blankutil`
 * Admin menu extended
 * Rename to BlankTheme
 

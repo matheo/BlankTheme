@@ -1,53 +1,62 @@
 <!DOCTYPE html>
 <html lang="{lang}">
 
-{pageaddvar name='stylesheet' value="`$themepath`/style/admin.css"}
+{pageaddvar name='stylesheet' value="`$stylepath`/admin.css"}
 {include file='sections/head.tpl'}
 
 <!-- Admin template -->
-<body id="bt-{$module}" class="bt-2col bt-admin">
+<body id="bt-{$module}" class="bt-admin">
+    <!-- skip navigation -->
+    <a href="#main" class="sr-only">{gt text='Skip to main content'}.</a>
 
-<!-- skip link navigation -->
-<ul class="ym-skiplinks">
-    <li><a class="ym-skip" href="#nav">{gt text='Skip to navigation'} {gt text='(Press Enter)'}.</a></li>
-    <li><a class="ym-skip" href="#main">{gt text='Skip to main content'} {gt text='(Press Enter)'}.</a></li>
-</ul>
+    {* for the backend we do not use a body template *}
+    <div class="bt-wrapper bt-func-{$func}">
+        <div class="bt-wbox {blankutil section='classesinnerpage'}">
 
-{* for the backend we do not use a body template *}
-<div class="ym-wrapper bt-12 bt-func-{$func}">
-    <div class="ym-wbox {bt_htmloutput section='classesinnerpage'}">
+            <!-- begin: nav -->
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <h1 class="navbar-brand">
+                            {img src='logo.gif' modname='core' set='' class='logo' __alt='logo' height='18'}
+                            <a href="{$baseurl}" title="{gt text='Go to the homepage'}">{$modvars.ZConfig.sitename}</a>
+                        </h1>
+                    </div>
+                    <div class="navbar-collapse">
+                        {blankmenuadmin current=$module}
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="{modurl modname='Users' type='user' func='logout'}">
+                                    {gt text='Logout'}&nbsp;
+                                    <i class="glyphicon glyphicon-log-out"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- end: nav -->
 
-        <!-- begin: header -->
-        <header>
-            {img src='logo.gif' modname='core' set='' class='logo' __alt='logo' height='25'}
-            <h1><a href="{$baseurl}" title="{gt text='Go to the homepage'}">{$modvars.ZConfig.sitename}</a></h1>
-            <span class="slogan">{$modvars.ZConfig.slogan}</span>
-        </header>
-        <!-- end: header -->
+            <!-- begin: #main -->
+            <main>
+                <div class="container">
+                    {$maincontent}
+                </div>
+            </main>
+            <!-- end: #main -->
 
-        <!-- begin: nav -->
-        <nav id="nav">
-            {bt_adminlinks current=$module}
-        </nav>
-        <!-- end: nav -->
-
-        <!-- begin: #main -->
-        <div id="main">
-            {$maincontent}
-            </div> {* end: .ym-cbox *}
-            <div class="ym-ie-clearing">&nbsp;</div>
-            </div> {* end: .ym-col1 *}
-            </div> {* close .ym-column wrapper *}
+            <!-- begin: footer -->
+            <footer>
+                <a href="{gt text='http://community.zikula.org/'}" title="{gt text='Powered by Zikula'}">{gt text='Powered by Zikula'} {$coredata.version_num}</a>
+                {blankutil section='footer'}
+            </footer>
+            <!-- end: footer -->
         </div>
-        <!-- end: #main -->
-
-        <!-- begin: footer -->
-        <footer>
-            <a href="{gt text='http://community.zikula.org/'}" title="{gt text='Powered by Zikula'}">{gt text='Powered by Zikula'} {$coredata.version_num}</a>
-            {bt_htmloutput section='footer'}
-        </footer>
-        <!-- end: footer -->
     </div>
-</div>
 </body>
 </html>

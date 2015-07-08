@@ -3,7 +3,7 @@
 
 ## Developer:
 **Mateo Tibaquirá [matheo]**  
-http://www.blanktheme.org/
+http://www.matheo.co/
 
 ## Menu management:
 **Erik Spaan [espaan]**  
@@ -15,11 +15,7 @@ http://www.erikspaan.nl/
 
 # Special thanks to:
 
-* **Dirk Jesse**  
-  YAML Author  
-  http://www.yaml.de/
-
-* **Zikula Communities**  
+* **Zikula Communities**
   Developers, Testers & Users  
   http://community.zikula.org/  
   http://zikula.es/

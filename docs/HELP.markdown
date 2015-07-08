@@ -9,5 +9,5 @@ http://community.zikula.org
 and log issues to ask for a new feature or report a bug:  
 https://github.com/matheo/BlankTheme/issues/new
 
-Thanks for use BlankTheme  
+Thanks for using BlankTheme
 we wait for your feedback ;-)

@@ -1,0 +1,796 @@
+/**
+ * Zikula Application Framework
+ * Uniform design of standard content elements.
+ *
+ * @copyright (c) BlankTheme Team
+ * @link      http://www.blanktheme.org
+ * @license   MIT - http://www.opensource.org/licenses/mit-license.html
+ */
+
+/**
+ * CSS Table of Contents
+ *
+ *  Global fixes (layout-global)
+ *  General layout elements (layout-basics)
+ *  Links (content-links)
+ *  Global typography settings (content-typography)
+ *      Headings
+ *      Lists
+ *      General text formatting
+ *      Miscellaneous
+ *  Generic content classes (content-generic-classes)
+ *  Tables (content-tables)
+ *  Zikula specific styles (content-zikula)
+ *      Fixes
+ *      Core overrides
+ *  Theme specific styles (content-theme)
+ */
+
+@media all
+{
+  /**
+   * Global fixes
+   *
+   * @section layout-global
+   */
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  /* force vertical scrollbar */
+  body {
+    overflow-y: scroll;
+    padding-top: 70px; /* navbar-fixed.top */
+  }
+
+  /* layout */
+  .bt-wrapper {
+    margin: 0 auto;
+  }
+
+  .bt-wbox {
+    position: relative;
+  }
+
+  /* full width layouts */
+  .bt-full2col .container,
+  .bt-full3col .container {
+    width: auto;
+  }
+
+
+
+  /**
+   * General layout elements
+   *
+   * @section layout-basics
+   */
+
+  #nav {
+    background: #f6f6f6 url('../images/design/bg-nav.png') repeat-x 0 0;
+  }
+
+  header div {
+    position: relative;
+  }
+
+  /* title and slogan */
+  header h1 {
+    background: transparent;
+    color: #349 !important;
+    letter-spacing: -1px;
+    margin: -5px 0 0;
+  }
+
+  header .slogan {
+    color: #777;
+    float: left;
+    font-size: 20px;
+    padding-left: 14px;
+  }
+
+  /* logo */
+  header .logo {
+    float: left;
+    margin-right: 1em;
+  }
+
+  /* top navigation container */
+  #topnav {
+    background: transparent;
+    color: #aaa;
+    line-height: 1.5;
+    text-align: right; /* LTR */
+    position: absolute;
+    right: 15px; /* LTR */
+    top: 15px;
+  }
+  .jumbotron #topnav {
+    font-size: 90%;
+  }
+
+  /* topnav navigation */
+  #bt-topnavlinks {
+    float: left;
+  }
+
+    #bt-topnavlinks ul {
+      float: left;
+      list-style: none;
+      margin: 0 0.5em 0 0;
+      padding: 0;
+    }
+
+    #bt-topnavlinks li {
+      border-right: 1px solid #ccc;
+      float: left;
+      margin: 0;
+      padding: 0;
+    }
+
+    #bt-topnavlinks li.bt-unique,
+    #bt-topnavlinks li.bt-last {
+      border-right: none;
+    }
+
+    #bt-topnavlinks li a {
+      display: block;
+      float: left;
+      height: 1.4em;
+      line-height: 1.4em;
+      padding: 0 0.5em;
+      text-align: center;
+      text-decoration: none;
+    }
+
+  main {
+    margin-bottom: 20px;
+  }
+
+  footer {
+    background: #eee;
+    color: #444;
+    font-size: 100%;
+    line-height: 1.5;
+    padding: 15px 0;
+    text-align: left;
+  }
+    footer p {
+      margin: 0;
+    }
+    #footer-sublinks {
+      font-size: 90%;
+    }
+
+
+
+  /**
+   * Links
+   * formatting of hyperlinks
+   *
+   * @section content-links
+   */
+
+  /* general links */
+  a {
+    background: transparent;
+    color: #4d87c7;
+    text-decoration: none;
+  }
+  a:active {
+    outline: none;
+  }
+  a:hover,
+  a:focus {
+    /* if you use backgrounds or borders here
+       you will interfere zikula core styles */
+    color: #182e7a;
+    text-decoration: underline;
+  }
+
+  /* top navigation links */
+  #topnav a {
+    background: transparent;
+    color: #4d87c7;
+    font-size: 100%;
+    font-weight: normal;
+    text-decoration: none;
+  }
+  #topnav a:focus,
+  #topnav a:hover,
+  #topnav a:active {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  /* title link */
+  header h1 a:focus,
+  header h1 a:hover,
+  header h1 a:active {
+    background: transparent;
+    text-decoration: none;
+  }
+
+  /* footer links */
+  footer a,
+  footer a:visited {
+    background: transparent;
+    color: #555;
+    /*font-weight: bold;*/
+  }
+  footer a:focus,
+  footer a:hover,
+  footer a:active {
+    background: transparent;
+    color: #4d87c7;
+    text-decoration: underline;
+  }
+  #footer-sublinks a {
+    font-size: 100%;
+    font-weight: normal;
+  }
+
+  /* tab links */
+  .nav-tabs > li > a {
+    color: #777;
+  }
+
+
+
+  /**
+   * Global typography settings
+   *
+   * @section content-typography
+   */
+
+  /* reset monospaced elements to font size 16px in all browsers */
+  textarea, pre, code, kbd, samp, var, tt {
+    font-family: Consolas, "Lucida Console", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier;
+  }
+
+  /* base layout gets standard font size 14px */
+  body {
+    color: #444;
+  }
+
+  /******* Headings *******/
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+  }
+
+  /******* Lists *******/
+
+  ul, ol, dl {
+    line-height: 1.5;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+  ol {
+    list-style-type: decimal;
+  }
+
+  ul ul {
+    list-style-type: circle;
+    margin-top: 0;
+  }
+  ol ol {
+    list-style-type: lower-latin;
+    margin-top: 0;
+  }
+  ol ul {
+    list-style-type: circle;
+    margin-top: 0;
+  }
+
+  /******* General text formatting *******/
+
+  cite, q {
+    font-style: italic
+  }
+  blockquote {
+    background: transparent;
+  }
+
+  em, i {
+    font-style: italic;
+  }
+
+  big {
+    font-size: 114.28571%;
+    line-height: 1.3125;
+  }
+  small {
+    line-height: 1.75;
+  }
+
+  pre, code, kbd, tt, samp, var {
+    font-size: 100%;
+  }
+  pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  pre, code {
+    color: #800;
+  }
+  kbd, samp, var, tt {
+    color: #666;
+    font-weight: bold;
+  }
+  var, dfn {
+    font-style: italic;
+  }
+
+  acronym, abbr {
+    letter-spacing: .07em;
+  }
+
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+
+  mark {
+    background: yellow;
+    color: black;
+  }
+
+  /******* Miscellaneous *******/
+
+  img, figure {
+    margin: 0;
+  }
+
+  a img,
+  button img {
+    vertical-align: middle;
+  }
+
+  .bordered {
+    border: 2px #eee solid;
+    border: 2px rgba(255,255,255,1) solid;
+    -webkit-box-shadow: 0 0 3px rgba(0,0,0,.25);
+    -moz-box-shadow: 0 0 3px rgba(0,0,0,.25);
+    box-shadow: 0 0 3px rgba(0,0,0,.25);
+    margin-top: 1.5em;
+  }
+
+  .box {
+    border-radius: 0.3em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #888;
+    border-color: rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
+    color: #444;
+    color: rgba(0, 0, 0, 0.8);
+    margin: 0 0 1.5em 0;
+    padding: 1.42857em;
+  }
+
+  .box > *:last-child {
+    margin-bottom: 0;
+  }
+
+  /* efa font resize styles */
+  .fontresize-large,
+  .fontresize-reset,
+  .fontresize-small {
+    width: 16px;
+    height: 16px;
+    padding: 3px 0;
+  }
+  .fontresize-large {
+    background: url(../images/icons/font_resize.gif) no-repeat 0px 50%;
+  }
+  .fontresize-reset {
+    background: url(../images/icons/font_resize.gif) no-repeat -20px 50%;
+  }
+  .fontresize-small {
+    background: url(../images/icons/font_resize.gif) no-repeat -40px 50%;
+  }
+
+
+
+  /**
+   * Generic content classes
+   * standard classes for positioning and highlighting
+   *
+   * @section content-generic-classes
+   */
+
+  .highlight {
+    color: #c30;
+  }
+  .dimmed,
+  .dimmed a {
+    color: #888;
+  }
+
+  .small-text {
+    font-size: 0.9em;
+  }
+  .smallerl-text {
+    font-size: 0.8em;
+  }
+  .smallestl-text {
+    font-size: 0.7em;
+  }
+
+  .large-text {
+    font-size: 1.15em;
+  }
+  .larger-text {
+    font-size: 1.25em;
+  }
+  .largest-text {
+    font-size: 1.35em;
+  }
+
+  .content-separator {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    margin: 22px 0 18px;
+  }
+
+  .text-separator {
+    color: #bbb;
+    padding: 0 2px;
+  }
+
+
+
+  /**
+   * Tables
+   * Generic classes for table-width and design definition
+   *
+   * @section content-tables
+   */
+
+  table.full,
+  table.z-datatable {
+    width: 100%;
+  }
+  table.fixed {
+    table-layout: fixed;
+  }
+
+  caption {
+    font-variant: small-caps;
+  }
+
+  th *:first-child,
+  td *:first-child {
+    margin-top: 0;
+  }
+
+  th.nowrap,
+  td.nowrap {
+    white-space: nowrap;
+  }
+
+  table.z-datatable thead th a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  table.z-datatable thead th {
+    text-align: left;
+    color: #000;
+    border-bottom: 2px #000 solid;
+  }
+
+  table.z-datatable tbody th,
+  table.z-datatable tbody td {
+    border-top: 1px solid #ccc;
+    text-align: left;
+  }
+  table.z-datatable tbody tr:hover th,
+  table.z-datatable tbody tr:hover td {
+    background: #f8f8f8;
+  }
+
+  table.z-datatable th,
+  table.z-datatable td {
+    padding: 0.5em;
+  }
+
+
+
+  /**
+   * Zikula specific styles
+   * styles to be used in the Zikula templates
+   *
+   * @section content-zikula
+   */
+
+  /******* Fixes *******/
+
+  .z-buttons a img,
+  .z-buttons button img {
+    vertical-align: baseline;
+  }
+
+  .z-errormsg hr,
+  .z-statusmsg hr {
+    margin: 5px 0;
+  }
+
+  /* js context menus */
+  #bt-wikula .bt-func-edit .bt-col1 .bt-box,
+  #bt-wikula .bt-func-edit #z-maincontent,
+  #bt-content.bt-admin .bt-col1 .bt-box,
+  #bt-content.bt-type-edit .bt-col1 .bt-box,
+  #bt-content.bt-admin #z-maincontent,
+  #bt-content.bt-type-edit #z-maincontent {
+    position: inherit;
+  }
+  div.contextMenu ul li {
+    margin-left: 0px;
+  }
+
+  /* jsCalendar */
+  .calendar {
+    z-index: 100;
+  }
+  .calendar tr.daysrow td.hilite {
+    font-weight: bold;
+  }
+
+  /* Scribite */
+  .htmlarea {
+    border: 1px solid #ccc !important;
+  }
+
+  /******* Core overrides *******/
+
+  .table > thead > tr > th,
+  .table > thead > tr > td {
+    background: transparent;
+  }
+
+  .nav-tabs > li {
+    margin-left: 5px;
+  }
+
+  .form-horizontal legend,
+  .form-inline legend {
+    font-size: 21px;
+  }
+
+  .z-form div.z-formrow span label,
+  .z-form div.z-formrow div label {
+    padding: 0 1em 0 0.5em;
+  }
+
+  /* main content */
+  #z-maincontent {
+    display: block;
+    position: relative;
+  }
+
+  /* z-pager */
+  .z-pager {
+    color: #999;
+  }
+  .z-pager a:hover {
+    text-decoration: none;
+  }
+
+
+
+  /**
+   * Theme custom styles
+   * customized styles for the theme
+   *
+   * @section content-theme
+   */
+
+
+  /** blocks styles **/
+
+  .z-block {
+    margin-bottom: 15px;
+  }
+  .z-block .z-block-title {
+    line-height: 22px;
+    margin: 0;
+    padding: 3px 4px;
+  }
+  .z-block .z-block-content {
+    padding: 5px;
+  }
+  .z-block ul,
+  .z-block ol,
+  .z-block dl {
+    margin: 0px;
+  }
+
+  /* top and bottom navigation blocks */
+  .z-blockposition-topnav,
+  .z-blockposition-bottomnav {
+    margin: 0px;
+  }
+
+  /* header and footer blocks default styles */
+  .z-blockposition-header,
+  .z-blockposition-footer {
+    float: right;
+  }
+
+
+  /** .bt-menublock styles **/
+
+  /* defaults for menu and menutree blocks inside main : to-customize */
+  main ul.navlist,
+  main ul.navlist li,
+  main ul.menutree,
+  main ul.menutree li,
+  .bt-menublock ul,
+  .bt-menublock ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  main ul.navlist li,
+  main ul.menutree li,
+  .bt-menublock ul li {
+    border-top: 1px solid #eee;
+    list-style: none;
+    padding: 3px 0;
+  }
+  main ul.navlist li:first-child,
+  main ul.menutree li:first-child,
+  .bt-menublock ul li:first-child {
+    border-top: none;
+  }
+  main ul.navlist li .z-floatright,
+  main ul.menutree li .z-floatright,
+  .bt-menublock ul li .z-floatright {
+    color: #999;
+  }
+  main ul.navlist li a,
+  main ul.menutree li a,
+  .bt-menublock ul li a {
+    display: block;
+    padding: 0.25em 0.5em;
+  }
+
+
+  /** miscelaneous **/
+
+  /* cool subcolumns style */
+  .coolsubcol {
+    background: #f9f9f9;
+    border-top: 2px solid #efefef;
+    color: #666;
+    padding-top: 15px;
+  }
+
+  /* zones */
+  .bt-zone {
+    margin-bottom: 1em;
+  }
+
+
+  /** example layouts: to-remove **/
+
+  .bt-example .page-header p,
+  .bt-example .page-header h2,
+  .bt-example .page-header h3 {
+    margin: 0;
+  }
+
+  .bt-example .bt-col1 img {
+    margin: 5px auto;
+  }
+
+  /* cover example */
+  .bt-cover {
+    background: #e5e5e5; /* background photo here */
+    padding: 0;
+    text-align: center;
+    /*text-shadow: 0 1px 3px rgba(0,0,0,.5); optional with a background image*/
+  }
+
+  /* extra markup and styles for table-esque vertical and horizontal centering */
+  .bt-cover .bt-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%; /* for at least Firefox */
+    min-height: 100%;
+  }
+  .bt-cover .bt-wbox {
+    display: table-cell;
+    vertical-align: top;
+  }
+  .bt-cover .bt-cover-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .bt-cover main {
+    padding: 0 20px;
+  }
+
+  /* overrides */
+  .bt-cover .navbar-brand {
+    color: #333;
+    float: none;
+    font-size: 24px;
+  }
+  .bt-cover footer {
+    background: none;
+    padding: 30px 20px;
+    width: 100%;
+  }
+
+  /* navigation customization */
+  .bt-cover #nav {
+    background: transparent;
+    border: none;
+    margin: 0;
+    padding: 30px 20px;
+  }
+  .bt-cover #nav .navbar-nav > li {
+    display: inline-block;
+  }
+  .bt-cover #nav .navbar-nav > li + li {
+    margin-left: 10px;
+  }
+  .bt-cover #nav .navbar-nav > li > a {
+    font-size: 16px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .bt-cover #nav .navbar-nav > li > a:hover {
+    border-bottom: 3px solid #ccc;
+  }
+  .bt-cover #nav .navbar-nav > .active > a,
+  .bt-cover #nav .navbar-nav > .active > a:hover,
+  .bt-cover #nav .navbar-nav > .active > a:focus {
+    background: transparent;
+    border-bottom: 3px solid #777;
+    color: #333;
+  }
+}
+
+@media (min-width: 768px) {
+  .bt-cover .navbar-brand {
+    float: left;
+  }
+  /* pull out the header and footer */
+  .bt-cover #nav {
+    position: fixed;
+    top: 0;
+  }
+  .bt-cover footer {
+    position: fixed;
+    bottom: 0;
+  }
+  /* start the vertical centering */
+  .bt-cover .bt-wbox {
+    vertical-align: middle;
+  }
+  /* handle the widths */
+  .bt-cover #nav,
+  .bt-cover footer,
+  .bt-cover .bt-cover-container {
+    width: 700px; /* must be percentage or pixels for horizontal alignment */
+  }
+}

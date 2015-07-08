@@ -1,4 +1,4 @@
 ## YAML Override template
 ## original/file.tpl: override/file.tpl
 ---
-system/Admin/templates/admin_admin_categorymenu.tpl: themes/BlankTheme/templates/modules/Admin/admin_admin_categorymenu.tpl
+modules/X/templates/y.tpl: themes/Matheo/BlankTheme/Resources/views/modules/X/y.tpl
